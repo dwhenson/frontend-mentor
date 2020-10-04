@@ -1,0 +1,125 @@
+/* =============================
+   Global Settings
+   ============================= */
+
+:root {
+	/* Colors */
+	--darkMagenta: hsl(300, 43%, 22%);
+	--softPink: hsl(333, 80%, 67%);
+	--darkGrayMagenta: hsl(303, 10%, 53%);
+	--lightGrayMagenta: hsl(300, 24%, 96%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Typography */
+	font-size: 15px;
+}
+
+body {
+	display: grid;
+	color: var(--darkMagenta);
+	font-family: "Spartan", sans-serif;
+	place-items: center;
+	text-align: center;
+}
+
+/* Layout
+   ============================= */
+
+.container {
+	padding: 2em;
+}
+
+.container > * {
+	margin-top: 3em;
+}
+
+/* =============================
+   Header
+   ============================= */
+
+h1 {
+	margin: 2em auto;
+	font-size: 1.75rem;
+	font-weight: 600;
+	letter-spacing: -1px;
+	text-align: center;
+}
+
+/* =============================
+   Ratings
+   ============================= */
+
+.rating {
+	margin-top: 1em;
+	padding: 1em;
+	border-radius: 5px;
+	background-color: var(--lightGrayMagenta);
+}
+
+.rating img {
+	display: inline-block;
+}
+
+.rating p {
+	margin-top: 0.5em;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+/* =============================
+   Reviews
+   ============================= */
+
+.review {
+	margin-top: 1em;
+	padding: 2em;
+	border-radius: 10px;
+	background-color: var(--darkMagenta);
+}
+
+.review p {
+	margin-top: 0.5em;
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 400;
+	line-height: 2;
+	text-align: left;
+}
+
+/* Avatars
+   ============================= */
+
+.avatar {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin-bottom: 2em;
+}
+
+.avatar img {
+	border-radius: 50%;
+}
+
+.avatar p {
+	margin: 0;
+	font-weight: 600;
+}
+
+.avatar p:last-of-type {
+	color: var(--softPink);
+}
+
+/* =============================
+   Frontend Mentor attribution
+   ============================= */
+
+.attribution {
+	margin-top: 5em;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
