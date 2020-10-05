@@ -1,0 +1,213 @@
+/* =============================
+   Global Settings
+   ============================= */
+
+:root {
+	/* Colors */
+	--darkMagenta: hsl(300, 43%, 22%);
+	--softPink: hsl(333, 80%, 67%);
+	--darkGrayMagenta: hsl(303, 10%, 53%);
+	--lightGrayMagenta: hsl(300, 24%, 96%);
+	--white: hsl(0, 0%, 100%);
+
+	/* Typography */
+	font-size: 15px;
+}
+
+body {
+	display: grid;
+	background: top left url("images/bg-pattern-top-desktop.svg") no-repeat,
+		bottom right url("images/bg-pattern-bottom-desktop.svg") no-repeat;
+	color: var(--darkMagenta);
+	font-family: "Spartan", sans-serif;
+	text-align: center;
+	place-items: center;
+}
+
+/* Layout
+   ============================= */
+
+.container {
+	display: grid;
+	gap: 2em;
+	width: 90%;
+	max-width: 1450px;
+	margin-top: 4em;
+}
+
+.container > * {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin-top: 2em;
+}
+
+/* =============================
+Header
+============================= */
+
+h1 {
+	margin-bottom: 1em;
+	font-size: 2.5rem;
+	font-weight: 600;
+	letter-spacing: -1px;
+	text-align: center;
+}
+
+h1 ~ p {
+	line-height: 1.5;
+}
+
+/* =============================
+   Ratings
+   ============================= */
+
+.rating {
+	padding: 1.25em 0.5em;
+	border-radius: 5px;
+	background-color: var(--lightGrayMagenta);
+}
+
+.stars img {
+	display: inline-block;
+}
+
+.rating p {
+	margin-top: 0.5em;
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
+/* =============================
+   Reviews
+   ============================= */
+
+.review {
+	padding: 2em;
+	border-radius: 10px;
+	background-color: var(--darkMagenta);
+}
+
+.review p {
+	color: #fff;
+	font-size: 0.8rem;
+	font-weight: 400;
+	line-height: 2;
+	text-align: left;
+}
+
+/* Avatars
+   ============================= */
+
+.avatar {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.avatar img {
+	margin-right: 1em;
+	border-radius: 50%;
+}
+
+.avatar p {
+	margin: 0;
+	font-weight: 600;
+}
+
+.avatar p:last-of-type {
+	color: var(--softPink);
+}
+
+/* =============================
+   Media queries
+   ============================= */
+
+@media screen and (min-width: 850px) {
+	.container {
+		grid-template-columns: 1fr 1.25fr;
+		grid-template-rows: auto auto;
+	}
+
+	/* Heading
+	   ============================= */
+
+	.header {
+		margin-right: 4em;
+		text-align: left;
+	}
+
+	h1 {
+		margin-bottom: 0.25em;
+		font-size: 3em;
+		text-align: left;
+	}
+
+	/* Rating
+	   ============================= */
+
+	.rating {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 75%;
+	}
+
+	.rating:first-of-type {
+		margin-left: 0;
+	}
+
+	.rating:nth-last-of-type(2) {
+		align-self: center;
+	}
+
+	.rating:last-of-type {
+		align-self: flex-end;
+	}
+
+	.rating p {
+		margin-top: 0;
+		margin-left: 1em;
+	}
+
+	/* Reviews
+	   ============================= */
+
+	.reviews {
+		grid-area: 2 / 1/ -1 / -1;
+		flex-direction: row;
+		gap: 2em;
+		margin-top: 2em;
+	}
+
+	.review {
+		align-self: flex-start;
+		min-height: 18em;
+	}
+
+	.review:first-of-type {
+		margin-top: 0;
+	}
+
+	.review:nth-last-of-type(2) {
+		margin-top: 2em;
+	}
+
+	.review:last-of-type {
+		margin-top: 4em;
+	}
+}
+
+/* =============================
+   Frontend Mentor attribution
+   ============================= */
+
+.attribution {
+	margin-top: 5em;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
