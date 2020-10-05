@@ -16,10 +16,12 @@
 
 body {
 	display: grid;
+	background: top left url("images/bg-pattern-top-desktop.svg") no-repeat,
+		bottom right url("images/bg-pattern-bottom-desktop.svg") no-repeat;
 	color: var(--darkMagenta);
 	font-family: "Spartan", sans-serif;
-	place-items: center;
 	text-align: center;
+	place-items: center;
 }
 
 /* Layout
@@ -51,10 +53,14 @@ Header
 
 h1 {
 	margin-bottom: 2em;
-	font-size: 2rem;
+	font-size: 2.5rem;
 	font-weight: 600;
 	letter-spacing: -1px;
 	text-align: center;
+}
+
+h1 ~ p {
+	line-height: 1.65;
 }
 
 /* =============================
@@ -66,12 +72,13 @@ h1 {
 }
 
 .rating {
-	padding: 0.5em;
+	margin-bottom: 0.75;
+	padding: 1em 0.5em;
 	border-radius: 5px;
 	background-color: var(--lightGrayMagenta);
 }
 
-.rating img {
+.stars img {
 	display: inline-block;
 }
 
@@ -131,19 +138,68 @@ h1 {
 @media screen and (min-width: 700px) {
 	.header {
 		justify-content: flex-start;
-		max-width: 60%;
-		margin-right: 4em;
 		text-align: left;
 	}
 
 	h1 {
+		width: 80%;
 		margin-bottom: 0;
-		font-size: 2.5rem;
+		font-size: 3rem;
 		text-align: left;
+	}
+
+	h1 ~ p {
+		width: 80%;
 	}
 
 	.reviews {
 		min-width: 100%;
+		margin-top: 1em;
+		gap: 2em;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	.rating {
+		display: flex;
+		align-items: center;
+		align-self: flex-start;
+		justify-content: center;
+		width: 85%;
+	}
+
+	.rating:first-of-type {
+		margin-left: 0;
+	}
+
+	.rating:nth-last-of-type(2) {
+		margin-left: 3em;
+	}
+
+	.rating:last-of-type {
+		margin-left: 6em;
+	}
+
+	.stars {
+		margin-right: 1em;
+		line-height: 0;
+	}
+
+	.review {
+		align-self: flex-start;
+		min-height: 18em;
+	}
+
+	.review:first-of-type {
+		margin-top: 0;
+	}
+
+	.review:nth-last-of-type(2) {
+		margin-top: 2em;
+	}
+
+	.review:last-of-type {
+		margin-top: 4em;
 	}
 }
 
