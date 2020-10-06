@@ -1,0 +1,125 @@
+/* Adapted version of Andy Bell's reset */
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default padding */
+/* Remove list styles on ul, ol elements with a class attribute */
+
+ul[class],
+ol[class] {
+	padding: 0;
+	list-style: none;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class] li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core body defaults */
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img {
+	display: block;
+	max-width: 100%;
+
+	/* Test */
+	height: auto;
+	border-style: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove animations and transitions if requested */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ==========  My Additions  ========== */
+/* ----  Stylistic options  ---- */
+/* Calculate adjustable line-height */
+
+* {
+	line-height: calc(2px + 2ex + 2px);
+}
+
+/* Natural flow and rhythm in articles by default */
+
+article > * + * {
+	margin-top: 1em;
+}
+
+/* ----  Accessability  ---- */
+/* Text meant only for screen readers */
+
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	display: block;
+	z-index: 100000; /* Above WP toolbar */
+	top: 5px;
+	left: 5px;
+	width: auto;
+	height: auto;
+	padding: 15px 23px 14px;
+	clip: auto !important;
+	border-radius: 3px;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #21759b;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: normal;
+	text-decoration: none;
+}
