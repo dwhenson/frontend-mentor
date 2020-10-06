@@ -1,0 +1,158 @@
+/* =============================
+   Global styles
+   ============================= */
+
+:root {
+	/* Colors  */
+	--darkGrayishBlue: hsl(217, 19%, 35%);
+	--desaturatedDarkBlue: hsl(214, 17%, 51%);
+	--grayishBlue: hsl(212, 23%, 69%);
+	--lightGrayishBlue: hsl(210, 46%, 95%);
+
+	/* Typography */
+	font-family: "Manrope", sans-serif;
+}
+
+/* Layout
+============================= */
+
+body {
+	display: grid;
+	place-items: center;
+	background-color: var(--lightGrayishBlue);
+}
+
+/* Typography
+============================= */
+
+h1 {
+	margin-bottom: 1em;
+	color: var(--darkGrayishBlue);
+	font-size: 1.2em;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+p {
+	color: var(--desaturatedDarkBlue);
+	line-height: 1.75;
+}
+
+/* =============================
+   Component - Mobile
+   ============================= */
+
+.component {
+	display: grid;
+	width: 60%;
+	max-width: 1200px;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
+}
+
+.contentWrapper {
+	display: grid;
+	margin-top: 2em;
+	padding: 1.5em;
+}
+
+/* Avatar
+   ============================= */
+
+.avatar {
+	display: flex;
+	align-items: center;
+	margin-top: 2em;
+}
+
+.avatar-image {
+	height: 4em;
+	margin-right: 1em;
+	border-radius: 50%;
+}
+
+.avatar-flexWrapper {
+	margin-right: auto;
+	color: var(--grayishBlue);
+	letter-spacing: 1px;
+}
+
+.avatar-flexWrapper p {
+	color: var(--darkGrayishBlue);
+	font-weight: 700;
+}
+
+.avatar-icon {
+	height: 100%;
+	padding: 0.75em;
+	border-radius: 50%;
+	background-color: var(--lightGrayishBlue);
+}
+
+/* =============================
+   Media queries - Tablet and Desktop
+   ============================= */
+
+@media screen and (min-width: 800px) {
+	.component {
+		grid-template-columns: 1fr 1.5fr;
+	}
+
+	.contentWrapper {
+		margin: 0;
+	}
+
+	.banner-image {
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+/* =============================
+   Toggled section
+   ============================= */
+
+.share {
+	display: none;
+	margin-bottom: 0;
+	padding: 1.5em;
+	background-color: var(--darkGrayishBlue);
+}
+
+.share-flexWrapper {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+}
+
+.share-flexWrapper > * {
+	margin-right: 1.5em;
+}
+
+.share-flexWrapper p {
+	color: var(--desaturatedDarkBlue);
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+.share-icon {
+	height: 100%;
+	padding: 0.75em;
+	border-radius: 50%;
+	background-color: var(--lightGrayishBlue);
+}
+
+/* =============================
+   Frontend Mentor attribution
+   ============================= */
+
+.attribution {
+	margin-top: 2em;
+	font-size: 11px;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
