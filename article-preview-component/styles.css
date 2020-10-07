@@ -10,7 +10,7 @@
 	--lightGrayishBlue: hsl(210, 46%, 95%);
 
 	/* Typography */
-	font-family: "Manrope", sans-serif;
+	font-family: Manrope, sans-serif;
 }
 
 /* Layout
@@ -51,7 +51,7 @@ p {
 }
 
 /* =============================
-   Component - Mobile
+   Main section - Mobile
    ============================= */
 
 .component {
@@ -121,7 +121,6 @@ p {
 	bottom: 0;
 	align-items: center;
 	width: 100%;
-	margin-bottom: 0;
 	padding: 1.85em;
 	border-radius: 0 0 15px 15px;
 	background-color: var(--darkGrayishBlue);
@@ -140,7 +139,7 @@ p {
 .share-flexWrapper p {
 	color: var(--grayishBlue);
 	font-size: 1.2em;
-	letter-spacing: 8px;
+	letter-spacing: 5px;
 	text-transform: uppercase;
 }
 
@@ -149,7 +148,6 @@ p {
 }
 
 .share-icon {
-	height: 100%;
 	padding: 0.75em;
 	border-radius: 50%;
 	background-color: var(--lightGrayishBlue);
@@ -177,13 +175,13 @@ p {
 	.share {
 		display: flex;
 		position: absolute;
-		right: -3.8em;
-		bottom: 9em;
+		right: -4.5em;
+		bottom: 8em;
 		width: auto;
 		padding: 1.25em 1.75em;
 		border-radius: 10px;
 		box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
-		font-size: 0.65rem;
+		font-size: 0.75rem;
 	}
 
 	.share::after {
