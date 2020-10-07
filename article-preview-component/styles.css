@@ -172,6 +172,9 @@ p {
 		border-radius: 15px 0 0 15px;
 	}
 
+	/* Toggled section
+	   ============================= */
+
 	.share {
 		display: flex;
 		position: absolute;
