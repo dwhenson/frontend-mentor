@@ -171,6 +171,25 @@ p {
 	.share {
 		display: none;
 		position: absolute;
+		right: -4.5em;
+		bottom: 8em;
+		width: auto;
+		padding: 1em 1.5em;
+		border-radius: 10px;
+		font-size: 0.75rem;
+	}
+
+	.share-flexWrapper > img:last-of-type {
+		margin-right: 0;
+	}
+
+	.share-flexWrapper p {
+		font-size: 1em;
+		letter-spacing: 4px;
+	}
+
+	.share-icon {
+		display: none;
 	}
 }
 
