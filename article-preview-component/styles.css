@@ -1,3 +1,9 @@
+/* TODO
+/* Fix very small screens
+/* Fix JS on mobile
+/* Fix JS on desktop
+/* Can icon size be adjusted and colors too?
+
 /* =============================
    Global styles
    ============================= */
@@ -44,17 +50,24 @@ p {
 
 .component {
 	display: grid;
-	width: 60%;
+	width: 70%;
+	min-width: 300px;
 	max-width: 1200px;
-	border-radius: 10px;
+	margin: 3em;
+	border-radius: 15px;
 	background-color: white;
 	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
 }
 
 .contentWrapper {
 	display: grid;
-	margin-top: 2em;
-	padding: 1.5em;
+	position: relative;
+	margin-top: 1em;
+	padding: 2em;
+}
+
+.banner-image {
+	border-radius: 15px 15px 0 0;
 }
 
 /* Avatar
@@ -67,7 +80,7 @@ p {
 }
 
 .avatar-image {
-	height: 4em;
+	height: 3em;
 	margin-right: 1em;
 	border-radius: 50%;
 }
@@ -79,8 +92,10 @@ p {
 }
 
 .avatar-flexWrapper p {
+	margin-bottom: 0.25em;
 	color: var(--darkGrayishBlue);
 	font-weight: 700;
+	line-height: 1.2;
 }
 
 .avatar-icon {
@@ -106,6 +121,7 @@ p {
 	.banner-image {
 		height: 100%;
 		object-fit: cover;
+		border-radius: 15px 0 0 15px;
 	}
 }
 
@@ -115,8 +131,13 @@ p {
 
 .share {
 	display: none;
+	position: absolute;
+	bottom: 0;
+	align-items: center;
+	width: 100%;
 	margin-bottom: 0;
-	padding: 1.5em;
+	padding: 2em;
+	border-radius: 0 0 15px 15px;
 	background-color: var(--darkGrayishBlue);
 }
 
@@ -131,9 +152,13 @@ p {
 }
 
 .share-flexWrapper p {
-	color: var(--desaturatedDarkBlue);
+	color: var(--grayishBlue);
 	letter-spacing: 8px;
 	text-transform: uppercase;
+}
+
+.social-icon {
+	height: 1.5em;
 }
 
 .share-icon {
@@ -148,7 +173,6 @@ p {
    ============================= */
 
 .attribution {
-	margin-top: 2em;
 	font-size: 11px;
 	text-align: center;
 }
