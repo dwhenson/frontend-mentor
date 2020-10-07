@@ -3,10 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="styles.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 		<title>Frontend Mentor | Article preview component</title>
 	</head>
@@ -19,29 +25,31 @@
 			/>
 			<section class="contentWrapper">
 				<div class="content">
-					<h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+					<h1>
+						Shift the overall look and feel by adding these wonderful touches to furniture in your home
+					</h1>
 					<p>
-						Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got
-						some simple tips to help you make any room feel complete.
+						Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and
+						uninviting. I’ve got some simple tips to help you make any room feel complete.
 					</p>
 				</div>
 
-				<div id="avatar" class="avatar">
+				<div id="avatar" class="avatar toggle-panel">
 					<img class="avatar-image" src="images/avatar-michelle.jpg" alt="Michelle avatar icon" />
 					<div class="avatar-flexWrapper">
 						<p>Michelle Appleton</p>
 						<time datetime="2020-06-28">28 Jun 2020</time>
 					</div>
-					<img id="avatar-icon" class="avatar-icon" src="images/icon-share.svg" alt="share" />
+					<img class="avatar-icon toggle-icon" src="images/icon-share.svg" alt="share" />
 				</div>
-				<div id="share" class="share">
+				<div id="share" class="share toggle-content">
 					<div class="share-flexWrapper">
 						<p>share</p>
 						<img src="images/icon-facebook.svg" alt="facebook" class="social-icon" />
 						<img src="images/icon-twitter.svg" alt="twitter" class="social-icon" />
 						<img src="images/icon-pinterest.svg" alt="pinterest" class="social-icon" />
 					</div>
-					<img id="share-icon" src="images/icon-share.svg" alt="share" class="share-icon" />
+					<img src="images/icon-share.svg" alt="share" class="share-icon toggle-icon" />
 				</div>
 			</section>
 		</article>
