@@ -51,7 +51,7 @@ p {
 .component {
 	display: grid;
 	width: 70%;
-	min-width: 300px;
+	min-width: 320px;
 	max-width: 1200px;
 	margin: 3em;
 	border-radius: 15px;
@@ -106,6 +106,50 @@ p {
 }
 
 /* =============================
+   Toggled section
+   ============================= */
+
+.share {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 0;
+	padding: 1.85em;
+	border-radius: 0 0 15px 15px;
+	background-color: var(--darkGrayishBlue);
+}
+
+.share-flexWrapper {
+	display: flex;
+	align-items: center;
+	margin-right: auto;
+}
+
+.share-flexWrapper > * {
+	margin-right: 1.5em;
+}
+
+.share-flexWrapper p {
+	color: var(--grayishBlue);
+	font-size: 1.2em;
+	letter-spacing: 8px;
+	text-transform: uppercase;
+}
+
+.social-icon {
+	height: 1.5em;
+}
+
+.share-icon {
+	height: 100%;
+	padding: 0.75em;
+	border-radius: 50%;
+	background-color: var(--lightGrayishBlue);
+}
+
+/* =============================
    Media queries - Tablet and Desktop
    ============================= */
 
@@ -123,49 +167,11 @@ p {
 		object-fit: cover;
 		border-radius: 15px 0 0 15px;
 	}
-}
 
-/* =============================
-   Toggled section
-   ============================= */
-
-.share {
-	display: none;
-	position: absolute;
-	bottom: 0;
-	align-items: center;
-	width: 100%;
-	margin-bottom: 0;
-	padding: 2em;
-	border-radius: 0 0 15px 15px;
-	background-color: var(--darkGrayishBlue);
-}
-
-.share-flexWrapper {
-	display: flex;
-	align-items: center;
-	margin-right: auto;
-}
-
-.share-flexWrapper > * {
-	margin-right: 1.5em;
-}
-
-.share-flexWrapper p {
-	color: var(--grayishBlue);
-	letter-spacing: 8px;
-	text-transform: uppercase;
-}
-
-.social-icon {
-	height: 1.5em;
-}
-
-.share-icon {
-	height: 100%;
-	padding: 0.75em;
-	border-radius: 50%;
-	background-color: var(--lightGrayishBlue);
+	.share {
+		display: none;
+		position: absolute;
+	}
 }
 
 /* =============================
