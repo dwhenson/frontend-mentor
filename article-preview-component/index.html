@@ -40,16 +40,43 @@
 						<p>Michelle Appleton</p>
 						<time datetime="2020-06-28">28 Jun 2020</time>
 					</div>
-					<img src="images/icon-share.svg" alt="Share" class="avatar-icon toggle-icon" />
+					<button class="avatar-icon toggle-icon">
+						<img src="images/icon-share.svg" alt="Share" />
+					</button>
 				</div>
-				<div id="share" class="share toggle-content">
-					<div class="share-flexWrapper">
-						<p>share</p>
-						<img src="images/icon-facebook.svg" alt="Facebook" class="social-icon" />
-						<img src="images/icon-twitter.svg" alt="Twitter" class="social-icon" />
-						<img src="images/icon-pinterest.svg" alt="Pinterest" class="social-icon" />
-					</div>
-					<img src="images/icon-share.svg" alt="Share" class="share-icon toggle-icon" />
+				<div id="share" class="share toggle-content" aria-live="polite">
+					<ul class="share-flexWrapper">
+						<li>share</li>
+						<li>
+							<a
+								><img
+									href="https://www.facebook.com"
+									src="images/icon-facebook.svg"
+									alt="Facebook"
+									class="social-icon"
+							/></a>
+						</li>
+
+						<li>
+							<a
+								><img
+									href="https://www.twitter.com"
+									src="images/icon-twitter.svg"
+									alt="Twitter"
+									class="social-icon"
+							/></a>
+						</li>
+						<li>
+							<a
+								><img
+									href="https://www.pinterest.com"
+									src="images/icon-pinterest.svg"
+									alt="Pinterest"
+									class="social-icon"
+							/></a>
+						</li>
+					</ul>
+					<button class="share-icon toggle-icon"><img src="images/icon-share.svg" alt="Share" /></button>
 				</div>
 			</section>
 		</article>

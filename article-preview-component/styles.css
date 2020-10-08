@@ -107,6 +107,7 @@ p {
 .avatar-icon {
 	height: 100%;
 	padding: 0.75em;
+	border: none;
 	border-radius: 50%;
 	background-color: var(--lightGrayishBlue);
 }
@@ -120,6 +121,7 @@ p {
 	position: absolute;
 	bottom: 0;
 	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	padding: 1.85em;
 	border-radius: 0 0 15px 15px;
@@ -129,16 +131,14 @@ p {
 .share-flexWrapper {
 	display: flex;
 	align-items: center;
-	margin-right: auto;
 }
 
 .share-flexWrapper > * {
-	margin-right: 1.5em;
+	margin-right: 1.25em;
 }
 
-.share-flexWrapper p {
+.share-flexWrapper li {
 	color: var(--grayishBlue);
-	font-size: 1.2em;
 	letter-spacing: 5px;
 	text-transform: uppercase;
 }
@@ -149,6 +149,7 @@ p {
 
 .share-icon {
 	padding: 0.75em;
+	border: none;
 	border-radius: 50%;
 	background-color: var(--lightGrayishBlue);
 }
@@ -178,7 +179,7 @@ p {
 	.share {
 		display: flex;
 		position: absolute;
-		right: -4.5em;
+		right: -5em;
 		bottom: 8em;
 		width: auto;
 		padding: 1.25em 1.75em;
@@ -204,7 +205,7 @@ p {
 		margin-right: 0;
 	}
 
-	.share-flexWrapper p {
+	.share-flexWrapper li {
 		font-size: 1em;
 		letter-spacing: 4px;
 	}
