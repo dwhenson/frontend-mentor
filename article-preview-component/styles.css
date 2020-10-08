@@ -18,6 +18,7 @@
 
 body {
 	display: grid;
+	grid-template-columns: minmax(3em, 40%) minmax(320px, 1000px) minmax(3em, 40%);
 	place-items: center;
 	background-color: var(--lightGrayishBlue);
 }
@@ -56,10 +57,7 @@ p {
 
 .component {
 	display: grid;
-	width: 70%;
-	min-width: 320px;
-	max-width: 1200px;
-	margin: 3em;
+	grid-column: 2;
 	border-radius: 15px;
 	background-color: white;
 	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
@@ -105,7 +103,6 @@ p {
 }
 
 .avatar-icon {
-	height: 100%;
 	padding: 0.75em;
 	border: none;
 	border-radius: 50%;
@@ -177,8 +174,6 @@ p {
 	   ============================= */
 
 	.share {
-		display: flex;
-		position: absolute;
 		right: -5em;
 		bottom: 8em;
 		width: auto;
