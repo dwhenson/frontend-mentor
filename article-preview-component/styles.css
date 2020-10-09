@@ -18,7 +18,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: minmax(3em, 40%) minmax(320px, 1000px) minmax(3em, 40%);
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1000px) minmax(5%, 1fr);
 	place-items: center;
 	background-color: var(--lightGrayishBlue);
 }
@@ -43,11 +43,12 @@ p {
    ============================= */
 
 .toggle-content {
-	transition: all 150ms linear;
+	transition: opacity 150ms linear;
 	opacity: 0;
 }
 
 .toggle-content.is-visible {
+	visibility: visible;
 	opacity: 1;
 }
 
@@ -114,7 +115,9 @@ p {
    ============================= */
 
 .share {
+	/* display: none; */
 	display: flex;
+	visibility: hidden;
 	position: absolute;
 	bottom: 0;
 	align-items: center;
@@ -155,7 +158,7 @@ p {
    Media queries - Tablet and Desktop
    ============================= */
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 740px) {
 	.component {
 		grid-template-columns: 1fr 1.5fr;
 	}

@@ -30,7 +30,7 @@ body {
 .container {
 	display: grid;
 	gap: 2em;
-	width: 70%;
+	width: 75%;
 	max-width: 1450px;
 	margin-top: 4em;
 }
@@ -142,7 +142,7 @@ h1 ~ p {
    Media queries - tablet and desktop
    ============================= */
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 950px) {
 	.container {
 		grid-template-columns: 1fr 1.25fr;
 		grid-template-rows: auto auto;
@@ -169,7 +169,7 @@ h1 ~ p {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 70%;
+		width: 75%;
 		padding: 1.25em 0.25em;
 	}
 
