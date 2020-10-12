@@ -4,211 +4,49 @@
 
 :root {
 	/* Colors  */
-	--darkGrayishBlue: hsl(217, 19%, 35%);
-	--desaturatedDarkBlue: hsl(214, 17%, 51%);
-	--grayishBlue: hsl(212, 23%, 69%);
-	--lightGrayishBlue: hsl(210, 46%, 95%);
+	--paleBlue: hsl(243, 100%, 93%);
+	--grayishBlue: hsl(229, 7%, 55%);
+	--darkBlue: hsl(228, 56%, 26%);
+	--veryDarkBlue: hsl(229, 57%, 11%);
+	--gradientStart: hsl(6, 100%, 80%);
+	--gradientEnd: hsl(335, 100%, 65%);
 
 	/* Typography */
-	font-family: "Manrope", sans-serif;
+	color: #fff;
+	font-family: "Raleway", sans-serif;
 }
 
 /* Layout
 ============================= */
 
+* {
+	font-size: clamp(1rem, 0.75rem + 0.5vw, 3rem);
+}
+
 body {
 	display: grid;
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1000px) minmax(5%, 1fr);
+	height: 100vh;
+	background-image: url("images/bg-mobile.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
 	place-items: center;
-	background-color: var(--lightGrayishBlue);
+}
+
+article {
+	display: flex;
+	grid-column: 2;
+	flex-direction: column;
+}
+
+.icons {
+	display: flex;
 }
 
 /* Typography
 ============================= */
 
-h1 {
-	margin-bottom: 1em;
-	color: var(--darkGrayishBlue);
-	font-size: 1.2em;
-	font-weight: 700;
-	line-height: 1.5;
-}
-
-p {
-	color: var(--desaturatedDarkBlue);
-	line-height: 1.75;
-}
-
-/* Toggle visibility
-   ============================= */
-
-.toggle-content {
-	transition: all 150ms linear;
-	opacity: 0;
-}
-
-.toggle-content.is-visible {
-	opacity: 1;
-}
-
 /* =============================
-   Component - Mobile
+   Mobile view
    ============================= */
-
-.component {
-	display: grid;
-	width: 70%;
-	min-width: 320px;
-	max-width: 1200px;
-	margin: 3em;
-	border-radius: 15px;
-	background-color: white;
-	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
-}
-
-.contentWrapper {
-	display: grid;
-	position: relative;
-	margin-top: 1em;
-	padding: 2em;
-}
-
-.banner-image {
-	border-radius: 15px 15px 0 0;
-}
-
-/* Avatar
-   ============================= */
-
-.avatar {
-	display: flex;
-	align-items: center;
-	margin-top: 2em;
-}
-
-.avatar-image {
-	height: 3em;
-	margin-right: 1em;
-	border-radius: 50%;
-}
-
-.avatar-flexWrapper {
-	margin-right: auto;
-	color: var(--grayishBlue);
-	letter-spacing: 1px;
-}
-
-.avatar-flexWrapper p {
-	margin-bottom: 0.25em;
-	color: var(--darkGrayishBlue);
-	font-weight: 700;
-	line-height: 1.2;
-}
-
-.avatar-icon {
-	height: 100%;
-	padding: 0.75em;
-	border-radius: 50%;
-	background-color: var(--lightGrayishBlue);
-}
-
-/* =============================
-   Toggled section
-   ============================= */
-
-.share {
-	display: flex;
-	position: absolute;
-	bottom: 0;
-	align-items: center;
-	width: 100%;
-	margin-bottom: 0;
-	padding: 1.85em;
-	border-radius: 0 0 15px 15px;
-	background-color: var(--darkGrayishBlue);
-}
-
-.share-flexWrapper {
-	display: flex;
-	align-items: center;
-	margin-right: auto;
-}
-
-.share-flexWrapper > * {
-	margin-right: 1.5em;
-}
-
-.share-flexWrapper p {
-	color: var(--grayishBlue);
-	font-size: 1.2em;
-	letter-spacing: 8px;
-	text-transform: uppercase;
-}
-
-.social-icon {
-	height: 1.5em;
-}
-
-.share-icon {
-	height: 100%;
-	padding: 0.75em;
-	border-radius: 50%;
-	background-color: var(--lightGrayishBlue);
-}
-
-/* =============================
-   Media queries - Tablet and Desktop
-   ============================= */
-
-@media screen and (min-width: 800px) {
-	.component {
-		grid-template-columns: 1fr 1.5fr;
-	}
-
-	.contentWrapper {
-		margin: 0;
-	}
-
-	.banner-image {
-		height: 100%;
-		object-fit: cover;
-		border-radius: 15px 0 0 15px;
-	}
-
-	.share {
-		display: flex;
-		position: absolute;
-		right: -3.8em;
-		bottom: 9em;
-		width: auto;
-		padding: 1.25em 1.75em;
-		border-radius: 10px;
-		box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
-		font-size: 0.65rem;
-	}
-
-	.share::after {
-		content: "";
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		width: 0;
-		height: 0;
-		transform: translateX(-50%);
-		border-top: solid 10px var(--darkGrayishBlue);
-		border-right: solid 10px transparent;
-		border-left: solid 10px transparent;
-	}
-
-	.share-flexWrapper > img:last-of-type {
-		margin-right: 0;
-	}
-
-	.share-flexWrapper p {
-		font-size: 1em;
-		letter-spacing: 4px;
-	}
-
-	.share-icon {
-		display: none;
-	}
-}
