@@ -75,18 +75,21 @@ select {
 }
 
 /* ==========  My Additions  ========== */
-/* ----  Stylistic options  ---- */
-/* Calculate adjustable line-height */
 
-* {
-	line-height: calc(2px + 2ex + 2px);
-}
+/* ----  Stylistic options  ---- */
+
+/* Calculate adjustable font-size and line-height */
+
+/* * {
+	font-size: clamp(1rem, 1rem + 0.5vw, 3rem);
+	line-height: clamp(1.2, 3px + 2ex + 3px, 1.7);
+} */
 
 /* Natural flow and rhythm in articles by default */
 
-article > * + * {
+/* article > * + * {
 	margin-top: 1em;
-}
+} */
 
 /* ----  Accessability  ---- */
 /* Text meant only for screen readers */
