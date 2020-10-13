@@ -13,26 +13,27 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<title>Frontend Mentor | Fylo data storage component</title>
+		<script async defer src="main.js"></script>
 	</head>
 	<body>
 		<article class="app">
 			<header>
 				<img src="images/logo.svg" alt="Fylo" class="logo" />
 				<div class="icons">
-					<img src="images/icon-document.svg" alt="document" class="icon document" />
-					<img src="images/icon-folder.svg" alt="folder" class="icon folder" />
-					<img src="images/icon-upload.svg" alt="upload" class="icon upload" />
+					<button><img src="images/icon-document.svg" alt="document" class="icon document" /></button>
+					<button><img src="images/icon-folder.svg" alt="folder" class="icon folder" /></button>
+					<button><img src="images/icon-upload.svg" alt="upload" class="icon upload" /></button>
 				</div>
 			</header>
 			<section class="info">
-				<p>You’ve used <strong>815 GB</strong> of your storage</p>
-				<input type="range" name="quantity" min="10" max="1000" class="slider" />
+				<p>You’ve used <strong class="amount-small"></strong> of your storage</p>
+				<input type="range" name="quantity" min="0" max="1000" class="slider" />
 				<div class="range">
 					<div class="min"><p>0 GB</p></div>
 					<div class="max"><p>1000 GB</p></div>
 				</div>
 				<div class="call-out">
-					<p><span class="amount">185</span> GB Left</p>
+					<p><span class="amount-large"></span> GB Left</p>
 				</div>
 			</section>
 		</article>
