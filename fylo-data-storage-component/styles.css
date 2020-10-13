@@ -48,7 +48,7 @@ article {
 header {
 	flex: 1 0 auto;
 	margin-bottom: 1em;
-	padding: 3em 2em 2em;
+	padding: 2em;
 	border-radius: 15px 80px 15px 15px;
 	background-color: var(--darkBlue);
 }
@@ -91,7 +91,7 @@ header {
 .info {
 	position: relative;
 	flex: 3 0 auto;
-	padding: 2em 2em;
+	padding: 1.5em 2em;
 	border-radius: 15px;
 	background-color: var(--darkBlue);
 }
