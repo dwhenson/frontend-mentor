@@ -17,18 +17,23 @@
 	<body>
 		<article class="app">
 			<header>
-				<img src="images/logo.svg" alt="Fylo" />
+				<img src="images/logo.svg" alt="Fylo" class="logo" />
 				<div class="icons">
-					<img src="images/icon-document.svg" alt="document" />
-					<img src="images/icon-folder.svg" alt="folder" />
-					<img src="images/icon-upload.svg" alt="upload" />
+					<img src="images/icon-document.svg" alt="document" class="icon document" />
+					<img src="images/icon-folder.svg" alt="folder" class="icon folder" />
+					<img src="images/icon-upload.svg" alt="upload" class="icon upload" />
 				</div>
 			</header>
 			<section class="info">
 				<p>You’ve used <strong>815 GB</strong> of your storage</p>
-				<div class="call-out">185 GB Left</div>
-				<div class="min">0 GB</div>
-				<div class="max">1000 GB</div>
+				<input type="range" name="quantity" min="10" max="1000" class="slider" />
+				<div class="range">
+					<div class="min"><p>0 GB</p></div>
+					<div class="max"><p>1000 GB</p></div>
+				</div>
+				<div class="call-out">
+					<p><span class="amount">185</span> GB Left</p>
+				</div>
 			</section>
 		</article>
 	</body>
