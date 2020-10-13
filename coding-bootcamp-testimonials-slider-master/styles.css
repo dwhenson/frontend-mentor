@@ -1,0 +1,18 @@
+/* =============================
+   Global styles
+   ============================= */
+
+:root {
+	/* Colors  */
+	--grayishBlue: hsl(240, 18%, 77%);
+	--darkBlue: hsl(240, 38%, 20%);
+
+	/* Typography */
+	font-family: "Inter", sans-serif;
+	font-weight: 300;
+}
+
+* {
+	font-size: clamp(1rem, 1rem + 0.4vw, 3rem);
+	line-height: clamp(1.2, 3px + 2ex + 3px, 1.7);
+}
