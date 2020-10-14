@@ -13,6 +13,66 @@
 }
 
 * {
-	font-size: clamp(1rem, 1rem + 0.4vw, 3rem);
-	line-height: clamp(1.2, 3px + 2ex + 3px, 1.7);
+}
+
+body {
+	display: grid;
+	grid-template-columns: minmax(7.5%, 1fr) minmax(320px, 1000px) minmax(7.5%, 1fr);
+	color: var(--darkBlue);
+	font-size: 1.3rem;
+	font-weight: 300;
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* =============================
+   Carousel
+   ============================= */
+
+.carousel-container {
+	position: relative;
+	grid-column: 2;
+	width: 100%;
+	height: 100%;
+
+	/* overflow: hidden; */
+}
+
+.carousel-slide {
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: inherit;
+	height: inherit;
+}
+
+.carousel-slide:nth-of-type(2) {
+	left: 100%;
+}
+
+/* =============================
+   Mobile styles
+   ============================= */
+
+.student-portrait {
+	width: 80%;
+	margin-bottom: 3em;
+}
+
+footer {
+	margin-top: 1em;
+}
+
+.name {
+	display: block;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.position {
+	display: block;
+	color: var(--grayishBlue);
+	font-size: 1.2rem;
 }
