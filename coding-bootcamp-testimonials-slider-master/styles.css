@@ -9,15 +9,15 @@
 
 	/* Typography */
 	font-family: "Inter", sans-serif;
+	font-size: clamp(0.5rem, 1rem + 0.25vw, 2.5rem);
 	font-weight: 300;
-}
-
-* {
+	line-height: clamp(1.2, 3px + 2ex + 3px, 1.8);
 }
 
 body {
 	display: grid;
-	grid-template-columns: minmax(7.5%, 1fr) minmax(320px, 1000px) minmax(7.5%, 1fr);
+	box-sizing: content-box;
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1500px) minmax(5%, 1fr);
 	color: var(--darkBlue);
 	font-size: 1.3rem;
 	font-weight: 300;
@@ -34,8 +34,6 @@ body {
 	grid-column: 2;
 	width: 100%;
 	height: 100%;
-
-	/* overflow: hidden; */
 }
 
 .carousel-slide {
@@ -49,30 +47,60 @@ body {
 }
 
 .carousel-slide:nth-of-type(2) {
-	left: 100%;
+}
+
+.button-container {
+	display: flex;
+	border-radius: 100%;
+	box-shadow: 0 0 20px 0 rgba(115, 115, 115, 0.5);
+}
+
+button {
+	box-sizing: content-box;
+	padding: 1em;
+	border: none;
+	background-color: #fff;
+}
+
+.previous {
+	border-radius: 100% 0 0 100%;
+}
+
+.next {
+	border-radius: 0 100% 100% 0;
 }
 
 /* =============================
-   Mobile styles
-   ============================= */
+Mobile styles
+============================= */
 
 .student-portrait {
-	width: 80%;
+	width: 70%;
 	margin-bottom: 3em;
+	box-shadow: 0 0 20px 0 rgba(135, 135, 172, 0.5);
 }
 
 footer {
 	margin-top: 1em;
+	font-size: clamp(0.5rem, 0.9rem + 0.25vw, 2.5rem);
 }
 
 .name {
 	display: block;
-	font-size: 1.2rem;
 	font-weight: 700;
 }
 
 .position {
 	display: block;
 	color: var(--grayishBlue);
-	font-size: 1.2rem;
+}
+
+/* ============================
+   Media queries - Tablet and Desktop
+   ============================= */
+
+@media screen and (min-width: 700px) {
+	.carousel-slide {
+		flex-direction: row-reverse;
+	}
 }
