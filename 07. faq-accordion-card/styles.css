@@ -1,0 +1,56 @@
+/* =============================
+   Global styles
+   ============================= */
+
+:root {
+	/* Colors  */
+	--darkBlue: hsl(238, 29%, 16%);
+	--softRed: hsl(14, 88%, 65%);
+
+	/* Gradient */
+	--softviolet: hsl(273, 75%, 66%);
+	--softBlue: hsl(240, 73%, 65%);
+
+	/* Dividers */
+	--grayishBlue: hsl(240, 5%, 91%);
+
+	/* Typography */
+	font-family: "Kumbh Sans", sans-serif;
+	font-weight: 300;
+}
+
+body {
+	display: grid;
+	grid-template-columns: minmax(5%, 1fr) minmax(375px, 1440px) minmax(5%, 1fr);
+	font-size: clamp(0.5rem, 1rem + 0.25vw, 2.5rem);
+}
+
+article {
+	grid-column: 2;
+}
+
+details summary::-webkit-details-marker {
+	background: red;
+	color: #fff;
+	font-size: 500%;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary::after {
+	content: "+";
+	width: 20px;
+	padding: 0;
+	float: right;
+	border-radius: 5px;
+	background: red;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+details[open] summary::after {
+	content: "-";
+}
