@@ -16,23 +16,49 @@
 
 	/* Typography */
 	font-family: "Kumbh Sans", sans-serif;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 body {
 	display: grid;
-	grid-template-columns: minmax(5%, 1fr) minmax(375px, 1440px) minmax(5%, 1fr);
+	grid-template-columns: minmax(25%, 1fr) minmax(375px, 1440px) minmax(25%, 1fr);
+	height: 100vh;
+	background: linear-gradient(var(--softviolet), var(--softBlue)) no-repeat;
 	font-size: clamp(0.5rem, 1rem + 0.25vw, 2.5rem);
+	line-height: 1.5;
 }
+
+/* =============================
+   Mobile styles
+   ============================= */
 
 article {
+	position: relative;
 	grid-column: 2;
+	align-self: center;
+	padding: 3em 2em;
+	border-radius: 2em;
+	background-color: white;
 }
 
-details summary::-webkit-details-marker {
-	background: red;
-	color: #fff;
-	font-size: 500%;
+article::before {
+	content: url("images/illustration-woman-online-mobile.svg");
+	position: absolute;
+	top: -6em;
+	left: 50%;
+	margin-left: -1em;
+	transform: translateX(-50%);
+}
+
+h1 {
+	margin: 1em 0;
+	font-size: clamp(0.5rem, 2.5rem + 0.25vw, 5rem);
+	text-align: center;
+}
+
+summary {
+	position: relative;
+	margin-bottom: 0.5em;
 }
 
 summary::-webkit-details-marker {
@@ -40,17 +66,78 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-	content: "+";
-	width: 20px;
-	padding: 0;
-	float: right;
-	border-radius: 5px;
-	background: red;
-	color: #fff;
-	font-weight: bold;
-	text-align: center;
+	content: url("images/icon-arrow-down.svg");
+	position: absolute;
+	left: 100%;
+	transition: all 0.25s;
+}
+
+summary:focus {
+	outline: 3px solid var(--softviolet);
+}
+
+summary:focus-visible {
+	outline: 3px solid var(--softviolet);
+}
+
+summary:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+details {
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+	border-bottom: 2px solid var(--grayishBlue);
+}
+
+details[open] summary {
+	font-weight: 700;
 }
 
 details[open] summary::after {
-	content: "-";
+	content: url("images/icon-arrow-down.svg");
+	transform: rotate(180deg);
+}
+
+/* ============================
+   Media queries - Tablet and Desktop
+   ============================= */
+
+@media screen and (min-width: 1200px) {
+	article {
+		padding-right: 2em;
+		padding-left: 30%;
+	}
+
+	article::before {
+		content: url("images/illustration-woman-online-mobile.svg");
+		position: absolute;
+		top: 50%;
+		left: -5em;
+		margin-left: 0;
+		transform: translateY(-50%);
+	}
+
+	h1 {
+		margin-top: 0;
+		text-align: left;
+	}
+
+	@media screen and (min-width: 1400px) {
+		article {
+			padding-right: 3em;
+			padding-left: 50%;
+		}
+
+		article::before {
+			content: url("images/illustration-woman-online-desktop.svg");
+			position: absolute;
+
+			/* top: 50%;
+		left: -5em;
+		width: 50%;
+		margin-left: -1em;
+		transform: translateY(-50%); */
+		}
+	}
 }
