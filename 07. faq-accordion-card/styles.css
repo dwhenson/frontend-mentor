@@ -21,7 +21,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: minmax(25%, 1fr) minmax(375px, 1440px) minmax(25%, 1fr);
+	grid-template-columns: minmax(20%, 1fr) minmax(320px, 1240px) minmax(20%, 1fr);
 	height: 100vh;
 	background: linear-gradient(var(--softviolet), var(--softBlue)) no-repeat;
 	font-size: clamp(0.5rem, 1rem + 0.25vw, 2.5rem);
@@ -38,6 +38,7 @@ article {
 	align-self: center;
 	padding: 3em 2em;
 	border-radius: 2em;
+	background: url("images/bg-pattern-mobile.svg") no-repeat center top;
 	background-color: white;
 }
 
@@ -65,6 +66,11 @@ summary::-webkit-details-marker {
 	display: none;
 }
 
+summary:hover {
+	color: var(--softRed);
+	cursor: pointer;
+}
+
 summary::after {
 	content: url("images/icon-arrow-down.svg");
 	position: absolute;
@@ -72,12 +78,8 @@ summary::after {
 	transition: all 0.25s;
 }
 
-summary:focus {
-	outline: 3px solid var(--softviolet);
-}
-
 summary:focus-visible {
-	outline: 3px solid var(--softviolet);
+	outline: 2px solid var(--softRed);
 }
 
 summary:focus:not(:focus-visible) {
@@ -88,6 +90,9 @@ details {
 	margin-bottom: 0.5em;
 	padding: 0.5em;
 	border-bottom: 2px solid var(--grayishBlue);
+}
+
+details:hover {
 }
 
 details[open] summary {
@@ -103,17 +108,19 @@ details[open] summary::after {
    Media queries - Tablet and Desktop
    ============================= */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1300px) {
 	article {
-		padding-right: 2em;
-		padding-left: 30%;
+		padding-right: 3em;
+		padding-left: 42%;
+		background: url("images/bg-pattern-desktop.svg") no-repeat center left;
+		background-color: #fff;
 	}
 
 	article::before {
-		content: url("images/illustration-woman-online-mobile.svg");
+		content: url("images/illustration-woman-online-desktop.svg");
 		position: absolute;
 		top: 50%;
-		left: -5em;
+		left: -7em;
 		margin-left: 0;
 		transform: translateY(-50%);
 	}
@@ -122,22 +129,8 @@ details[open] summary::after {
 		margin-top: 0;
 		text-align: left;
 	}
-
-	@media screen and (min-width: 1400px) {
-		article {
-			padding-right: 3em;
-			padding-left: 50%;
-		}
-
-		article::before {
-			content: url("images/illustration-woman-online-desktop.svg");
-			position: absolute;
-
-			/* top: 50%;
-		left: -5em;
-		width: 50%;
-		margin-left: -1em;
-		transform: translateY(-50%); */
-		}
-	}
 }
+
+/* TODO Create new branch and try with flexbox */
+/* CHECK why can't I resize the pseudo element */
+/* CHECK Is this the best way to go about positioning elements? */
