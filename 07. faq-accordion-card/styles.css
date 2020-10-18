@@ -112,8 +112,10 @@ details[open] summary::after {
 	article {
 		padding-right: 3em;
 		padding-left: 42%;
-		background: url("images/bg-pattern-desktop.svg") no-repeat center left;
+		background: url("images/bg-pattern-desktop.svg") no-repeat;
 		background-color: #fff;
+		background-position: -7em 60%;
+		background-size: 60%;
 	}
 
 	article::before {
@@ -131,6 +133,5 @@ details[open] summary::after {
 	}
 }
 
-/* TODO Create new branch and try with flexbox */
 /* CHECK why can't I resize the pseudo element */
 /* CHECK Is this the best way to go about positioning elements? */
