@@ -15,7 +15,7 @@
 body {
 	display: grid;
 	box-sizing: content-box;
-	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1500px) minmax(5%, 1fr);
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1200px) minmax(5%, 1fr);
 	background: url(images/pattern-curve.svg) no-repeat bottom left;
 	color: var(--darkBlue);
 	font-size: 1.3rem;
