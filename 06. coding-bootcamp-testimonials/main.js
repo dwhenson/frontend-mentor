@@ -1,5 +1,5 @@
-const right = document.querySelector(".right");
-const left = document.querySelector(".left");
+const right = document.querySelector("#right");
+const left = document.querySelector("#left");
 
 function showLeft() {
 	left.style.left = "0";
