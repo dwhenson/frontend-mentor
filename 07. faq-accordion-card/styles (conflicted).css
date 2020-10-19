@@ -27,22 +27,12 @@ body {
    ============================= */
 
 article {
-	display: flex;
+	position: relative;
 	grid-column: 2;
-	flex-direction: column;
 	align-self: center;
-	justify-content: center;
-	padding: 2em 3em;
+	padding: 3em 2em;
 	border-radius: 2em;
 	background-color: white;
-}
-
-.illustration-container {
-	align-self: center;
-	margin-top: -9em;
-	padding-bottom: 3em;
-	background: url(images/bg-pattern-mobile.svg) no-repeat center bottom;
-	background-size: 100%;
 }
 
 .illustration-box {
@@ -50,7 +40,7 @@ article {
 }
 
 h1 {
-	margin: 0.5em 0;
+	margin: 2em 0 1em;
 	font-size: clamp(0.5rem, 2.5rem + 0.25vw, 5rem);
 	text-align: center;
 }
@@ -90,6 +80,9 @@ details {
 	border-bottom: 2px solid var(--grayishBlue);
 }
 
+details:hover {
+}
+
 details[open] summary {
 	font-weight: 700;
 }
@@ -103,37 +96,26 @@ details[open] summary::after {
    Media queries - Tablet and Desktop
    ============================= */
 
-@media only screen and (min-width: 1150px) {
-	body {
-		display: grid;
-		grid-template-columns: minmax(10%, 1fr) minmax(320px, 1240px) minmax(10%, 1fr);
-	}
-
+@media screen and (min-width: 1300px) {
 	article {
-		flex-direction: row;
-		justify-content: space-between;
+		padding-right: 3em;
+		padding-left: 42%;
+		background: url("images/bg-pattern-desktop.svg") no-repeat -7em 80%;
+		background-color: #fff;
+		background-size: 57%;
 	}
 
-	section {
-		flex-grow: 1;
-	}
-
-	.illustration-container {
-		position: relative;
-		flex-shrink: 0;
-		margin-top: 3em;
-		margin-right: 5em;
-		margin-left: -8em;
-		padding-bottom: 6em;
-		background: url(images/bg-pattern-desktop.svg) no-repeat left top;
-		background-size: 100%;
-	}
-
-	.illustration-box {
-		display: block;
+	article::before {
+		content: url("images/illustration-woman-online-desktop.svg");
 		position: absolute;
-		z-index: 1;
-		top: 30%;
-		left: -5%;
+		top: 50%;
+		left: -7em;
+		margin-left: 0;
+		transform: translateY(-50%);
+	}
+
+	h1 {
+		margin-top: 0;
+		text-align: left;
 	}
 }
