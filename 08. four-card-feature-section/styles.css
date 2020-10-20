@@ -95,10 +95,32 @@ section img {
 }
 
 /* =============================
+Tablet Layout
+============================= */
+
+@media only screen and (min-width: 600px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 2em;
+	}
+
+	header {
+		width: 80%;
+		margin: 5em auto 3em;
+	}
+
+	section {
+		margin: 0;
+	}
+}
+
+/* =============================
 Desktop Layout
 ============================= */
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 1000px) {
 	main {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -108,7 +130,6 @@ Desktop Layout
 
 	header {
 		width: 50%;
-		margin: 5em auto 3em;
 	}
 
 	.supervisor {
