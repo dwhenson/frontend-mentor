@@ -1,0 +1,20 @@
+/* =============================
+   Global styles
+   ============================= */
+
+:root {
+	--desaturatedRed: hsl(0, 36%, 70%);
+	--softRed: hsl(0, 93%, 68%);
+	--grayishRed: hsl(0, 6%, 24%);
+	--gradientLight: linear, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+	--gradientDark: linear, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+	font-family: "Joesfin Sans", sans-serif;
+	font-weight: 400;
+}
+
+body {
+	display: grid;
+	grid-template-columns: minmax(10%, 1fr) minmax(320px, 1240px) minmax(10%, 1fr);
+	height: 100vh;
+}
