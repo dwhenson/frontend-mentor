@@ -15,7 +15,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: minmax(20%, 1fr) minmax(320px, 1240px) minmax(20%, 1fr);
+	grid-template-columns: minmax(10%, 1fr) minmax(320px, 1240px) minmax(10%, 1fr);
 	height: 100vh;
 	background: linear-gradient(var(--softviolet), var(--softBlue)) no-repeat;
 	font-size: clamp(0.5rem, 1rem + 0.25vw, 2.5rem);
@@ -104,11 +104,6 @@ details[open] summary::after {
    ============================= */
 
 @media only screen and (min-width: 1150px) {
-	body {
-		display: grid;
-		grid-template-columns: minmax(10%, 1fr) minmax(320px, 1240px) minmax(10%, 1fr);
-	}
-
 	article {
 		flex-direction: row;
 		justify-content: space-between;
@@ -125,7 +120,7 @@ details[open] summary::after {
 		margin-right: 5em;
 		margin-left: -8em;
 		padding-bottom: 6em;
-		background: url(images/bg-pattern-desktop.svg) no-repeat left top;
+		background: url(images/bg-pattern-desktop.svg) no-repeat left bottom;
 		background-size: 100%;
 	}
 
