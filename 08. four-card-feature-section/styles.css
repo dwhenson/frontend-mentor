@@ -1,0 +1,93 @@
+/* =============================
+Global styles
+============================= */
+
+:root {
+	--red: hsl(0, 78%, 62%);
+	--redCyan: hsl(180, 62%, 55%);
+	--orange: hsl(34, 97%, 64%);
+	--blue: hsl(212, 86%, 64%);
+	--darkBlue: hsl(234, 12%, 34%);
+	--grayishBlue: hsl(229, 6%, 66%);
+	--lightGray: hsl(0, 0%, 98%);
+
+	font-family: Poppins, sans-serif;
+	font-weight: 200;
+}
+
+body {
+	--fontSize: 0.8rem;
+
+	display: grid;
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1440px) minmax(5%, 1fr);
+	color: var(--grayishBlue);
+	font-size: clamp(0.5rem, var(--fontSize) + 0.5vw, 2.5rem);
+	font-weight: 400;
+	line-height: 2;
+	text-align: center;
+}
+
+.container {
+	grid-column: 2;
+}
+
+/* =============================
+   Typography
+   ============================= */
+
+h1 {
+	margin-bottom: 1em;
+	color: var(--darkBlue);
+	font-weight: 200;
+	line-height: 1.6;
+}
+
+h1 span {
+	font-weight: 600;
+}
+
+main {
+	text-align: left;
+}
+
+h2 {
+	color: var(--darkBlue);
+}
+
+/* =============================
+   Layout
+   ============================= */
+
+header {
+	margin: 5em 0;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	margin: 2em 0;
+	padding: 2em;
+	border-radius: 0.5em;
+	box-shadow: 0 5px 20px 2px rgba(31, 32, 32, 0.2);
+}
+
+section img {
+	align-self: flex-end;
+	padding-top: 2em;
+}
+
+.supervisor {
+	border-top: 5px solid var(--redCyan);
+}
+
+.team-builder {
+	border-top: 5px solid var(--red);
+}
+
+.karma {
+	border-top: 5px solid var(--orange);
+}
+
+.calculator {
+	border-top: 5px solid var(--blue);
+}
