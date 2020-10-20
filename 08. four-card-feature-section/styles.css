@@ -21,7 +21,6 @@ body {
 	display: grid;
 	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1440px) minmax(5%, 1fr);
 	color: var(--grayishBlue);
-	font-size: clamp(0.5rem, var(--fontSize) + 0.5vw, 2.5rem);
 	font-weight: 400;
 	line-height: 2;
 	text-align: center;
@@ -29,6 +28,7 @@ body {
 
 .container {
 	grid-column: 2;
+	height: 100vh;
 }
 
 /* =============================
@@ -55,7 +55,7 @@ h2 {
 }
 
 /* =============================
-   Layout
+   Mobile Layout
    ============================= */
 
 header {
@@ -65,6 +65,7 @@ header {
 section {
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-end;
 	margin: 2em 0;
 	padding: 2em;
 	border-radius: 0.5em;
@@ -73,7 +74,8 @@ section {
 
 section img {
 	align-self: flex-end;
-	padding-top: 2em;
+	margin-top: 2em;
+	padding-top: 0;
 }
 
 .supervisor {
@@ -90,4 +92,38 @@ section img {
 
 .calculator {
 	border-top: 5px solid var(--blue);
+}
+
+/* =============================
+Desktop Layout
+============================= */
+
+@media only screen and (min-width: 850px) {
+	main {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		gap: 2em;
+	}
+
+	header {
+		width: 50%;
+		margin: 5em auto 3em;
+	}
+
+	.supervisor {
+		grid-area: 2 / 1/ 4 /2;
+	}
+
+	.team-builder {
+		grid-area: 1 / 2 /3 /3;
+	}
+
+	.karma {
+		grid-area: 3 / 2/ 5 /3;
+	}
+
+	.calculator {
+		grid-area: 2 / 3 / 4 /4;
+	}
 }
