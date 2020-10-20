@@ -113,6 +113,10 @@ details[open] summary::after {
 		flex-grow: 1;
 	}
 
+	h1 {
+		text-align: left;
+	}
+
 	.illustration-container {
 		position: relative;
 		flex-shrink: 0;
