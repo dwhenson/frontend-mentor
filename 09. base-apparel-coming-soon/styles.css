@@ -61,3 +61,31 @@ main {
 .hero {
 	width: 100%;
 }
+
+form {
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+
+input {
+	width: 100%;
+	padding: 0.5em 1em;
+	border: 1px solid var(--desaturatedRed);
+	border-radius: 2em;
+	background-color: transparent;
+}
+
+input::placeholder {
+	color: var(--desaturatedRed);
+}
+
+button {
+	position: absolute;
+	left: calc(100% - (1.75em * 2) - 12px);
+	height: 100%;
+	padding: 0.5em 1.75em;
+	border: none;
+	border-radius: 2em;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
