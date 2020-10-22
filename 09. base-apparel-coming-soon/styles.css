@@ -9,12 +9,55 @@
 	--gradientLight: linear, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
 	--gradientDark: linear, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
 
-	font-family: "Joesfin Sans", sans-serif;
+	font-family: "Josefin Sans", sans-serif;
 	font-weight: 400;
 }
 
 body {
-	display: grid;
-	grid-template-columns: minmax(10%, 1fr) minmax(320px, 1240px) minmax(10%, 1fr);
 	height: 100vh;
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	color: var(--desaturatedRed);
+	line-height: 1.8;
+	text-align: center;
+}
+
+/* =============================
+   Mobile
+   ============================= */
+
+/* Typography
+   ============================= */
+
+h1 {
+	margin-bottom: 0.25em;
+	font-size: clamp(2rem, 4rem + 0.5vw, 6rem);
+	font-weight: 300;
+	letter-spacing: 7.5px;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+h1 span {
+	color: black;
+	font-weight: 400;
+}
+
+p {
+	margin-bottom: 2em;
+	font-size: clamp(0.75rem, 1rem + 0.5vw, 2rem);
+}
+
+/* Layout
+   ============================= */
+
+main {
+	margin: 2em 2em 0;
+}
+
+.logo {
+	margin: 2em 0 2em 2em;
+}
+
+.hero {
+	width: 100%;
 }
