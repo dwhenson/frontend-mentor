@@ -37,11 +37,22 @@
 				stay up-to-date with announcements and our launch deals.
 			</p>
 			<form action="#">
-				<!-- label for screen readers only -->
+				<!-- label text for screen readers -->
 				<label class="screen-reader-text" for="email">Enter email address</label>
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<button><img src="images/icon-arrow.svg" alt="submit" /></button>
+				<!-- wrapper to enable absolute positioning of icon and button -->
+				<div class="form-wrapper">
+					<input type="email" name="email" id="email" placeholder="Email Address" />
+					<img class="error" src="images/icon-error.svg" alt="error" />
+					<button><img src="images/icon-arrow.svg" alt="submit" /></button>
+				</div>
 			</form>
+			<div class="status" aria-live="polite"></div>
 		</main>
 	</body>
 </html>
+
+<!--
+// CHECK
+Getting the image to span the height? Currently outside main.
+Aligning things inside an input?
+ -->
