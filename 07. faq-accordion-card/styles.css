@@ -80,6 +80,10 @@ summary:focus-visible {
 	outline: 2px solid var(--softRed);
 }
 
+details[open] summary {
+	font-weight: 700;
+}
+
 summary:focus:not(:focus-visible) {
 	outline: 0;
 }
@@ -88,10 +92,6 @@ details {
 	margin-bottom: 0.5em;
 	padding: 0.5em;
 	border-bottom: 2px solid var(--grayishBlue);
-}
-
-details[open] summary {
-	font-weight: 700;
 }
 
 details[open] summary::after {
