@@ -16,8 +16,14 @@
 		<script async defer src="script.js"></script>
 	</head>
 	<body>
-		<img src="images/logo.svg" alt="Base Apparel" class="logo" />
-		<img src="images/hero-mobile.jpg" alt="Girl wearing Base Apparel clothes" class="hero" />
+		<header>
+			<img class="logo" src="images/logo.svg" alt="Base Apparel" />
+		</header>
+		<picture class="hero">
+			<source media="(min-width: 950px)" srcset="images/hero-desktop.jpg 610w" sizes="45vw" />
+			<source media="(max-width: 949px)" srcset="images/hero-mobile.jpg 375w" sizes="100vw" />
+			<img src="images/hero-mobile.jpg" alt="A girl wearing Base Apparel clothes" />
+		</picture>
 		<main>
 			<h1>
 				We're <br />
@@ -31,7 +37,8 @@
 				stay up-to-date with announcements and our launch deals.
 			</p>
 			<form action="#">
-				<label for="email" class="screen-reader-text">Enter email address</label>
+				<!-- label for screen readers only -->
+				<label class="screen-reader-text" for="email">Enter email address</label>
 				<input type="email" name="email" id="email" placeholder="Email Address" />
 				<button><img src="images/icon-arrow.svg" alt="submit" /></button>
 			</form>

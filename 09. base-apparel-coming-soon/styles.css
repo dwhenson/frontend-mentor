@@ -30,7 +30,7 @@ body {
 
 h1 {
 	margin-bottom: 0.25em;
-	font-size: clamp(2rem, 4rem + 0.5vw, 6rem);
+	font-size: clamp(2rem, 4.5rem + 0.5vw, 6rem);
 	font-weight: 300;
 	letter-spacing: 7.5px;
 	line-height: 1.2;
@@ -51,41 +51,81 @@ p {
    ============================= */
 
 main {
-	margin: 2em 2em 0;
+	align-self: start;
+	margin: 5em 7.5% 0;
 }
 
 .logo {
-	margin: 2em 0 2em 2em;
-}
-
-.hero {
-	width: 100%;
+	width: 30%;
+	min-width: 10em;
+	margin: 2em 0 2em 7.5%;
 }
 
 form {
 	display: flex;
 	position: relative;
 	justify-content: center;
+	max-width: 500px;
+	margin: 0 auto;
 }
 
 input {
 	width: 100%;
-	padding: 0.5em 1em;
+	padding: 1em;
 	border: 1px solid var(--desaturatedRed);
 	border-radius: 2em;
 	background-color: transparent;
+	font-size: clamp(0.75rem, 1rem + 0.25vw, 2rem);
+
+	/* font-weight: 300; */
 }
 
 input::placeholder {
+	padding: 1em;
 	color: var(--desaturatedRed);
+	font-size: clamp(0.75rem, 1.1rem + 0.5vw, 2rem);
+	font-weight: 300;
 }
 
 button {
 	position: absolute;
-	left: calc(100% - (1.75em * 2) - 12px);
+	left: calc(100% - (2.5em * 2) - 12px);
 	height: 100%;
-	padding: 0.5em 1.75em;
+	padding: 0.5em 3.5em;
 	border: none;
-	border-radius: 2em;
+	border-radius: 5em;
 	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+/* =============================
+   Desktop styles
+   ============================= */
+
+@media only screen and (min-width: 950px) {
+	body {
+		display: grid;
+		grid-template-columns: 1fr 45vw;
+		grid-template-rows: 10% 1fr;
+		text-align: left;
+	}
+
+	.logo {
+		max-width: 15em;
+		margin-left: 15%;
+	}
+
+	main {
+		width: 35vw;
+		margin-top: 0;
+		margin-left: 15%;
+	}
+
+	.hero {
+		grid-area: 1 / 2/ -2 / -1;
+		width: 100%;
+	}
+
+	form {
+		margin: 0;
+	}
 }
