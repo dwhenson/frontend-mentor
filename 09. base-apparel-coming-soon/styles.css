@@ -30,7 +30,7 @@ body {
 
 h1 {
 	margin-bottom: 0.25em;
-	font-size: clamp(2rem, 4.5rem + 0.5vw, 6rem);
+	font-size: clamp(1.5rem, 3.5rem + 0.5vw, 4rem);
 	font-weight: 300;
 	letter-spacing: 7.5px;
 	line-height: 1.2;
@@ -44,7 +44,7 @@ h1 span {
 
 p {
 	margin-bottom: 2em;
-	font-size: clamp(0.75rem, 0.8rem + 0.5vw, 2rem);
+	font-size: clamp(0.75rem, 0.8rem + 0.25vw, 2rem);
 }
 
 /* Layout
@@ -65,15 +65,16 @@ main {
    ============================= */
 
 form {
+	display: flex;
+	position: relative;
 	justify-content: center;
 	max-width: 500px;
 	margin: 0 auto;
 }
 
 input {
-	position: relative;
-	width: 100%;
-	padding: 0.75em 1em;
+	flex-grow: 1;
+	padding: 0.5em 1em;
 	border: 1px solid var(--desaturatedRed);
 	border-radius: 2em;
 	background-color: transparent;
@@ -85,7 +86,7 @@ input {
 
 input::placeholder {
 	color: var(--desaturatedRed);
-	font-size: clamp(0.75rem, 1rem + 0.5vw, 2rem);
+	font-size: clamp(0.75rem, 1rem + 0.25vw, 2rem);
 	font-weight: 300;
 }
 
@@ -95,7 +96,7 @@ input::placeholder {
 
 button {
 	position: absolute;
-	left: calc(100% - (2.5em * 2) - 12px);
+	right: 0;
 	height: 100%;
 	padding: 0.5em 2.5em;
 	border: none;
@@ -127,7 +128,7 @@ input:focus {
 .status {
 	margin-top: 0.5em;
 	margin-left: 2.1em;
-	font-size: clamp(0.75rem, 0.75rem + 0.5vw, 2rem);
+	font-size: clamp(0.75rem, 0.75rem + 0.25vw, 2rem);
 }
 
 /* =============================
@@ -158,7 +159,8 @@ input:focus {
 
 	.hero {
 		grid-area: 1 / 2/ -2 / -1;
-		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	form {
