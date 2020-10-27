@@ -44,7 +44,7 @@ h1 span {
 
 p {
 	margin-bottom: 2em;
-	font-size: clamp(0.75rem, 1rem + 0.5vw, 2rem);
+	font-size: clamp(0.75rem, 0.8rem + 0.5vw, 2rem);
 }
 
 /* Layout
