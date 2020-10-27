@@ -104,14 +104,13 @@ button {
 	cursor: pointer;
 }
 
-button:focus-visible,
-input:focus-visible {
-	outline: 2px solid var(--grayishRed);
+button:hover {
+	box-shadow: 0 5px 10px 0 hsla(0, 6%, 24%, 0.25);
 }
 
-button:focus:not(:focus-visible),
-input:focus:not(:focus-visible) {
-	outline: 0;
+button:focus,
+input:focus {
+	outline: 2px solid var(--grayishRed);
 }
 
 /* Javascript controlled styles

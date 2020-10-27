@@ -41,12 +41,14 @@ function checkEmail() {
 	if (regex.test(input.value.trim())) {
 		showSuccess(status, "Email valid");
 		status.style.color = "var(--grayishRed)";
-		input.style.border = "1px solid var(--desaturatedRed)";
+		input.style.border = "3px solid var(--grayishRed)";
+		input.style.outline = "none";
 		icon.style.display = "none";
 	} else {
 		showError(status, "Please provide a valid email");
 		status.style.color = "var(--softRed)";
-		input.style.border = "solid 2px var(--softRed)";
+		input.style.border = "solid 3px var(--softRed)";
+		input.style.outline = "none";
 		icon.style.display = "block";
 	}
 }
@@ -70,10 +72,11 @@ form.addEventListener("submit", function (event) {
 		checkEmail();
 		input.focus();
 		form.addEventListener("input", inputHandler);
-		// If form is valid, allow submit and clear values
+		// If form is valid, allow submit and return to initial values
 	} else {
 		form.submit();
 		input.value = "";
 		status.textContent = "";
+		input.style.border = "1px solid var(--desaturatedRed)";
 	}
 });
