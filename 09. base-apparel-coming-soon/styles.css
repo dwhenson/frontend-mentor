@@ -14,7 +14,6 @@
 }
 
 body {
-	height: 100vh;
 	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
 	color: var(--desaturatedRed);
 	line-height: 1.5;
@@ -30,7 +29,7 @@ body {
 
 h1 {
 	margin-bottom: 0.25em;
-	font-size: clamp(1.5rem, 8vw + 1rem, 4rem);
+	font-size: clamp(1.5rem, 5vw + 1rem, 6rem);
 	font-weight: 300;
 	letter-spacing: 7.5px;
 	line-height: 1;
@@ -44,7 +43,7 @@ h1 span {
 
 p {
 	margin-bottom: 2em;
-	font-size: clamp(0.75rem, 1vw + 0.5rem, 2rem);
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
 }
 
 /* Layout
@@ -79,14 +78,14 @@ input {
 	border-radius: 2em;
 	background-color: transparent;
 	color: var(--desaturatedRed);
-	font-size: clamp(0.75rem, 1.5vw + 0.5rem, 2rem);
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
 	font-weight: 300;
 	text-indent: 1em;
 }
 
 input::placeholder {
 	color: var(--desaturatedRed);
-	font-size: clamp(0.75rem, 1.5vw + 0.5rem, 2rem);
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
 	font-weight: 300;
 }
 
@@ -129,7 +128,7 @@ input:focus {
 .status {
 	margin-top: 0.5em;
 	margin-left: 2.1em;
-	font-size: clamp(0.75rem, 1.5vw + 0.5rem, 2rem);
+	font-size: clamp(0.75rem, 1.5vw + 0.5rem, 1.5rem);
 }
 
 /* =============================
@@ -153,7 +152,6 @@ input:focus {
 	}
 
 	main {
-		/* width: 35vw; */
 		margin-top: 2.5em;
 		margin-left: 15%;
 	}
@@ -161,11 +159,12 @@ input:focus {
 	.hero {
 		grid-area: 1 / 2/ -1 / -1;
 		height: 100%;
-		object-fit: cover;
+		object-fit: fill;
 	}
 
 	form {
-		width: 100%;
+		width: 70%;
+		margin: 0;
 	}
 
 	button {
