@@ -12,10 +12,12 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdn.jsdelivr.net/gh/cferdinandi/bouncer@1/dist/bouncer.polyfills.min.js"></script>
 		<script async defer src="main.js"></script>
 	</head>
 
 	<body>
+		<!-- Enables positioning of content inside central grid column -->
 		<div class="container">
 			<header>
 				<h1>Learn to code by watching others</h1>
@@ -27,17 +29,64 @@
 			<main>
 				<p class="accent"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
 				<form action="#">
-					<label class="screen-reader-text" for="first-name">First Name</label>
-					<input type="text" name="first-name" id="first-name" placeholder="First Name" required />
-					<label class="screen-reader-text" for="Last-name">Last Name</label>
-					<input type="text" name="last-name" id="lsat-name" placeholder="Last Name" required />
-					<label class="screen-reader-text" for="Email">Email Address</label>
-					<input type="email" name="email" id="email" placeholder="Email Address" required />
-					<label class="screen-reader-text" for="Password">Password</label>
-					<input type="password" name="password" id="password" placeholder="Password" required />
+					<!-- data-bouncer-target places displayed message in designated element  -->
+					<label for="first-name">
+						<input
+							type="text"
+							name="first-name"
+							id="first-name"
+							placeholder="First Name"
+							data-bouncer-target="#first-name-error"
+							required
+						/>
+						<img src="images/icon-error.svg" alt="error" />
+					</label>
+					<!-- ID enables placing of error message in designated element -->
+					<div id="first-name-error" class="error-message" aria-live="polite"></div>
+					<label for="Last-name">
+						<input
+							type="text"
+							name="last-name"
+							id="lsat-name"
+							placeholder="Last Name"
+							data-bouncer-target="#last-name-error"
+							required
+						/>
+						<img src="images/icon-error.svg" alt="error" />
+					</label>
+					<!-- ID enables placing of error message in designated element -->
+					<div id="last-name-error" class="error-message" aria-live="polite"></div>
+					<label for="email">
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder="Email Address"
+							data-bouncer-target="#email-error"
+							required
+						/>
+						<img src="images/icon-error.svg" alt="error" />
+					</label>
+					<!-- ID enables placing of error message in designated element -->
+					<div id="email-error" class="error-message" aria-live="polite"></div>
+					<label for="password">
+						<input
+							type="password"
+							name="password"
+							id="password"
+							placeholder="Password"
+							data-bouncer-target="#password-error"
+							required
+						/>
+						<img src="images/icon-error.svg" alt="error" />
+					</label>
+					<!-- ID enables placing of error message in designated element -->
+					<div id="password-error" class="error-message" aria-live="polite"></div>
 					<button>Claim your free trial</button>
 					<footer>
-						By clicking the button, you are agreeing to our <span>Terms and Services</span>
+						<small
+							>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
+						</small>
 					</footer>
 				</form>
 			</main>

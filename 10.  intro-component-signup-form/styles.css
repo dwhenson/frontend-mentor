@@ -16,18 +16,24 @@ body {
 	background: url("images/bg-intro-desktop.png");
 	background-color: hsla(0, 100%, 74%);
 	color: #fff;
-	font-family: "Poppins", sans-serif;
-	font-size: clamp(0.5rem, 0.1vw + 1rem, 2rem);
+	font-family: Poppins, sans-serif;
+	font-size: clamp(0.5rem, 1rem + 0.5vw, 2rem);
 	font-weight: 300;
 	text-align: center;
 }
 
 .container {
 	grid-column: 2;
-	margin-top: 20%;
+	align-self: center;
 }
 
-/* Typography
+a {
+	color: var(--red);
+	text-decoration: none;
+}
+
+/* =============================
+   Mobile styles
    ============================= */
 
 h1 {
@@ -37,10 +43,6 @@ h1 {
 p {
 	margin-bottom: 3em;
 }
-
-/* =============================
-   Mobile styles
-   ============================= */
 
 .accent {
 	display: inline-block;
@@ -52,6 +54,9 @@ p {
 	box-shadow: 0 7.5px 0 rgba(218, 103, 103, 1);
 }
 
+/* Form styles
+   ============================= */
+
 form {
 	display: flex;
 	flex-direction: column;
@@ -61,17 +66,19 @@ form {
 	box-shadow: 0 7.5px 0 rgba(218, 103, 103, 1);
 }
 
+label {
+	position: relative;
+}
+
 input {
-	margin-bottom: 1em;
-	padding: 0.75em 0;
+	width: 100%;
+	padding: 0.75em 1em;
 	border: 1px solid rgba(225, 225, 225, 1);
 	border-radius: 0.25em;
 }
 
 input::placeholder {
-	padding-left: 1em;
-	font-size: clamp(0.5rem, 0.1vw + 0.75rem, 2rem);
-	font-weight: 600;
+	font-size: inherit;
 }
 
 input:focus {
@@ -88,21 +95,38 @@ button {
 	color: white;
 	font-weight: 600;
 	text-transform: uppercase;
-}
-
-footer {
-	color: var(--grayishBlue);
-	font-size: clamp(0.5rem, 0.1vw + 0.75rem, 2rem);
-	font-weight: 600;
-}
-
-footer span {
-	color: var(--red);
+	cursor: pointer;
 }
 
 button:focus,
 input:focus {
-	outline: 2px solid var(--red);
+	outline: 2px solid var(--blue);
+}
+
+footer {
+	color: var(--grayishBlue);
+	font-weight: 500;
+}
+
+/* Error messages and icons
+   ============================= */
+
+img {
+	visibility: hidden;
+	position: absolute;
+	top: 50%;
+	right: 1em;
+	transform: translateY(-50%);
+}
+
+.error-message {
+	height: 2em;
+	margin: 0.25em 0 1em;
+	color: var(--red);
+	font-size: clamp(0.25rem, 0.5rem + 0.5vw, 0.75rem);
+	font-style: italic;
+	font-weight: 300;
+	text-align: right;
 }
 
 /* =============================
@@ -110,9 +134,6 @@ input:focus {
    ============================= */
 
 @media only screen and (min-width: 850px) {
-	/* Layout
-	   ============================= */
-
 	body {
 		grid-template-columns: minmax(15%, 1fr) minmax(320px, 1240px) minmax(15%, 1fr);
 		font-size: clamp(0.5rem, 0.25vw + 1rem, 2rem);
@@ -122,23 +143,15 @@ input:focus {
 	.container {
 		display: flex;
 		align-items: center;
-		gap: 2em;
-		margin-top: 0;
+		gap: 10%;
 	}
 
 	header {
-		width: 50%;
+		width: 45%;
 	}
 
 	main {
-		width: 50%;
-	}
-
-	p {
-		margin-bottom: 0;
-	}
-
-	footer {
+		width: 45%;
 		text-align: center;
 	}
 }
