@@ -84,7 +84,9 @@ select {
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
-	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
 }
 
 .screen-reader-text:hover,

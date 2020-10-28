@@ -6,33 +6,41 @@
 		<title>Frontend Mentor | Intro component with sign up form</title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="reset.carousel-slide" />
+		<link rel="stylesheet" href="reset.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;1,700&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="styles.css" />
 		<script async defer src="main.js"></script>
 	</head>
 
 	<body>
-		<header>
-			<h1>Learn to code by watching others</h1>
-			<p>
-				See how experienced developers solve problems in real-time. Watching scripted tutorials is
-				great, but understanding how developers think is invaluable.
-			</p>
-		</header>
-		<main>
-			<p>Try it free 7 days then $20/mo. thereafter</p>
-			<form action="#">
-				<label class="screen-reader-text" for="first-name">First Name</label>
-				<input type="text" name="first-name" id="first-name" placeholder="First Name" required />
-				<label class="screen-reader-text" for="Last-name">Last Name</label>
-				<input type="text" name="last-name" id="lsat-name" placeholder="Last Name" required />
-				<label class="screen-reader-text" for="Email">Email Address</label>
-				<input type="email" name="email" id="email" placeholder="Email Address" required />
-				<label class="screen-reader-text" for="Password">Password</label>
-				<input type="password" name="password" id="password" placeholder="Password" required />
-				<button>Password Claim your free trial</button>
-			</form>
-			<footer>By clicking the button, you are agreeing to our Terms and Services</footer>
-		</main>
+		<div class="container">
+			<header>
+				<h1>Learn to code by watching others</h1>
+				<p>
+					See how experienced developers solve problems in real-time. Watching scripted tutorials is
+					great, but understanding how developers think is invaluable.
+				</p>
+			</header>
+			<main>
+				<p class="accent"><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+				<form action="#">
+					<label class="screen-reader-text" for="first-name">First Name</label>
+					<input type="text" name="first-name" id="first-name" placeholder="First Name" required />
+					<label class="screen-reader-text" for="Last-name">Last Name</label>
+					<input type="text" name="last-name" id="lsat-name" placeholder="Last Name" required />
+					<label class="screen-reader-text" for="Email">Email Address</label>
+					<input type="email" name="email" id="email" placeholder="Email Address" required />
+					<label class="screen-reader-text" for="Password">Password</label>
+					<input type="password" name="password" id="password" placeholder="Password" required />
+					<button>Claim your free trial</button>
+					<footer>
+						By clicking the button, you are agreeing to our <span>Terms and Services</span>
+					</footer>
+				</form>
+			</main>
+		</div>
 	</body>
 </html>

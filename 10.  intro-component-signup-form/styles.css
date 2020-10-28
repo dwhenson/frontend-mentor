@@ -1,3 +1,144 @@
 /* =============================
    Global styles
    ============================= */
+
+:root {
+	--red: hsl(0, 100%, 74%);
+	--green: hsl(154, 59%, 51%);
+	--blue: hsl(248, 32%, 49%);
+	--darkBlue: hsl(249, 10%, 26%);
+	--grayishBlue: hsl(246, 25%, 77%);
+}
+
+body {
+	display: grid;
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1240px) minmax(5%, 1fr);
+	background: url("images/bg-intro-desktop.png");
+	background-color: hsla(0, 100%, 74%);
+	color: #fff;
+	font-family: "Poppins", sans-serif;
+	font-size: clamp(0.5rem, 0.1vw + 1rem, 2rem);
+	font-weight: 300;
+	text-align: center;
+}
+
+.container {
+	grid-column: 2;
+	margin-top: 20%;
+}
+
+/* Typography
+   ============================= */
+
+h1 {
+	margin-bottom: 1em;
+}
+
+p {
+	margin-bottom: 3em;
+}
+
+/* =============================
+   Mobile styles
+   ============================= */
+
+.accent {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 2em;
+	padding: 1em 3em;
+	border-radius: 0.5em;
+	background-color: var(--blue);
+	box-shadow: 0 7.5px 0 rgba(218, 103, 103, 1);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 1.5em;
+	border-radius: 0.5em;
+	background-color: #fff;
+	box-shadow: 0 7.5px 0 rgba(218, 103, 103, 1);
+}
+
+input {
+	margin-bottom: 1em;
+	padding: 0.75em 0;
+	border: 1px solid rgba(225, 225, 225, 1);
+	border-radius: 0.25em;
+}
+
+input::placeholder {
+	padding-left: 1em;
+	font-size: clamp(0.5rem, 0.1vw + 0.75rem, 2rem);
+	font-weight: 600;
+}
+
+input:focus {
+	outline: 2px solid var(--red);
+}
+
+button {
+	margin-bottom: 1em;
+	padding: 1em;
+	border: none;
+	border-radius: 0.25em;
+	background: var(--green);
+	box-shadow: 0 5px 0 rgba(49, 185, 126, 1);
+	color: white;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+footer {
+	color: var(--grayishBlue);
+	font-size: clamp(0.5rem, 0.1vw + 0.75rem, 2rem);
+	font-weight: 600;
+}
+
+footer span {
+	color: var(--red);
+}
+
+button:focus,
+input:focus {
+	outline: 2px solid var(--red);
+}
+
+/* =============================
+   Desktop styles
+   ============================= */
+
+@media only screen and (min-width: 850px) {
+	/* Layout
+	   ============================= */
+
+	body {
+		grid-template-columns: minmax(15%, 1fr) minmax(320px, 1240px) minmax(15%, 1fr);
+		font-size: clamp(0.5rem, 0.25vw + 1rem, 2rem);
+		text-align: left;
+	}
+
+	.container {
+		display: flex;
+		align-items: center;
+		gap: 2em;
+		margin-top: 0;
+	}
+
+	header {
+		width: 50%;
+	}
+
+	main {
+		width: 50%;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	footer {
+		text-align: center;
+	}
+}
