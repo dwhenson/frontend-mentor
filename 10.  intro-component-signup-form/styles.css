@@ -25,7 +25,7 @@ body {
 .container {
 	grid-column: 2;
 	align-self: center;
-	margin: 10% auto;
+	margin: 5% auto;
 }
 
 a {
