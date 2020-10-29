@@ -12,7 +12,7 @@
 
 body {
 	display: grid;
-	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1240px) minmax(5%, 1fr);
+	grid-template-columns: minmax(2.5%, 1fr) minmax(320px, 1240px) minmax(2.5%, 1fr);
 	background: url("images/bg-intro-desktop.png");
 	background-color: hsla(0, 100%, 74%);
 	color: #fff;
@@ -25,6 +25,7 @@ body {
 .container {
 	grid-column: 2;
 	align-self: center;
+	margin: 30% auto;
 }
 
 a {
@@ -38,6 +39,7 @@ a {
 
 h1 {
 	margin-bottom: 1em;
+	line-height: 1.2;
 }
 
 p {
