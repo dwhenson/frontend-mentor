@@ -1,0 +1,152 @@
+:root {
+	/* Colors */
+	--cyan: hsl(179, 62%, 43%);
+	--lightCyan: hsl(179, 47%, 52%);
+	--green: hsl(71, 73%, 54%);
+	--white: hsl(204, 43%, 93%);
+	--gray: hsl(218, 22%, 67%);
+	--underemphasize: hsla(99, 100%, 100%, 0.5);
+
+	/* Spacing */
+	--flow-space: 1em;
+}
+
+/* =============================
+   Global Styles
+   ============================= */
+
+body {
+	display: grid;
+	grid-template-columns: minmax(7.5%, 1fr) minmax(320px, 1440px) minmax(7.5%, 1fr);
+	place-items: center;
+	color: var(--white);
+	font-family: Karla, sans-serif;
+	font-size: clamp(0.75rem, 1rem + 0.25vw, 3rem);
+	font-weight: 400;
+	line-height: 1.8;
+}
+
+div {
+	grid-column: 2;
+}
+
+h1,
+h2 {
+	line-height: 1.2;
+}
+
+h1 {
+	color: var(--cyan);
+	font-size: clamp(0.75rem, 1.5rem + 0.5vw, 3rem);
+}
+
+h2 {
+	font-size: clamp(0.75rem, 1.15rem + 0.5vw, 3rem);
+}
+
+/* =============================
+   Utilities
+   ============================= */
+
+/* Layout */
+
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.direction {
+	flex-direction: column;
+}
+
+.alignment {
+	align-items: center;
+}
+
+.full-width {
+	flex-basis: 100%;
+}
+
+/* Spacing */
+
+.wrapper {
+	padding: calc(var(--flow-space) * 2);
+}
+
+.flow > * + * {
+	margin-top: var(--flow-space);
+}
+
+/* Color */
+
+.bg-gray {
+	background-color: var(--gray);
+}
+
+.bg-white {
+	background-color: var(--white);
+}
+
+.bg-cyan {
+	background-color: var(--cyan);
+}
+
+.bg-lightCyan {
+	background-color: var(--lightCyan);
+}
+
+.bg-green {
+	background-color: var(--green);
+}
+
+.deemphasize {
+	color: var(--underemphasize);
+}
+
+/* =============================
+   Block
+   ============================= */
+
+/* Header
+   ============================= */
+
+header h2 {
+	color: var(--green);
+}
+
+header p {
+	color: var(--gray);
+}
+
+/* Subscription
+   ============================= */
+
+.price {
+	margin-right: 0.5em;
+	font-size: 2.5em;
+}
+
+.cta {
+	width: 100%;
+	padding: 0.75em 1.25em;
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 0 0.5em 0.75em 0 rgba(0, 0, 0, 0.2);
+	color: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+/* =============================
+   Desktop styles
+   ============================= */
+
+@media only screen and (min-width: 45em) {
+	.direction {
+		flex-direction: row;
+	}
+
+	.split {
+		width: 50%;
+	}
+}
