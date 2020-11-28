@@ -187,8 +187,8 @@ Blocks
 	width: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
 }
 
-.toggle-styles:hover .toggle-thumb {
-	margin-left: 1px;
+:focus + .toggle-styles:not(:hover) .toggle-thumb::before {
+	display: block;
 }
 
 :checked + .toggle-styles .toggle-thumb {
@@ -196,24 +196,22 @@ Blocks
 	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
 }
 
+.toggle-styles:hover .toggle-thumb {
+	margin-left: 1px;
+}
+
 :checked + .toggle-styles:hover .toggle-thumb {
 	margin-left: -1px;
-}
-
-:focus + .toggle-styles:not(:hover) .toggle-thumb::before {
-	display: block;
-}
-
-.annually {
-	display: none;
 }
 
 /* Prices
 	 ============================= */
 
-h2 + p {
+.price {
 	align-items: center;
 	display: inline-flex;
+	font-size: 4rem;
+	margin-top: ;
 }
 
 .currency {
@@ -221,8 +219,20 @@ h2 + p {
 	margin-right: 0.1em;
 }
 
-.price {
-	font-size: 4rem;
+.price-switch-container {
+	height: 6rem;
+	overflow: hidden;
+}
+
+.switch {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.switch.annually {
+	transform: translateY(-6rem);
+	transition: transform 1200ms cubic-bezier(1, 0, 0.55, 0.85);
 }
 
 /* Plans
