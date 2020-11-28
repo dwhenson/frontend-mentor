@@ -228,11 +228,12 @@ Blocks
 	align-items: center;
 	display: flex;
 	flex-direction: column;
+	transform: translateY(-6rem);
+	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
 }
 
 .switch.annually {
-	transform: translateY(-6rem);
-	transition: transform 1200ms cubic-bezier(1, 0, 0.55, 0.85);
+	transform: translateY(0);
 }
 
 /* Plans
