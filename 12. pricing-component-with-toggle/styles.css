@@ -19,6 +19,9 @@
 Global styles
 ============================= */
 body {
+	background-image: url(images/bg-bottom.svg), url(images/bg-top.svg);
+	background-position: bottom left, top right;
+	background-repeat: no-repeat;
 	color: var(--clr-neutral-800);
 	display: grid;
 	font-family: "Montserrat", sans-serif;
@@ -183,7 +186,7 @@ Blocks
 }
 
 :checked + .toggle-styles .toggle-thumb {
-	box-shadow: 0 0 var(--toggle-thumb-space) var(--color-shadow-dark);
+	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
 	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
 }
 
@@ -202,7 +205,6 @@ Blocks
 	align-items: center;
 	display: inline-flex;
 	font-size: 4rem;
-	margin-top: ;
 }
 
 .currency {
@@ -231,6 +233,7 @@ Blocks
 	 ============================= */
 
 .plan {
+	background-color: white;
 	border-radius: 0.5em;
 	color: var(--fg, inherit);
 	padding: 2em;
