@@ -27,7 +27,7 @@ body {
 	font-family: "Montserrat", sans-serif;
 	font-size: clamp(0.7rem, 0.8rem + 0.25vw, 2rem);
 	font-weight: 700;
-	grid-template-columns: minmax(2em, 1fr) minmax(320px, 1440px) minmax(2em, 1fr);
+	grid-template-columns: minmax(0.25em, 1fr) minmax(320px, 1440px) minmax(0.25em, 1fr);
 	text-align: center;
 }
 
@@ -42,6 +42,8 @@ Utilities
 
 .container {
 	grid-column: 2;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 10em;
 }
 
@@ -59,7 +61,7 @@ Utilities
 	gap: 3em;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 55em) {
 	.flex {
 		align-items: center;
 		flex-direction: row;
@@ -92,7 +94,6 @@ Utilities
 	color: var(--fg, inherit);
 	display: block;
 	font-size: 0.85rem;
-	font-size: inherit;
 	letter-spacing: 0.1em;
 	margin-top: 2.5em;
 	padding: 1.25em 2.5em;
@@ -127,6 +128,7 @@ Blocks
 .toggle {
 	align-items: center;
 	color: var(--clr-neutral-400);
+	cursor: pointer;
 	display: flex;
 	gap: 1em;
 	margin-left: auto;
@@ -239,7 +241,7 @@ Blocks
 	padding: 2em;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 55em) {
 	.plan:first-of-type {
 		border-radius: 0.5em 0 0 0.5em;
 	}
