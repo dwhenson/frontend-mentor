@@ -17,8 +17,6 @@
 	--fw-300: 300;
 	--fw-400: 400;
 	--fw-700: 700;
-<<<<<<< Updated upstream
-=======
 
 	/* font size */
 	--fs-100: 0.5rem;
@@ -38,7 +36,6 @@
 		--fs-600: 2.125rem;
 		--fs-900: 4.25rem;
 	} */
->>>>>>> Stashed changes
 }
 
 /* =============================
@@ -47,27 +44,13 @@ Global styles
 body {
 	display: grid;
 	font-family: "Kumbh Sans", sans-serif;
-<<<<<<< Updated upstream
-	font-weight: var(--fw-400);
-	grid-template-columns: minmax(1em, 1fr) minmax(320px, 1440px) minmax(1em, 1fr);
-=======
 	font-size: var(--fs-400);
 	font-weight: var(--fw-400);
 	grid-template-columns: minmax(0.25em, 1fr) minmax(320px, 1440px) minmax(0.25em, 1fr);
->>>>>>> Stashed changes
 	line-height: 1.8;
 	text-align: center;
 }
 
-<<<<<<< Updated upstream
-h1,
-h2 {
-	line-height: 1.2;
-}
-
-.price {
-	font-size: 3rem;
-=======
 h1 {
 	font-size: var(--fs-800);
 }
@@ -78,7 +61,6 @@ h2 {
 
 .price {
 	font-size: var(--fs-900);
->>>>>>> Stashed changes
 	font-weight: var(--fw-700);
 }
 
@@ -95,12 +77,7 @@ Utilities
 	grid-column: 2;
 	margin-left: auto;
 	margin-right: auto;
-<<<<<<< Updated upstream
-
-	/* max-width: 80%; */
-=======
 	max-width: 80%;
->>>>>>> Stashed changes
 }
 
 .flow-content > * + * {
@@ -175,11 +152,7 @@ Utilities
 	color: var(--fg, var(--clr-brand-600));
 	display: inline-block;
 	font-weight: var(--fw-700);
-<<<<<<< Updated upstream
-	padding: 1em 2.5em;
-=======
 	padding: 0.75em 2.5em;
->>>>>>> Stashed changes
 	text-decoration: none;
 	transition: background-color 250ms linear;
 }
