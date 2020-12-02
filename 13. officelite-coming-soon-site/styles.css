@@ -29,6 +29,7 @@
 	--fs-700: 2rem;
 	--fs-800: 2.5rem;
 	--fs-900: 3rem;
+	--fs-1000: 5rem;
 }
 
 /* ==========================================================
@@ -37,17 +38,11 @@ Global styles
 body {
 	display: grid;
 	font-family: "Kumbh Sans", sans-serif;
-	font-size: clamp(var(--fs-300) calc(var(--fs-300) + 1vw), var(--fs-500));
+	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
 	font-weight: var(--fw-400);
-	grid-template-columns: minmax(1em, 1fr) minmax(calc(320px - 2em), 1440px) minmax(1em, 1fr);
-	line-height: 1.6;
+	grid-template-columns: minmax(1em, 1fr) minmax(calc(360px - 2em), 1440px) minmax(1em, 1fr);
+	line-height: 1.8;
 	text-align: center;
-}
-
-@media only screen and (min-width: 50em) {
-	body {
-		text-align: left;
-	}
 }
 
 h1 {
@@ -56,6 +51,12 @@ h1 {
 
 h2 {
 	font-size: clamp(var(--fs-400), calc(var(--fs-400) + 1vw), var(--fs-500));
+}
+
+@media only screen and (min-width: 45em) {
+	body {
+		text-align: left;
+	}
 }
 
 /* ==========================================================
@@ -81,7 +82,7 @@ Utilities
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer, 3em) * 5);
+	margin-top: calc(var(--spacer, 3em) * 8);
 }
 
 .split {
@@ -94,7 +95,7 @@ Utilities
 	flex-basis: 100%;
 }
 
-@media only screen and (min-width: 65em) {
+@media only screen and (min-width: 60em) {
 	.split {
 		flex-direction: row;
 		gap: var(--spacer);
@@ -106,7 +107,7 @@ Utilities
 	gap: 0 calc(var(--spacer) * 4);
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 45em) {
 	.grid {
 		grid-auto-flow: column dense;
 		grid-template-columns: 1fr 1fr;
@@ -115,6 +116,16 @@ Utilities
 
 	.column-2 {
 		grid-area: 1 / -2 / -1 / -1;
+	}
+
+	/* HACK Issues with `align-content: center`  on parent */
+	header .grid h1 {
+		align-self: end;
+	}
+
+	header .grid > .btn {
+		align-self: start;
+		justify-self: start;
 	}
 }
 
@@ -154,8 +165,10 @@ Utilities
 	color: var(--fg, var(--clr-primary-600));
 	display: inline-block;
 	font-weight: var(--fw-700);
+	justify-self: center;
 	line-height: 1;
 	padding: 1em 2.5em;
+	text-align: center;
 	text-decoration: none;
 	transition: background-color 250ms linear;
 }
@@ -174,6 +187,16 @@ Utilities
 	outline: 0;
 }
 
+.accent-dark.btn {
+	box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 45em) {
+	.grid .btn {
+		justify-self: start;
+	}
+}
+
 /* Header
 	 ========================================================== */
 
@@ -182,13 +205,10 @@ Utilities
 	padding-top: 5%;
 }
 
-.hero {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-header .btn {
-	box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
+@media only screen and (min-width: 45em) {
+	.hero {
+		transform: translateX(5%);
+	}
 }
 
 /* Plans
@@ -217,11 +237,18 @@ header .btn {
 	font-weight: var(--fw-700);
 }
 
+@media only screen and (min-width: 60em) {
+	.grid.plan {
+		display: revert;
+		text-align: center;
+	}
+}
+
 /* Countdown
 	 ========================================================== */
 
 .countdown {
-	gap: 2em;
+	justify-content: space-between;
 	line-height: 1.2;
 	margin-bottom: 5em;
 	text-align: center;
@@ -240,25 +267,42 @@ header .btn {
 
 .countdown-app {
 	flex-direction: row;
-	gap: 0.5em;
+	gap: 0.25em;
 	justify-content: center;
 }
 
 .countdown-app > div {
-	align-self: center;
 	background-color: var(--bg, var(--clr-primary-200));
 	border-radius: 0.5em;
 	max-width: min-content;
-	padding: 1em;
+	padding: 0.5em;
 }
 
 .countdown-app p:not([id]) {
 	color: var(--fg, var(--clr-primary-600));
-	font-size: clamp(var(--fs-700), calc(var(--fs-800) + 1vw), var(--fs-900));
+	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
 }
 
 .countdown-app p[id] {
 	color: var(--clr-secondary-400);
 	font-size: clamp(var(--fs-200), calc(var(--fs-200) + 1vw), var(--fs-300));
 	font-weight: var(--fw-700);
+}
+
+@media only screen and (min-width: 60em) {
+	.countdown h2 {
+		text-align: left;
+	}
+
+	.countdown .btn {
+		max-width: max-content;
+	}
+
+	.countdown-app {
+		justify-content: start;
+	}
+
+	.countdown-app > div {
+		padding: 1em;
+	}
 }
