@@ -19,8 +19,6 @@ dd {
 	margin: 0;
 }
 
-<<<<<<< Updated upstream
-=======
 /* Adjust line heights */
 h1,
 .h1,
@@ -31,7 +29,6 @@ h3,
 	line-height: 1.2;
 }
 
->>>>>>> Stashed changes
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
