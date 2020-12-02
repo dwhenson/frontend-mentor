@@ -85,7 +85,7 @@ select {
 
 /* Text meant only for screen readers */
 
-.screen-reader-text {
+.visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 	height: 1px;
@@ -95,9 +95,9 @@ select {
 	width: 1px;
 }
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
+.visually-hidden:hover,
+.visually-hidden:active,
+.visually-hidden:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);

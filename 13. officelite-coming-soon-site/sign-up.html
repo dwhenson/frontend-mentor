@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Officelite coming soon site</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<script async defer src="main.js"></script>
+	</head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+	<body class="sign-up">
+		<div class="container flow-section">
+			<img class="logo" src="design/shared/logo.svg" alt="Officelite logo" />
 
-    <title>Frontend Mentor | Officelite coming soon site</title>
-</head>
-<body>
-  Work smarter. Save time.
+			<header class="flow-content">
+				<h1>Work smarter. Save time.</h1>
+				<p>
+					Easily manage your projects. Get on the list and receive in-app perks available only to early
+					subscribers. We are moving into final development and getting ready for official launch soon..
+				</p>
+			</header>
 
-  Easily manage your projects. Get on the list and receive in-app perks available only to 
-  early subscribers. We are moving into final development and getting ready for official launch soon.
+			<main class="container">
+				<section class="split countdown">
+					<div class="flow-content">
+						<h2><span>Coming</span> <time datetime="20201201"> Today </time></h2>
+						<div class="countdown-app split">
+							<div>
+								<p>00</p>
+								<p id="days">days</p>
+							</div>
+							<div>
+								<p>00</p>
+								<p id="hours">hours</p>
+							</div>
+							<div>
+								<p>00</p>
+								<p id="minutes">mins</p>
+							</div>
+							<div>
+								<p>00</p>
+								<p id="seconds">secs</p>
+							</div>
+						</div>
+					</div>
+				</section>
 
-  <!-- If you're choosing to make this date dynamic, set it to 30 days in the future from the moment the visitor views the page -->
-  Coming 4 Nov 2020
-
-  <!-- If you're choosing to make this timer dynamic, have it countdown from the date you set above -->
-  47 Days
-  07 Hours
-  56 Min
-  14 Sec
-
-  Name
-  Email Address
-  Basic Pack Free
-  Basic Pack Free
-  Pro Pack $9.99
-  Ultimate Pack $19.99
-  Phone Number
-  Company
-  Get on the list
-</body>
+				<section class="column-2">
+					<form class="split plan" action="#">
+						<label class="visually-hidden" for="name">Name</label>
+						<input type="text" name="name" id="name" placeholder="Name" />
+						<label class="visually-hidden" for="email">Email Address</label>
+						<input type="email" name="email" id="email" placeholder="Email Address" />
+						<label class="visually-hidden" for="plan">Options</label>
+						<select class="options" name="plan" id="plan">
+							<option value="Basic Pack" selected><span>Basic Pack</span> Free</option>
+							<option value="Pro Pack"><strong>Pro Pack</strong> $9.99</option>
+							<option value="Ultimate Pack"><span>Ultimate Pack</span> $19.99</option>
+						</select>
+						<label class="visually-hidden" for="phone">Phone Number</label>
+						<input type="tel" name="phone" id="phone" placeholder="Phone Number" />
+						<label class="visually-hidden" for="company">Company</label>
+						<input type="text" name="company" id="company" placeholder="Company" />
+						<button class="btn accent-dark" type="submit">Get on the list</button>
+					</form>
+				</section>
+			</main>
+		</div>
+	</body>
 </html>

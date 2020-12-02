@@ -6,6 +6,7 @@
 	--clr-primary-600: rgba(130, 156, 255, 1);
 	--clr-primary-800: rgba(81, 117, 255, 1);
 	--clr-secondary-200: rgba(153, 156, 167, 1);
+	--clr-secondary-300: rgba(145, 150, 171, 1);
 	--clr-secondary-400: rgba(116, 123, 149, 1);
 	--clr-secondary-600: rgba(51, 57, 80, 1);
 	--clr-secondary-800: rgba(37, 41, 58, 1);
@@ -36,6 +37,7 @@
 Global styles
 ========================================================== */
 body {
+	color: var(--clr-secondary-300);
 	display: grid;
 	font-family: "Kumbh Sans", sans-serif;
 	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
@@ -46,10 +48,12 @@ body {
 }
 
 h1 {
+	color: var(--fg, var(--clr-secondary-800));
 	font-size: clamp(var(--fs-600), calc(var(--fs-700) + 1vw), var(--fs-800));
 }
 
 h2 {
+	color: var(--fg, var(--clr-secondary-800));
 	font-size: clamp(var(--fs-400), calc(var(--fs-400) + 1vw), var(--fs-500));
 }
 
@@ -72,8 +76,12 @@ Utilities
 }
 
 @media only screen and (min-width: 45em) {
-	.container {
+	.home .container {
 		max-width: 90%;
+	}
+
+	.sign-up .container {
+		max-width: 80%;
 	}
 }
 
@@ -82,7 +90,7 @@ Utilities
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer, 3em) * 8);
+	margin-top: calc(var(--spacer, 3em) * 5);
 }
 
 .split {
@@ -107,25 +115,30 @@ Utilities
 	gap: 0 calc(var(--spacer) * 4);
 }
 
+.column-2 {
+	grid-area: 1 / -2 / -1 / -1;
+}
+
 @media only screen and (min-width: 45em) {
-	.grid {
+	.home .grid {
 		grid-auto-flow: column dense;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto;
 	}
+}
 
-	.column-2 {
-		grid-area: 1 / -2 / -1 / -1;
+@media only screen and (min-width: 60em) {
+	.home .grid {
+		grid-template-rows: 1fr auto 1fr;
 	}
 
 	/* HACK Issues with `align-content: center`  on parent */
-	header .grid h1 {
+	.home header .grid h1 {
 		align-self: end;
 	}
 
-	header .grid > .btn {
+	.home header .grid > .btn {
 		align-self: start;
-		justify-self: start;
 	}
 }
 
@@ -161,6 +174,7 @@ Utilities
 .btn {
 	align-self: center;
 	background-color: var(--bg, var(--clr-primary-200));
+	border: none;
 	border-radius: 2em;
 	color: var(--fg, var(--clr-primary-600));
 	display: inline-block;
@@ -205,9 +219,23 @@ Utilities
 	padding-top: 5%;
 }
 
+.hero {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sign-up header {
+	margin-top: 6em;
+}
+
+/* HACK align outer edge of image with container */
 @media only screen and (min-width: 45em) {
 	.hero {
 		transform: translateX(5%);
+	}
+
+	.sign-up header {
+		text-align: center;
 	}
 }
 
@@ -217,7 +245,7 @@ Utilities
 .plan {
 	background-color: var(--bg, var(--clr-primary-000));
 	border-radius: 1em;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 10px 25px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 	color: var(--fg, inherit);
 	padding: 2em;
 }
@@ -230,6 +258,10 @@ Utilities
 
 .plan ul + ul {
 	margin-top: calc(var(--spacer) * 3);
+}
+
+.plan ul:first-of-type {
+	color: var(--fg, var(--clr-secondary-800));
 }
 
 .price {
@@ -289,20 +321,63 @@ Utilities
 	font-weight: var(--fw-700);
 }
 
+@media only screen and (min-width: 45em) {
+	.countdown-app {
+		gap: 1em;
+	}
+
+	.countdown-app > div {
+		padding: 1em;
+	}
+}
+
 @media only screen and (min-width: 60em) {
 	.countdown h2 {
 		text-align: left;
-	}
-
-	.countdown .btn {
-		max-width: max-content;
 	}
 
 	.countdown-app {
 		justify-content: start;
 	}
 
-	.countdown-app > div {
-		padding: 1em;
+	/* HACK stop button stretching
+		 -------------------------- */
+	.countdown .btn {
+		max-width: max-content;
 	}
+}
+
+/* Form
+	 ========================================================== */
+
+/* TODO add form validation and style dropdown
+			-------------------------- */
+
+form.split {
+	flex-direction: column;
+	gap: 0;
+	margin-bottom: 5em;
+	padding: 1em 2em;
+}
+
+form > * {
+	margin-top: 0.5em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+form select,
+form input {
+	border: none;
+	border-bottom: 1px solid var(--clr-secondary-200);
+	padding-left: 1em;
+}
+
+form input::placeholder {
+	color: var(--clr-secondary-200);
+}
+
+form button {
+	margin-bottom: 0.5em;
+	margin-top: 2em;
 }
