@@ -110,20 +110,17 @@ Utilities
 	}
 }
 
-.grid {
-	display: grid;
-	gap: 0 calc(var(--spacer) * 4);
-}
-
-.column-2 {
-	grid-area: 1 / -2 / -1 / -1;
-}
-
 @media only screen and (min-width: 45em) {
 	.home .grid {
+		display: grid;
+		gap: 0 calc(var(--spacer) * 4);
 		grid-auto-flow: column dense;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto;
+	}
+
+	.home .column-2 {
+		grid-area: 1 / -2 / -1 / -1;
 	}
 }
 
@@ -139,6 +136,32 @@ Utilities
 
 	.home header .grid > .btn {
 		align-self: start;
+	}
+
+	.sign-up .grid {
+		align-content: center;
+		display: grid;
+		gap: calc(var(--spacer) * 4);
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.sign-up .column-2 {
+		grid-area: 1 / -2 / -1 / -1;
+	}
+
+	/* HACK Issues with `align-content: center`  on parent */
+	.sign-up .grid header {
+		align-self: end;
+	}
+
+	.sign-up .grid section:first-of-type {
+		align-self: start;
+		margin-top: 0;
+	}
+
+	.sign-up .grid .column-2 {
+		align-self: center;
 	}
 }
 
@@ -163,10 +186,6 @@ Utilities
 	--bg: var(--clr-secondary-600);
 	--fg: var(--clr-primary-000);
 }
-
-/* ==========================================================
-	 Blocks
-	 ========================================================== */
 
 /* Pseudo buttons
 	 ========================================================== */
@@ -201,21 +220,22 @@ Utilities
 	outline: 0;
 }
 
-.accent-dark.btn {
-	box-shadow: 0 1em 1em rgba(0, 0, 0, 0.2);
-}
-
 @media only screen and (min-width: 45em) {
 	.grid .btn {
 		justify-self: start;
 	}
 }
 
+/* ==========================================================
+	 Blocks
+	 ========================================================== */
+
 /* Header
 	 ========================================================== */
 
 .logo {
 	display: inline-block;
+	margin-bottom: 3em;
 	padding-top: 5%;
 }
 
@@ -224,18 +244,24 @@ Utilities
 	margin-right: auto;
 }
 
-.sign-up header {
-	margin-top: 6em;
-}
-
-/* HACK align outer edge of image with container */
 @media only screen and (min-width: 45em) {
+	/* HACK align outer edge of image with container on home page */
+	.logo {
+		display: block;
+	}
+
 	.hero {
 		transform: translateX(5%);
 	}
 
 	.sign-up header {
 		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 60em) {
+	.sign-up header {
+		text-align: left;
 	}
 }
 
@@ -357,6 +383,9 @@ form.split {
 	flex-direction: column;
 	gap: 0;
 	margin-bottom: 5em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80%;
 	padding: 1em 2em;
 }
 
