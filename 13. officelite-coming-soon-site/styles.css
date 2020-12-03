@@ -1,3 +1,12 @@
+/* TODO */
+
+/*
+- Background images
+- Line break on sign-up page button
+- Form validation
+- JavaScript dynamic content
+*/
+
 :root {
 	/* colors */
 	--clr-primary-000: rgba(255, 255, 255, 1);
@@ -138,10 +147,12 @@ Utilities
 		align-self: start;
 	}
 
+	/* End hack */
+
 	.sign-up .grid {
 		align-content: center;
 		display: grid;
-		gap: calc(var(--spacer) * 4);
+		gap: calc(var(--spacer) * 4) calc(var(--spacer) * 2);
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 	}
@@ -163,6 +174,8 @@ Utilities
 	.sign-up .grid .column-2 {
 		align-self: center;
 	}
+
+	/* End hack */
 }
 
 /* Colors
@@ -196,6 +209,7 @@ Utilities
 	border: none;
 	border-radius: 2em;
 	color: var(--fg, var(--clr-primary-600));
+	cursor: pointer;
 	display: inline-block;
 	font-weight: var(--fw-700);
 	justify-self: center;
@@ -329,19 +343,21 @@ Utilities
 	justify-content: center;
 }
 
+/* HACK width and and max-width to prevent layout jank */
 .countdown-app > div {
 	background-color: var(--bg, var(--clr-primary-200));
 	border-radius: 0.5em;
-	max-width: min-content;
+	max-width: 7em;
 	padding: 0.5em;
+	width: 3em;
 }
 
-.countdown-app p:not([id]) {
+.countdown-app p[id] {
 	color: var(--fg, var(--clr-primary-600));
 	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
 }
 
-.countdown-app p[id] {
+.countdown-app p:not([id]) {
 	color: var(--clr-secondary-400);
 	font-size: clamp(var(--fs-200), calc(var(--fs-200) + 1vw), var(--fs-300));
 	font-weight: var(--fw-700);
@@ -376,9 +392,6 @@ Utilities
 /* Form
 	 ========================================================== */
 
-/* TODO add form validation and style dropdown
-			-------------------------- */
-
 form.split {
 	flex-direction: column;
 	gap: 0;
@@ -409,4 +422,12 @@ form input::placeholder {
 form button {
 	margin-bottom: 0.5em;
 	margin-top: 2em;
+}
+
+.error {
+	border-color: var(--clr-error-200);
+}
+
+.error-message {
+	color: var(--clr-error-200);
 }
