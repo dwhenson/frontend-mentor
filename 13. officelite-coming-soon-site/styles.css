@@ -56,6 +56,69 @@ body {
 	text-align: center;
 }
 
+/* Background images
+	 ========================================================== */
+
+/* Home page
+			-------------------------- */
+
+/* prettier-ignore  */
+.home {
+	background:
+		url(design/home/bg-pattern-header.svg) center -10em/90% no-repeat,
+		url(design/home/bg-pattern-footer.svg) center 95%/200% no-repeat,
+		linear-gradient(rgba(251, 251, 251, 1) 60%, rgba(52, 52, 52, 1) 40%);
+}
+
+/* prettier-ignore  */
+@media only screen and (min-width: 45em) {
+	.home {
+		background:
+			url(design/home/bg-pattern-header.svg) right -15em  top -15em/90% no-repeat,
+			url(design/home/bg-pattern-footer.svg) center bottom -10em/100% no-repeat,
+			linear-gradient(rgba(251, 251, 251, 1) 55%, rgba(52, 52, 52, 1) 45%);
+	}
+}
+
+/* prettier-ignore  */
+@media only screen and (min-width: 60em) {
+	.home {
+		background:
+			url(design/home/bg-pattern-header.svg) right -25em  top -25em/80% no-repeat,
+			url(design/home/bg-pattern-footer.svg) left -25em bottom -30em/100% no-repeat,
+			linear-gradient(rgba(251, 251, 251, 1) 65%, rgba(52, 52, 52, 1) 35%);
+	}
+}
+
+/* Sign-up page
+	 -------------------------- */
+
+/* prettier-ignore  */
+.sign-up {
+	background:
+		url(design/home/bg-pattern-header.svg) center -15em/150% no-repeat,
+		url(design/home/bg-pattern-footer.svg) center bottom/100% no-repeat,
+		linear-gradient(rgba(251, 251, 251, 1) 75%, rgba(52, 52, 52, 1) 35%);
+}
+
+/* prettier-ignore  */
+@media only screen and (min-width: 45em) {
+	.sign-up {
+		background:
+			url(design/home/bg-pattern-footer.svg) center bottom -15em/110% no-repeat,
+			linear-gradient(rgba(251, 251, 251, 1) 70%, rgba(52, 52, 52, 1) 30%);
+	}
+}
+
+/* prettier-ignore  */
+@media only screen and (min-width: 60em) {
+	.sign-up {
+		background:
+			url(design/home/bg-pattern-footer.svg) right -25em top -30em/100% no-repeat,
+			linear-gradient(90deg, rgba(251, 251, 251, 1) 70%, rgba(52, 52, 52, 1) 30%);
+	}
+}
+
 h1 {
 	color: var(--fg, var(--clr-secondary-800));
 	font-size: clamp(var(--fs-600), calc(var(--fs-700) + 1vw), var(--fs-800));
@@ -82,16 +145,7 @@ Utilities
 	grid-column: 2;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-@media only screen and (min-width: 45em) {
-	.home .container {
-		max-width: 90%;
-	}
-
-	.sign-up .container {
-		max-width: 80%;
-	}
+	max-width: 90%;
 }
 
 .flow-content > * + * {
@@ -249,7 +303,7 @@ Utilities
 
 .logo {
 	display: inline-block;
-	margin-bottom: 3em;
+	margin-bottom: 5em;
 	padding-top: 5%;
 }
 
@@ -320,7 +374,7 @@ Utilities
 	 ========================================================== */
 
 .countdown {
-	justify-content: space-between;
+	align-items: center;
 	line-height: 1.2;
 	margin-bottom: 5em;
 	text-align: center;
@@ -328,13 +382,13 @@ Utilities
 
 .countdown h2 {
 	color: var(--clr-primary-800);
-	font-size: var(--fs-400);
-	letter-spacing: 2px;
+	font-size: var(--fs-500);
+	letter-spacing: 3px;
 	text-transform: uppercase;
 }
 
 .countdown h2 span {
-	/* color: var(--clr-primary-000); */
+	color: var(--fg, var(--clr-secondary-800));
 }
 
 .countdown-app {
@@ -343,13 +397,16 @@ Utilities
 	justify-content: center;
 }
 
-/* HACK width and and max-width to prevent layout jank */
+@media only screen and (min-width: 60120em) {
+	.countdown .countdown-app {
+		max-width: 60%;
+	}
+}
+
 .countdown-app > div {
 	background-color: var(--bg, var(--clr-primary-200));
 	border-radius: 0.5em;
-	max-width: 7em;
 	padding: 0.5em;
-	width: 3em;
 }
 
 .countdown-app p[id] {
@@ -395,7 +452,6 @@ Utilities
 form.split {
 	flex-direction: column;
 	gap: 0;
-	margin-bottom: 5em;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 80%;
