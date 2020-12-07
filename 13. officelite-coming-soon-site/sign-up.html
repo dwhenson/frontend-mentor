@@ -57,13 +57,15 @@
 						<label class="visually-hidden" for="email">Email Address</label>
 						<input type="email" name="email" id="email" placeholder="Email Address" required />
 						<label class="visually-hidden" for="plan">Options</label>
-						<select class="options" name="plan" id="plan" required>
-							<option value="Basic Pack" selected><span>Basic Pack</span> Free</option>
-							<option value="Pro Pack"><strong>Pro Pack</strong> $9.99</option>
-							<option value="Ultimate Pack"><span>Ultimate Pack</span> $19.99</option>
-						</select>
+						<div class="select">
+							<select class="options" name="plan" id="standard-select" required>
+								<option value="Basic Pack" selected><span>Basic Pack</span> - Free</option>
+								<option value="Pro Pack"><strong>Pro Pack</strong> - $9.99</option>
+								<option value="Ultimate Pack"><span>Ultimate Pack</span> - $19.99</option>
+							</select>
+						</div>
 						<label class="visually-hidden" for="phone">Phone Number</label>
-						<input type="tel" name="phone" id="phone" placeholder="Phone Number" />
+						<input type="tel" name="phone" id="phone" placeholder="Phone Number" pattern="[0-9]" />
 						<label class="visually-hidden" for="company">Company</label>
 						<input type="text" name="company" id="company" placeholder="Company" />
 						<button class="btn accent-dark" type="submit">Get on the list</button>

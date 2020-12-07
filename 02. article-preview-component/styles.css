@@ -27,12 +27,12 @@ body {
 ============================= */
 
 h1 {
+	color: var(--darkGrayishBlue);
 	font-size: 1.2em;
 	font-weight: 700;
 	line-height: 1.5;
 	margin-bottom: 1em;
 	margin-top: 1em;
-	color: var(--darkGrayishBlue);
 }
 
 p {
