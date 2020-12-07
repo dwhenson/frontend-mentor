@@ -20,9 +20,9 @@ body {
 
 	display: grid;
 	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1440px) minmax(5%, 1fr);
-	color: var(--grayishBlue);
-	font-weight: 400;
 	line-height: 2;
+	font-weight: 400;
+	color: var(--grayishBlue);
 	text-align: center;
 }
 
@@ -36,9 +36,9 @@ body {
    ============================= */
 
 h1 {
-	margin-bottom: 1em;
-	color: var(--darkBlue);
 	font-weight: 200;
+	color: var(--darkBlue);
+	margin-bottom: 1em;
 	line-height: 1.6;
 }
 

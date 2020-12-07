@@ -17,22 +17,22 @@
 ============================= */
 
 body {
-	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1000px) minmax(5%, 1fr);
-	display: grid;
-	place-items: center;
 	background-color: var(--lightGrayishBlue);
+	display: grid;
+	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1000px) minmax(5%, 1fr);
+	place-items: center;
 }
 
 /* Typography
 ============================= */
 
 h1 {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	color: var(--darkGrayishBlue);
 	font-size: 1.2em;
 	font-weight: 700;
 	line-height: 1.5;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	color: var(--darkGrayishBlue);
 }
 
 p {
@@ -44,13 +44,13 @@ p {
    ============================= */
 
 .toggle-content {
-	transition: opacity 150ms linear;
 	opacity: 0;
+	transition: opacity 150ms linear;
 }
 
 .toggle-content.is-visible {
-	visibility: visible;
 	opacity: 1;
+	visibility: visible;
 }
 
 /* =============================
@@ -58,18 +58,18 @@ p {
    ============================= */
 
 .component {
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
 	display: grid;
 	grid-column: 2;
-	border-radius: 15px;
-	background-color: white;
-	box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
 }
 
 .contentWrapper {
 	display: grid;
-	position: relative;
 	margin-top: 1em;
 	padding: 2em;
+	position: relative;
 }
 
 .banner-image {
@@ -80,35 +80,35 @@ p {
    ============================= */
 
 .avatar {
-	display: flex;
 	align-items: center;
+	display: flex;
 	margin-top: 2em;
 }
 
 .avatar-image {
+	border-radius: 50%;
 	height: 3em;
 	margin-right: 1em;
-	border-radius: 50%;
 }
 
 .avatar-flexWrapper {
-	margin-right: auto;
 	color: var(--grayishBlue);
 	letter-spacing: 1px;
+	margin-right: auto;
 }
 
 .avatar-flexWrapper p {
-	margin-bottom: 0.25em;
 	color: var(--darkGrayishBlue);
 	font-weight: 700;
 	line-height: 1.2;
+	margin-bottom: 0.25em;
 }
 
 .avatar-icon {
-	padding: 0.75em;
+	background-color: var(--lightGrayishBlue);
 	border: none;
 	border-radius: 50%;
-	background-color: var(--lightGrayishBlue);
+	padding: 0.75em;
 }
 
 /* =============================
@@ -116,22 +116,23 @@ p {
    ============================= */
 
 .share {
+	align-items: center;
+	background-color: var(--darkGrayishBlue);
+	border-radius: 0 0 15px 15px;
+	bottom: 0;
+
 	/* display: none; */
 	display: flex;
-	visibility: hidden;
-	position: absolute;
-	bottom: 0;
-	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 	padding: 1.85em;
-	border-radius: 0 0 15px 15px;
-	background-color: var(--darkGrayishBlue);
+	position: absolute;
+	visibility: hidden;
+	width: 100%;
 }
 
 .share-flexWrapper {
-	display: flex;
 	align-items: center;
+	display: flex;
 }
 
 .share-flexWrapper > * {
@@ -149,10 +150,10 @@ p {
 }
 
 .share-icon {
-	padding: 0.75em;
+	background-color: var(--lightGrayishBlue);
 	border: none;
 	border-radius: 50%;
-	background-color: var(--lightGrayishBlue);
+	padding: 0.75em;
 }
 
 /* =============================
@@ -169,35 +170,35 @@ p {
 	}
 
 	.banner-image {
+		border-radius: 15px 0 0 15px;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 15px 0 0 15px;
 	}
 
 	/* Toggled section
 	   ============================= */
 
 	.share {
-		right: -5em;
-		bottom: 8em;
-		width: auto;
-		padding: 1.25em 1.75em;
 		border-radius: 10px;
+		bottom: 8em;
 		box-shadow: 0 2px 24px 0 hsla(217, 19%, 35%, 0.5);
 		font-size: 0.75rem;
+		padding: 1.25em 1.75em;
+		right: -5em;
+		width: auto;
 	}
 
 	.share::after {
+		border-left: solid 10px transparent;
+		border-right: solid 10px transparent;
+		border-top: solid 10px var(--darkGrayishBlue);
 		content: "";
+		height: 0;
+		left: 50%;
 		position: absolute;
 		top: 100%;
-		left: 50%;
-		width: 0;
-		height: 0;
 		transform: translateX(-50%);
-		border-top: solid 10px var(--darkGrayishBlue);
-		border-right: solid 10px transparent;
-		border-left: solid 10px transparent;
+		width: 0;
 	}
 
 	.share-flexWrapper > img:last-of-type {

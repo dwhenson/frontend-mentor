@@ -15,32 +15,32 @@
 }
 
 body {
-	display: grid;
 	background: top left url("images/bg-pattern-top-desktop.svg") no-repeat,
 		bottom right url("images/bg-pattern-bottom-desktop.svg") no-repeat;
 	color: var(--darkMagenta);
+	display: grid;
 	font-family: "Spartan", sans-serif;
-	text-align: center;
 	place-items: center;
+	text-align: center;
 }
 
 /* Layout
    ============================= */
 
 .container {
-	display: flex;
-	flex-wrap: wrap;
 	width: 90%;
-	max-width: 1450;
+	flex-wrap: wrap;
 	margin-top: 4em;
+	display: flex;
+	max-width: 1450;
 }
 
 .container > * {
-	display: flex;
 	flex: 1 0 350px;
+	display: flex;
 	flex-wrap: wrap;
-	padding: 2em 1em;
 	gap: 1em;
+	padding: 2em 1em;
 }
 
 /* =============================
@@ -52,10 +52,10 @@ Header
 }
 
 h1 {
-	margin-bottom: 2em;
 	font-size: 2.5rem;
 	font-weight: 600;
 	letter-spacing: -1px;
+	margin-bottom: 2em;
 	text-align: center;
 }
 
@@ -72,10 +72,10 @@ h1 ~ p {
 }
 
 .rating {
+	background-color: var(--lightGrayMagenta);
+	border-radius: 5px;
 	margin-bottom: 0.75;
 	padding: 1em 0.5em;
-	border-radius: 5px;
-	background-color: var(--lightGrayMagenta);
 }
 
 .stars img {
@@ -83,9 +83,9 @@ h1 ~ p {
 }
 
 .rating p {
-	margin-top: 0.5em;
 	font-size: 0.8rem;
 	font-weight: 600;
+	margin-top: 0.5em;
 }
 
 /* =============================
@@ -93,11 +93,11 @@ h1 ~ p {
    ============================= */
 
 .review {
+	background-color: var(--darkMagenta);
+	border-radius: 10px;
 	flex: 1 1 200px;
 	min-width: 200px;
 	padding: 2em;
-	border-radius: 10px;
-	background-color: var(--darkMagenta);
 }
 
 .review p {
@@ -112,19 +112,19 @@ h1 ~ p {
    ============================= */
 
 .avatar {
-	display: flex;
 	align-items: center;
+	display: flex;
 	margin-bottom: 2em;
 }
 
 .avatar img {
-	margin-right: 1em;
 	border-radius: 50%;
+	margin-right: 1em;
 }
 
 .avatar p {
-	margin: 0;
 	font-weight: 600;
+	margin: 0;
 }
 
 .avatar p:last-of-type {
@@ -142,10 +142,10 @@ h1 ~ p {
 	}
 
 	h1 {
-		width: 80%;
-		margin-bottom: 0;
 		font-size: 3rem;
+		margin-bottom: 0;
 		text-align: left;
+		width: 80%;
 	}
 
 	h1 ~ p {
@@ -153,17 +153,17 @@ h1 ~ p {
 	}
 
 	.reviews {
-		min-width: 100%;
-		margin-top: 1em;
 		gap: 2em;
+		margin-top: 1em;
+		min-width: 100%;
 	}
 }
 
 @media screen and (min-width: 800px) {
 	.rating {
-		display: flex;
 		align-items: center;
 		align-self: flex-start;
+		display: flex;
 		justify-content: center;
 		width: 85%;
 	}
@@ -181,8 +181,8 @@ h1 ~ p {
 	}
 
 	.stars {
-		margin-right: 1em;
 		line-height: 0;
+		margin-right: 1em;
 	}
 
 	.review {
@@ -208,8 +208,8 @@ h1 ~ p {
    ============================= */
 
 .attribution {
-	margin-top: 5em;
 	font-size: 11px;
+	margin-top: 5em;
 	text-align: center;
 }
 

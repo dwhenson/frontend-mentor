@@ -1,10 +1,8 @@
 /* TODO */
 
 /*
-- Background images
-- Line break on sign-up page button
 - Form validation
-- JavaScript dynamic content
+- Max-width on background
 */
 
 :root {
@@ -143,6 +141,7 @@ Utilities
 	 ========================================================== */
 .container {
 	grid-column: 2;
+	margin-bottom: 5em;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 90%;
@@ -163,7 +162,7 @@ Utilities
 }
 
 .split > * {
-	flex-basis: 100%;
+	/* flex-basis: 100%; */
 }
 
 @media only screen and (min-width: 60em) {
@@ -341,6 +340,7 @@ Utilities
 	border-radius: 1em;
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 	color: var(--fg, inherit);
+	flex-basis: 100%;
 	padding: 2em;
 }
 
@@ -373,10 +373,12 @@ Utilities
 /* Countdown
 	 ========================================================== */
 
+/* Countdown section
+	 -------------------------- */
+
 .countdown {
-	align-items: center;
+	justify-content: space-between;
 	line-height: 1.2;
-	margin-bottom: 5em;
 	text-align: center;
 }
 
@@ -391,16 +393,14 @@ Utilities
 	color: var(--fg, var(--clr-secondary-800));
 }
 
+/* Countdown app
+-------------------------- */
+
 .countdown-app {
 	flex-direction: row;
 	gap: 0.25em;
 	justify-content: center;
-}
-
-@media only screen and (min-width: 60120em) {
-	.countdown .countdown-app {
-		max-width: 60%;
-	}
+	text-align: center;
 }
 
 .countdown-app > div {
@@ -412,6 +412,7 @@ Utilities
 .countdown-app p[id] {
 	color: var(--fg, var(--clr-primary-600));
 	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
+	min-width: 2ch;
 }
 
 .countdown-app p:not([id]) {
@@ -437,12 +438,6 @@ Utilities
 
 	.countdown-app {
 		justify-content: start;
-	}
-
-	/* HACK stop button stretching
-		 -------------------------- */
-	.countdown .btn {
-		max-width: max-content;
 	}
 }
 
