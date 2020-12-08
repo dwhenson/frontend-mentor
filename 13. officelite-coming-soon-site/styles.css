@@ -38,11 +38,9 @@ Global styles
 ========================================================== */
 body {
 	color: var(--clr-secondary-300);
-	display: grid;
 	font-family: "Kumbh Sans", sans-serif;
 	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
 	font-weight: var(--fw-400);
-	grid-template-columns: minmax(1em, 1fr) minmax(calc(360px - 2em), 1440px) minmax(1em, 1fr);
 	line-height: 1.8;
 	text-align: center;
 }
@@ -137,7 +135,7 @@ Utilities
 	margin-bottom: 3em;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 90%;
+	width: min(90%, 1440px);
 }
 
 .flow-content > * + * {
@@ -154,10 +152,6 @@ Utilities
 	gap: calc(var(--spacer, 2em) * 4);
 }
 
-.split > * {
-	/* flex-basis: 100%; */
-}
-
 @media only screen and (min-width: 60em) {
 	.split {
 		flex-direction: row;
@@ -169,10 +163,11 @@ Utilities
 	.column-2 {
 		grid-area: 1 / -2 / -1 / -1;
 	}
+}
 
-	/* Home page grid layouts
+/* Home page grid layouts
 	 -------------------------- */
-
+@media only screen and (min-width: 45em) {
 	.home .grid {
 		display: grid;
 		gap: 0 calc(var(--spacer) * 4);
@@ -186,40 +181,16 @@ Utilities
 	.home .grid {
 		grid-template-rows: 1fr auto 1fr;
 	}
+}
 
-	.home header h1 {
-		align-self: end;
-	}
-
-	.home header .btn {
-		align-self: start;
-	}
-
-	/* Sign-up page grid layouts
+/* Sign-up page grid layouts
 			 -------------------------- */
-
+@media only screen and (min-width: 60em) {
 	.sign-up .grid {
 		display: grid;
 		gap: calc(var(--spacer) * 4) calc(var(--spacer) * 2);
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
-	}
-
-	.sign-up header {
-		align-self: start;
-	}
-
-	.sign-up .countdown {
-		align-self: end;
-	}
-
-	.sign-up .grid .column-2 {
-		display: flex;
-		flex-direction: column;
-		margin-left: auto;
-		margin-right: 0;
-		margin-top: 0;
-		width: 80%;
 	}
 }
 
@@ -279,12 +250,6 @@ Utilities
 	outline: 0;
 }
 
-@media only screen and (min-width: 45em) {
-	.grid .btn {
-		justify-self: start;
-	}
-}
-
 /* ==========================================================
 	 Blocks
 	 ========================================================== */
@@ -316,10 +281,23 @@ Utilities
 	.sign-up header {
 		text-align: center;
 	}
+
+	.grid .btn {
+		justify-self: start;
+	}
 }
 
 @media only screen and (min-width: 60em) {
+	.home header h1 {
+		align-self: end;
+	}
+
+	.home header .btn {
+		align-self: start;
+	}
+
 	.sign-up header {
+		align-self: start;
 		text-align: left;
 	}
 }
@@ -436,9 +414,18 @@ Utilities
 /* Form
 	 ========================================================== */
 
+.sign-up .column-2 {
+	display: flex;
+	margin-left: auto;
+	margin-right: 0;
+	margin-top: 0;
+	width: 80%;
+}
+
 form.split {
 	flex-direction: column;
 	gap: 0;
+	justify-content: space-around;
 	padding: 1em 2em;
 }
 
@@ -459,8 +446,9 @@ form input::placeholder {
 }
 
 form button.btn {
-	margin-bottom: 2.5em;
-	margin-top: 2.5em;
+	margin-bottom: 2em;
+	margin-top: 4em;
+	padding: 1.5em 3em;
 	width: 100%;
 }
 
