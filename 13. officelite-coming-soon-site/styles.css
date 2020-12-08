@@ -504,8 +504,11 @@ select,
 
 .invalid,
 .invalid::placeholder {
-	border-bottom: 1px solid var(--clr-error-200);
 	color: var(--clr-error-200);
+}
+
+.invalid {
+	border-bottom: 1px solid var(--clr-error-200);
 }
 
 /* ==========================================================
