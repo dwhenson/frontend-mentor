@@ -18,11 +18,11 @@ Global styles
 body {
 	--fontSize: 0.8rem;
 
+	color: var(--grayishBlue);
 	display: grid;
+	font-weight: 400;
 	grid-template-columns: minmax(5%, 1fr) minmax(320px, 1440px) minmax(5%, 1fr);
 	line-height: 2;
-	font-weight: 400;
-	color: var(--grayishBlue);
 	text-align: center;
 }
 
@@ -36,10 +36,10 @@ body {
    ============================= */
 
 h1 {
-	font-weight: 200;
 	color: var(--darkBlue);
-	margin-bottom: 1em;
+	font-weight: 200;
 	line-height: 1.6;
+	margin-bottom: 1em;
 }
 
 h1 span {
@@ -64,13 +64,13 @@ header {
 }
 
 section {
+	border-radius: 0.5em;
+	box-shadow: 0 5px 20px 2px rgba(31, 32, 32, 0.2);
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	margin: 2em 0;
 	padding: 2em;
-	border-radius: 0.5em;
-	box-shadow: 0 5px 20px 2px rgba(31, 32, 32, 0.2);
 }
 
 section img {
@@ -102,14 +102,14 @@ Tablet Layout
 @media only screen and (min-width: 600px) {
 	main {
 		display: grid;
+		gap: 2em;
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 1fr);
-		gap: 2em;
 	}
 
 	header {
-		width: 80%;
 		margin: 5em auto 3em;
+		width: 80%;
 	}
 
 	section {
@@ -124,9 +124,9 @@ Desktop Layout
 @media only screen and (min-width: 1000px) {
 	main {
 		display: grid;
+		gap: 2em;
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(4, 1fr);
-		gap: 2em;
 	}
 
 	header {

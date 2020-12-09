@@ -15,7 +15,8 @@
 }
 
 body {
-	background: top left url("images/bg-pattern-top-desktop.svg") no-repeat,
+	background:
+		top left url("images/bg-pattern-top-desktop.svg") no-repeat,
 		bottom right url("images/bg-pattern-bottom-desktop.svg") no-repeat;
 	color: var(--darkMagenta);
 	display: grid;
@@ -28,16 +29,16 @@ body {
    ============================= */
 
 .container {
-	width: 90%;
+	display: flex;
 	flex-wrap: wrap;
 	margin-top: 4em;
-	display: flex;
 	max-width: 1450;
+	width: 90%;
 }
 
 .container > * {
-	flex: 1 0 350px;
 	display: flex;
+	flex: 1 0 350px;
 	flex-wrap: wrap;
 	gap: 1em;
 	padding: 2em 1em;

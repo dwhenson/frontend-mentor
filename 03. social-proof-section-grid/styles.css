@@ -15,13 +15,14 @@
 }
 
 body {
-	display: grid;
-	background: top left url("images/bg-pattern-top-desktop.svg") no-repeat,
+	background:
+		top left url("images/bg-pattern-top-desktop.svg") no-repeat,
 		bottom right url("images/bg-pattern-bottom-desktop.svg") no-repeat;
 	color: var(--darkMagenta);
+	display: grid;
 	font-family: "Spartan", sans-serif;
-	text-align: center;
 	place-items: center;
+	text-align: center;
 }
 
 /* Layout
@@ -30,9 +31,9 @@ body {
 .container {
 	display: grid;
 	gap: 2em;
-	width: 75%;
-	max-width: 1450px;
 	margin-top: 4em;
+	max-width: 1450px;
+	width: 75%;
 }
 
 .container > * {
@@ -48,10 +49,10 @@ body {
    ============================= */
 
 h1 {
-	margin-bottom: 1em;
 	font-size: 2.5rem;
 	font-weight: 600;
 	letter-spacing: -1px;
+	margin-bottom: 1em;
 	text-align: center;
 }
 
@@ -63,10 +64,10 @@ h1 ~ p {
    ============================= */
 
 .rating {
+	background-color: var(--lightGrayMagenta);
+	border-radius: 5px;
 	margin-bottom: 1em;
 	padding: 0.75em 0.5em;
-	border-radius: 5px;
-	background-color: var(--lightGrayMagenta);
 }
 
 .rating:last-of-type {
@@ -78,19 +79,19 @@ h1 ~ p {
 }
 
 .rating p {
-	margin-top: 0.5em;
 	font-size: 0.85rem;
 	font-weight: 600;
+	margin-top: 0.5em;
 }
 
 /* Review section
    ============================= */
 
 .review {
+	background-color: var(--darkMagenta);
+	border-radius: 10px;
 	margin-bottom: 1em;
 	padding: 2em;
-	border-radius: 10px;
-	background-color: var(--darkMagenta);
 }
 
 .review p {
@@ -105,19 +106,19 @@ h1 ~ p {
    ------------- */
 
 .avatar {
-	display: flex;
 	align-items: center;
+	display: flex;
 	margin-bottom: 2em;
 }
 
 .avatar img {
-	margin-right: 1em;
 	border-radius: 50%;
+	margin-right: 1em;
 }
 
 .avatar p {
-	margin: 0;
 	font-weight: 600;
+	margin: 0;
 }
 
 .avatar p:last-of-type {
@@ -129,8 +130,8 @@ h1 ~ p {
    ============================= */
 
 .attribution {
-	margin-top: 2em;
 	font-size: 11px;
+	margin-top: 2em;
 	text-align: center;
 }
 
@@ -157,8 +158,8 @@ h1 ~ p {
 	}
 
 	h1 {
-		margin-bottom: 0.25em;
 		font-size: 3em;
+		margin-bottom: 0.25em;
 		text-align: left;
 	}
 
@@ -166,11 +167,11 @@ h1 ~ p {
 	   ============================= */
 
 	.rating {
-		display: flex;
 		align-items: center;
+		display: flex;
 		justify-content: center;
-		width: 75%;
 		padding: 1.25em 0.25em;
+		width: 75%;
 	}
 
 	.rating:nth-last-of-type(2) {
@@ -182,24 +183,24 @@ h1 ~ p {
 	}
 
 	.rating p {
-		margin-top: 0;
 		margin-left: 1.25em;
+		margin-top: 0;
 	}
 
 	/* Review section
 	   ============================= */
 
 	.reviews {
-		grid-area: 2 / 1/ -1 / -1;
 		flex-direction: row;
+		grid-area: 2 / 1/ -1 / -1;
 		margin-top: 3em;
 	}
 
 	.review {
 		align-self: flex-start;
-		min-height: 85%;
-		margin-right: 2em;
 		margin-bottom: 0;
+		margin-right: 2em;
+		min-height: 85%;
 		padding: 1em;
 	}
 
@@ -208,7 +209,7 @@ h1 ~ p {
 	}
 
 	.review:last-of-type {
-		margin-top: 4em;
 		margin-right: 0;
+		margin-top: 4em;
 	}
 }
