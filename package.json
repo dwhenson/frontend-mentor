@@ -1,10 +1,10 @@
 {
 	"name": "Frontend-Mentor",
 	"version": "1.0.0",
-	"description": "Vanilla JS Academy Extra Credit Files",
+	"description": "Frontend-Mentor challanges and projects",
 	"main": "index.html",
 	"scripts": {
-		"lint-js": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
+		"fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
 		"fix-styles": "prettier-stylelint --write 'src/**/*.{css,scss}' "
 	},
 	"author": "Dave Henson",
