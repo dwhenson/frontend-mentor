@@ -1,7 +1,7 @@
 {
 	"name": "Frontend-Mentor",
 	"version": "1.0.0",
-	"description": "Frontend-Mentor challanges and projects",
+	"description": "Frontend-Mentor challenges and projects",
 	"main": "index.html",
 	"scripts": {
 		"fix-code": "prettier-eslint --write 'src/**/*.{js,jsx}' ",
@@ -28,6 +28,7 @@
 		"prettier-stylelint": "^0.4.2",
 		"stylelint": "^13.8.0",
 		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-config-rational-order": "^0.1.2",
 		"stylelint-config-standard": "^20.0.0",
 		"stylelint-order": "^4.1.0",
 		"stylelint-scss": "^3.18.0"

@@ -1,7 +1,12 @@
 {
-  "extends": "stylelint-config-recommended",
-  "plugins": ["stylelint-order", "stylelint-scss"],
+  "extends": "stylelint-config-rational-order",
+  "plugins": ["stylelint-order", "stylelint-config-rational-order/plugin", "stylelint-scss"],
   "rules": {
+		"order/properties-order": [],
+    "plugin/rational-order": [true, {
+      "border-in-box-model": true,
+      "empty-line-between-groups": true
+    }],
     "at-rule-empty-line-before": [ "always", {
           "except": [
             "blockless-after-same-name-blockless",
@@ -55,11 +60,11 @@
         "declaration-colon-space-before": "never",
         "declaration-empty-line-before": [ "always", {
           "except": [
-            "after-declaration",
-            "first-nested"
+						"first-nested"
           ],
           "ignore": [
-            "after-comment",
+						"after-comment",
+						"after-declaration",
             "inside-single-line-block"
           ]
         } ],
@@ -133,7 +138,6 @@
           "hasBlock": true
 				}
 			]
-		],
-		  "order/properties-alphabetical-order": [ true, { "severity": "warning" } ]
+		]
   }
 }

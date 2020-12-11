@@ -38,9 +38,9 @@ Global styles
 ========================================================== */
 body {
 	color: var(--clr-secondary-300);
-	font-family: "Kumbh Sans", sans-serif;
-	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
 	font-weight: var(--fw-400);
+	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
+	font-family: "Kumbh Sans", sans-serif;
 	line-height: 1.8;
 	text-align: center;
 }
@@ -132,10 +132,10 @@ Utilities
 	 ========================================================== */
 .container {
 	grid-column: 2;
+	width: min(90%, 1440px);
+	margin-right: auto;
 	margin-bottom: 3em;
 	margin-left: auto;
-	margin-right: auto;
-	width: min(90%, 1440px);
 }
 
 .flow-content > * + * {
@@ -170,10 +170,10 @@ Utilities
 @media only screen and (min-width: 45em) {
 	.home .grid {
 		display: grid;
-		gap: 0 calc(var(--spacer) * 4);
 		grid-auto-flow: column dense;
-		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto;
+		grid-template-columns: 1fr 1fr;
+		gap: 0 calc(var(--spacer) * 4);
 	}
 }
 
@@ -188,9 +188,9 @@ Utilities
 @media only screen and (min-width: 60em) {
 	.sign-up .grid {
 		display: grid;
-		gap: calc(var(--spacer) * 4) calc(var(--spacer) * 2);
-		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		gap: calc(var(--spacer) * 4) calc(var(--spacer) * 2);
 	}
 }
 
@@ -220,26 +220,30 @@ Utilities
 	 ========================================================== */
 
 .btn {
+	display: inline-block;
 	align-self: center;
-	background-color: var(--bg, var(--clr-primary-200));
+	justify-self: center;
+	padding: 1em 2.5em;
 	border: none;
 	border-radius: 2em;
+
 	color: var(--fg, var(--clr-primary-600));
-	cursor: pointer;
-	display: inline-block;
 	font-weight: var(--fw-700);
-	justify-self: center;
 	line-height: 1;
-	padding: 1em 2.5em;
 	text-align: center;
 	text-decoration: none;
+
+	background-color: var(--bg, var(--clr-primary-200));
+	cursor: pointer;
+
 	transition: background-color 250ms linear;
 }
 
 .btn:hover,
 .btn:focus {
-	background-color: var(--bg-h, var(--clr-primary-400));
 	color: var(--fg-h, var(--clr-primary-600));
+
+	background-color: var(--bg-h, var(--clr-primary-400));
 }
 
 .btn:focus-visible {
@@ -264,8 +268,8 @@ Utilities
 }
 
 .hero {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 @media only screen and (min-width: 45em) {
@@ -298,6 +302,7 @@ Utilities
 
 	.sign-up header {
 		align-self: start;
+
 		text-align: left;
 	}
 }
@@ -306,18 +311,20 @@ Utilities
 	 ========================================================== */
 
 .plan {
-	background-color: var(--bg, var(--clr-primary-000));
-	border-radius: 1em;
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-	color: var(--fg, inherit);
 	flex-basis: 100%;
 	padding: 2em;
+	border-radius: 1em;
+
+	color: var(--fg, inherit);
+
+	background-color: var(--bg, var(--clr-primary-000));
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .plan.accent-dark {
 	background-image: url(design/home/bg-pattern-pricing.svg);
-	background-position: center 90%;
 	background-repeat: no-repeat;
+	background-position: center 90%;
 }
 
 .plan ul + ul {
@@ -329,13 +336,14 @@ Utilities
 }
 
 .price {
-	font-size: var(--fs-900);
 	font-weight: var(--fw-700);
+	font-size: var(--fs-900);
 }
 
 @media only screen and (min-width: 60em) {
 	.grid.plan {
 		display: revert;
+
 		text-align: center;
 	}
 }
@@ -348,6 +356,7 @@ Utilities
 
 .countdown {
 	justify-content: space-between;
+
 	line-height: 1.2;
 	text-align: center;
 }
@@ -370,25 +379,28 @@ Utilities
 	flex-direction: row;
 	gap: 0.25em;
 	justify-content: center;
+
 	text-align: center;
 }
 
 .countdown-app > div {
-	background-color: var(--bg, var(--clr-primary-200));
-	border-radius: 0.5em;
 	padding: 0.5em;
+	border-radius: 0.5em;
+
+	background-color: var(--bg, var(--clr-primary-200));
 }
 
 .countdown-app p[id] {
+	min-width: 2ch;
+
 	color: var(--fg, var(--clr-primary-600));
 	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
-	min-width: 2ch;
 }
 
 .countdown-app p:not([id]) {
 	color: var(--clr-secondary-400);
-	font-size: clamp(var(--fs-200), calc(var(--fs-200) + 1vw), var(--fs-300));
 	font-weight: var(--fw-700);
+	font-size: clamp(var(--fs-200), calc(var(--fs-200) + 1vw), var(--fs-300));
 }
 
 @media only screen and (min-width: 45em) {
@@ -416,17 +428,17 @@ Utilities
 
 .sign-up .column-2 {
 	display: flex;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 3em;
 	width: 80%;
+	margin-top: 3em;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 @media only screen and (min-width: 60em) {
 	.sign-up .column-2 {
-		margin-left: 3em;
-		margin-right: 0;
 		margin-top: 0;
+		margin-right: 0;
+		margin-left: 3em;
 	}
 }
 
@@ -439,14 +451,14 @@ form.split {
 
 form > * {
 	margin-top: 0.5em;
-	padding-bottom: 1em;
 	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 form input {
+	padding-left: 1em;
 	border: none;
 	border-bottom: 1px solid var(--clr-secondary-200);
-	padding-left: 1em;
 }
 
 form input::placeholder {
@@ -454,10 +466,10 @@ form input::placeholder {
 }
 
 form button.btn {
-	margin-bottom: 2em;
-	margin-top: 4em;
-	padding: 1.5em 3em;
 	width: 100%;
+	margin-top: 4em;
+	margin-bottom: 2em;
+	padding: 1.5em 3em;
 }
 
 form > *:focus-within {
@@ -469,31 +481,35 @@ form > *:focus-within {
 
 /* Hide default select */
 select {
-	appearance: none;
-	background-color: transparent;
-	border: none;
-	cursor: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	margin: 0;
-	outline: none;
-	padding: 0 1em 0 0;
 	width: 100%;
+	margin: 0;
+	padding: 0 1em 0 0;
+	border: none;
+
+	font-size: inherit;
+	font-family: inherit;
+	line-height: inherit;
+
+	background-color: transparent;
+	outline: none;
+	cursor: inherit;
+
+	appearance: none;
 }
 
 /* Create custom select */
 .select {
-	align-items: center;
-	border-bottom: 1px solid var(--clr-secondary-200);
-	cursor: pointer;
 	display: grid;
 	grid-template-areas: "select";
+	align-items: center;
+	width: 100%;
 	margin-top: 0.5em;
+	padding-top: 1em;
 	padding-bottom: 1em;
 	padding-left: 0.8em;
-	padding-top: 1em;
-	width: 100%;
+	border-bottom: 1px solid var(--clr-secondary-200);
+
+	cursor: pointer;
 }
 
 select,
@@ -502,12 +518,14 @@ select,
 }
 
 .select::after {
-	background-color: var(--clr-primary-800);
-	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-	content: "";
-	height: 0.5em;
 	justify-self: end;
 	width: 0.8em;
+	height: 0.5em;
+
+	background-color: var(--clr-primary-800);
+
+	content: "";
+	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
 
 .invalid,
