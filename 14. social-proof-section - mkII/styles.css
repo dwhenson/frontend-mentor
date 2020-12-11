@@ -38,7 +38,11 @@ Global styles
 /* Typography
 	 ================================================== */
 
+/* prettier-ignore */
 body {
+	background:
+		url(images/bg-pattern-top-mobile.svg) left top no-repeat,
+		url(images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
 	color: var(--clr-primary-600);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
@@ -47,7 +51,12 @@ body {
 }
 
 @media only screen and (min-width: 65em) {
+	/* prettier-ignore */
 	body {
+		background:
+			url(images/bg-pattern-top-desktop.svg) left top no-repeat,
+			url(images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
+		color: var(--clr-primary-600);
 		text-align: left;
 	}
 }
@@ -65,15 +74,15 @@ h1 {
 	gap: calc(var(--spacer) * 5);
 }
 
-@media only screen and (min-width: 65em) {
+.reviews {
+	grid-column: 1 / -1;
+}
+
+@media only screen and (min-width: 50em) {
 	.grid-main {
 		grid-template-columns: 40% 1fr;
 		grid-template-rows: auto auto;
 	}
-}
-
-.reviews {
-	grid-column: 1 / -1;
 }
 
 /* ==================================
@@ -82,20 +91,21 @@ Utilities
 ==================================
 ======================== */
 .container {
-	margin-top: 2em;
+	margin-bottom: 3em;
+	margin-top: 6em;
 	padding-bottom: 2em;
 	padding-left: 1em;
 	padding-right: 1em;
 	padding-top: 2em;
 }
 
-@media only screen and (min-width: 65em) {
+@media only screen and (min-width: 50em) {
 	.container {
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 5em;
+		margin-top: 8em;
 		padding: 2rem;
-		width: min(80%, 1440px);
+		width: min(80%, 1200px);
 	}
 }
 
@@ -127,6 +137,12 @@ Utilities
 /* Ratings
 	 ================================================== */
 
+.ratings {
+	flex-direction: column;
+	gap: 1em;
+	justify-content: center;
+}
+
 .ratings .rating {
 	align-items: center;
 	background-color: var(--clr-neutral-200);
@@ -134,7 +150,6 @@ Utilities
 	font-weight: var(--fw-800);
 	gap: calc(var(--spacer) * 2);
 	line-height: 1;
-	margin-top: 1em;
 	padding: 1.25em 2.5em;
 }
 
@@ -145,6 +160,8 @@ Utilities
 	justify-content: center;
 }
 
+/* Add staggered effect
+	 -------------------------- */
 @media only screen and (min-width: 70em) {
 	.ratings .rating:nth-of-type(1) {
 		margin-right: 4em;
@@ -168,7 +185,7 @@ Utilities
 	border-radius: 1em;
 	color: var(--clr-neutral-100);
 	display: grid;
-	gap: calc(var(--spacer) * 2);
+	gap: calc(var(--spacer) * 1);
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto auto;
 	padding: 2em;
@@ -199,6 +216,8 @@ Utilities
 	grid-column: 1 / -1;
 }
 
+/* Add staggered effect
+	 -------------------------- */
 @media only screen and (min-width: 65em) {
 	.review:nth-of-type(1) {
 		margin-bottom: 4em;
