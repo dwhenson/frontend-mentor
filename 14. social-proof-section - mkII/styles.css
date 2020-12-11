@@ -1,10 +1,10 @@
-/* ==========================================================
+/* ==================================================
 Global styles
-========================================================== */
+================================================== */
 :root {
 	/* colors */
-	--clr-primary-300: hsl(300, 43%, 22%);
-	--clr-primary-600: hsl(333, 80%, 67%);
+	--clr-primary-300: hsl(333, 80%, 67%);
+	--clr-primary-600: hsl(300, 43%, 22%);
 	--clr-neutral-100: hsl(0, 0%, 100%);
 	--clr-neutral-200: hsl(300, 24%, 96%);
 	--clr-neutral-400: hsl(303, 10%, 53%);
@@ -18,31 +18,38 @@ Global styles
 	--fw-800: 700;
 
 	/* font size */
-	--fs-400: 1rem;
-	--fs-600: 3rem;
+	--fs-400: 0.8125rem;
+	--fs-400: 0.9375rem;
+	--fs-600: 2rem;
 
 	/* font family */
 	--ff-body: "Spartan", sans-serif;
 
 	/* break points  */
-	--bp-md: 50em;
+	--bp-md: 65em;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 65em) {
 	:root {
-		/* --fs-400: 1.2rem; */
 		--fs-600: 3rem;
 	}
 }
 
 /* Typography
-	 ========================================================== */
+	 ================================================== */
 
 body {
-	color: var(--clr-primary-300);
+	color: var(--clr-primary-600);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
 	font-weight: var(--fw-400);
+	text-align: center;
+}
+
+@media only screen and (min-width: 65em) {
+	body {
+		text-align: left;
+	}
 }
 
 h1 {
@@ -50,15 +57,15 @@ h1 {
 	font-size: var(--fs-600);
 }
 
-/* ==========================================================
+/* ==================================================
 	 Composition
-========================================================== */
+================================================== */
 .grid-main {
 	display: grid;
 	gap: calc(var(--spacer) * 5);
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 65em) {
 	.grid-main {
 		grid-template-columns: 40% 1fr;
 		grid-template-rows: auto auto;
@@ -69,17 +76,20 @@ h1 {
 	grid-column: 1 / -1;
 }
 
-/* ==========================================================
+/* ==================================
+========================
 Utilities
-========================================================== */
+==================================
+======================== */
 .container {
+	margin-top: 2em;
 	padding-bottom: 2em;
 	padding-left: 1em;
 	padding-right: 1em;
 	padding-top: 2em;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 65em) {
 	.container {
 		margin-left: auto;
 		margin-right: auto;
@@ -90,7 +100,7 @@ Utilities
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer, 1em) * 4);
+	margin-top: calc(var(--spacer, 1em) * 3);
 }
 
 .flow-content > * + * {
@@ -103,29 +113,58 @@ Utilities
 	gap: var(--spacer);
 }
 
-.split > * {
-	flex-basis: 100%;
-}
-
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 65em) {
 	.split {
 		flex-direction: row;
 		gap: calc(var(--spacer, 2em) * 3);
 	}
 }
 
-/* ==========================================================
+/* ==================================================
 	 Blocks
-	 ========================================================== */
+	 ================================================== */
 
 /* Ratings
-	 ========================================================== */
+	 ================================================== */
+
+.ratings .rating {
+	align-items: center;
+	background-color: var(--clr-neutral-200);
+	border-radius: 0.5em;
+	font-weight: var(--fw-800);
+	gap: calc(var(--spacer) * 2);
+	line-height: 1;
+	margin-top: 1em;
+	padding: 1.25em 2.5em;
+}
+
+.ratings .stars {
+	align-items: center;
+	flex-direction: row;
+	gap: 0.5em;
+	justify-content: center;
+}
+
+@media only screen and (min-width: 70em) {
+	.ratings .rating:nth-of-type(1) {
+		margin-right: 4em;
+	}
+
+	.ratings .rating:nth-of-type(2) {
+		margin-left: 2em;
+		margin-right: 2em;
+	}
+
+	.ratings .rating:nth-of-type(3) {
+		margin-left: 4em;
+	}
+}
 
 /* Reviews
-	 ========================================================== */
+	 ================================================== */
 
 .reviews .grid-card {
-	background-color: var(--clr-primary-300);
+	background-color: var(--clr-primary-600);
 	border-radius: 1em;
 	color: var(--clr-neutral-100);
 	display: grid;
@@ -133,6 +172,7 @@ Utilities
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto auto;
 	padding: 2em;
+	text-align: left;
 }
 
 .reviews img {
@@ -152,14 +192,14 @@ Utilities
 }
 
 .reviews .role {
-	color: var(--clr-primary-600);
+	color: var(--clr-primary-300);
 }
 
 .reviews .quote {
 	grid-column: 1 / -1;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 65em) {
 	.review:nth-of-type(1) {
 		margin-bottom: 4em;
 	}
