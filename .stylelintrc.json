@@ -5,7 +5,7 @@
 		"order/properties-order": [],
     "plugin/rational-order": [true, {
       "border-in-box-model": true,
-      "empty-line-between-groups": true
+			"empty-line-between-groups": false
     }],
     "at-rule-empty-line-before": [ "always", {
           "except": [
@@ -116,28 +116,6 @@
         "value-list-comma-newline-after": "always-multi-line",
         "value-list-comma-space-after": "always-single-line",
         "value-list-comma-space-before": "never",
-        "value-list-max-empty-lines": 0,
-
-    "order/order": [
-      [
-        "custom-properties",
-        "dollar-variables",
-        {
-          "type": "at-rule",
-          "name": "extend"
-        },
-        {
-          "type": "at-rule",
-          "name": "include",
-          "hasBlock": false
-        },
-        "declarations",
-        {
-          "type": "at-rule",
-          "name": "include",
-          "hasBlock": true
-				}
-			]
-		]
-  }
+        "value-list-max-empty-lines": 0
+	}
 }

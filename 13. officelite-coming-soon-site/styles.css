@@ -228,6 +228,7 @@ Utilities
 	border-radius: 2em;
 
 	color: var(--fg, var(--clr-primary-600));
+
 	font-weight: var(--fw-700);
 	line-height: 1;
 	text-align: center;

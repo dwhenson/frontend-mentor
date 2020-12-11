@@ -45,7 +45,6 @@ body {
 	font-size: var(--fs-400);
 	font-family: var(--ff-body);
 	text-align: center;
-
 	background:
 		url(images/bg-pattern-top-mobile.svg) left top no-repeat,
 		url(images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
@@ -56,7 +55,6 @@ body {
 	body {
 		color: var(--clr-primary-600);
 		text-align: left;
-
 		background:
 			url(images/bg-pattern-top-desktop.svg) left top no-repeat,
 			url(images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
@@ -150,10 +148,8 @@ Utilities
 	align-items: center;
 	padding: 1.25em 2.5em;
 	border-radius: 0.5em;
-
 	font-weight: var(--fw-800);
 	line-height: 1;
-
 	background-color: var(--clr-neutral-200);
 }
 
@@ -191,10 +187,8 @@ Utilities
 	gap: calc(var(--spacer) * 1);
 	padding: 2em;
 	border-radius: 1em;
-
 	color: var(--clr-neutral-100);
 	text-align: left;
-
 	background-color: var(--clr-primary-600);
 }
 
@@ -211,7 +205,6 @@ Utilities
 
 .reviews .name {
 	margin-bottom: 0.25em;
-
 	font-weight: var(--fw-800);
 }
 
