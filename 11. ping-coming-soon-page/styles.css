@@ -19,7 +19,8 @@
 	--fs-300: 0.8rem;
 	--fs-400: 1rem;
 	--fs-500: 1.25rem;
-	--fs-600: 1.5rem;
+	--fs-600: 2rem;
+	--fs-700: 3rem;
 }
 
 /* 	==================================================
@@ -27,7 +28,7 @@
 		================================================== */
 body {
 	display: grid;
-	grid-template-columns: minmax(1em, 1fr) minmax(320px, 1440px) minmax(1em, 1fr);
+	grid-template-columns: minmax(0.5em, 1fr) minmax(375px, 1440px) minmax(0.5em, 1fr);
 	font-family: "Libre Franklin", sans-serif;
 	font-weight: var(--fw-300);
 	text-align: center;
@@ -39,12 +40,19 @@ body > * {
 }
 
 h1 {
+	font-size: var(--fs-600);
 	font-weight: var(--fw-300);
 }
 
 h1 span {
-	color: var(--clr-neutral-200);
 	font-weight: var(--fw-700);
+	color: var(--clr-neutral-200);
+}
+
+@media only screen and (min-width: 60em) {
+	h1 {
+		font-size: var(--fs-700);
+	}
 }
 
 /* ==========================================================
@@ -67,10 +75,10 @@ h1 span {
    	================================================== */
 
 header img {
-	margin-top: 4em;
-	margin-left: auto;
+	margin-top: 6em;
 	margin-right: auto;
 	margin-bottom: 3em;
+	margin-left: auto;
 }
 
 header p {
@@ -81,18 +89,18 @@ header p {
    	================================================== */
 
 form {
-	margin-top: 2em;
 	flex-direction: column;
+	margin-top: 2em;
 }
 
 form input,
 form button {
-	margin-top: 0.75em;
-	margin-left: 1.25em;
-	margin-right: 1.25em;
+	padding: 1em 2.5em;
 	border: 1px solid var(--clr-primary-100);
 	border-radius: 2em;
-	padding: 0.75em 1.5em;
+	margin-top: 0.75em;
+	margin-right: 1.25em;
+	margin-left: 1.25em;
 	background-color: var(--bg, white);
 	color: var(--fg, var(--clr-primary-100));
 }
@@ -105,19 +113,67 @@ form button {
 	--bg: var(--clr-primary-100);
 	--fg: white;
 
-	font-weight: 600;
 	box-shadow: 0 1em 1em var(--clr-primary-100-shadow);
+	font-weight: 600;
+}
+
+@media only screen and (min-width: 60em) {
+	form {
+		flex-direction: row;
+		max-width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	form > input {
+		flex-basis: 70%;
+	}
+
+	form > button {
+		flex-basis: 30%;
+	}
 }
 
 /* 	Main image
    	================================================== */
 
 .main-image {
-	margin-top: 4em;
+	margin-top: 7em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 60em) {
+	.main-image {
+		max-width: 60%;
+	}
 }
 
 /* 	Footer
    	================================================== */
 
 footer {
+	margin-top: 8em;
+}
+
+footer .flex-wrapper {
+	justify-content: center;
+	gap: var(--spacer);
+}
+
+footer ion-icon {
+	padding: 0.25em;
+	border: 1px solid hsla(223, 100%, 88%, 0.5);
+	border-radius: 50%;
+	font-size: 1.5em;
+	color: var(--clr-primary-100);
+}
+
+footer ion-icon:hover {
+	color: white;
+	background-color: var(--clr-primary-100);
+}
+
+footer small {
+	display: block;
 }
