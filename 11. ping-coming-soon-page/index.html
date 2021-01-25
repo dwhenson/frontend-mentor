@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,600;0,700;1,300&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="styles.css" />
@@ -18,18 +18,18 @@
 	</head>
 
 	<body>
-		<section class="container flow-section">
-			<img src="images/logo.svg" alt="PING." />
+		<section class="container">
 			<header class="flow-content">
+				<img src="images/logo.svg" alt="PING." />
 				<h1>We are launching <span class="highlight">soon!</span></h1>
 				<p>Subscribe and get notified</p>
 			</header>
-			<form class="flow-content" action="#">
-				<label for="email">Add email address</label>
-				<input type="email" name="email" id="email" />
+			<form class="flex" action="#">
+				<label class="visually-hidden" for="email">Add your email address</label>
+				<input type="email" name="email" id="email" placeholder="Your email address" />
 				<button>Notify Me</button>
 			</form>
-			<img src="images/illustration-dashboard.png" alt="" />
+			<img class="main-image" src="images/illustration-dashboard.png" alt="" />
 			<footer class="flow-content">
 				<div class="flex-wrapper"></div>
 				<small>&copy; Copyright Ping. All rights reserved.</small>

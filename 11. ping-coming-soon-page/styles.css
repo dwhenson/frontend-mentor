@@ -1,13 +1,14 @@
 :root {
 	/* colors */
 	--clr-primary-100: hsl(223, 87%, 63%);
+	--clr-primary-100-shadow: hsla(223, 87%, 63%, 0.3);
 	--clr-secondary-100: hsl(223, 100%, 88%);
 	--clr-neutral-100: hsl(0, 0%, 59%);
 	--clr-neutral-200: hsl(209, 33%, 12%);
 	--clr-error-100: hsl(354, 100%, 66%);
 
 	/* spacing */
-	--spacer: 1em;
+	--spacer: 1.5em;
 
 	/* font weight */
 	--fw-300: 300;
@@ -50,14 +51,73 @@ h1 span {
 		Utilities
 		========================================================== */
 
-.flow-section > * + * {
-	margin-top: calc(var(--spacer, 3em) * 3);
-}
-
 .flow-content > * + * {
 	margin-top: var(--spacer, 1em);
 }
 
-.split {
+.flex {
 	display: flex;
+}
+
+/* 	==================================================
+		Blocks
+		================================================== */
+
+/* 	Header
+   	================================================== */
+
+header img {
+	margin-top: 4em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3em;
+}
+
+header p {
+	color: var(--clr-neutral-200);
+}
+
+/* 	Form
+   	================================================== */
+
+form {
+	margin-top: 2em;
+	flex-direction: column;
+}
+
+form input,
+form button {
+	margin-top: 0.75em;
+	margin-left: 1.25em;
+	margin-right: 1.25em;
+	border: 1px solid var(--clr-primary-100);
+	border-radius: 2em;
+	padding: 0.75em 1.5em;
+	background-color: var(--bg, white);
+	color: var(--fg, var(--clr-primary-100));
+}
+
+form input::placeholder {
+	color: var(--clr-secondary-100);
+}
+
+form button {
+	--bg: var(--clr-primary-100);
+	--fg: white;
+
+	font-weight: 600;
+	box-shadow: 0 1em 1em var(--clr-primary-100-shadow);
+}
+
+/* 	Main image
+   	================================================== */
+
+.main-image {
+	margin-top: 4em;
+}
+
+/* 	Footer
+   	================================================== */
+
+footer {
 }
