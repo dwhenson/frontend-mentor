@@ -1,3 +1,63 @@
-/* =============================
-   Global styles
-   ============================= */
+:root {
+	/* colors */
+	--clr-primary-100: hsl(223, 87%, 63%);
+	--clr-secondary-100: hsl(223, 100%, 88%);
+	--clr-neutral-100: hsl(0, 0%, 59%);
+	--clr-neutral-200: hsl(209, 33%, 12%);
+	--clr-error-100: hsl(354, 100%, 66%);
+
+	/* spacing */
+	--spacer: 1em;
+
+	/* font weight */
+	--fw-300: 300;
+	--fw-600: 600;
+	--fw-700: 700;
+
+	/* font size */
+	--fs-300: 0.8rem;
+	--fs-400: 1rem;
+	--fs-500: 1.25rem;
+	--fs-600: 1.5rem;
+}
+
+/* 	==================================================
+		Global Styles
+		================================================== */
+body {
+	display: grid;
+	grid-template-columns: minmax(1em, 1fr) minmax(320px, 1440px) minmax(1em, 1fr);
+	font-family: "Libre Franklin", sans-serif;
+	font-weight: var(--fw-300);
+	text-align: center;
+	color: var(--clr-neutral-100);
+}
+
+body > * {
+	grid-column: 2;
+}
+
+h1 {
+	font-weight: var(--fw-300);
+}
+
+h1 span {
+	color: var(--clr-neutral-200);
+	font-weight: var(--fw-700);
+}
+
+/* ==========================================================
+		Utilities
+		========================================================== */
+
+.flow-section > * + * {
+	margin-top: calc(var(--spacer, 3em) * 3);
+}
+
+.flow-content > * + * {
+	margin-top: var(--spacer, 1em);
+}
+
+.split {
+	display: flex;
+}

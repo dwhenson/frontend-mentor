@@ -7,21 +7,33 @@
 		<title>Frontend Mentor | Ping coming soon page</title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,600;0,700;1,300&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="styles.css" />
 		<script src="main.js" async defer></script>
 	</head>
 
 	<body>
-		<section>
-			<h1>We are launching soon!</h1>
-			<p>Subscribe and get notified</p>
-			<form action="#">
+		<section class="container flow-section">
+			<img src="images/logo.svg" alt="PING." />
+			<header class="flow-content">
+				<h1>We are launching <span class="highlight">soon!</span></h1>
+				<p>Subscribe and get notified</p>
+			</header>
+			<form class="flow-content" action="#">
 				<label for="email">Add email address</label>
 				<input type="email" name="email" id="email" />
 				<button>Notify Me</button>
 			</form>
-			<small>&copy; Copyright Ping. All rights reserved.</small>
+			<img src="images/illustration-dashboard.png" alt="" />
+			<footer class="flow-content">
+				<div class="flex-wrapper"></div>
+				<small>&copy; Copyright Ping. All rights reserved.</small>
+			</footer>
 		</section>
 	</body>
 </html>

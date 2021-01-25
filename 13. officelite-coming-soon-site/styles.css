@@ -37,11 +37,11 @@
 Global styles
 ========================================================== */
 body {
-	color: var(--clr-secondary-300);
-	font-weight: var(--fw-400);
-	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
 	font-family: "Kumbh Sans", sans-serif;
+	font-size: clamp(var(--fs-300) calc(var(--fs-500) + 1vw), var(--fs-600));
+	font-weight: var(--fw-400);
 	line-height: 1.8;
+	color: var(--clr-secondary-300);
 	text-align: center;
 }
 
@@ -109,13 +109,13 @@ body {
 }
 
 h1 {
-	color: var(--fg, var(--clr-secondary-800));
 	font-size: clamp(var(--fs-700), calc(var(--fs-800) + 1vw), var(--fs-900));
+	color: var(--fg, var(--clr-secondary-800));
 }
 
 h2 {
-	color: var(--fg, var(--clr-secondary-800));
 	font-size: clamp(var(--fs-400), calc(var(--fs-400) + 1vw), var(--fs-500));
+	color: var(--fg, var(--clr-secondary-800));
 }
 
 @media only screen and (min-width: 45em) {
@@ -131,11 +131,11 @@ Utilities
 /* Layout
 	 ========================================================== */
 .container {
-	grid-column: 2;
 	width: min(90%, 1440px);
 	margin-right: auto;
 	margin-bottom: 3em;
 	margin-left: auto;
+	grid-column: 2;
 }
 
 .flow-content > * + * {
@@ -222,22 +222,22 @@ Utilities
 .btn {
 	display: inline-block;
 	align-self: center;
-	justify-self: center;
 	padding: 1em 2.5em;
-	border: none;
-	border-radius: 2em;
-
-	color: var(--fg, var(--clr-primary-600));
 
 	font-weight: var(--fw-700);
 	line-height: 1;
+
+	color: var(--fg, var(--clr-primary-600));
 	text-align: center;
 	text-decoration: none;
-
-	background-color: var(--bg, var(--clr-primary-200));
 	cursor: pointer;
 
+	background-color: var(--bg, var(--clr-primary-200));
+	border: none;
+	border-radius: 2em;
+
 	transition: background-color 250ms linear;
+	justify-self: center;
 }
 
 .btn:hover,
@@ -264,8 +264,8 @@ Utilities
 
 .logo {
 	display: inline-block;
-	margin-bottom: 5em;
 	padding-top: 5%;
+	margin-bottom: 5em;
 }
 
 .hero {
@@ -314,11 +314,11 @@ Utilities
 .plan {
 	flex-basis: 100%;
 	padding: 2em;
-	border-radius: 1em;
 
 	color: var(--fg, inherit);
 
 	background-color: var(--bg, var(--clr-primary-000));
+	border-radius: 1em;
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
@@ -337,8 +337,8 @@ Utilities
 }
 
 .price {
-	font-weight: var(--fw-700);
 	font-size: var(--fs-900);
+	font-weight: var(--fw-700);
 }
 
 @media only screen and (min-width: 60em) {
@@ -363,10 +363,10 @@ Utilities
 }
 
 .countdown h2 {
-	color: var(--clr-primary-800);
 	font-size: var(--fs-500);
-	letter-spacing: 3px;
+	color: var(--clr-primary-800);
 	text-transform: uppercase;
+	letter-spacing: 3px;
 }
 
 .countdown h2 span {
@@ -378,30 +378,30 @@ Utilities
 
 .countdown-app {
 	flex-direction: row;
-	gap: 0.25em;
 	justify-content: center;
 
 	text-align: center;
+	gap: 0.25em;
 }
 
 .countdown-app > div {
 	padding: 0.5em;
-	border-radius: 0.5em;
 
 	background-color: var(--bg, var(--clr-primary-200));
+	border-radius: 0.5em;
 }
 
 .countdown-app p[id] {
 	min-width: 2ch;
+	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
 
 	color: var(--fg, var(--clr-primary-600));
-	font-size: clamp(var(--fs-700), calc(var(--fs-900) + 1vw), var(--fs-1000));
 }
 
 .countdown-app p:not([id]) {
-	color: var(--clr-secondary-400);
-	font-weight: var(--fw-700);
 	font-size: clamp(var(--fs-200), calc(var(--fs-200) + 1vw), var(--fs-300));
+	font-weight: var(--fw-700);
+	color: var(--clr-secondary-400);
 }
 
 @media only screen and (min-width: 45em) {
@@ -445,20 +445,20 @@ Utilities
 
 form.split {
 	flex-direction: column;
-	gap: 0;
 	justify-content: space-around;
 	padding: 1em 2em;
+	gap: 0;
 }
 
 form > * {
-	margin-top: 0.5em;
 	padding-top: 1em;
 	padding-bottom: 1em;
+	margin-top: 0.5em;
 }
 
 form input {
 	padding-left: 1em;
-	border: none;
+				border: none;
 	border-bottom: 1px solid var(--clr-secondary-200);
 }
 
@@ -468,9 +468,9 @@ form input::placeholder {
 
 form button.btn {
 	width: 100%;
+	padding: 1.5em 3em;
 	margin-top: 4em;
 	margin-bottom: 2em;
-	padding: 1.5em 3em;
 }
 
 form > *:focus-within {
@@ -483,17 +483,17 @@ form > *:focus-within {
 /* Hide default select */
 select {
 	width: 100%;
-	margin: 0;
 	padding: 0 1em 0 0;
-	border: none;
+	margin: 0;
+	font-family: inherit;
 
 	font-size: inherit;
-	font-family: inherit;
 	line-height: inherit;
+	cursor: inherit;
 
 	background-color: transparent;
+	border: none;
 	outline: none;
-	cursor: inherit;
 
 	appearance: none;
 }
@@ -501,16 +501,16 @@ select {
 /* Create custom select */
 .select {
 	display: grid;
-	grid-template-areas: "select";
 	align-items: center;
 	width: 100%;
-	margin-top: 0.5em;
 	padding-top: 1em;
 	padding-bottom: 1em;
 	padding-left: 0.8em;
-	border-bottom: 1px solid var(--clr-secondary-200);
+	margin-top: 0.5em;
 
 	cursor: pointer;
+	border-bottom: 1px solid var(--clr-secondary-200);
+	grid-template-areas: "select";
 }
 
 select,
@@ -519,13 +519,13 @@ select,
 }
 
 .select::after {
-	justify-self: end;
 	width: 0.8em;
 	height: 0.5em;
 
-	background-color: var(--clr-primary-800);
-
 	content: "";
+
+	background-color: var(--clr-primary-800);
+	justify-self: end;
 	clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
 
