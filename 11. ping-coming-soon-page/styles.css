@@ -28,7 +28,7 @@
 		================================================== */
 body {
 	display: grid;
-	grid-template-columns: minmax(0.5em, 1fr) minmax(375px, 1440px) minmax(0.5em, 1fr);
+	grid-template-columns: minmax(3%, 1fr) minmax(350px, 1440px) minmax(3%, 1fr);
 	font-family: "Libre Franklin", sans-serif;
 	font-weight: var(--fw-300);
 	text-align: center;
@@ -67,6 +67,14 @@ h1 span {
 	display: flex;
 }
 
+@media only screen and (min-width: 60em) {
+	.container {
+		max-width: 60%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
 /* 	==================================================
 		Blocks
 		================================================== */
@@ -90,23 +98,23 @@ header p {
 
 form {
 	flex-direction: column;
+	justify-content: space-between;
 	margin-top: 2em;
 }
 
 form input,
 form button {
+	width: 100%;
 	padding: 1em 2.5em;
 	border: 1px solid var(--clr-primary-100);
 	border-radius: 2em;
 	margin-top: 0.75em;
-	margin-right: 1.25em;
-	margin-left: 1.25em;
 	background-color: var(--bg, white);
 	color: var(--fg, var(--clr-primary-100));
 }
 
 form input::placeholder {
-	color: var(--clr-secondary-100);
+	color: inherit;
 }
 
 form button {
@@ -114,19 +122,19 @@ form button {
 	--fg: white;
 
 	box-shadow: 0 1em 1em var(--clr-primary-100-shadow);
+	margin-bottom: 1.25em;
 	font-weight: 600;
 }
 
 @media only screen and (min-width: 60em) {
 	form {
 		flex-direction: row;
-		max-width: 60%;
-		margin-left: auto;
 		margin-right: auto;
+		margin-left: auto;
 	}
 
-	form > input {
-		flex-basis: 70%;
+	form > .flex-wrapper {
+		flex-basis: 60%;
 	}
 
 	form > button {
@@ -134,19 +142,29 @@ form button {
 	}
 }
 
+/* 	Error styles  */
+
+form input.error {
+	border: 1px solid var(--clr-error-100);
+	color: var(--clr-error-100);
+}
+
+div.error {
+	height: var(--fs-300);
+	margin-top: 0.5em;
+	margin-left: 3em;
+	font-size: var(--fs-300);
+	text-align: left;
+	color: var(--clr-error-100);
+}
+
 /* 	Main image
    	================================================== */
 
 .main-image {
 	margin-top: 7em;
-	margin-left: auto;
 	margin-right: auto;
-}
-
-@media only screen and (min-width: 60em) {
-	.main-image {
-		max-width: 60%;
-	}
+	margin-left: auto;
 }
 
 /* 	Footer
@@ -156,7 +174,7 @@ footer {
 	margin-top: 8em;
 }
 
-footer .flex-wrapper {
+footer .icons {
 	justify-content: center;
 	gap: var(--spacer);
 }
@@ -170,8 +188,8 @@ footer ion-icon {
 }
 
 footer ion-icon:hover {
-	color: white;
 	background-color: var(--clr-primary-100);
+	color: white;
 }
 
 footer small {
