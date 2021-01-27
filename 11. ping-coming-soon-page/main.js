@@ -17,6 +17,7 @@ function validateEmailKeydown() {
 		errorField.textContent = `Please provide a valid email address`;
 		emailField.classList.add("error");
 	} else {
+		errorField.textContent = ``;
 		emailField.classList.remove("error");
 	}
 }
