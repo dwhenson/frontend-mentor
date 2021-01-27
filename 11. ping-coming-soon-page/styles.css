@@ -28,7 +28,7 @@
 		================================================== */
 body {
 	display: grid;
-	grid-template-columns: minmax(3%, 1fr) minmax(350px, 1440px) minmax(3%, 1fr);
+	grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 1440px) minmax(1rem, 1fr);
 	font-family: "Libre Franklin", sans-serif;
 	font-weight: var(--fw-300);
 	text-align: center;
@@ -194,4 +194,5 @@ footer ion-icon:hover {
 
 footer small {
 	display: block;
+	margin-bottom: 4rem;
 }
