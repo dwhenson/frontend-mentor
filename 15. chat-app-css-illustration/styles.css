@@ -1,65 +1,84 @@
 :root {
 	/* colors */
-	--clr-primary-100: hsl(223, 87%, 63%);
-	--clr-primary-100-shadow: hsla(223, 87%, 63%, 0.3);
-	--clr-secondary-100: hsl(223, 100%, 88%);
-	--clr-neutral-100: hsl(0, 0%, 59%);
-	--clr-neutral-200: hsl(209, 33%, 12%);
-	--clr-error-100: hsl(354, 100%, 66%);
+
+	/* Primary - Text */
+	--clr-primary-100: hsl(276, 100%, 81%);
+	--clr-primary-200: hsl(276, 55%, 52%);
+	--clr-primary-300: hsl(276, 100%, 81%);
+	--clr-primary-400: hsl(271, 36%, 24%);
+
+	/* Primary - Gradients */
+	--clr-primary-grad-100: hsl(293, 100%, 63%);
+	--clr-primary-grad-200: hsl(264, 100%, 61%);
+
+	/* Secondary */
+	--clr-secondary-100: hsl(0, 0%, 100%);
+	--clr-secondary-200: hsl(206, 6%, 79%);
+	--clr-secondary-300: hsl(271, 15%, 43%);
 
 	/* spacing */
-	--spacer: 1.5em;
+	--spacer: 2rem;
 
 	/* font weight */
+	--fw-100: 100;
+	--fw-200: 200;
 	--fw-300: 300;
+	--fw-400: 400;
+	--fw-500: 500;
 	--fw-600: 600;
 	--fw-700: 700;
+	--fw-800: 800;
+	--fw-900: 900;
 
 	/* font size */
-	--fs-300: 0.8rem;
+	--fs-100: 0.422rem;
+	--fs-200: 0.563rem;
+	--fs-300: 0.75rem;
 	--fs-400: 1rem;
-	--fs-500: 1.25rem;
-	--fs-600: 2rem;
-	--fs-700: 3rem;
+	--fs-500: 1.33rem;
+	--fs-600: 1.77rem;
+	--fs-700: 2.369rem;
+	--fs-800: 3.157rem;
+	--fs-900: 4.209rem;
 }
 
 /* 	==================================================
 		Global Styles
 		================================================== */
+
 body {
-	display: grid;
-	grid-template-columns: minmax(0.5em, 1fr) minmax(375px, 1440px) minmax(0.5em, 1fr);
-	font-family: "Libre Franklin", sans-serif;
-	font-weight: var(--fw-300);
-	text-align: center;
-	color: var(--clr-neutral-100);
+	font-family: "Rubik", sans-serif;
+	line-height: 2;
+	font-weight: 400;
+	color: var(--clr-secondary-200);
 }
 
-body > * {
-	grid-column: 2;
+main {
+	margin-top: 15em;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacer);
 }
 
 h1 {
-	font-size: var(--fs-600);
-	font-weight: var(--fw-300);
+	font-size: var(--fs-700);
+	color: var(--clr-primary-400);
 }
 
-h1 span {
-	font-weight: var(--fw-700);
-	color: var(--clr-neutral-200);
-}
-
-@media only screen and (min-width: 60em) {
-	h1 {
-		font-size: var(--fs-700);
-	}
-}
-
-/* ==========================================================
+/* 	==================================================
 		Utilities
-		========================================================== */
+		================================================== */
 
-.flow-content > * + * {
+.center-content {
+	display: grid;
+	grid-template-columns: minmax(1em, 1fr) minmax(min-content, 1000px) minmax(1em, 1fr);
+}
+
+.center-content > * {
+	grid-column: 2;
+}
+
+.flow > * + * {
 	margin-top: var(--spacer, 1em);
 }
 
@@ -71,109 +90,19 @@ h1 span {
 		Blocks
 		================================================== */
 
-/* 	Header
+/* 	Heading
    	================================================== */
 
-header img {
-	margin-top: 6em;
-	margin-right: auto;
-	margin-bottom: 3em;
-	margin-left: auto;
+.heading {
+	max-width: 50ch;
 }
 
-header p {
-	color: var(--clr-neutral-200);
+.headnig p {
+	font-weight: 700;
 }
 
-/* 	Form
+/* 	Phone
    	================================================== */
-
-form {
-	flex-direction: column;
-	margin-top: 2em;
-}
-
-form input,
-form button {
-	padding: 1em 2.5em;
-	border: 1px solid var(--clr-primary-100);
-	border-radius: 2em;
-	margin-top: 0.75em;
-	margin-right: 1.25em;
-	margin-left: 1.25em;
-	background-color: var(--bg, white);
-	color: var(--fg, var(--clr-primary-100));
-}
-
-form input::placeholder {
-	color: var(--clr-secondary-100);
-}
-
-form button {
-	--bg: var(--clr-primary-100);
-	--fg: white;
-
-	box-shadow: 0 1em 1em var(--clr-primary-100-shadow);
-	font-weight: 600;
-}
-
-@media only screen and (min-width: 60em) {
-	form {
-		flex-direction: row;
-		max-width: 60%;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	form > input {
-		flex-basis: 70%;
-	}
-
-	form > button {
-		flex-basis: 30%;
-	}
-}
-
-/* 	Main image
-   	================================================== */
-
-.main-image {
-	margin-top: 7em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-@media only screen and (min-width: 60em) {
-	.main-image {
-		max-width: 60%;
-	}
-}
-
-/* 	Footer
-   	================================================== */
-
-footer {
-	margin-top: 8em;
-}
-
-footer .flex-wrapper {
-	justify-content: center;
-	gap: var(--spacer);
-}
-
-footer ion-icon {
-	padding: 0.25em;
-	border: 1px solid hsla(223, 100%, 88%, 0.5);
-	border-radius: 50%;
-	font-size: 1.5em;
-	color: var(--clr-primary-100);
-}
-
-footer ion-icon:hover {
-	color: white;
-	background-color: var(--clr-primary-100);
-}
-
-footer small {
-	display: block;
+.phone {
+	max-width: 25em;
 }
