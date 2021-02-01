@@ -134,40 +134,79 @@ h1 {
 	--fg: var(--clr-neutral-100);
 
 	display: inline-flex;
-	justify-content: space-around;
 	align-items: center;
 	min-width: 75%;
 }
 
 .phone .message.price span {
+	margin-right: 0.75em;
+	margin-left: auto;
 	font-size: var(--fs-500);
 	font-weight: 700;
 }
 
+.phone .message.price::before {
+	width: 2em;
+	height: 2em;
+	border: 1px solid white;
+	border-radius: 50%;
+	margin-right: 1em;
+	content: "";
+}
+
 .phone .message {
 	align-self: var(--align, flex-start);
+	max-width: 60%;
 	padding: 1em;
 	border-radius: 1em 1em 1em 0.25em;
 	background-color: var(--bg, inherit);
 	font-size: var(--fs-300);
 	color: var(--fg, var(--clr-primary-400));
-	max-width: 65%;
 }
+
+/* 	Image messages
+    ------------------- */
 
 .phone .message.images {
 	--align: flex-end;
 
 	max-width: 100%;
-	padding-left: 0;
 	padding-right: 0;
+	padding-left: 0;
 }
 
-.message img {
+.phone .message img {
 	border-radius: 1em;
 }
 
-/* TODO
-1) Create classes for alternative buttons - can anything else be a variable?
-2) Think about flex/grid for header
-3) Think about icons or font awesome for icons?
-*/
+/* 	Input styles
+    ------------------- */
+.phone label {
+	position: relative;
+	align-items: center;
+}
+
+.phone input {
+	width: 100%;
+	padding: 1em 2em;
+	border: none;
+	border-radius: 2em;
+	font-size: var(--fs-400);
+}
+
+.phone input::placeholder {
+	color: var(--clr-neutral-300);
+}
+
+.phone button {
+	position: absolute;
+	right: 0.5em;
+	width: 1.8em;
+	height: 1.8em;
+	border: none;
+	border-radius: 2em;
+	background-color: black;
+	font-size: var(--fs-500);
+	font-weight: 700;
+	color: white;
+}

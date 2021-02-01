@@ -28,10 +28,12 @@
 			</section>
 
 			<section class="phone flow">
-				<div class="profile">
+				<div class="profile flex">
 					<img src="images/avatar.jpg" alt="" width="30" height="30" />
-					<h2 class="user-name">Samuel Green</h2>
-					<p class="user-status">Available to Walk</p>
+					<div class="wrapper">
+						<h2 class="user-name">Samuel Green</h2>
+						<p class="user-status">Available to Walk</p>
+					</div>
 				</div>
 				<div class="chat flex">
 					<p class="message sent">That sounds great. I’d be happy with that.</p>
@@ -48,9 +50,10 @@
 					</p>
 					<p class="message price bg-gradient">30 minute walk <span>$29</span></p>
 					<p class="message price bg-gradient">1 hour walk <span>$49</span></p>
-					<div class="message-input">
-						<p>Type a message…</p>
-					</div>
+					<label for="message" class="flex">
+						<input type="text" id="message" name="message" placeholder="Type a message" />
+						<button>></button>
+					</label>
 				</div>
 			</section>
 		</main>
