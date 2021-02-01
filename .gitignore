@@ -426,7 +426,21 @@ config.codekit3
 .ntvs_analysis.dat
 node_modules/
 
-## Design files
+## Frontend Mentor Design files
 *.sketch
 *.xd
 *.fig
+
+## Personal additions 
+.nova/
+.editorconfig
+.eslintrc.js
+.eslint
+.postcss-sorting.json
+.prettierrc
+.styleintrc
+.stylelintrc.json
+
+
+
+
