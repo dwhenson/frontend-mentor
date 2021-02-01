@@ -19,7 +19,7 @@
 	--clr-gradient-200: hsl(264, 100%, 61%);
 
 	/* spacing */
-	--spacer: 1rem;
+	--spacer: 0.5rem;
 
 	/* font size */
 	--fs-100: 0.422rem;
@@ -40,27 +40,29 @@
 body {
 	font-family: "Rubik", sans-serif;
 	font-weight: 400;
-	line-height: 2;
+	line-height: 1.8;
 	color: hsl(271, 6%, 64%);
 }
 
 main {
-	flex-direction: row-reverse;
+	flex-direction: column-reverse;
 	align-items: center;
-	justify-content: space-between;
-	margin-top: 15em;
-	gap: var(--spacer);
+	justify-content: center;
+	margin-top: 5em;
+	margin-bottom: 5em;
+	text-align: center;
 }
 
-h1 {
-	font-size: var(--fs-700);
-	font-weight: 400;
-	color: var(--clr-primary-300);
+@media only screen and (min-width: 1000px) {
+	main {
+		flex-direction: row-reverse;
+		text-align: left;
+	}
 }
 
 /* 	==================================================
-		Utilities
-		================================================== */
+	Utilities
+	================================================== */
 
 .center-content {
 	display: grid;
@@ -77,6 +79,7 @@ h1 {
 
 .flex {
 	display: flex;
+
 	gap: var(--spacer);
 }
 
@@ -94,11 +97,24 @@ h1 {
 	Blocks
 	================================================== */
 
-/* 	Header
+/* 	Intro
    	================================================== */
 
-.header {
-	max-width: 50ch;
+.intro {
+	max-width: 60ch;
+	margin: 0 auto;
+	margin-top: 6em;
+}
+
+.intro h1 {
+	font-size: var(--fs-800);
+	font-weight: 500;
+	color: var(--clr-primary-300);
+}
+
+.intro p {
+	margin-top: 1.5em;
+	font-size: var(--fs-500);
 }
 
 /* 	Phone
@@ -112,6 +128,7 @@ h1 {
 	box-shadow: 0 0.5em 3em hsla(271, 36%, 24%, 0.25);
 	overflow: hidden;
 	background-color: hsl(269, 21%, 96%);
+	text-align: left;
 }
 
 .phone .chat::before {
@@ -244,6 +261,7 @@ h1 {
 .phone label {
 	position: relative;
 	align-items: center;
+	margin-top: 1em;
 }
 
 .phone input {
