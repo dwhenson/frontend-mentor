@@ -53,10 +53,47 @@ main {
 	text-align: center;
 }
 
-@media only screen and (min-width: 1000px) {
+main::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -20%;
+	z-index: 1;
+	width: 27em;
+	height: 40vh;
+	border-radius: 0 0 25em 25em;
+	background: linear-gradient(180deg, var(--clr-gradient-100), var(--clr-gradient-200));
+}
+
+main::after {
+	content: "";
+	position: absolute;
+	right: -20%;
+	bottom: 0;
+	width: 27em;
+	height: 40vh;
+	border-radius: 25em 25em 0 0;
+	background: hsla(278, 39%, 97%, 1);
+}
+
+@media only screen and (min-width: 75em) {
 	main {
 		flex-direction: row-reverse;
 		text-align: left;
+	}
+
+	main::before {
+		left: -20%;
+		width: 45em;
+		height: 80vh;
+		border-radius: 0 0 22.5em 22.5em;
+	}
+
+	main::after {
+		right: -20%;
+		width: 45em;
+		height: 80vh;
+		border-radius: 22.5em 22.5em 0 0;
 	}
 }
 
@@ -101,6 +138,7 @@ main {
    	================================================== */
 
 .intro {
+	z-index: 10;
 	max-width: 60ch;
 	margin: 0 auto;
 	margin-top: 6em;
@@ -121,6 +159,7 @@ main {
    	================================================== */
 .phone {
 	position: relative;
+	z-index: 10;
 	max-width: 27em;
 	padding: 1em;
 	border: 1em solid var(--clr-neutral-100);
@@ -258,7 +297,7 @@ main {
 
 /* 	Message input
     ------------------- */
-.phone label {
+.phone form {
 	position: relative;
 	align-items: center;
 	margin-top: 1em;
@@ -278,12 +317,14 @@ main {
 
 .phone button {
 	position: absolute;
+	top: 50%;
 	right: 0.5em;
 	width: 1.8em;
 	height: 1.8em;
 	border: none;
 	border-radius: 2em;
 	background-color: black;
+	transform: translateY(-50%);
 	font-size: var(--fs-500);
 	font-weight: 700;
 	color: white;
