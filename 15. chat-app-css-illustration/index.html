@@ -15,38 +15,43 @@
 		<link rel="stylesheet" href="reset.css" />
 		<link rel="stylesheet" href="styles.css" />
 	</head>
+
 	<body class="center-content">
 		<main class="flex">
-			<div class="phone">
-				<div class="profile">
-					<p class="name">Samuel Green</p>
-					<p>Available to Walk</p>
-				</div>
-				<div class="sent"><p>That sounds great. I’d be happy with that.</p></div>
-				<div class="sent"><p>Could you send over some pictures of your dog, please?</p></div>
-				<div class="received"><p>Here are a few pictures. She’s a happy girl!</p></div>
-				<div class="received"><p>Can you make it?</p></div>
-				<div class="sent">
-					<p>She looks so happy! The time we discussed works. How long shall I take her out for?</p>
-				</div>
-				<div class="quote">
-					<p>30 minute walk <span class="price">$29</span></p>
-				</div>
-				<div class="quote">
-					<p>1 hour walk <span class="price">$49</span></p>
-				</div>
-				<div class="message-input">
-					<p>Type a message…</p>
-				</div>
-			</div>
-
-			<section class="flow heading">
+			<section class="flow header">
 				<h1>Simple booking</h1>
 				<p>
 					Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss
 					arrangements and make bookings. Once the walk has been completed you can rate your walker and
 					book again all through the chat.
 				</p>
+			</section>
+
+			<section class="phone flow">
+				<div class="profile">
+					<img src="images/avatar.jpg" alt="" width="30" height="30" />
+					<h2 class="user-name">Samuel Green</h2>
+					<p class="user-status">Available to Walk</p>
+				</div>
+				<div class="chat flex">
+					<p class="message sent">That sounds great. I’d be happy with that.</p>
+					<p class="message sent">Could you send over some pictures of your dog, please?</p>
+					<div class="message images flex">
+						<img src="images/dog-image-1.jpg" alt="" width="60" height="60" />
+						<img src="images/dog-image-2.jpg" alt="" width="60" height="60" />
+						<img src="images/dog-image-3.jpg" alt="" width="60" height="60" />
+					</div>
+					<p class="message received">Here are a few pictures. She’s a happy girl!</p>
+					<p class="message received">Can you make it?</p>
+					<p class="message sent">
+						She looks so happy! The time we discussed works. How long shall I take her out for?
+					</p>
+					<p class="message price bg-gradient">30 minute walk <span>$29</span></p>
+					<p class="message price bg-gradient">1 hour walk <span>$49</span></p>
+					<div class="message-input">
+						<p>Type a message…</p>
+					</div>
+				</div>
 			</section>
 		</main>
 	</body>

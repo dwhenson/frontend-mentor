@@ -1,34 +1,25 @@
 :root {
-	/* colors */
-
 	/* Primary - Text */
+	--clr-primary-000: hsl(144, 40, 93%);
 	--clr-primary-100: hsl(276, 100%, 81%);
 	--clr-primary-200: hsl(276, 55%, 52%);
-	--clr-primary-300: hsl(276, 100%, 81%);
-	--clr-primary-400: hsl(271, 36%, 24%);
-
-	/* Primary - Gradients */
-	--clr-primary-grad-100: hsl(293, 100%, 63%);
-	--clr-primary-grad-200: hsl(264, 100%, 61%);
+	--clr-primary-300: hsl(271, 36%, 24%);
 
 	/* Secondary */
-	--clr-secondary-100: hsl(0, 0%, 100%);
-	--clr-secondary-200: hsl(206, 6%, 79%);
-	--clr-secondary-300: hsl(271, 15%, 43%);
+	--clr-secondary-100: hsl(277, 39%, 93%);
+	--clr-secondary-200: hsl(271, 15%, 43%);
+
+	/* Neutral */
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-200: hsl(150, 20%, 96%);
+	--clr-neutral-300: hsl(206, 6%, 79%);
+
+	/* Gradients */
+	--clr-gradient-100: hsl(293, 100%, 63%);
+	--clr-gradient-200: hsl(264, 100%, 61%);
 
 	/* spacing */
-	--spacer: 2rem;
-
-	/* font weight */
-	--fw-100: 100;
-	--fw-200: 200;
-	--fw-300: 300;
-	--fw-400: 400;
-	--fw-500: 500;
-	--fw-600: 600;
-	--fw-700: 700;
-	--fw-800: 800;
-	--fw-900: 900;
+	--spacer: 1rem;
 
 	/* font size */
 	--fs-100: 0.422rem;
@@ -48,21 +39,23 @@
 
 body {
 	font-family: "Rubik", sans-serif;
-	line-height: 2;
 	font-weight: 400;
-	color: var(--clr-secondary-200);
+	line-height: 2;
+	color: hsl(271, 6%, 64%);
 }
 
 main {
-	margin-top: 15em;
+	flex-direction: row-reverse;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: 15em;
 	gap: var(--spacer);
 }
 
 h1 {
 	font-size: var(--fs-700);
-	color: var(--clr-primary-400);
+	font-weight: 400;
+	color: var(--clr-primary-300);
 }
 
 /* 	==================================================
@@ -71,7 +64,7 @@ h1 {
 
 .center-content {
 	display: grid;
-	grid-template-columns: minmax(1em, 1fr) minmax(min-content, 1000px) minmax(1em, 1fr);
+	grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 1440px) minmax(1rem, 1fr);
 }
 
 .center-content > * {
@@ -84,25 +77,97 @@ h1 {
 
 .flex {
 	display: flex;
+	gap: var(--spacer);
+}
+
+/* prettier-ignore */
+.bg-gradient {
+	background:
+		linear-gradient(
+			var(--gradient-angle, 45deg),
+			var(--clr-gradient-100),
+			var(--clr-gradient-200)
+		);
 }
 
 /* 	==================================================
 		Blocks
 		================================================== */
 
-/* 	Heading
+/* 	Header
    	================================================== */
 
-.heading {
+.header {
 	max-width: 50ch;
-}
-
-.headnig p {
-	font-weight: 700;
 }
 
 /* 	Phone
    	================================================== */
 .phone {
 	max-width: 25em;
+	padding: 1em;
+	border: 1em solid var(--clr-neutral-100);
+	border-radius: 2em;
+	box-shadow: 0 0.5em 3em hsl(271, 36%, 24%);
+	background-color: hsl(269, 21%, 96%);
 }
+
+.phone .chat {
+	flex-direction: column;
+	line-height: 1.5;
+}
+
+.phone .message.sent {
+	--bg: var(--clr-secondary-100);
+	--fg: var(--clr-primary-200);
+}
+
+.phone .message.received {
+	--align: flex-end;
+	--bg: var(--clr-neutral-100);
+	--fg: var(--clr-primary-300);
+
+	border-radius: 1em 1em 0.25em 1em;
+}
+
+.phone .message.price {
+	--fg: var(--clr-neutral-100);
+
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	min-width: 75%;
+}
+
+.phone .message.price span {
+	font-size: var(--fs-500);
+	font-weight: 700;
+}
+
+.phone .message {
+	align-self: var(--align, flex-start);
+	padding: 1em;
+	border-radius: 1em 1em 1em 0.25em;
+	background-color: var(--bg, inherit);
+	font-size: var(--fs-300);
+	color: var(--fg, var(--clr-primary-400));
+	max-width: 65%;
+}
+
+.phone .message.images {
+	--align: flex-end;
+
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.message img {
+	border-radius: 1em;
+}
+
+/* TODO
+1) Create classes for alternative buttons - can anything else be a variable?
+2) Think about flex/grid for header
+3) Think about icons or font awesome for icons?
+*/
