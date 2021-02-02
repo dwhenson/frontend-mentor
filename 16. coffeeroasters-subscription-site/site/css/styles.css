@@ -15,7 +15,7 @@
 	--clr-neutral-400: hsl(215, 19%, 25%);
 
 	/* Spacing */
-	--spacer: 1rem;
+	--spacer: 1em;
 	--lh-small: 1.3;
 	--lh-regular: 1.6;
 
@@ -26,4 +26,35 @@
 	--fs-600: 2rem;
 	--fs-700: 3rem;
 	--fs-800: 4.5rem;
+}
+
+.center-content {
+	display: grid;
+	grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 1440px) minmax(1rem, 1fr);
+}
+
+.center-content > * {
+	grid-column: 2;
+}
+
+.container {
+	padding-right: 2rem;
+	padding-left: 2rem;
+}
+
+.flow-content > * + * {
+	margin-top: var(--spacer, 1rem);
+}
+
+.flow-section > * + * {
+	margin-top: calc(var(--spacer, 1rem) * 4);
+}
+
+.flex {
+	display: flex;
+	gap: var(--spacer, 1em);
+}
+
+.flex > * {
+	flex-basis: 100%;
 }
