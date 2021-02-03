@@ -36,7 +36,7 @@
 	--clr-neutral-400: hsl(215, 19%, 25%);
 
 	/* Spacing */
-	--spacer: 1em;
+	--spacer: 2em;
 	--lh-small: 1.3;
 	--lh-regular: 1.6;
 
@@ -53,12 +53,25 @@
 /* ==================================================
 	 Global Styles
 	 ================================================== */
-
 body {
 	font-family: "Barlow", sans-serif;
 	font-size: var(--fs-400);
 	line-height: var(--lh-regular);
 	color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-000);
+}
+
+nav {
+	font-size: var(--fs-300);
+	text-transform: uppercase;
+	line-height: var(--lh-small);
+	letter-spacing: 1px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 700;
 }
 
 h1,
@@ -66,6 +79,7 @@ h2,
 h3,
 h4 {
 	font-family: "Fraunces", serif;
+	line-height: var(--lh-small);
 }
 
 h1 {
@@ -107,14 +121,30 @@ h4 {
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer, 1rem) * 4);
+	margin-top: calc(var(--spacer) * 6);
 }
 
 .flex {
 	display: flex;
-	gap: var(--spacer, 1em);
+	gap: calc(var(--spacer, 1em) * 2);
 }
 
 .flex > * {
 	flex-basis: 100%;
+}
+
+.light-accent,
+.dark-accent {
+	color: var(--fg, var(--clr-neutral-400));
+	background-color: var(--bg, var(--clr-neutral-000));
+}
+
+.light-accent {
+	--fg: var(--clr-neutral-000);
+	--bg: var(--clr-primary-200);
+}
+
+.dark-accent {
+	--fg: var(--clr-neutral-000);
+	--bg: var(--clr-neutral-400);
 }
