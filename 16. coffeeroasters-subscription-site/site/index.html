@@ -13,8 +13,8 @@
 
 	<body>
 		<div class="home center-content flow-section">
-			<header>
-				<nav class="flex">
+			<header class="flow-content">
+				<nav class="flex nav">
 					<!-- Wrapper to avoid image as direct flex child -->
 					<div>
 						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
@@ -24,9 +24,13 @@
 						<li><a href="about.html">About us</a></li>
 						<li><a href="plan.html">Create your plan</a></li>
 					</ul>
+					<!-- Wrapper to avoid image as direct flex child -->
+					<div>
+						<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="20" height="20" />
+					</div>
 				</nav>
 
-				<section class="container flow-content">
+				<section class="container flow-content dark-accent hero">
 					<h1>Great coffee made simple.</h1>
 					<p>
 						Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees
@@ -38,7 +42,7 @@
 
 			<main class="flow-section">
 				<section class="container flow-content">
-					<h2>Our collection</h2>
+					<h2 class="title">our collection</h2>
 					<ul role="list" class="flex">
 						<li class="container flow-content">
 							<img src="assets/home/desktop/image-gran-espresso.png" alt="Gran espresso coffee" />
@@ -124,21 +128,23 @@
 				</section>
 			</main>
 
-			<footer class="container flex dark-accent">
-				<div>
-					<!-- Wrapper to avoid image as direct flex child -->
-					<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
-				</div>
-				<ul role="list" class="flex">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About us</a></li>
-					<li><a href="plan.html">Create your plan</a></li>
-				</ul>
-				<div class="flex">
-					<a href="#"><img src="assets/shared/desktop/icon-facebook.svg" alt="Facebook" /></a>
-					<a href="#"><img src="assets/shared/desktop/icon-twitter.svg" alt="Twitter" /></a>
-					<a href="#"><img src="assets/shared/desktop/icon-instagram.svg" alt="Instagram" /></a>
-				</div>
+			<footer class="container dark-accent">
+				<nav class="flex nav footer">
+					<div>
+						<!-- Wrapper to avoid image as direct flex child -->
+						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+					</div>
+					<ul role="list" class="flex">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="plan.html">Create your plan</a></li>
+					</ul>
+					<div class="flex">
+						<a href="#"><img src="assets/shared/desktop/icon-facebook.svg" alt="Facebook" /></a>
+						<a href="#"><img src="assets/shared/desktop/icon-twitter.svg" alt="Twitter" /></a>
+						<a href="#"><img src="assets/shared/desktop/icon-instagram.svg" alt="Instagram" /></a>
+					</div>
+				</nav>
 			</footer>
 		</div>
 	</body>
