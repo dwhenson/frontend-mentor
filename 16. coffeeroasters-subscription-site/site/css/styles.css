@@ -138,7 +138,14 @@ h4 {
 /* TODO add gradient on letters */
 .title {
 	font-size: var(--fs-700);
-	color: var(--clr-neutral-300);
+	margin-bottom: -1rem;
+	background-color: var(--clr-neutral-300);
+	background-image: linear-gradient(to bottom, var(--clr-neutral-300) 5%, var(--clr-neutral-000));
+	background-size: 100%;
+	background-repeat: repeat;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 }
 
 @media only screen and (min-width: 50em) {
@@ -156,6 +163,10 @@ h4 {
 
 	h4 {
 		font-size: var(--fs-500);
+	}
+
+	.title {
+		font-size: var(--fs-800);
 	}
 }
 
@@ -189,10 +200,6 @@ h4 {
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacer, 1em);
-}
-
-.flex > * {
-	/* flex-basis: 100%; */
 }
 
 .light-accent {
@@ -280,14 +287,23 @@ header .nav {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 }
 
-header .nav > * {
-	flex-basis: auto;
-}
-
-header .nav ul {
+.desktop-nav {
+	margin: 0;
 	display: none;
+}
+
+@media only screen and (min-width: 50em) {
+	.desktop-nav {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.mobile-nav {
+		display: none;
+	}
 }
 
 /* 	Our Collection
@@ -371,9 +387,5 @@ footer .icons {
 @media only screen and (min-width: 50em) {
 	footer .nav ul {
 		flex-direction: row;
-
-		/* flex-basis: auto; */
-
-		/* width: 100%; */
 	}
 }
