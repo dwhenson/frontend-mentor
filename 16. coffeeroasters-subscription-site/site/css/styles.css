@@ -60,7 +60,7 @@ body {
 	line-height: var(--lh-regular);
 	letter-spacing: 0.5px;
 	text-align: center;
-	color: var(--clr-neutral-400);
+	color: var(--clr-neutral-300);
 }
 
 section {
@@ -97,10 +97,9 @@ a {
 	color: inherit;
 }
 
-a:hover,
 a:focus-visible {
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
-	background-color: var(--clr-primary-100);
+	background-color: inherit;
 	outline: transparent;
 }
 
@@ -117,10 +116,12 @@ h3,
 h4 {
 	font-family: "Fraunces", serif;
 	line-height: var(--lh-small);
+	color: var(--clr-neutral-400);
 }
 
 h1 {
 	font-size: var(--fs-700);
+	color: var(--clr-neutral-000);
 }
 
 h2 {
@@ -135,7 +136,6 @@ h4 {
 	font-size: var(--fs-400);
 }
 
-/* TODO add gradient on letters */
 .title {
 	font-size: var(--fs-700);
 	margin-bottom: -1rem;
@@ -148,7 +148,7 @@ h4 {
 	-moz-text-fill-color: transparent;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 40em) {
 	h1 {
 		font-size: var(--fs-800);
 	}
@@ -237,7 +237,8 @@ h4 {
 	font-size: var(--fs-500);
 }
 
-.button:hover,
+/* .button:hover, */
+
 .button:focus-visible {
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
 	background-color: var(--clr-primary-100);
@@ -248,7 +249,7 @@ h4 {
 	outline: transparent;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 40em) {
 	.button {
 		margin-left: 0;
 	}
@@ -266,13 +267,15 @@ h4 {
 	padding-bottom: 5em;
 	margin-top: 2.5em;
 	background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
+	background-repeat: no-repeat;
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 40em) {
 	.hero {
 		text-align: left;
 		padding-left: 4em;
 		padding-right: 4em;
+		background-image: url("../assets/home/tablet/image-hero-coffeepress.jpg");
 	}
 
 	.hero :is(h1, p) {
@@ -287,7 +290,6 @@ header .nav {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	align-items: center;
 }
 
 .desktop-nav {
@@ -295,7 +297,15 @@ header .nav {
 	display: none;
 }
 
-@media only screen and (min-width: 50em) {
+.desktop-nav a:hover {
+	color: var(--clr-neutral-400);
+}
+
+.desktop-nav a[aria-current] {
+	color: var(--clr-neutral-400);
+}
+
+@media only screen and (min-width: 40em) {
 	.desktop-nav {
 		display: flex;
 		flex-direction: row;
@@ -309,7 +319,7 @@ header .nav {
 /* 	Our Collection
    	================================================== */
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 40em) {
 	.our-collection li {
 		display: grid;
 		text-align: left;
@@ -357,7 +367,7 @@ header .nav {
 	color: var(--clr-secondary-200);
 }
 
-@media only screen and (min-width: 50em) {
+@media only screen and (min-width: 40em) {
 	.how-works ol {
 		flex-direction: row;
 	}
@@ -376,15 +386,24 @@ footer .nav {
 	color: var(--clr-neutral-300);
 }
 
+footer .nav a:hover {
+	color: var(--clr-neutral-000);
+}
+
 footer .icons {
 	flex-direction: row;
 }
 
-.filter-white {
-	filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(242deg) brightness(102%) contrast(101%);
+/* FIX hover color not working */
+footer .icons img:hover {
+	filter: invert(84%) sepia(15%) saturate(798%) hue-rotate(327deg) brightness(103%) contrast(103%);
 }
 
-@media only screen and (min-width: 50em) {
+.filter-white {
+	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(100%) contrast(100%);
+}
+
+@media only screen and (min-width: 40em) {
 	footer .nav ul {
 		flex-direction: row;
 	}
