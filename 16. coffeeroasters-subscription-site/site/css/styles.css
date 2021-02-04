@@ -86,13 +86,6 @@ nav {
 	text-transform: uppercase;
 }
 
-section li {
-	padding-top: calc(var(--spacer) * 1);
-	padding-bottom: calc(var(--spacer) * 1);
-	border-radius: 1em;
-	flex-basis: 100%;
-}
-
 li img {
 	margin-left: auto;
 	margin-right: auto;
@@ -212,6 +205,15 @@ h4 {
 	color: var(--clr-neutral-000);
 }
 
+/* 	Displayed list item
+   	================================================== */
+.display li {
+	padding-top: calc(var(--spacer) * 1);
+	padding-bottom: calc(var(--spacer) * 1);
+	border-radius: 1em;
+	flex-basis: 100%;
+}
+
 /* 	Pseudo button
    	================================================== */
 
@@ -266,8 +268,7 @@ h4 {
 		padding-right: 4em;
 	}
 
-	.hero h1,
-	.hero p {
+	.hero :is(h1, p) {
 		max-width: 60%;
 	}
 }
