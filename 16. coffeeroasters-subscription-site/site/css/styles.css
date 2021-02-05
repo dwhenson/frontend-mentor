@@ -110,6 +110,7 @@ a:focus:not(:focus-visible) {
 /* 	Typography
    	================================================== */
 
+/* TODO Consider clamp for .title font size */
 h1,
 h2,
 h3,
@@ -148,7 +149,7 @@ h4 {
 	-webkit-text-fill-color: transparent;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	h1 {
 		font-size: var(--fs-800);
 	}
@@ -166,15 +167,16 @@ h4 {
 	}
 
 	.title {
-		font-size: 5.25rem;
-		margin-bottom: -1em;
 		margin-top: -1rem;
+		margin-bottom: -3.5rem;
+		font-size: 5.5rem;
 	}
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 65em) {
 	.title {
-		font-size: var(--fs-900);
+		font-size: 8.5rem;
+		margin-bottom: -5rem;
 	}
 }
 
@@ -210,7 +212,7 @@ h4 {
 	gap: var(--spacer, 1em);
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 65em) {
 	.flex {
 		flex-direction: row;
 	}
@@ -234,8 +236,6 @@ h4 {
    	================================================== */
 .display li {
 	flex-basis: 100%;
-	padding-top: calc(var(--spacer) * 1);
-	padding-bottom: calc(var(--spacer) * 1);
 	border-radius: 1em;
 }
 
@@ -269,7 +269,7 @@ h4 {
 	outline: transparent;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.button {
 		margin-left: 0;
 	}
@@ -294,7 +294,7 @@ h4 {
 	text-align: center;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.hero {
 		padding-right: 4em;
 		padding-left: 4em;
@@ -307,7 +307,7 @@ h4 {
 	}
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 65em) {
 	.hero {
 		background-image: url("../assets/home/desktop/image-hero-coffeepress.jpg");
 	}
@@ -339,7 +339,7 @@ header .nav {
 	color: var(--clr-neutral-400);
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.desktop-nav {
 		display: flex;
 		flex-direction: row;
@@ -353,7 +353,7 @@ header .nav {
 /* 	Our Collection
    	================================================== */
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.our-collection li {
 		display: grid;
 		grid-template-areas:
@@ -370,7 +370,7 @@ header .nav {
 	}
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 65em) {
 	.our-collection li {
 		display: block;
 		text-align: center;
@@ -387,11 +387,11 @@ header .nav {
 }
 
 .choose-us li img {
-	margin-bottom: 3em;
 	margin-top: 3em;
+	margin-bottom: 3em;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.choose-us li {
 		display: grid;
 		grid-template-areas:
@@ -404,14 +404,14 @@ header .nav {
 	}
 
 	.choose-us li img {
-		margin-bottom: 0;
-		margin-top: 0;
 		grid-area: image;
 		align-self: center;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 
-@media only screen and (min-width: 60em) {
+@media only screen and (min-width: 65em) {
 	.choose-us li {
 		display: block;
 		text-align: center;
@@ -437,7 +437,7 @@ header .nav {
 	color: var(--clr-secondary-200);
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	.how-works {
 		text-align: left;
 	}
@@ -448,6 +448,42 @@ header .nav {
 
 	.how-works .button {
 		margin-right: auto;
+	}
+}
+
+/* 	Stages bar
+   	================================================== */
+
+.stages-container {
+	display: none;
+	position: relative;
+	justify-content: space-between;
+	width: 70%;
+}
+
+.stages-container::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: var(--clr-secondary-200);
+	transform: translateY(-50%);
+}
+
+.circle {
+	z-index: 10;
+	width: 3rem;
+	height: 3rem;
+	border: 3px solid var(--clr-primary-200);
+	border-radius: 50%;
+	background-color: var(--clr-neutral-000);
+}
+
+@media only screen and (min-width: 45em) {
+	.stages-container {
+		display: flex;
 	}
 }
 
@@ -477,7 +513,7 @@ footer .icons img:hover {
 	filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(100%) contrast(100%);
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 45em) {
 	footer .nav ul {
 		flex-direction: row;
 	}
