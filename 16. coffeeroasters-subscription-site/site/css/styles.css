@@ -87,8 +87,8 @@ nav {
 }
 
 li img {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 a {
@@ -98,9 +98,9 @@ a {
 }
 
 a:focus-visible {
+	outline: transparent;
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
 	background-color: inherit;
-	outline: transparent;
 }
 
 a:focus:not(:focus-visible) {
@@ -137,15 +137,15 @@ h4 {
 }
 
 .title {
-	font-size: var(--fs-700);
-	margin-bottom: -1rem;
 	background-color: var(--clr-neutral-300);
-	background-image: linear-gradient(to bottom, var(--clr-neutral-300) 5%, var(--clr-neutral-000));
+	background-image: linear-gradient(to bottom, var(--clr-neutral-300) 0, var(--clr-neutral-000));
 	background-size: 100%;
 	background-repeat: repeat;
 	background-clip: text;
+	-webkit-background-clip: text;
+	font-size: 3.5rem;
+	text-fill-color: transparent;
 	-webkit-text-fill-color: transparent;
-	-moz-text-fill-color: transparent;
 }
 
 @media only screen and (min-width: 40em) {
@@ -166,7 +166,15 @@ h4 {
 	}
 
 	.title {
-		font-size: var(--fs-800);
+		font-size: 5.25rem;
+		margin-bottom: -1em;
+		margin-top: -1rem;
+	}
+}
+
+@media only screen and (min-width: 60em) {
+	.title {
+		font-size: var(--fs-900);
 	}
 }
 
@@ -202,6 +210,12 @@ h4 {
 	gap: var(--spacer, 1em);
 }
 
+@media only screen and (min-width: 60em) {
+	.flex {
+		flex-direction: row;
+	}
+}
+
 .light-accent {
 	background-color: var(--clr-primary-200);
 	color: var(--clr-neutral-000);
@@ -212,13 +226,17 @@ h4 {
 	color: var(--clr-neutral-000);
 }
 
+.dark-accent :is(h2, h3, p) {
+	color: var(--clr-neutral-000);
+}
+
 /* 	Displayed list item
    	================================================== */
 .display li {
+	flex-basis: 100%;
 	padding-top: calc(var(--spacer) * 1);
 	padding-bottom: calc(var(--spacer) * 1);
 	border-radius: 1em;
-	flex-basis: 100%;
 }
 
 /* 	Pseudo button
@@ -230,19 +248,21 @@ h4 {
 	padding: 0.5em 1.25em;
 	border-radius: 0.5em;
 	margin-top: calc(var(--spacer) * 2);
+	margin-right: auto;
 	margin-bottom: calc(var(--spacer) * 2);
 	margin-left: auto;
-	margin-right: auto;
 	font-family: "Fraunces", serif;
 	font-size: var(--fs-500);
 }
 
-/* .button:hover, */
+.button:hover {
+	background-color: var(--clr-primary-100);
+}
 
 .button:focus-visible {
+	outline: transparent;
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
 	background-color: var(--clr-primary-100);
-	outline: transparent;
 }
 
 .button:focus:not(:focus-visible) {
@@ -266,20 +286,34 @@ h4 {
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 2.5em;
+	background-color: var(--clr-neutral-400);
 	background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
+	background-position: top right;
+	background-size: cover;
 	background-repeat: no-repeat;
+	text-align: center;
 }
 
 @media only screen and (min-width: 40em) {
 	.hero {
-		text-align: left;
-		padding-left: 4em;
 		padding-right: 4em;
+		padding-left: 4em;
 		background-image: url("../assets/home/tablet/image-hero-coffeepress.jpg");
+		text-align: left;
 	}
 
 	.hero :is(h1, p) {
 		max-width: 60%;
+	}
+}
+
+@media only screen and (min-width: 60em) {
+	.hero {
+		background-image: url("../assets/home/desktop/image-hero-coffeepress.jpg");
+	}
+
+	.hero :is(h1, p) {
+		max-width: 50%;
 	}
 }
 
@@ -293,8 +327,8 @@ header .nav {
 }
 
 .desktop-nav {
-	margin: 0;
 	display: none;
+	margin: 0;
 }
 
 .desktop-nav a:hover {
@@ -322,12 +356,13 @@ header .nav {
 @media only screen and (min-width: 40em) {
 	.our-collection li {
 		display: grid;
-		text-align: left;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto 1fr;
 		grid-template-areas:
 			"image title"
 			"image title";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr;
+		text-align: left;
+		gap: 2rem;
 	}
 
 	.our-collection li img {
@@ -335,17 +370,52 @@ header .nav {
 	}
 }
 
+@media only screen and (min-width: 60em) {
+	.our-collection li {
+		display: block;
+		text-align: center;
+	}
+}
+
 /* 	Choose us
    	================================================== */
 
-/* FIX background color height */
+/* FIX Overflow content */
 .choose-us li {
-	padding-top: calc(var(--spacer) * 3);
-	padding-bottom: calc(var(--spacer) * 3);
+	padding-top: calc(var(--spacer) * 2);
+	padding-bottom: calc(var(--spacer) * 2);
 }
 
 .choose-us li img {
-	margin-bottom: 4em;
+	margin-bottom: 3em;
+	margin-top: 3em;
+}
+
+@media only screen and (min-width: 40em) {
+	.choose-us li {
+		display: grid;
+		grid-template-areas:
+			"image title"
+			"image title";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr;
+		text-align: left;
+		gap: 2rem;
+	}
+
+	.choose-us li img {
+		margin-bottom: 0;
+		margin-top: 0;
+		grid-area: image;
+		align-self: center;
+	}
+}
+
+@media only screen and (min-width: 60em) {
+	.choose-us li {
+		display: block;
+		text-align: center;
+	}
 }
 
 /* 	How it works
@@ -362,12 +432,16 @@ header .nav {
 
 .how-works .number {
 	font-family: "fraunces", serif;
-	font-weight: 900;
 	font-size: var(--fs-800);
+	font-weight: 900;
 	color: var(--clr-secondary-200);
 }
 
 @media only screen and (min-width: 40em) {
+	.how-works {
+		text-align: left;
+	}
+
 	.how-works ol {
 		flex-direction: row;
 	}
@@ -380,10 +454,10 @@ header .nav {
 /* 	Footer
    	================================================== */
 footer .nav {
-	gap: calc(var(--spacer) * 2);
 	align-items: center;
 	justify-content: space-between;
 	color: var(--clr-neutral-300);
+	gap: calc(var(--spacer) * 2);
 }
 
 footer .nav a:hover {
