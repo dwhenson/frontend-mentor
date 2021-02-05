@@ -47,17 +47,29 @@ body {
 	text-rendering: optimizeSpeed;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 img,
 picture {
 	display: block;
 	max-width: 100%;
 }
+
+img[width] {
+	width: auto; /* Defer to max-width */
+}
+
+img[width][height] {
+	height: auto; /* Preserve aspect ratio */
+}
+
+/* Let SVG scale without boundaries  */
+
+/*
+img[src$=".svg"] {
+	width: 100%;
+	height: auto;
+	max-width: none;
+} */
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -84,7 +96,6 @@ select {
 /* ----  Accessibility  ---- */
 
 /* Text meant only for screen readers */
-
 .visually-hidden {
 	position: absolute !important;
 	width: 1px;
@@ -114,4 +125,30 @@ select {
 	background-color: #f1f1f1;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
+}
+
+/* Skip to main content */
+a.skip-main {
+	left: -999px;
+	position: absolute;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: -999;
+}
+
+a.skip-main:focus,
+a.skip-main:active {
+	background: white;
+	color: black;
+	left: 0;
+	top: 0;
+	width: auto;
+	height: auto;
+	overflow: auto;
+	margin: 10px;
+	padding: 5px;
+	font-size: 1.4em;
+	z-index: 999;
 }
