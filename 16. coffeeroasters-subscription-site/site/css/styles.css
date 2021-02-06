@@ -362,7 +362,7 @@ header .nav {
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 1fr 1fr;
 		text-align: left;
-		gap: 2rem;
+		gap: 0 2rem;
 	}
 
 	.our-collection li img {
@@ -387,20 +387,26 @@ header .nav {
 }
 
 .choose-us li img {
-	margin-top: 3em;
-	margin-bottom: 3em;
+	margin-top: var(--spacer);
+	margin-bottom: calc(var(--spacer) * 2);
+	padding-left: 2em;
+	padding-right: 2em;
 }
 
 @media only screen and (min-width: 45em) {
+	.choose-us h3 {
+		margin-top: 0;
+	}
+
 	.choose-us li {
 		display: grid;
 		grid-template-areas:
 			"image title"
 			"image title";
 		grid-template-rows: auto 1fr;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto 1fr;
 		text-align: left;
-		gap: 2rem;
+		gap: 0 2rem;
 	}
 
 	.choose-us li img {
@@ -412,6 +418,10 @@ header .nav {
 }
 
 @media only screen and (min-width: 65em) {
+	.choose-us h3 {
+		margin-top: var(--spacer);
+	}
+
 	.choose-us li {
 		display: block;
 		text-align: center;
