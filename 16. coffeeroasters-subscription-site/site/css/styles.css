@@ -94,9 +94,6 @@ nav {
 
 section img {
 	border-radius: 1em;
-}
-
-li img {
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -262,18 +259,20 @@ h4 {
 
 /* 	Block list items
    	================================================== */
-.blocks > li {
+.blocks > * {
 	flex-basis: 100%;
 	border-radius: 1em;
 }
 
-.blocks > li img[src$=".svg"] {
+.blocks li > img[src$=".svg"] {
 	margin-top: calc(var(--spacer) * 2);
 	margin-bottom: calc(var(--spacer) * 2);
+	margin-left: auto;
+	margin-right: auto;
 }
 
-@media only screen and (min-width: 45em) and (max-width: 64em) and (max-width: 64em) {
-	.blocks > li {
+@media only screen and (min-width: 45em) {
+	.blocks > * {
 		display: grid;
 		grid-template-areas:
 			"image title"
@@ -284,7 +283,7 @@ h4 {
 		gap: 0 calc(var(--spacer) * 2);
 	}
 
-	.blocks > li img {
+	.blocks > * :is(img, picture) {
 		grid-area: image;
 		align-self: center;
 		margin-top: 0;
@@ -295,6 +294,7 @@ h4 {
 @media only screen and (min-width: 65em) {
 	.blocks > li {
 		display: block;
+		text-align: center;
 	}
 }
 
@@ -324,7 +324,7 @@ h4 {
 }
 
 .cta:focus:not(:focus-visible) {
-	outline: transparent;
+	outline: transparet;
 }
 
 @media only screen and (min-width: 45em) {
@@ -436,7 +436,7 @@ header .nav {
 		text-align: left;
 	}
 
-	.home :is(h1, p) {
+	.hero :is(h1, p) {
 		max-width: 50%;
 	}
 
@@ -491,11 +491,11 @@ footer .icons img:hover {
 	}
 }
 
-/* 	Home page sections
+/* 	Home Page Sections
    	================================================== */
 
 /* 	Choose us
-   	================================================== */
+    ------------------- */
 
 /* FIX Overflow content */
 .choose-us li {
@@ -513,7 +513,7 @@ footer .icons img:hover {
 }
 
 /* 	How it works
-   	================================================== */
+    ------------------- */
 
 .how-works .number {
 	font-family: "fraunces", serif;
@@ -532,14 +532,48 @@ footer .icons img:hover {
 	}
 }
 
-/* 	About page sections
+/* 	About Page Sections
    	================================================== */
+
+/* 	Commitment
+    ------------------- */
+
+.our-commitment {
+	gap: 0 calc(var(--spacer) * 5);
+}
+
+/* 	Quality
+    ------------------- */
+
+.quality {
+	display: block;
+}
+
+@media only screen and (min-width: 65em) {
+	.quality {
+		display: grid;
+		grid-template-areas:
+			"title image"
+			"text image";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 2fr 1fr;
+		gap: 0 calc(var(--spacer) * 5);
+	}
+}
 
 /* 	Headquarters
-   	================================================== */
+    ------------------- */
+
+.headquarters {
+	display: block;
+}
+
+.headquarters ul > li {
+	flex-basis: 100%;
+}
 
 @media only screen and (min-width: 45em) {
-	.headquarters img {
+	.headquarters li > img[src$=".svg"] {
 		margin-left: 0;
 	}
 

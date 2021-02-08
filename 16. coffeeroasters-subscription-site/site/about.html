@@ -41,12 +41,17 @@
 				</section>
 			</header>
 
-			<main id="main" class="flow-section">
+			<main id="main" class="flow-section blocks">
 				<section class="[ flow-content ] [ our-commitment ]">
-					<img
-						src="assets/about/mobile/image-commitment.jpg"
-						alt="A barister lovingly making a cup of coffee"
-					/>
+					<picture>
+						<source srcset="assets/about/desktop/image-commitment.jpg" media="(min-width: 1040px)" />
+						<source srcset="assets/about/tablet/image-commitment.jpg" media="(min-width: 720px)" />
+						<img
+							src="assets/about/mobile/image-commitment.jpg"
+							alt="A barister lovingly making a cup of coffee"
+						/>
+					</picture>
+
 					<h2>Our commitment</h2>
 					<p>
 						We’re built on a simple mission and a commitment to doing good along the way. We want to make
@@ -60,8 +65,12 @@
 					</p>
 				</section>
 
-				<section class="[ container flow-content dark-accent ] [ uncomp-quality ]">
-					<img src="assets/about/mobile/image-quality.jpg" alt="" />
+				<section class="[ container flow-content dark-accent ] [ quality ]">
+					<picture>
+						<source srcset="assets/about/desktop/image-quality.jpg" media="(min-width: 1040px)" />
+						<source srcset="assets/about/tablet/image-quality.jpg" media="(min-width: 720px)" />
+						<img src="assets/about/mobile/image-quality.jpg" alt="A lovely looking cup of coffee" />
+					</picture>
 					<h2>Uncompromising quality</h2>
 					<p>
 						Although we work with growers who pay close attention to all stages of harvest and processing,
@@ -70,40 +79,40 @@
 						roast consistent, user-friendly coffee, so that brewing is easy and enjoyable.
 					</p>
 				</section>
-			</main>
 
-			<section class="[ container flow-content display ] [ headquarters ]">
-				<h2 class="sub-heading">Our headquarters</h2>
-				<ul role="list" class="flex">
-					<li class="container flow-content">
-						<img src="assets/about/desktop/illustration-uk.svg" alt="" />
-						<h3>UK</h3>
-						<address>
-							68 Asfordby Rd <br />Alcaston <br />SY6 1YA <br /><a href="tel:+441241918425" title=""
-								>+44 1241 918425</a
-							>
-						</address>
-					</li>
-					<li class="container flow-content">
-						<img src="assets/about/desktop/illustration-canada.svg" alt="" />
-						<h3>Canada</h3>
-						<address>
-							1528 Eglinton Avenue <br />Toronto <br />Ontario M4P 1A6 <br /><a href="tel:+14164852997"
-								>+1 416 485 2997</a
-							>
-						</address>
-					</li>
-					<li class="container flow-content">
-						<img src="assets/about/desktop/illustration-australia.svg" alt="" />
-						<h3>Australia</h3>
-						<address>
-							36 Swanston Street <br />Kewell <br />Victoria <br /><a href="tel:+61499283629"
-								>+61 4 9928 3629</a
-							>
-						</address>
-					</li>
-				</ul>
-			</section>
+				<section class="[ container flow-content display ] [ headquarters ]">
+					<h2 class="sub-heading">Our headquarters</h2>
+					<ul role="list" class="flex">
+						<li class="container flow-content">
+							<img src="assets/about/desktop/illustration-uk.svg" alt="" />
+							<h3>United Kingdom</h3>
+							<address>
+								68 Asfordby Rd <br />Alcaston <br />SY6 1YA <br /><a href="tel:+441241918425" title=""
+									>+44 1241 918425</a
+								>
+							</address>
+						</li>
+						<li class="container flow-content">
+							<img src="assets/about/desktop/illustration-canada.svg" alt="" />
+							<h3>Canada</h3>
+							<address>
+								1528 Eglinton Avenue <br />Toronto <br />Ontario M4P 1A6 <br /><a href="tel:+14164852997"
+									>+1 416 485 2997</a
+								>
+							</address>
+						</li>
+						<li class="container flow-content">
+							<img src="assets/about/desktop/illustration-australia.svg" alt="" />
+							<h3>Australia</h3>
+							<address>
+								36 Swanston Street <br />Kewell <br />Victoria <br /><a href="tel:+61499283629"
+									>+61 4 9928 3629</a
+								>
+							</address>
+						</li>
+					</ul>
+				</section>
+			</main>
 
 			<footer class="container dark-accent">
 				<nav class="flex nav">
