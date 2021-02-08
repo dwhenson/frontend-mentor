@@ -63,6 +63,12 @@ body {
 	text-align: center;
 }
 
+@media only screen and (min-width: 45em) {
+	body .about {
+		text-align: left;
+	}
+}
+
 section {
 	padding-top: calc(var(--spacer) * 3);
 	padding-bottom: calc(var(--spacer) * 3);
@@ -95,18 +101,18 @@ li img {
 	margin-left: auto;
 }
 
+a {
+	font-weight: 700;
+	text-decoration: none;
+	color: inherit;
+}
+
 address {
 	font-style: normal;
 }
 
 address a {
 	font-weight: 400;
-}
-
-a {
-	font-weight: 700;
-	text-decoration: none;
-	color: inherit;
 }
 
 a:focus-visible {
@@ -117,6 +123,11 @@ a:focus-visible {
 
 a:focus:not(:focus-visible) {
 	outline: transparent;
+}
+
+button {
+	border: none;
+	background-color: inherit;
 }
 
 /* 	Typography
@@ -157,7 +168,7 @@ h4 {
 	background-clip: text;
 	-webkit-background-clip: text;
 	font-size: 3.5rem;
-	text-fill-color: transparent;
+	-moz-text-fill-color: transparent;
 	-webkit-text-fill-color: transparent;
 }
 
@@ -326,9 +337,6 @@ h4 {
 		Blocks
 		================================================== */
 
-/* 	COMMON BLOCKS
-   	================================================== */
-
 /* 	Navigation
 		================================================== */
 
@@ -398,6 +406,59 @@ header .nav {
 	}
 }
 
+/* 	Hero
+   	================================================== */
+
+.hero {
+	padding-top: 5em;
+	padding-bottom: 5em;
+	margin-top: 2.5em;
+	background-color: var(--clr-neutral-400);
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.home .hero {
+	background-position: top right;
+	background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
+}
+
+.about .hero {
+	background-position: center;
+	background-image: url("../assets/about/mobile/image-hero-whitecup.jpg");
+}
+
+@media only screen and (min-width: 45em) {
+	.hero {
+		padding-right: 4em;
+		padding-left: 4em;
+		text-align: left;
+	}
+
+	.home :is(h1, p) {
+		max-width: 50%;
+	}
+
+	.home .hero {
+		background-image: url("../assets/home/tablet/image-hero-coffeepress.jpg");
+	}
+
+	.home .about {
+		background-image: url("../assets/about/tablet/image-hero-whitecup.jpg");
+	}
+}
+
+@media only screen and (min-width: 65em) {
+	.home .hero {
+		background-image: url("../assets/home/desktop/image-hero-coffeepress.jpg");
+	}
+
+	.about .hero {
+		background-image: url("../assets/about/desktop/image-hero-whitecup.jpg");
+	}
+}
+
 /* 	Footer
 		================================================== */
 footer .nav {
@@ -430,45 +491,8 @@ footer .icons img:hover {
 	}
 }
 
-/* 	HOME PAGE
+/* 	Home page sections
    	================================================== */
-
-/* 	Hero
-   	================================================== */
-
-.hero {
-	padding-top: 5em;
-	padding-bottom: 5em;
-	margin-top: 2.5em;
-	background-color: var(--clr-neutral-400);
-	background-size: cover;
-	background-repeat: no-repeat;
-	text-align: center;
-}
-
-.home .hero {
-	background-position: top right;
-	background-image: url("../assets/home/mobile/image-hero-coffeepress.jpg");
-}
-
-@media only screen and (min-width: 45em) {
-	.home .hero {
-		padding-right: 4em;
-		padding-left: 4em;
-		background-image: url("../assets/home/tablet/image-hero-coffeepress.jpg");
-		text-align: left;
-	}
-
-	.home .hero :is(h1, p) {
-		max-width: 50%;
-	}
-}
-
-@media only screen and (min-width: 65em) {
-	.home .hero {
-		background-image: url("../assets/home/desktop/image-hero-coffeepress.jpg");
-	}
-}
 
 /* 	Choose us
    	================================================== */
@@ -508,47 +532,18 @@ footer .icons img:hover {
 	}
 }
 
-/* 	ABOUT PAGE
-   	================================================== */
-@media only screen and (min-width: 45em) {
-	body .about {
-		text-align: left;
-	}
-}
-
-/* 	Hero
-   	================================================== */
-
-.about .hero {
-	background-position: center;
-	background-image: url("../assets/about/mobile/image-hero-whitecup.jpg");
-}
-
-@media only screen and (min-width: 45em) {
-	.about .hero {
-		padding-right: 4em;
-		padding-left: 4em;
-		background-image: url("../assets/about/tablet/image-hero-whitecup.jpg");
-	}
-
-	.about .hero :is(h1, p) {
-		max-width: 40%;
-	}
-}
-
-@media only screen and (min-width: 65em) {
-	.about .hero {
-		background-image: url("../assets/about/desktop/image-hero-whitecup.jpg");
-	}
-}
-
-/* 	Commitment
+/* 	About page sections
    	================================================== */
 
 /* 	Headquarters
    	================================================== */
+
 @media only screen and (min-width: 45em) {
 	.headquarters img {
 		margin-left: 0;
+	}
+
+	.headquarters ul {
+		flex-direction: row;
 	}
 }
