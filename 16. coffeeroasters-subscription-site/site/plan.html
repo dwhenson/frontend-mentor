@@ -1,252 +1,261 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Frontend Mentor | Coffeeroasters subscription site</title>
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/styles.css" />
-		<script defer src="js/main.js"></script>
-	</head>
 
-	<body>
-		<div class="plan center-content flow-section">
-			<header class="flow-content">
-				<a class="skip-main" href="#main">Skip to main content</a>
-				<nav class="flex nav">
-					<!-- Wrapper to avoid image as direct flex child -->
-					<div>
-						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
-					</div>
-					<ul role="list" class="flex desktop-nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About us</a></li>
-						<li><a aria-current="page" href="plan.html">Create your plan</a></li>
-					</ul>
-					<!-- Wrapper to avoid image as direct flex child -->
-					<div class="mobile-nav">
-						<button aria-label="menu">
-							<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="30" height="30" />
-						</button>
-					</div>
-				</nav>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Frontend Mentor | Coffeeroasters subscription site</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+	<script defer src="js/main.js"></script>
+</head>
 
-				<section class="[ container flow-content dark-accent ] [ hero ]">
-					<h1>Create a plan</h1>
+<body>
+	<div class="plan center-content flow-section">
+		<header class="flow-content">
+			<a class="skip-main" href="#main">Skip to main content</a>
+			<nav class="flex nav">
+				<!-- Wrapper to avoid image as direct flex child -->
+				<div>
+					<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+				</div>
+				<ul role="list" class="flex desktop-nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About us</a></li>
+					<li><a aria-current="page" href="plan.html">Create your plan</a></li>
+				</ul>
+				<!-- Wrapper to avoid image as direct flex child -->
+				<div class="mobile-nav">
+					<button aria-label="menu">
+						<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="30" height="30" />
+					</button>
+				</div>
+			</nav>
+
+			<section class="[ container flow-content dark-accent ] [ hero ]">
+				<h1>Create a plan</h1>
+				<p>
+					Build a subscription plan that best fits your needs. We offer an assortment of the best
+					artisan coffees from around the globe delivered fresh to your door.
+				</p>
+			</section>
+		</header>
+
+		<section class="[ container display dark-accent ] [ how-works ]">
+			<!-- Stages bar-->
+			<div class="stages-container">
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+			</div>
+			<ol role="list" class="flex">
+				<li class="flow-content">
+					<p class="number">01</p>
+					<h3>Pick your coffee</h3>
 					<p>
-						Build a subscription plan that best fits your needs. We offer an assortment of the best
-						artisan coffees from around the globe delivered fresh to your door.
+						Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay
+						fair prices for them. There are new coffees in all profiles every month for you to try out.
+					</p>
+				</li>
+				<li class="flow-content">
+					<p class="number">02</p>
+					<h3>Choose the frequency</h3>
+					<p>
+						Customize your order frequency, quantity, even your roast style and grind type. Pause, skip
+						or cancel your subscription with no commitment through our online portal.
+					</p>
+				</li>
+				<li class="flow-content">
+					<p class="number">03</p>
+					<h3>Receive and enjoy!</h3>
+					<p>
+						We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning
+						world-class coffees curated to provide a distinct tasting experience.
+					</p>
+				</li>
+			</ol>
+		</section>
+
+		<aside>
+			<ol>
+				<li><a href="#Preferences">Preferences</a></li>
+				<li><a href="#Bean">Bean Type</a></li>
+				<li><a href="#Quantity">Quantity</a></li>
+				<li><a href="#Grind">Grind Options</a></li>
+				<li><a href="#Deliveries">Deliveries</a></li>
+			</ol>
+		</aside>
+
+		<main id="main" class="flow-section">
+			<form class="flow-section" action="#">
+				<details id="preferences">
+					<summary>How do you drink your coffee?</summary>
+					<ul role="list">
+						<li>
+							<h3>Capsule</h3>
+							<p>Compatible with Nespresso systems and similar brewers</p>
+							<label>
+								<input type="radio" name="preferences" value="capsule" />
+							</label>
+						</li>
+						<li>
+							<h3>Filter</h3>
+							<p>For pour over or drip methods like Aeropress, Chemex, and V60</p>
+							<label>
+								<input type="radio" name="preferences" value="filter" />
+							</label>
+						</li>
+						<li>
+							<h3>Espresso</h3>
+							<p>Espresso Dense and finely ground beans for an intense, flavorful experience</p>
+							<label>
+								<input type="radio" name="preferences" value="espresso" />
+							</label>
+						</li>
+					</ul>
+				</details>
+
+				<details id="bean">
+					<summary>What type of coffee?</summary>
+					<ul role="list">
+						<li>
+							<h3>Single origin</h3>
+							<p>Distinct, high quality coffee from a specific family-owned farm</p>
+							<label>
+								<input type="radio" name="bean" value="single" />
+							</label>
+						</li>
+						<li>
+							<h3>Decaf</h3>
+							<p>Just like regular coffee, except the caffeine has been removed</p>
+							<label>
+								<input type="radio" name="bean" value="decaf" />
+							</label>
+						</li>
+						<li>
+							<h3>Blended</h3>
+							<p>Combination of two or three dark roasted beans of organic coffees</p>
+							<label>
+								<input type="radio" name="bean" value="blended" />
+							</label>
+						</li>
+					</ul>
+				</details>
+
+				<details id="amount">
+					<summary>How much would you like?</summary>
+					<ul role="list">
+						<li>
+							<h3>250g</h3>
+							<p>Perfect for the solo drinker. Yields about 12 delicious cups.</p>
+							<label>
+								<input type="radio" name="bean" value="250g" />
+							</label>
+						</li>
+						<li>
+							<h3>500g</h3>
+							<p>Perfect option for a couple. Yields about 40 delectable cups.</p>
+							<label>
+								<input type="radio" name="bean" value="500g" />
+							</label>
+						</li>
+						<li>
+							<h3>1000g</h3>
+							<p>Perfect for offices and events. Yields about 90 delightful cups.</p>
+							<label>
+								<input type="radio" name="bean" value="blended" />
+							</label>
+						</li>
+					</ul>
+				</details>
+
+				<details id="grind">
+					<summary>Want us to grind them?</summary>
+					<ul role="list">
+						<li>
+							<h3>Wholebean</h3>
+							<p>Best choice if you cherish the full sensory experience</p>
+							<label>
+								<input type="radio" name="bean" value="wholebean" />
+							</label>
+						</li>
+						<li>
+							<h3>Filter</h3>
+							<p>For drip or pour-over coffee methods such as V60 or Aeropress Cafetiére</p>
+							<label>
+								<input type="radio" name="bean" value="filter" />
+							</label>
+						</li>
+						<li>
+							<h3>Course ground</h3>
+							<p>Beans specially suited for french press coffee</p>
+							<label>
+								<input type="radio" name="bean" value="course" />
+							</label>
+						</li>
+					</ul>
+				</details>
+
+				<details id="frequency">
+					<summary>How often should we deliver?</summary>
+					<ul role="list">
+						<li>
+							<h3>Every week</h3>
+							<p>$14.00 per shipment. Includes free first-class shipping.</p>
+							<label>
+								<input type="radio" name="bean" value="wholebean" />
+							</label>
+						</li>
+						<li>
+							<h3>Every 2 weeks</h3>
+							<p>$17.25 per shipment. Includes free priority shipping.</p>
+							<label>
+								<input type="radio" name="bean" value="filter" />
+							</label>
+						</li>
+						<li>
+							<h3>Every month</h3>
+							<p>$22.50 per shipment. Includes free priority shipping. O</p>
+							<label>
+								<input type="radio" name="bean" value="course" />
+							</label>
+						</li>
+					</ul>
+				</details>
+
+				<section class="container flow-content dark-accent summary">
+					<h2>Order summary</h2>
+					<p>
+						“I drink coffee as<span class="value">_____</span>with a
+						<span class="value"> _____ </span> type of bean. <span class="value">_____</span> ground ala <span
+							class="value">_____</span>, sent to me<span class="value">_____</span>.”
 					</p>
 				</section>
-			</header>
+				<button class="cta light-accent">Create my plan</button>
+			</form>
+		</main>
 
-			<section class="[ container display dark-accent ] [ how-works ]">
-				<!-- Stages bar-->
-				<div class="stages-container">
-					<div class="circle"></div>
-					<div class="circle"></div>
-					<div class="circle"></div>
+		<footer class="container dark-accent">
+			<nav class="flex nav">
+				<div>
+					<!-- Wrapper to avoid image as direct flex child -->
+					<img class="filter-white" src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
 				</div>
-				<ol role="list" class="flex">
-					<li class="flow-content">
-						<p class="number">01</p>
-						<h3>Pick your coffee</h3>
-						<p>
-							Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay
-							fair prices for them. There are new coffees in all profiles every month for you to try out.
-						</p>
-					</li>
-					<li class="flow-content">
-						<p class="number">02</p>
-						<h3>Choose the frequency</h3>
-						<p>
-							Customize your order frequency, quantity, even your roast style and grind type. Pause, skip
-							or cancel your subscription with no commitment through our online portal.
-						</p>
-					</li>
-					<li class="flow-content">
-						<p class="number">03</p>
-						<h3>Receive and enjoy!</h3>
-						<p>
-							We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning
-							world-class coffees curated to provide a distinct tasting experience.
-						</p>
-					</li>
-				</ol>
-			</section>
+				<ul role="list" class="flex">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About us</a></li>
+					<li><a href="plan.html">Create your plan</a></li>
+				</ul>
+				<div class="flex icons">
+					<a href="#"><img src="assets/shared/desktop/icon-facebook.svg" alt="Facebook" /></a>
+					<a href="#"><img src="assets/shared/desktop/icon-twitter.svg" alt="Twitter" /></a>
+					<a href="#"><img src="assets/shared/desktop/icon-instagram.svg" alt="Instagram" /></a>
+				</div>
+			</nav>
+		</footer>
+	</div>
+</body>
 
-			<aside>
-				<ol>
-					<li><a href="#Preferences">Preferences</a></li>
-					<li><a href="#Bean">Bean Type</a></li>
-					<li><a href="#Quantity">Quantity</a></li>
-					<li><a href="#Grind">Grind Options</a></li>
-					<li><a href="#Deliveries">Deliveries</a></li>
-				</ol>
-			</aside>
-
-			<main id="main" class="flow-section">
-				<form action="#" method="get" accept-charset="utf-8">
-					<details id="preferences">
-						<summary>How do you drink your coffee?</summary>
-						<ul role="list">
-							<li>
-								<h3>Capsule</h3>
-								<p>Compatible with Nespresso systems and similar brewers</p>
-								<label>
-									<input type="radio" name="preferences" value="capsule" />
-								</label>
-							</li>
-							<li>
-								<h3>Filter</h3>
-								<p>For pour over or drip methods like Aeropress, Chemex, and V60</p>
-								<label>
-									<input type="radio" name="preferences" value="filter" />
-								</label>
-							</li>
-							<li>
-								<h3>Espresso</h3>
-								<p>Espresso Dense and finely ground beans for an intense, flavorful experience</p>
-								<label>
-									<input type="radio" name="preferences" value="espresso" />
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details id="bean">
-						<summary>What type of coffee?</summary>
-						<ul role="list">
-							<li>
-								<h3>Single origin</h3>
-								<p>Distinct, high quality coffee from a specific family-owned farm</p>
-								<label>
-									<input type="radio" name="bean" value="single" />
-								</label>
-							</li>
-							<li>
-								<h3>Decaf</h3>
-								<p>Just like regular coffee, except the caffeine has been removed</p>
-								<label>
-									<input type="radio" name="bean" value="decaf" />
-								</label>
-							</li>
-							<li>
-								<h3>Blended</h3>
-								<p>Combination of two or three dark roasted beans of organic coffees</p>
-								<label>
-									<input type="radio" name="bean" value="blended" />
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details id="amount">
-						<summary>How much would you like?</summary>
-						<ul role="list">
-							<li>
-								<h3>250g</h3>
-								<p>Perfect for the solo drinker. Yields about 12 delicious cups.</p>
-								<label>
-									<input type="radio" name="bean" value="250g" />
-								</label>
-							</li>
-							<li>
-								<h3>500g</h3>
-								<p>Perfect option for a couple. Yields about 40 delectable cups.</p>
-								<label>
-									<input type="radio" name="bean" value="500g" />
-								</label>
-							</li>
-							<li>
-								<h3>1000g</h3>
-								<p>Perfect for offices and events. Yields about 90 delightful cups.</p>
-								<label>
-									<input type="radio" name="bean" value="blended" />
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details id="grind">
-						<summary>Want us to grind them?</summary>
-						<ul role="list">
-							<li>
-								<h3>Wholebean</h3>
-								<p>Best choice if you cherish the full sensory experience</p>
-								<label>
-									<input type="radio" name="bean" value="wholebean" />
-								</label>
-							</li>
-							<li>
-								<h3>Filter</h3>
-								<p>For drip or pour-over coffee methods such as V60 or Aeropress Cafetiére</p>
-								<label>
-									<input type="radio" name="bean" value="filter" />
-								</label>
-							</li>
-							<li>
-								<h3>Course ground</h3>
-								<p>Beans specially suited for french press coffee</p>
-								<label>
-									<input type="radio" name="bean" value="course" />
-								</label>
-							</li>
-						</ul>
-					</details>
-
-					<details id="frequency">
-						<summary>How often should we deliver?</summary>
-						<ul role="list">
-							<li>
-								<h3>Every week</h3>
-								<p>$14.00 per shipment. Includes free first-class shipping.</p>
-								<label>
-									<input type="radio" name="bean" value="wholebean" />
-								</label>
-							</li>
-							<li>
-								<h3>Every 2 weeks</h3>
-								<p>$17.25 per shipment. Includes free priority shipping.</p>
-								<label>
-									<input type="radio" name="bean" value="filter" />
-								</label>
-							</li>
-							<li>
-								<h3>Every month</h3>
-								<p>$22.50 per shipment. Includes free priority shipping. O</p>
-								<label>
-									<input type="radio" name="bean" value="course" />
-								</label>
-							</li>
-						</ul>
-					</details>
-				</form>
-			</main>
-
-			rder Summary “I drink coffee _____, with a _____ type of bean. _____ ground ala _____, sent to me
-			_____.” Create my plan!
-
-			<footer class="container dark-accent">
-				<nav class="flex nav">
-					<div>
-						<!-- Wrapper to avoid image as direct flex child -->
-						<img class="filter-white" src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
-					</div>
-					<ul role="list" class="flex">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About us</a></li>
-						<li><a href="plan.html">Create your plan</a></li>
-					</ul>
-					<div class="flex icons">
-						<a href="#"><img src="assets/shared/desktop/icon-facebook.svg" alt="Facebook" /></a>
-						<a href="#"><img src="assets/shared/desktop/icon-twitter.svg" alt="Twitter" /></a>
-						<a href="#"><img src="assets/shared/desktop/icon-instagram.svg" alt="Instagram" /></a>
-					</div>
-				</nav>
-			</footer>
-		</div>
-	</body>
 </html>
