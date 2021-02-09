@@ -64,6 +64,7 @@ body {
 }
 
 @media only screen and (min-width: 45em) {
+	body .plan,
 	body .about {
 		text-align: left;
 	}
@@ -112,10 +113,18 @@ address a {
 	font-weight: 400;
 }
 
+a[aria-current] {
+	color: var(--clr-neutral-400);
+}
+
 a:focus-visible {
 	outline: transparent;
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
 	background-color: inherit;
+}
+
+a:hover:not(.cta) {
+	color: var(--clr-neutral-400);
 }
 
 a:focus:not(:focus-visible) {
@@ -370,14 +379,6 @@ header .nav {
 	margin: 0;
 }
 
-.desktop-nav a:hover {
-	color: var(--clr-neutral-400);
-}
-
-.desktop-nav a[aria-current] {
-	color: var(--clr-neutral-400);
-}
-
 @media only screen and (min-width: 45em) {
 	.desktop-nav {
 		display: flex;
@@ -624,9 +625,8 @@ footer .icons img:hover {
 /* 	Plan
    	================================================== */
 
-.summary {
-	text-align: left;
-}
+/* 	Typography
+    ------------------- */
 
 .summary h2 {
 	font-family: "Barlow", sans-serif;
@@ -636,11 +636,41 @@ footer .icons img:hover {
 	font-weight: 400;
 }
 
+aside li,
 .summary p {
 	font-family: "Fraunces", serif;
-	line-height: var(--lh-small);
-	font-size: var(--fs-600);
+	font-size: var(--fs-500);
 	font-weight: 700;
+}
+
+/* 	Aside
+    ------------------- */
+
+aside {
+	display: none;
+}
+
+aside span {
+	margin-right: 1em;
+}
+
+@media only screen and (min-width: 65em) {
+	aside {
+		display: block;
+	}
+
+	.two-col {
+		display: grid;
+		grid-template-columns: minmax(auto, 24%) 1fr;
+		gap: calc(var(--spacer) * 3);
+	}
+}
+
+/* 	Order summary
+    ------------------- */
+
+.summary {
+	padding: 2em 4em;
 }
 
 .summary .value {
@@ -649,6 +679,6 @@ footer .icons img:hover {
 
 button.cta {
 	margin-top: 4.5rem;
+	margin-bottom: 4.5rem;
 	margin-left: auto;
 }
-
