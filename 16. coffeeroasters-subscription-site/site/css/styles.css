@@ -218,6 +218,20 @@ h4 {
 	padding-left: 2rem;
 }
 
+@media only screen and (min-width: 45em) {
+	.container {
+		padding-right: 4rem;
+		padding-left: 4rem;
+	}
+}
+
+@media only screen and (min-width: 65em) {
+	.container {
+		padding-right: 6rem;
+		padding-left: 6rem;
+	}
+}
+
 .flow-content > * + * {
 	margin-top: var(--spacer, 1rem);
 }
@@ -244,6 +258,8 @@ h4 {
 }
 
 .dark-accent {
+	--clr-circle: var(--clr-neutral-400);
+
 	background-color: var(--clr-neutral-400);
 	color: var(--clr-neutral-000);
 }
@@ -397,7 +413,7 @@ header .nav {
 	height: 3rem;
 	border: 3px solid var(--clr-primary-200);
 	border-radius: 50%;
-	background-color: var(--clr-neutral-000);
+	background-color: var(--clr-circle, var(--clr-neutral-000));
 }
 
 @media only screen and (min-width: 45em) {
@@ -429,15 +445,18 @@ header .nav {
 	background-image: url("../assets/about/mobile/image-hero-whitecup.jpg");
 }
 
+.plan .hero {
+	background-position: center;
+	background-image: url("../assets/plan/mobile/image-hero-blackcup.jpg");
+}
+
 @media only screen and (min-width: 45em) {
 	.hero {
-		padding-right: 4em;
-		padding-left: 4em;
 		text-align: left;
 	}
 
 	.hero :is(h1, p) {
-		max-width: 50%;
+		max-width: 60%;
 	}
 
 	.home .hero {
@@ -446,6 +465,10 @@ header .nav {
 
 	.home .about {
 		background-image: url("../assets/about/tablet/image-hero-whitecup.jpg");
+	}
+
+	.plan .hero {
+		background-image: url("../assets/plan/tablet/image-hero-blackcup.jpg");
 	}
 }
 
@@ -456,6 +479,10 @@ header .nav {
 
 	.about .hero {
 		background-image: url("../assets/about/desktop/image-hero-whitecup.jpg");
+	}
+
+	.plan .hero {
+		background-image: url("../assets/plan/desktop/image-hero-blackcup.jpg");
 	}
 }
 
@@ -514,6 +541,14 @@ footer .icons img:hover {
 
 /* 	How it works
     ------------------- */
+
+.how-works ol {
+	gap: 3rem;
+}
+
+.how-works h2 + ol {
+	margin-top: 3rem;
+}
 
 .how-works .number {
 	font-family: "fraunces", serif;
