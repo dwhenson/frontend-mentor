@@ -43,76 +43,83 @@
 			</header>
 
 			<main id="main" class="flow-section">
-					<section class="[ container display dark-accent ] [ how-works ]">
-						<!-- Stages bar-->
-						<div class="stages-container">
-							<div class="circle"></div>
-							<div class="circle"></div>
-							<div class="circle"></div>
-						</div>
-						<ol role="list" class="flex">
-							<li class="flow-content">
-								<p class="number">01</p>
-								<h3>Pick your coffee</h3>
-								<p>
-									Select from our evolving range of artisan coffees. Our beans are ethically sourced and we
-									pay fair prices for them. There are new coffees in all profiles every month for you to try
-									out.
-								</p>
+				<section class="[ container display dark-accent ] [ how-works ]">
+					<!-- Stages bar-->
+					<div class="stages-container">
+						<div class="circle"></div>
+						<div class="circle"></div>
+						<div class="circle"></div>
+					</div>
+					<ol role="list" class="flex">
+						<li class="flow-content">
+							<p class="number">01</p>
+							<h3>Pick your coffee</h3>
+							<p>
+								Select from our evolving range of artisan coffees. Our beans are ethically sourced and we
+								pay fair prices for them. There are new coffees in all profiles every month for you to try
+								out.
+							</p>
+						</li>
+						<li class="flow-content">
+							<p class="number">02</p>
+							<h3>Choose the frequency</h3>
+							<p>
+								Customize your order frequency, quantity, even your roast style and grind type. Pause, skip
+								or cancel your subscription with no commitment through our online portal.
+							</p>
+						</li>
+						<li class="flow-content">
+							<p class="number">03</p>
+							<h3>Receive and enjoy!</h3>
+							<p>
+								We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning
+								world-class coffees curated to provide a distinct tasting experience.
+							</p>
+						</li>
+					</ol>
+				</section>
+
+				<div class="two-col">
+					<aside>
+						<ol role="list">
+							<li>
+								<a href="#preferences"><span>01</span>Preferences</a>
 							</li>
-							<li class="flow-content">
-								<p class="number">02</p>
-								<h3>Choose the frequency</h3>
-								<p>
-									Customize your order frequency, quantity, even your roast style and grind type. Pause, skip
-									or cancel your subscription with no commitment through our online portal.
-								</p>
+							<li>
+								<a href="#bean"><span>02</span>Bean Type</a>
 							</li>
-							<li class="flow-content">
-								<p class="number">03</p>
-								<h3>Receive and enjoy!</h3>
-								<p>
-									We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning
-									world-class coffees curated to provide a distinct tasting experience.
-								</p>
+							<li>
+								<a href="#quantity"><span>03</span>Quantity</a>
+							</li>
+							<li>
+								<a href="#grind"><span>04</span>Grind Options</a>
+							</li>
+							<li>
+								<a href="#deliveries"><span>05</span>Deliveries</a>
 							</li>
 						</ol>
-					</section>
-
-					<div class="two-col">
-						<aside>
-							<ol role="list">
-								<li><a href="#preferences"><span>01</span>Preferences</a></li>
-								<li><a href="#bean"><span>02</span>Bean Type</a></li>
-								<li><a href="#quantity"><span>03</span>Quantity</a></li>
-								<li><a href="#grind"><span>04</span>Grind Options</a></li>
-								<li><a href="#deliveries"><span>05</span>Deliveries</a></li>
-							</ol>
-						</aside>
+					</aside>
 					<form class="flow-section" action="#">
-						<details id="preferences">
+						<details id="preferences" class="flow-content">
 							<summary>How do you drink your coffee?</summary>
-							<ul role="list">
+							<ul role="list" class="flex">
 								<li>
+									<input type="radio" id="capsule" name="preferences" value="capsule" />
+									<label for="capsule"></label>
 									<h3>Capsule</h3>
 									<p>Compatible with Nespresso systems and similar brewers</p>
-									<label>
-										<input type="radio" name="preferences" value="capsule" />
-									</label>
 								</li>
 								<li>
+									<input type="radio" id="filter" name="preferences" value="filter" />
+									<label for="filter"></label>
 									<h3>Filter</h3>
 									<p>For pour over or drip methods like Aeropress, Chemex, and V60</p>
-									<label>
-										<input type="radio" name="preferences" value="filter" />
-									</label>
 								</li>
 								<li>
+									<input type="radio" id="espresso" name="preferences" value="espresso" />
+									<label for="espresso"></label>
 									<h3>Espresso</h3>
 									<p>Espresso Dense and finely ground beans for an intense, flavorful experience</p>
-									<label>
-										<input type="radio" name="preferences" value="espresso" />
-									</label>
 								</li>
 							</ul>
 						</details>
@@ -235,8 +242,8 @@
 						</section>
 						<button class="cta light-accent">Create my plan</button>
 					</form>
-				</main>
-			</div>
+				</div>
+			</main>
 
 			<footer class="container dark-accent">
 				<nav class="flex nav">

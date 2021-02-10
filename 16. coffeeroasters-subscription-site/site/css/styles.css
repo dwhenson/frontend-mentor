@@ -134,6 +134,7 @@ a:focus:not(:focus-visible) {
 button {
 	border: none;
 	background-color: inherit;
+	cursor: pointer;
 }
 
 /* 	Typography
@@ -650,6 +651,15 @@ aside {
 	display: none;
 }
 
+aside ol {
+	margin-top: 0;
+}
+
+aside li {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
 aside span {
 	margin-right: 1em;
 }
@@ -661,7 +671,7 @@ aside span {
 
 	.two-col {
 		display: grid;
-		grid-template-columns: minmax(auto, 24%) 1fr;
+		grid-template-columns: minmax(auto, 25%) 1fr;
 		gap: calc(var(--spacer) * 3);
 	}
 }
@@ -681,4 +691,95 @@ button.cta {
 	margin-top: 4.5rem;
 	margin-bottom: 4.5rem;
 	margin-left: auto;
+}
+
+@media only screen and (min-width: 65em) {
+	button.cta {
+		margin-right: 0;
+	}
+}
+
+/* Form */
+
+summary {
+	position: relative;
+	font-family: "Fraunces", serif;
+	font-size: var(--fs-600);
+	font-weight: 700;
+	line-height: var(--lh-small);
+}
+
+details > summary {
+	list-style: none;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+summary::after {
+	content: url("../assets/plan/desktop/icon-arrow.svg");
+	left: calc(100% - var(--spacer));
+	top: 10%;
+	position: absolute;
+	transition: all 0.25s;
+}
+
+details[open] summary::after {
+	content: url("../assets/plan/desktop/icon-arrow.svg");
+	transform: rotate(180deg);
+}
+
+summary:focus-visible {
+	outline: 3px solid var(--clr-secondary-200);
+}
+
+summary:focus:not(:focus-visible) {
+	outline: 0;
+}
+
+details ul h3 {
+	margin-bottom: 1rem;
+}
+
+details li {
+	position: relative;
+	padding: 2rem 1rem 4rem;
+	background-color: var(--clr-neutral-200);
+	border-radius: 1em;
+	flex-basis: 100%;
+	gap: 0.5rem;
+
+	/* Create new stacking context */
+	opacity: 0.9999;
+	overflow: hidden;
+}
+
+details li:hover {
+	background-color: var(--clr-secondary-200);
+}
+
+details li label {
+	cursor: pointer;
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	margin-top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+details li input {
+	opacity: 0;
+}
+
+details input:checked ~ h3,
+details input:checked ~ p {
+	color: var(--clr-neutral-000);
+}
+
+details input:checked ~ label {
+	background-color: var(--clr-primary-200);
+	z-index: -10;
 }
