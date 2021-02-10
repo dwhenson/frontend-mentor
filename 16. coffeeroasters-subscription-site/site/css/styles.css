@@ -590,7 +590,6 @@ footer .icons img:hover {
 /* 	Quality
     ------------------- */
 
-/* FIX image breakpoints and sizes */
 .quality {
 	display: block;
 }
@@ -810,4 +809,70 @@ button.cta {
 	button.cta {
 		margin-right: 0;
 	}
+}
+
+/* 	Modal - Confirm order
+    ------------------- */
+
+.summary.modal {
+	position: absolute;
+	display: none;
+	top: 30vh;
+	left: 50vw;
+	z-index: 100;
+	width: min(75%, 1080px);
+	padding: 0;
+	border-radius: 1em;
+	box-shadow: 0 1em 1em rgba(21, 22, 24, 0.25);
+	overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: white;
+	background-image: none;
+	transform: translate(-50%);
+}
+
+.summary.modal :is(p, div) {
+	padding-right: 2rem;
+	padding-left: 2rem;
+}
+
+.summary.modal h2 {
+	padding: 2rem;
+	background-color: var(--clr-neutral-400);
+	font-family: "Fraunces", serif;
+	font-size: var(--fs-600);
+	font-weight: 700;
+	text-transform: none;
+	color: var(--clr-neutral-000);
+}
+
+.summary.modal .check {
+	font-family: "Barlow", sans-serif;
+	font-size: var(--fs-400);
+	font-weight: 400;
+}
+
+.summary.modal .price {
+	font-size: var(--fs-600);
+	font-weight: 700;
+	color: black;
+}
+
+.summary.modal .price-check {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+@media only screen and (min-width: 45em) {
+	.summary.modal .price-check {
+		flex-direction: row;
+	}
+}
+
+.summary.modal button {
+	margin: 0;
 }
