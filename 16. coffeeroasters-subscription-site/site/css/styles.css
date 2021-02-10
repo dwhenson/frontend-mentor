@@ -623,7 +623,7 @@ footer .icons img:hover {
 	}
 }
 
-/* 	Plan
+/* 	Plan page
    	================================================== */
 
 /* 	Typography
@@ -651,10 +651,6 @@ aside {
 	display: none;
 }
 
-aside ol {
-	margin-top: 0;
-}
-
 aside li {
 	padding-bottom: 1rem;
 }
@@ -680,29 +676,6 @@ aside span {
 	}
 }
 
-/* 	Order summary
-    ------------------- */
-
-.summary {
-	padding: 2em 4em;
-}
-
-.summary .value {
-	color: var(--clr-primary-200);
-}
-
-button.cta {
-	margin-top: 4.5rem;
-	margin-bottom: 4.5rem;
-	margin-left: auto;
-}
-
-@media only screen and (min-width: 65em) {
-	button.cta {
-		margin-right: 0;
-	}
-}
-
 /* Form */
 
 fieldset {
@@ -719,8 +692,13 @@ summary {
 	line-height: var(--lh-small);
 }
 
+/* 	Remove native marker and replace
+    ------------------- */
+
 details > summary {
 	list-style: none;
+	margin-bottom: 1rem;
+	padding-right: 1rem;
 }
 
 summary::-webkit-details-marker {
@@ -746,6 +724,10 @@ summary:focus-visible {
 
 summary:focus:not(:focus-visible) {
 	outline: 0;
+}
+
+details {
+	text-align: left;
 }
 
 details ul h3 {
@@ -796,4 +778,30 @@ details input:checked ~ p {
 details input:checked ~ label {
 	background-color: var(--clr-primary-200);
 	z-index: -10;
+}
+
+/* 	Order summary
+    ------------------- */
+
+.summary {
+	padding: 2em 4em;
+	background-image: url(../assets/plan/desktop/bg-order-summary.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.summary .value {
+	color: var(--clr-primary-200);
+}
+
+button.cta {
+	margin-top: 4.5rem;
+	margin-bottom: 4.5rem;
+	margin-left: auto;
+}
+
+@media only screen and (min-width: 65em) {
+	button.cta {
+		margin-right: 0;
+	}
 }
