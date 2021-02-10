@@ -656,8 +656,12 @@ aside ol {
 }
 
 aside li {
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+}
+
+aside li:not(:first-of-type) {
+	border-top: 2px solid var(--clr-neutral-200);
+	padding-top: 1rem;
 }
 
 aside span {
@@ -700,6 +704,12 @@ button.cta {
 }
 
 /* Form */
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
 
 summary {
 	position: relative;
