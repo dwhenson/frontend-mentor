@@ -769,6 +769,10 @@ details li:hover {
 	background-color: var(--clr-secondary-200);
 }
 
+details li:focus-within {
+	box-shadow: 0 0 0 3px var(--clr-secondary-200);
+}
+
 details li label {
 	cursor: pointer;
 	position: absolute;
