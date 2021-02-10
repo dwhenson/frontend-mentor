@@ -198,7 +198,7 @@ h4 {
 
 	.title {
 		margin-top: -1rem;
-		margin-bottom: -3.5rem;
+		margin-bottom: -2.5rem;
 		font-size: 5.5rem;
 	}
 }
@@ -206,7 +206,7 @@ h4 {
 @media only screen and (min-width: 65em) {
 	.title {
 		font-size: 8.5rem;
-		margin-bottom: -5rem;
+		margin-bottom: -3rem;
 	}
 }
 
@@ -579,7 +579,12 @@ footer .icons img:hover {
     ------------------- */
 
 .our-commitment {
-	gap: 0 calc(var(--spacer) * 5);
+	gap: 0 calc(var(--spacer) * 2);
+}
+
+.our-commitment picture {
+	align-self: start;
+	margin-top: 2rem;
 }
 
 /* 	Quality
@@ -598,7 +603,7 @@ footer .icons img:hover {
 			"text image";
 		grid-template-rows: auto 1fr;
 		grid-template-columns: 2fr 1fr;
-		gap: 0 calc(var(--spacer) * 5);
+		gap: 0 calc(var(--spacer) * 2);
 	}
 }
 
