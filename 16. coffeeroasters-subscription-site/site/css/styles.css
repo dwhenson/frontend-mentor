@@ -274,7 +274,7 @@ h4 {
 }
 
 .blocks li > img[src$=".svg"] {
-	margin-top: calc(var(--spacer) * 2);
+	margin-top: calc(var(--spacer) * 1);
 	margin-right: auto;
 	margin-bottom: calc(var(--spacer) * 2);
 	margin-left: auto;
@@ -292,6 +292,10 @@ h4 {
 		gap: 0 calc(var(--spacer) * 2);
 	}
 
+	.blocks li > img[src$=".svg"] {
+		margin-top: calc(var(--spacer) * 2);
+	}
+
 	.blocks > * :is(img, picture) {
 		grid-area: image;
 		align-self: center;
@@ -305,6 +309,10 @@ h4 {
 		display: block;
 		text-align: center;
 	}
+
+	.blocks li > img[src$=".svg"] {
+		margin-top: calc(var(--spacer) * 1);
+	}
 }
 
 .container {
@@ -314,15 +322,15 @@ h4 {
 
 @media only screen and (min-width: 45em) {
 	.container {
-		padding-right: 4rem;
-		padding-left: 4rem;
+		padding-right: 3rem;
+		padding-left: 3rem;
 	}
 }
 
 @media only screen and (min-width: 65em) {
 	.container {
-		padding-right: 6rem;
-		padding-left: 6rem;
+		padding-right: 4rem;
+		padding-left: 4rem;
 	}
 }
 
@@ -340,6 +348,7 @@ h4 {
 	font-family: "Fraunces", serif;
 	font-size: var(--fs-500);
 	font-weight: 700;
+	transition: background-color 200ms;
 }
 
 .cta:hover {
@@ -645,6 +654,7 @@ footer .icons img:hover {
 
 .headquarters ul > li {
 	flex-basis: 100%;
+	padding: 1rem;
 }
 
 @media only screen and (min-width: 45em) {
@@ -686,13 +696,17 @@ aside {
 	display: none;
 }
 
+aside ol {
+	margin-top: 0;
+}
+
 aside li:not(:first-of-type) {
 	padding-top: 1rem;
 	border-top: 2px solid var(--clr-neutral-200);
 }
 
 aside span {
-	margin-right: 1em;
+	margin-right: 0.5em;
 }
 
 @media only screen and (min-width: 65em) {
@@ -728,7 +742,7 @@ summary {
     ------------------- */
 
 details > summary {
-	padding-right: 1rem;
+	padding-right: 2rem;
 	margin-bottom: 1rem;
 	list-style: none;
 }
@@ -745,6 +759,10 @@ summary::after {
 	transition: all 0.25s;
 }
 
+details[open] summary ~ * {
+	animation: sweep 0.2s ease-out;
+}
+
 details[open] summary::after {
 	content: url("../assets/plan/desktop/icon-arrow.svg");
 	transform: rotate(180deg);
@@ -756,10 +774,6 @@ summary:focus-visible {
 
 summary:focus:not(:focus-visible) {
 	outline: 0;
-}
-
-details[open] summary ~ * {
-	animation: sweep 1.2s ease-out;
 }
 
 @keyframes sweep {
@@ -791,11 +805,12 @@ details li {
 
 	/* Create new stacking context */
 	opacity: 0.9999;
-	padding: 2rem 1rem 4rem;
+	padding: 2rem 2rem 4rem;
 	border-radius: 1em;
 	overflow: hidden;
 	background-color: var(--clr-neutral-200);
 	gap: 0.5rem;
+	transition: background-color 200ms;
 }
 
 details li:hover {
@@ -846,12 +861,11 @@ details input:checked ~ label {
 }
 
 button.cta {
-	margin-top: 4.5rem;
 	margin-bottom: 4.5rem;
 	margin-left: auto;
 }
 
-@media only screen and (min-width: 65em) {
+@media only screen and (min-width: 45em) {
 	button.cta {
 		margin-right: 0;
 	}
