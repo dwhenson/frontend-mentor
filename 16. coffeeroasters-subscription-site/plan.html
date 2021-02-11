@@ -18,7 +18,9 @@
 				<nav class="flex nav">
 					<!-- Wrapper to avoid image as direct flex child -->
 					<div>
-						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+						<a href="index.html"
+							><img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters Home"
+						/></a>
 					</div>
 					<ul role="list" class="flex desktop-nav">
 						<li><a href="index.html">Home</a></li>
@@ -99,29 +101,40 @@
 							</li>
 						</ol>
 					</aside>
-
 					<form class="flow-section" action="#">
 						<fieldset>
 							<details id="preferences" class="flow-content">
 								<summary><legend>How do you drink your coffee?</legend></summary>
 								<ul role="list" class="flex">
 									<li>
+										<h3 class="visually-hidden">Capsule</h3>
+										<p class="visually-hidden">Compatible with Nespresso systems and similar brewers</p>
 										<input type="radio" id="capsule" name="preferences" value="capsule" />
 										<label for="capsule"></label>
-										<h3>Capsule</h3>
-										<p>Compatible with Nespresso systems and similar brewers</p>
+										<h3 aria-hidden="true">Capsule</h3>
+										<p aria-hidden="true">Compatible with Nespresso systems and similar brewers</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Filter</h3>
+										<p class="visually-hidden">
+											For pour over or drip methods like Aeropress, Chemex, and V60
+										</p>
 										<input type="radio" id="filter" name="preferences" value="filter" />
 										<label for="filter"></label>
-										<h3>Filter</h3>
-										<p>For pour over or drip methods like Aeropress, Chemex, and V60</p>
+										<h3 aria-hidden="true">Filter</h3>
+										<p aria-hidden="true">For pour over or drip methods like Aeropress, Chemex, and V60</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Espresso</h3>
+										<p class="visually-hidden">
+											Espresso Dense and finely ground beans for an intense, flavorful experience
+										</p>
 										<input type="radio" id="espresso" name="preferences" value="espresso" />
 										<label for="espresso"></label>
-										<h3>Espresso</h3>
-										<p>Espresso Dense and finely ground beans for an intense, flavorful experience</p>
+										<h3 aria-hidden="true">Espresso</h3>
+										<p aria-hidden="true">
+											Espresso Dense and finely ground beans for an intense, flavorful experience
+										</p>
 									</li>
 								</ul>
 							</details>
@@ -132,22 +145,37 @@
 								<summary><legend>What type of coffee?</legend></summary>
 								<ul role="list" class="flex">
 									<li>
+										<h3 class="visually-hidden">Single origin</h3>
+										<p class="visually-hidden">
+											Distinct, high quality coffee from a specific family-owned farm
+										</p>
 										<input type="radio" id="single" name="bean" value="single" />
 										<label for="single"></label>
-										<h3>Single origin</h3>
-										<p>Distinct, high quality coffee from a specific family-owned farm</p>
+										<h3 aria-hidden="true">Single origin</h3>
+										<p aria-hidden="true">Distinct, high quality coffee from a specific family-owned farm</p>
 									</li>
+
 									<li>
+										<h3 class="visually-hidden">Decaf</h3>
+										<p class="visually-hidden">
+											Just like regular coffee, except the caffeine has been removed
+										</p>
 										<input type="radio" id="decaf" name="bean" value="decaf" />
 										<label for="decaf"></label>
-										<h3>Decaf</h3>
-										<p>Just like regular coffee, except the caffeine has been removed</p>
+										<h3 aria-hidden="true">Decaf</h3>
+										<p aria-hidden="true">Just like regular coffee, except the caffeine has been removed</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Blended</h3>
+										<p class="visually-hidden">
+											Combination of two or three dark roasted beans of organic coffees
+										</p>
 										<input type="radio" id="blended" name="bean" value="blended" />
 										<label for="blended"></label>
-										<h3>Blended</h3>
-										<p>Combination of two or three dark roasted beans of organic coffees</p>
+										<h3 aria-hidden="true">Blended</h3>
+										<p aria-hidden="true">
+											Combination of two or three dark roasted beans of organic coffees
+										</p>
 									</li>
 								</ul>
 							</details>
@@ -158,22 +186,34 @@
 								<summary><legend>How much would you like?</legend></summary>
 								<ul role="list" class="flex">
 									<li>
+										<h3 class="visually-hidden">250g</h3>
+										<p class="visually-hidden">
+											Perfect for the solo drinker. Yields about 12 delicious cups.
+										</p>
 										<input type="radio" id="250g" name="quantity" value="250g" />
 										<label for="250g"></label>
-										<h3>250g</h3>
-										<p>Perfect for the solo drinker. Yields about 12 delicious cups.</p>
+										<h3 aria-hidden="true">250g</h3>
+										<p aria-hidden="true">Perfect for the solo drinker. Yields about 12 delicious cups.</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">500g</h3>
+										<p class="visually-hidden">
+											Perfect option for a couple. Yields about 40 delectable cups.
+										</p>
 										<input type="radio" id="500g" name="quantity" value="500g" />
 										<label for="500g"></label>
-										<h3>500g</h3>
-										<p>Perfect option for a couple. Yields about 40 delectable cups.</p>
+										<h3 aria-hidden="true">500g</h3>
+										<p aria-hidden="true">Perfect option for a couple. Yields about 40 delectable cups.</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">1000g</h3>
+										<p class="visually-hidden">
+											Perfect for offices and events. Yields about 90 delightful cups.
+										</p>
 										<input type="radio" id="1000g" name="quantity" value="1000g" />
 										<label for="1000g"></label>
-										<h3>1000g</h3>
-										<p>Perfect for offices and events. Yields about 90 delightful cups.</p>
+										<h3 aria-hidden="true">1000g</h3>
+										<p aria-hidden="true">Perfect for offices and events. Yields about 90 delightful cups.</p>
 									</li>
 								</ul>
 							</details>
@@ -184,22 +224,32 @@
 								<summary><legend>Want us to grind them?</legend></summary>
 								<ul role="list" class="flex">
 									<li>
+										<h3 class="visually-hidden">Wholebean</h3>
+										<p class="visually-hidden">Best choice if you cherish the full sensory experience</p>
 										<input type="radio" id="wholebean" name="grind" value="wholebean" />
 										<label for="wholebean"></label>
-										<h3>Wholebean</h3>
-										<p>Best choice if you cherish the full sensory experience</p>
+										<h3 aria-hidden="true">Wholebean</h3>
+										<p aria-hidden="true">Best choice if you cherish the full sensory experience</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Filter</h3>
+										<p class="visually-hidden">
+											For drip or pour-over coffee methods such as V60 or Aeropress Cafetiére
+										</p>
 										<input type="radio" id="filter-grind" name="grind" value="filter" />
 										<label for="filter-grind"></label>
-										<h3>Filter</h3>
-										<p>For drip or pour-over coffee methods such as V60 or Aeropress Cafetiére</p>
+										<h3 aria-hidden="true">Filter</h3>
+										<p aria-hidden="true">
+											For drip or pour-over coffee methods such as V60 or Aeropress Cafetiére
+										</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Coarse ground</h3>
+										<p class="visually-hidden">Beans specially suited for french press coffee</p>
 										<input type="radio" id="coarse" name="grind" value="coarse" />
 										<label for="coarse"></label>
-										<h3>Coarse ground</h3>
-										<p>Beans specially suited for french press coffee</p>
+										<h3 aria-hidden="true">Coarse ground</h3>
+										<p aria-hidden="true">Beans specially suited for french press coffee</p>
 									</li>
 								</ul>
 							</details>
@@ -210,22 +260,28 @@
 								<summary><legend>How often should we deliver?</legend></summary>
 								<ul role="list" class="flex">
 									<li>
+										<h3 class="visually-hidden">Every week</h3>
+										<p class="visually-hidden">$14.00 per shipment. Includes free first-class shipping.</p>
 										<input type="radio" id="weekly" name="deliveries" value="weekly" />
 										<label for="weekly"></label>
-										<h3>Every week</h3>
-										<p>$14.00 per shipment. Includes free first-class shipping.</p>
+										<h3 aria-hidden="true">Every week</h3>
+										<p aria-hidden="true">$14.00 per shipment. Includes free first-class shipping.</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Every 2 weeks</h3>
+										<p class="visually-hidden">$17.25 per shipment. Includes free priority shipping.</p>
 										<input type="radio" id="two-weeks" name="deliveries" value="two-weeks" />
 										<label for="two-weeks"></label>
-										<h3>Every 2 weeks</h3>
-										<p>$17.25 per shipment. Includes free priority shipping.</p>
+										<h3 aria-hidden="true">Every 2 weeks</h3>
+										<p aria-hidden="true">$17.25 per shipment. Includes free priority shipping.</p>
 									</li>
 									<li>
+										<h3 class="visually-hidden">Every month</h3>
+										<p class="visually-hidden">$22.50 per shipment. Includes free priority shipping.</p>
 										<input type="radio" id="three-weeks" name="deliveries" value="three-weeks" />
 										<label for="three-weeks"></label>
-										<h3>Every month</h3>
-										<p>$22.50 per shipment. Includes free priority shipping. O</p>
+										<h3 aria-hidden="true">Every month</h3>
+										<p aria-hidden="true">$22.50 per shipment. Includes free priority shipping.</p>
 									</li>
 								</ul>
 							</details>
