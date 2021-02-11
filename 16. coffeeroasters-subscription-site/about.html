@@ -29,7 +29,9 @@
 					</ul>
 					<!-- Wrapper to avoid image as direct flex child -->
 					<div class="mobile-nav">
-						<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="20" height="20" />
+						<button id="menu" aria-label="menu">
+							<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="30" height="30" />
+						</button>
 					</div>
 				</nav>
 
@@ -46,18 +48,8 @@
 			<main id="main" class="flow-section blocks">
 				<section class="[ container flow-content ] [ our-commitment ]">
 					<picture>
-						<source
-							srcset="assets/about/desktop/image-commitment.jpg"
-							media="(min-width: 1040px)"
-							width="445"
-							height="474"
-						/>
-						<source
-							srcset="assets/about/tablet/image-commitment.jpg"
-							media="(min-width: 720px)"
-							width="558"
-							height="312"
-						/>
+						<source srcset="assets/about/desktop/image-commitment.jpg" media="(min-width: 1040px)" />
+						<source srcset="assets/about/tablet/image-commitment.jpg" media="(min-width: 720px)" />
 						<img
 							src="assets/about/mobile/image-commitment.jpg"
 							alt="A barister lovingly making a cup of coffee"
@@ -148,7 +140,7 @@
 			</footer>
 
 			<!-- Mobile Nav Modal -->
-			<section class="container mobile-modal">
+			<div class="mobile-modal">
 				<nav>
 					<div class="flex">
 						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
@@ -157,13 +149,13 @@
 						</button>
 					</div>
 
-					<ul role="list" class="flow-content">
+					<ul role="list" class="flow-section">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="about.html">About us</a></li>
 						<li><a href="plan.html">Create your plan</a></li>
 					</ul>
 				</nav>
-			</section>
+			</div>
 			<!-- End modal -->
 		</div>
 	</body>
