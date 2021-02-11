@@ -758,6 +758,22 @@ summary:focus:not(:focus-visible) {
 	outline: 0;
 }
 
+details[open] summary ~ * {
+	animation: sweep 1.2s ease-out;
+}
+
+@keyframes sweep {
+	0% {
+		opacity: 0;
+		margin-top: -1rem;
+	}
+
+	100% {
+		opacity: 1;
+		margin-left: 0;
+	}
+}
+
 /* 	Style contents of details element
     ------------------- */
 
