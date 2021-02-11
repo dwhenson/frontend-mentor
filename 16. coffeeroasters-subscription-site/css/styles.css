@@ -559,7 +559,7 @@ header .nav {
 }
 
 /* 	Footer
-		================================================== */
+	================================================== */
 footer .nav {
 	align-items: center;
 	justify-content: space-between;
@@ -596,7 +596,7 @@ footer .icons img:hover {
 /* 	Choose us
     ------------------- */
 
-/* FIX Overflow content */
+/* FIXME Overflow content */
 .choose-us li {
 	padding-top: calc(var(--spacer) * 2);
 	padding-bottom: calc(var(--spacer) * 2);
