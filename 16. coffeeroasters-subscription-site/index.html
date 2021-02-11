@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Coffeeroasters subscription site</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<script defer src="js/main.js"></script>
+	</head>
+
+	<body>
+		<div class="home center-content flow-section">
+			<header class="flow-content">
+				<a class="skip-main" href="#main">Skip to main content</a>
+				<nav class="flex nav">
+					<!-- Wrapper to avoid image as direct flex child -->
+					<div>
+						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+					</div>
+					<ul role="list" class="flex desktop-nav">
+						<li><a aria-current="page" href="index.html">Home</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="plan.html">Create your plan</a></li>
+					</ul>
+					<!-- Wrapper to avoid image as direct flex child -->
+					<div class="mobile-nav">
+						<button id="menu" aria-label="menu">
+							<img src="assets/shared/mobile/icon-hamburger.svg" alt="menu" width="30" height="30" />
+						</button>
+					</div>
+				</nav>
+
+				<section class="[ container flow-content dark-accent ] [ hero ]">
+					<h1>Great coffee made simple.</h1>
+					<p>
+						Start your mornings with the world’s best coffees. Try our expertly curated artisan coffees
+						from our best roasters delivered directly to your door, at your schedule.
+					</p>
+					<a href="plan.html" class="cta light-accent">Create your plan</a>
+				</section>
+			</header>
+
+			<main id="main" class="flow-section">
+				<section class="[ container flow-content ] [ our-collection ]">
+					<h2 class="title">our collection</h2>
+					<ul role="list" class="flex blocks">
+						<li class="flow-content">
+							<img src="assets/home/desktop/image-gran-espresso.png" alt="Gran espresso coffee" />
+							<h3>Gran Espresso</h3>
+							<p>Light and flavorful blend with cocoa and black pepper for an intense experience</p>
+						</li>
+						<li class="flow-content">
+							<img src="assets/home/desktop/image-planalto.png" alt="Planalto coffee" />
+							<h3>Planalto</h3>
+							<p>Brazilian dark roast with rich and velvety body, and hints of fruits and nuts</p>
+						</li>
+						<li class="flow-content">
+							<img src="assets/home/desktop/image-piccollo.png" alt="Piccollo coffee" />
+							<h3>Piccollo</h3>
+							<p>Mild and smooth blend featuring notes of toasted almond and dried cherry</p>
+						</li>
+						<li class="flow-content">
+							<img src="assets/home/desktop/image-danche.png" alt="Danche coffee" />
+							<h3>Danche</h3>
+							<p>Ethiopian hand-harvested blend densely packed with vibrant fruit notes</p>
+						</li>
+					</ul>
+				</section>
+
+				<section class="[ container flow-content dark-accent display ] [ choose-us ]">
+					<h2>Why choose us?</h2>
+					<p>
+						A large part of our role is choosing which particular coffees will be featured in our range.
+						This means working closely with the best coffee growers to give you a more impactful
+						experience on every level.
+					</p>
+					<ul role="list" class="flex blocks">
+						<li class="flow-content light-accent">
+							<img src="assets/home/desktop/icon-coffee-bean.svg" alt="" />
+							<h3>Best quality</h3>
+							<p>
+								Discover an endless variety of the world’s best artisan coffee from each of our roasters.
+							</p>
+						</li>
+						<li class="flow-content light-accent">
+							<img src="assets/home/desktop/icon-gift.svg" alt="" />
+							<h3>Exclusive benefits</h3>
+							<p>Special offers and swag when you subscribe, including 30% off your first shipment.</p>
+						</li>
+						<li class="flow-content light-accent">
+							<!-- HACK Adjust icons to match size -->
+							<img
+								src="assets/home/desktop/icon-truck.svg"
+								alt=""
+								style="padding-top: 11px; padding-bottom: 11px"
+							/>
+							<h3>Free shipping</h3>
+							<p>We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p>
+						</li>
+					</ul>
+				</section>
+
+				<section class="[ container flow-content display ] [ how-works ]">
+					<h2 class="sub-heading">How it works</h2>
+					<!-- Stages bar-->
+					<div class="stages-container">
+						<div class="circle"></div>
+						<div class="circle"></div>
+						<div class="circle"></div>
+					</div>
+					<ol role="list" class="flex">
+						<li class="flow-content">
+							<p class="number">01</p>
+							<h3>Pick your coffee</h3>
+							<p>
+								Select from our evolving range of artisan coffees. Our beans are ethically sourced and we
+								pay fair prices for them. There are new coffees in all profiles every month for you to try
+								out.
+							</p>
+						</li>
+						<li class="flow-content">
+							<p class="number">02</p>
+							<h3>Choose the frequency</h3>
+							<p>
+								Customize your order frequency, quantity, even your roast style and grind type. Pause, skip
+								or cancel your subscription with no commitment through our online portal.
+							</p>
+						</li>
+						<li class="flow-content">
+							<p class="number">03</p>
+							<h3>Receive and enjoy!</h3>
+							<p>
+								We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning
+								world-class coffees curated to provide a distinct tasting experience.
+							</p>
+						</li>
+					</ol>
+					<a href="plan.html" class="cta light-accent">Create your plan</a>
+				</section>
+			</main>
+
+			<footer class="container dark-accent">
+				<nav class="flex nav">
+					<div>
+						<!-- Wrapper to avoid image as direct flex child -->
+						<img class="filter-white" src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+					</div>
+					<ul role="list" class="flex">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="plan.html">Create your plan</a></li>
+					</ul>
+					<div class="flex icons">
+						<a href="#"><img src="assets/shared/desktop/icon-facebook.svg" alt="Facebook" /></a>
+						<a href="#"><img src="assets/shared/desktop/icon-twitter.svg" alt="Twitter" /></a>
+						<a href="#"><img src="assets/shared/desktop/icon-instagram.svg" alt="Instagram" /></a>
+					</div>
+				</nav>
+			</footer>
+
+			<!-- Mobile Nav Modal -->
+			<section class="container mobile-modal">
+				<nav>
+					<div class="flex">
+						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
+						<button id="close" aria-label="close">
+							<img src="assets/shared/mobile/icon-close.svg" alt="menu" width="30" height="30" />
+						</button>
+					</div>
+
+					<ul role="list" class="flow-content">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="plan.html">Create your plan</a></li>
+					</ul>
+				</nav>
+			</section>
+			<!-- End modal -->
+		</div>
+	</body>
+</html>
