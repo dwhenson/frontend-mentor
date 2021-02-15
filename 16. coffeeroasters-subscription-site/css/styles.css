@@ -763,6 +763,7 @@ summary::after {
 }
 
 details[open] summary ~ * {
+	will-change: opacity, transform;
 	animation: sweep 0.2s ease-out;
 }
 
@@ -782,12 +783,12 @@ summary:focus:not(:focus-visible) {
 @keyframes sweep {
 	0% {
 		opacity: 0;
-		margin-top: -1rem;
+		transform: translateY(-1em);
 	}
 
 	100% {
 		opacity: 1;
-		margin-left: 0;
+		transform: translateY(0);
 	}
 }
 
@@ -805,15 +806,13 @@ details ul h3 {
 details li {
 	position: relative;
 	flex-basis: 100%;
-
-	/* Create new stacking context */
-	opacity: 0.9999;
 	padding: 2rem 2rem 4rem;
 	border-radius: 1em;
 	overflow: hidden;
 	background-color: var(--clr-neutral-200);
 	transition: background-color 200ms;
 	gap: 0.5rem;
+	z-index: 1;
 }
 
 details li:hover {
