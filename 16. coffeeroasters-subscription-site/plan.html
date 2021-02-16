@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		<script defer src="js/main.js"></script>
+		<script defer src="js/form.js"></script>
 	</head>
 
 	<body>
@@ -104,7 +105,7 @@
 					<form class="flow-section" action="#">
 						<fieldset>
 							<details id="preferences" class="flow-content">
-								<summary><legend>How do you drink your coffee?</legend></summary>
+								<summary>How do you drink your coffee?</summary>
 								<ul role="list" class="flex">
 									<li>
 										<h3 class="visually-hidden">Capsule</h3>
@@ -142,7 +143,7 @@
 
 						<fieldset>
 							<details id="bean" class="flow-content">
-								<summary><legend>What type of coffee?</legend></summary>
+								<summary>What type of coffee?</summary>
 								<ul role="list" class="flex">
 									<li>
 										<h3 class="visually-hidden">Single origin</h3>
@@ -183,7 +184,7 @@
 
 						<fieldset>
 							<details id="quantity" class="flow-content">
-								<summary><legend>How much would you like?</legend></summary>
+								<summary>How much would you like?</summary>
 								<ul role="list" class="flex">
 									<li>
 										<h3 class="visually-hidden">250g</h3>
@@ -221,7 +222,7 @@
 
 						<fieldset>
 							<details id="grind" class="flow-content">
-								<summary><legend>Want us to grind them?</legend></summary>
+								<summary>Want us to grind them?</summary>
 								<ul role="list" class="flex">
 									<li>
 										<h3 class="visually-hidden">Wholebean</h3>
@@ -257,12 +258,12 @@
 
 						<fieldset>
 							<details id="deliveries" class="flow-content">
-								<summary><legend>How often should we deliver?</legend></summary>
+								<summary>How often should we deliver?</summary>
 								<ul role="list" class="flex">
 									<li>
 										<h3 class="visually-hidden">Every week</h3>
 										<p class="visually-hidden">$14.00 per shipment. Includes free first-class shipping.</p>
-										<input type="radio" id="weekly" name="deliveries" value="weekly" />
+										<input type="radio" id="weekly" name="deliveries" value="week" />
 										<label for="weekly"></label>
 										<h3 aria-hidden="true">Every week</h3>
 										<p aria-hidden="true">$14.00 per shipment. Includes free first-class shipping.</p>
@@ -270,7 +271,7 @@
 									<li>
 										<h3 class="visually-hidden">Every 2 weeks</h3>
 										<p class="visually-hidden">$17.25 per shipment. Includes free priority shipping.</p>
-										<input type="radio" id="two-weeks" name="deliveries" value="two-weeks" />
+										<input type="radio" id="two-weeks" name="deliveries" value="two weeks" />
 										<label for="two-weeks"></label>
 										<h3 aria-hidden="true">Every 2 weeks</h3>
 										<p aria-hidden="true">$17.25 per shipment. Includes free priority shipping.</p>
@@ -278,7 +279,7 @@
 									<li>
 										<h3 class="visually-hidden">Every month</h3>
 										<p class="visually-hidden">$22.50 per shipment. Includes free priority shipping.</p>
-										<input type="radio" id="three-weeks" name="deliveries" value="three-weeks" />
+										<input type="radio" id="three-weeks" name="deliveries" value="three weeks" />
 										<label for="three-weeks"></label>
 										<h3 aria-hidden="true">Every month</h3>
 										<p aria-hidden="true">$22.50 per shipment. Includes free priority shipping.</p>
@@ -290,12 +291,14 @@
 						<section class="flow-content dark-accent summary">
 							<h2>Order summary</h2>
 							<p>
-								“I drink coffee as<span class="value">_____</span>with a
-								<span class="value"> _____ </span> type of bean. <span class="value">_____</span> ground ala
-								<span class="value">_____</span>, sent to me<span class="value">_____</span>.”
+								“I drink coffee as <span class="value" data-value="preferences">_____</span> with a
+								<span class="value" data-value="bean"> _____ </span> type of bean.
+								<span class="value" data-value="quantity">_____</span> ground ala
+								<span class="value" data-value="grind">_____</span>, sent to me every
+								<span class="value" data-value="deliveries">_____</span>.”
 							</p>
 						</section>
-						<button class="cta light-accent">Create my plan</button>
+						<button id="checkout" class="cta light-accent">Create my plan</button>
 					</form>
 				</div>
 			</main>
@@ -320,21 +323,25 @@
 			</footer>
 
 			<!-- Check-Out Modal -->
-			<section class="flow-content summary modal">
-				<h2>Order summary</h2>
-				<p>
-					“I drink coffee as<span class="value">_____</span>with a
-					<span class="value"> _____ </span> type of bean. <span class="value">_____</span> ground ala
-					<span class="value">_____</span>, sent to me<span class="value">_____</span>.”
-				</p>
-				<p class="check">
-					Is this correct? You can proceed to checkout or go back to plan selection if something is off.
-					Subscription discount codes can also be redeemed at the checkout.
-				</p>
-				<p class="price-check">
-					<span class="price">$_____/mo </span>
-					<button id="checkout" class="cta light-accent">Checkout</button>
-				</p>
+			<section class="checkout modal">
+				<div class="[ flow-content ] [ summary checkout content ]">
+					<h2>Order summary</h2>
+					<p>
+						“I drink coffee as <span class="value" data-value="preferences">_____</span>with a
+						<span class="value" data-value="bean"> _____ </span> type of bean.
+						<span class="value" data-value="quantity">_____</span> ground ala
+						<span class="value" data-value="grind">_____</span>, sent to me every
+						<span class="value" data-value="deliveries">_____</span>.”
+					</p>
+					<p class="check">
+						Is this correct? You can proceed to checkout or go back to plan selection if something is off.
+						Subscription discount codes can also be redeemed at the checkout.
+					</p>
+					<p class="price-check">
+						<span class="price">$28.80/mo </span>
+						<button class="cta light-accent">Checkout</button>
+					</p>
+				</div>
 			</section>
 			<!-- End modal -->
 
