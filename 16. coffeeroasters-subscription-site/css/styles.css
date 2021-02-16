@@ -551,7 +551,7 @@ footer .icons {
 	flex-direction: row;
 }
 
-/* FIX hover color not working */
+/* FIXME hover color not working */
 footer .icons img:hover {
 	filter: invert(84%) sepia(15%) saturate(798%) hue-rotate(327deg) brightness(103%) contrast(103%);
 }
@@ -572,7 +572,23 @@ footer .icons img:hover {
 /* 	Choose us
     ------------------- */
 
-/* FIXME Overflow content */
+.choose-us {
+	position: relative;
+	background-color: inherit;
+}
+
+.choose-us::before {
+	position: absolute;
+	content: "";
+	background-color: var(--clr-neutral-400);
+	width: 100%;
+	height: 60%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 1rem;
+}
+
 .choose-us li {
 	padding-top: calc(var(--spacer) * 2);
 	padding-bottom: calc(var(--spacer) * 2);
@@ -633,17 +649,18 @@ footer .icons img:hover {
 /* 	Quality
     ------------------- */
 .quality {
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	background-color: inherit;
 	gap: 2rem;
+	justify-content: space-between;
 }
 
 .quality .text {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	gap: 1rem;
+	text-align: center;
 }
 
 .quality::before {
@@ -651,11 +668,31 @@ footer .icons img:hover {
 	content: "";
 	background-color: var(--clr-neutral-400);
 	width: 100%;
-	height: 60%;
+	height: 75%;
 	bottom: 0;
 	left: 0;
 	z-index: -1;
 	border-radius: 1rem;
+}
+
+@media only screen and (min-width: 65em) {
+	.quality {
+		flex-direction: row-reverse;
+	}
+
+	.quality > * {
+		flex-basis: 100%;
+	}
+
+	.quality img {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.quality .text {
+		justify-content: flex-end;
+		text-align: left;
+	}
 }
 
 /* 	Headquarters
@@ -760,16 +797,16 @@ details > summary {
 	list-style: none;
 }
 
-summary::marker {
+details > summary::marker,
+details > summary::-webkit-details-marker {
 	display: none;
 }
 
 summary::after {
 	content: url("../assets/plan/desktop/icon-arrow.svg");
 	position: absolute;
-	top: 10%;
 	left: calc(100% - var(--spacer));
-	transition: all 0.25s;
+	transition: transform 0.25s;
 }
 
 details[open] summary ~ * {
