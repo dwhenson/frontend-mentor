@@ -113,7 +113,7 @@
 									<li>
 										<h3 class="visually-hidden">Capsule</h3>
 										<p class="visually-hidden">Compatible with Nespresso systems and similar brewers</p>
-										<input type="radio" id="capsule" name="preferences" value="capsule" />
+										<input type="radio" id="capsule" name="preferences" value="capsule" required />
 										<label for="capsule"></label>
 										<h3 aria-hidden="true">Capsule</h3>
 										<p aria-hidden="true">Compatible with Nespresso systems and similar brewers</p>
@@ -266,7 +266,7 @@
 									<li>
 										<h3 class="visually-hidden">Every week</h3>
 										<p class="visually-hidden">$14.00 per shipment. Includes free first-class shipping.</p>
-										<input type="radio" id="weekly" name="deliveries" value="week" />
+										<input type="radio" id="weekly" name="deliveries" value="week" required />
 										<label for="weekly"></label>
 										<h3 aria-hidden="true">Every week</h3>
 										<p aria-hidden="true">$14.00 per shipment. Includes free first-class shipping.</p>
@@ -330,7 +330,7 @@
 				<div class="[ flow-content ] [ summary checkout content ]">
 					<h2>Order summary</h2>
 					<p>
-						“I drink coffee as <span class="value" data-value="preferences">_____</span>with a
+						“I drink coffee as <span class="value" data-value="preferences">_____</span> with a
 						<span class="value" data-value="bean"> _____ </span> type of bean.
 						<span class="value" data-value="quantity">_____</span> ground ala
 						<span class="value" data-value="grind">_____</span>, sent to me every
@@ -342,7 +342,7 @@
 					</p>
 					<p class="price-check">
 						<span class="price">$28.80/mo </span>
-						<button class="cta light-accent">Checkout</button>
+						<button type="submit" id="submit" class="cta light-accent">Checkout</button>
 					</p>
 				</div>
 			</section>
@@ -353,7 +353,7 @@
 				<nav>
 					<div class="flex">
 						<img src="assets/shared/desktop/logo.svg" alt="Coffeeroasters" />
-						<button id="close" aria-label="close">
+						<button type="submit" id="close" aria-label="close">
 							<img src="assets/shared/mobile/icon-close.svg" alt="menu" width="30" height="30" />
 						</button>
 					</div>

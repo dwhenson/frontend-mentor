@@ -118,10 +118,10 @@ a[aria-current] {
 }
 
 a:focus-visible {
+	padding: 1em;
 	outline: transparent;
 	box-shadow: 0 0 0 3px var(--clr-secondary-200);
 	background-color: inherit;
-	paddingg: 1em;
 }
 
 a:hover:not(.cta) {
@@ -409,10 +409,10 @@ header .nav {
 	z-index: 100;
 	width: 100vw;
 	height: 100vh;
-	margin: 0;
 	padding-top: 4rem;
-	padding-left: 1rem;
 	padding-right: 1rem;
+	padding-left: 1rem;
+	margin: 0;
 	background-color: white;
 }
 
@@ -578,15 +578,15 @@ footer .icons img:hover {
 }
 
 .choose-us::before {
-	position: absolute;
 	content: "";
-	background-color: var(--clr-neutral-400);
-	width: 100%;
-	height: 60%;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
+	width: 100%;
+	height: 60%;
 	border-radius: 1rem;
+	background-color: var(--clr-neutral-400);
 }
 
 .choose-us li {
@@ -649,12 +649,12 @@ footer .icons img:hover {
 /* 	Quality
     ------------------- */
 .quality {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	position: relative;
+	justify-content: space-between;
 	background-color: inherit;
 	gap: 2rem;
-	justify-content: space-between;
 }
 
 .quality .text {
@@ -664,15 +664,15 @@ footer .icons img:hover {
 }
 
 .quality::before {
-	position: absolute;
 	content: "";
-	background-color: var(--clr-neutral-400);
-	width: 100%;
-	height: 75%;
+	position: absolute;
 	bottom: 0;
 	left: 0;
 	z-index: -1;
+	width: 100%;
+	height: 75%;
 	border-radius: 1rem;
+	background-color: var(--clr-neutral-400);
 }
 
 @media only screen and (min-width: 65em) {
@@ -810,8 +810,8 @@ summary::after {
 }
 
 details[open] summary ~ * {
-	will-change: opacity, transform;
 	animation: sweep 0.2s ease-out;
+	will-change: opacity, transform;
 }
 
 details[open] summary::after {
@@ -853,13 +853,13 @@ details ul h3 {
 details li {
 	position: relative;
 	flex-basis: 100%;
+	z-index: 1;
 	padding: 2rem 2rem 4rem;
 	border-radius: 1em;
 	overflow: hidden;
 	background-color: var(--clr-neutral-200);
 	transition: background-color 200ms;
 	gap: 0.5rem;
-	z-index: 1;
 }
 
 details li:hover {
@@ -924,30 +924,27 @@ button.cta {
     ------------------- */
 
 .checkout.modal {
-	position: absolute;
+	position: fixed;
 	display: none;
 	z-index: 100;
 	width: 100vw;
 	height: 100vh;
+	border-radius: 0;
 	margin: 0;
 	background-color: rgba(21, 22, 24, 0.75);
-	border-radius: 0;
 }
 
 .checkout.modal .content {
+	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 60%;
 	padding: 0;
 	border-radius: 1em;
-	box-shadow: 0 1em 1em rgba(21, 22, 24, 0.25);
-	overflow: hidden;
-	margin-right: auto;
-	margin-left: auto;
 	background-color: white;
 	background-image: none;
+	transform: translate(-50%, -50%);
 }
 
 .checkout.modal .content :is(p, div) {
