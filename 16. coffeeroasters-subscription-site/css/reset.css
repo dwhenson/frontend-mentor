@@ -32,8 +32,8 @@ h3,
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-	list-style: none;
 	padding-left: 0;
+	list-style: none;
 }
 
 /* Set core root defaults */
@@ -109,52 +109,52 @@ select {
 .visually-hidden:hover,
 .visually-hidden:active,
 .visually-hidden:focus {
+	display: block;
 	top: 5px;
 	left: 5px;
 	z-index: 100000; /* Above WP toolbar */
-	display: block;
 	width: auto;
 	height: auto;
 	padding: 15px 23px 14px;
 	border-radius: 3px;
-	color: #21759b;
-	font-weight: bold;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	background-color: #f1f1f1;
 	font-size: 14px;
+	font-weight: bold;
 	line-height: normal;
 	text-decoration: none;
-	background-color: #f1f1f1;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #21759b;
 	clip: auto !important;
 }
 
 /* Skip to main content */
 a#skip-main {
-	display: inline-block;
-	padding: 0.7rem 1rem 0.5rem 1rem;
-	background-color: black;
-	color: white;
-	text-decoration: none;
-	font-weight: 700;
-	text-transform: uppercase;
 	position: absolute;
+	display: inline-block;
 	top: 1rem;
 	left: 1rem;
+	padding: 0.7rem 1rem 0.5rem 1rem;
+	background-color: black;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
 }
 
 a#skip-main:hover {
-	color: white;
 	background: black;
+	color: white;
 }
 
 a#skip-main:not(:focus) {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
 	position: absolute;
 	width: 1px;
+	height: auto;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	clip: rect(0 0 0 0);
 	white-space: nowrap;
 }
 

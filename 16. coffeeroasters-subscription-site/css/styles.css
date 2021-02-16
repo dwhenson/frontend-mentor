@@ -404,7 +404,7 @@ header .nav {
 /* 	Mobile modal
     ------------------- */
 .mobile-modal {
-	position: absolute;
+	position: fixed;
 	display: none;
 	z-index: 100;
 	width: 100vw;
@@ -468,7 +468,7 @@ header .nav {
 	}
 
 	.hero :is(h1, p) {
-		max-width: 60%;
+		max-width: 50%;
 	}
 
 	.home .hero {
@@ -935,13 +935,13 @@ button.cta {
 }
 
 .checkout.modal .content {
-	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	width: 60%;
 	padding: 0;
 	border-radius: 1em;
+	overflow: hidden;
 	background-color: white;
 	background-image: none;
 	transform: translate(-50%, -50%);
