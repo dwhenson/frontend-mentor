@@ -128,10 +128,10 @@ select {
 }
 
 /* Skip to main content */
-a.skip-main {
+a#skip-main {
 	display: inline-block;
 	padding: 0.7rem 1rem 0.5rem 1rem;
-	background: black;
+	background-color: black;
 	color: white;
 	text-decoration: none;
 	font-weight: 700;
@@ -141,12 +141,12 @@ a.skip-main {
 	left: 1rem;
 }
 
-a.skip-main:hover {
-	background: white;
-	color: black;
+a#skip-main:hover {
+	color: white;
+	background: black;
 }
 
-a.skip-main:not(:focus) {
+a#skip-main:not(:focus) {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: auto;
