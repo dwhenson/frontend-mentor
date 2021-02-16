@@ -129,26 +129,36 @@ select {
 
 /* Skip to main content */
 a.skip-main {
-	left: -999px;
+	display: inline-block;
+	padding: 0.7rem 1rem 0.5rem 1rem;
+	background: black;
+	color: white;
+	text-decoration: none;
+	font-weight: 700;
+	text-transform: uppercase;
 	position: absolute;
-	top: auto;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
-	z-index: -999;
+	top: 1rem;
+	left: 1rem;
 }
 
-a.skip-main:focus,
-a.skip-main:active {
+a.skip-main:hover {
 	background: white;
 	color: black;
-	left: 0;
-	top: 0;
-	width: auto;
+}
+
+a.skip-main:not(:focus) {
+	border: 0;
+	clip: rect(0 0 0 0);
 	height: auto;
-	overflow: auto;
-	margin: 10px;
-	padding: 5px;
-	font-size: 1.4em;
-	z-index: 999;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+
+/* Remove necessary focus style as main is the :target */
+main:focus {
+	outline: none;
 }
