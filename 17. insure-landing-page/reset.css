@@ -1,0 +1,165 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Adjust line heights */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+	line-height: 1;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+	padding-left: 0;
+	margin: 0;
+	list-style: none;
+}
+
+/* Set core root defaults */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	display: block;
+	max-width: 100%;
+}
+
+img[width] {
+	width: auto; /* Defer to max-width */
+}
+
+img[width][height] {
+	height: auto; /* Preserve aspect ratio */
+}
+
+/* Let SVG scale without boundaries  */
+
+/*
+img[src$=".svg"] {
+	width: 100%;
+	height: auto;
+	max-width: none;
+} */
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ==========  My Additions  ========== */
+
+/* ----  Accessibility  ---- */
+
+/* Text meant only for screen readers */
+.visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	white-space: nowrap;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+}
+
+.visually-hidden:hover,
+.visually-hidden:active,
+.visually-hidden:focus {
+	display: block;
+	top: 5px;
+	left: 5px;
+	z-index: 100000; /* Above WP toolbar */
+	width: auto;
+	height: auto;
+	padding: 15px 23px 14px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	background-color: #f1f1f1;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: normal;
+	text-decoration: none;
+	color: #21759b;
+	clip: auto !important;
+}
+
+/* Skip to main content */
+a#skip-main {
+	position: absolute;
+	display: inline-block;
+	top: 1rem;
+	left: 1rem;
+	padding: 0.7rem 1rem 0.5rem 1rem;
+	background-color: black;
+	font-weight: 700;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: white;
+}
+
+a#skip-main:hover {
+	background: black;
+	color: white;
+}
+
+a#skip-main:not(:focus) {
+	position: absolute;
+	width: 1px;
+	height: auto;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	margin: 0;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* Remove necessary focus style as main is the :target */
+main:focus {
+	outline: none;
+}
