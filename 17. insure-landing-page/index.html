@@ -27,48 +27,66 @@
 		<div class="flow-section">
 			<header class="site-head container" role="banner">
 				<a href="#main-content" id="skip-main">Skip to content</a>
-				<div class="wrapper">
-					<div class="site-head__inner">
-						<a href="/" aria-label="Insure home" class="site-head__brand">
-							<img src="images/logo.svg" alt="Insure logo" />
-						</a>
-						<burger-menu max-width="600">
-							<nav class="navigation" aria-label="primary">
-								<ul role="list">
-									<li>
-										<a href="#">How we work</a>
-									</li>
-									<li>
-										<a href="#">Blog</a>
-									</li>
-									<li>
-										<a href="#">Account</a>
-									</li>
-									<li>
-										<a class="cta" href="#">View plans</a>
-									</li>
-								</ul>
-							</nav>
-						</burger-menu>
-					</div>
+				<!-- <div class="container"> -->
+				<div class="site-head__inner">
+					<a href="/" aria-label="Insure home" class="site-head__brand">
+						<img src="images/logo.svg" alt="Insure logo" />
+					</a>
+					<burger-menu max-width="600">
+						<nav class="navigation" aria-label="primary">
+							<ul role="list">
+								<li>
+									<a href="#">How we work</a>
+								</li>
+								<li>
+									<a href="#">Blog</a>
+								</li>
+								<li>
+									<a href="#">Account</a>
+								</li>
+								<li>
+									<a class="cta" href="#">View plans</a>
+								</li>
+							</ul>
+						</nav>
+					</burger-menu>
 				</div>
+				<!-- </div> -->
 			</header>
 
 			<main id="main-content" tab-index="-1" class="flow-section container">
-				<section class="flow-content">
-					<h1>Humanizing your insurance.</h1>
-					<p>
-						Get your life insurance coverage easier and faster. We Humanizing your insurance. Get your
-						life insurance coverage easier and faster. We blend our expertise and technology to help you
-						find the plan that’s right for you. Ensure you and your loved ones are protected.
-					</p>
-					<a class="cta" href="#">View plans</a>
+				<section class="block-accent hero">
+					<picture>
+						<source
+							srcset="images/image-intro-desktop.jpg"
+							width="540"
+							height="650"
+							media="(min-width: 700px)"
+						/>
+						<img
+							src="images/image-intro-mobile.jpg"
+							alt="A happy well insured family having fun"
+							width="375"
+							height="451"
+						/>
+					</picture>
+					<!-- Wrapper to enable flex layout -->
+					<div class="flow-content wrapper">
+						<h1>Humanizing your insurance.</h1>
+						<p>
+							Get your life insurance coverage easier and faster. We Humanizing your insurance. Get your
+							life insurance coverage easier and faster. We blend our expertise and technology to help you
+							find the plan that’s right for you. Ensure you and your loved ones are protected.
+						</p>
+						<a class="cta cta-accent" href="#">View plans</a>
+					</div>
 				</section>
 
-				<section class="flow-content different">
+				<section class="flow-section different">
 					<h2>We’re different</h2>
-					<ul role="list">
+					<ul class="flex" role="list">
 						<li class="flow-content">
+							<img src="images/icon-snappy-process.svg" alt="" width="20" height="20" />
 							<h3>Snappy Process</h3>
 							<p>
 								Our application process can be completed in minutes, not hours. Don’t get stuck filling in
@@ -76,6 +94,7 @@
 							</p>
 						</li>
 						<li class="flow-content">
+							<img src="images/icon-affordable-prices.svg" alt="" width="20" height="20" />
 							<h3>Affordable Prices</h3>
 							<p>
 								We don’t want you worrying about high monthly costs. Our prices may be low, but we still
@@ -83,6 +102,7 @@
 							</p>
 						</li>
 						<li class="flow-content">
+							<img src="images/icon-people-first.svg" alt="" width="20" height="20" />
 							<h3>People First</h3>
 							<p>
 								Our plans aren’t full of conditions and clauses to prevent payouts. We make sure you’re
@@ -92,14 +112,36 @@
 					</ul>
 				</section>
 
-				<section>
+				<section class="container flow-content block-accent find-out">
 					<h2>Find out more about how we work</h2>
-					<a class="cta" href="#">How we work</a>
+					<a class="cta cta-accent" href="#">How we work</a>
 				</section>
 			</main>
 
-			<footer class="footer container">
-				<nav>
+			<footer class="container flow-section">
+				<nav class="footer-nav__inner">
+					<a href="/" aria-label="Insure home" class="site-head__brand">
+						<img src="images/logo.svg" alt="Insure logo" />
+					</a>
+					<nav>
+						<ul class="navigation-social" role="list">
+							<li>
+								<a href="/"><img src="images/icon-facebook.svg" alt="" /> </a>
+							</li>
+							<li>
+								<a href="/"><img src="images/icon-twitter.svg" alt="" /> </a>
+							</li>
+							<li>
+								<a href="/"><img src="images/icon-pinterest.svg" alt="" /> </a>
+							</li>
+							<li>
+								<a href="/"><img src="images/icon-instagram.svg" alt="" /> </a>
+							</li>
+						</ul>
+					</nav>
+				</nav>
+
+				<nav class="flex footer-nav__details">
 					<ul role="list">
 						<li><a href="/">Our company</a></li>
 						<li><a href="/">How we work</a></li>
