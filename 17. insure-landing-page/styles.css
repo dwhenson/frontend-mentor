@@ -367,7 +367,21 @@ header .site-head__inner {
 	transform: translateX(-50%);
 }
 
-/*CHECK why does adding max-width work here?*/
+/*FIXME make into utility class*/
+h1 {
+	position: relative;
+	padding-top: 1em;
+}
+
+h1::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2em;
+	border-top: 1px solid white;
+}
+
 .hero img {
 	position: relative;
 	right: 50%;
@@ -376,10 +390,9 @@ header .site-head__inner {
 	max-width: 100vw;
 	margin-right: -50vw;
 	margin-left: -50vw;
-	/*z-index: -100;*/
 }
 
-@media only screen and (min-width: 42rem) {
+@media only screen and (min-width: 52rem) {
 	.hero {
 		flex-direction: row-reverse;
 		padding-top: calc(var(--spacer) * 3);
@@ -402,16 +415,8 @@ header .site-head__inner {
    	================================================== */
 
 .find-out {
-	/*display: flex;*/
 	flex-wrap: wrap;
-	/*justify-content: space-between;*/
-	/*align-items: center;*/
 	padding: clamp(2rem, 5%, 6rem);
-	/*gap: clamp(2rem, 5%, 6rem);*/
-}
-
-.find-out .cta {
-	/*flex: 0 0 10em;*/
 }
 
 /* 	Footer
@@ -424,11 +429,17 @@ header .site-head__inner {
 	justify-content: space-between;
 	line-height: 1;
 	gap: 2rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--clr-neutral-200);
 }
 
 .navigation-social {
 	display: flex;
 	gap: 1rem;
+}
+
+.footer-nav__details {
+	margin-top: 3rem;
 }
 
 .footer-nav__details ul > li:first-child {
