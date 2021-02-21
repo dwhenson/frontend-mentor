@@ -30,13 +30,13 @@
 	 Global Styles
 	 ================================================== */
 body {
+	margin-bottom: 6rem;
 	background-color: var(--clr-neutral-100);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
 	line-height: var(--lh-regular);
-	color: var(--clr-neutral-200);
-	margin-bottom: 6rem;
 	text-align: center;
+	color: var(--clr-neutral-200);
 }
 
 #main-content {
@@ -44,8 +44,8 @@ body {
 }
 
 a {
-	color: currentColor;
 	text-decoration: none;
+	color: currentColor;
 }
 
 a:hover {
@@ -62,8 +62,8 @@ a:hover {
 }
 
 img[src$=".svg"] {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 @media only screen and (min-width: 42rem) {
@@ -72,8 +72,8 @@ img[src$=".svg"] {
 	}
 
 	img[src$=".svg"] {
-		margin-left: 0;
 		margin-right: auto;
+		margin-left: 0;
 	}
 }
 
@@ -118,8 +118,8 @@ h3 {
 }
 
 .container {
-	padding-left: clamp(1rem, 2.5%, 3rem);
 	padding-right: clamp(1rem, 2.5%, 3rem);
+	padding-left: clamp(1rem, 2.5%, 3rem);
 }
 
 .flex {
@@ -135,19 +135,28 @@ h3 {
 /*CHECK why is --fg working for header but not p?*/
 .block-accent {
 	--fg: var(--clr-neutral-100);
-
-	color: var(--clr-neutral-100);
 	background-color: var(--clr-primary-100);
+	color: var(--clr-neutral-100);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: clamp(2rem, 5%, 6rem);
+}
+
+@media only screen and (min-width: 42em) {
+	.block-accent {
+		flex-direction: row;
+	}
 }
 
 .cta {
 	display: inline-block;
 	padding: 0.5em 1.5em;
 	border: 1px solid var(--outline, var(--clr-neutral-400));
-	color: var(--fg, var(--clr-primary-100));
 	font-weight: 700;
-	text-transform: uppercase;
 	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: var(--fg, var(--clr-primary-100));
 }
 
 .navigation .cta {
@@ -168,9 +177,9 @@ h3 {
 
 .navigation .cta:hover,
 .cta:hover {
+	border: 1px solid var(--outline-hover, var(--clr-neutral-400));
 	background-color: var(--bg-hover, var(--clr-neutral-400));
 	color: var(--fg-hover, var(--clr-neutral-100));
-	border: 1px solid var(--outline-hover, var(--clr-neutral-400));
 }
 
 /* 	==================================================
@@ -188,10 +197,10 @@ header {
 header .site-head__inner {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	align-items: center;
-	gap: 1rem;
+	justify-content: space-between;
 	line-height: 1;
+	gap: 1rem;
 }
 
 /* 	Navigation
@@ -200,17 +209,17 @@ header .site-head__inner {
 .navigation ul {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem;
 	align-items: center;
+	gap: 2rem;
 }
 
 .navigation a {
 	display: block;
 	padding: 0.5rem;
-	font-weight: 700;
 	font-size: var(--fs-300);
-	text-transform: uppercase;
+	font-weight: 700;
 	text-decoration: none;
+	text-transform: uppercase;
 	color: currentColor;
 }
 
@@ -228,15 +237,15 @@ header .site-head__inner {
 .burger-menu__bar,
 .burger-menu__bar::before,
 .burger-menu__bar::after {
+	position: absolute;
 	display: block;
+	left: 50%;
 	width: 1.5rem;
 	height: 0.2rem;
-	background: var(--clr-neutral-400);
 	border: 1px solid var(--clr-neutral-400);
-	position: absolute;
 	border-radius: 0.5rem;
-	left: 50%;
 	margin-left: -0.75rem;
+	background: var(--clr-neutral-400);
 	transition: transform 250ms ease-in-out;
 }
 
@@ -259,13 +268,13 @@ header .site-head__inner {
 }
 
 .burger-menu[enabled="true"] .burger-menu__trigger {
+	position: relative;
 	display: block;
+	z-index: 1;
 	width: 2rem;
 	height: 2rem; /* Nice big tap target */
-	position: relative;
-	z-index: 1;
-	background: transparent;
 	border: none;
+	background: transparent;
 	cursor: pointer;
 }
 
@@ -273,14 +282,14 @@ header .site-head__inner {
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin-top: 6rem;
-	padding: 5rem 1.5rem 2rem 1.5rem;
-	width: 100%;
-	height: 100%;
 	visibility: hidden;
 	opacity: 0;
-	background: var(--clr-neutral-100);
+	width: 100%;
+	height: 100%;
+	padding: 5rem 1.5rem 2rem 1.5rem;
 	overflow-y: auto;
+	margin-top: 6rem;
+	background: var(--clr-neutral-100);
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -297,8 +306,8 @@ header .site-head__inner {
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {
 	visibility: visible;
 	opacity: 1;
-	transition: opacity 200ms ease;
 	background-color: var(--clr-neutral-300);
+	transition: opacity 200ms ease;
 }
 
 .burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
@@ -306,8 +315,8 @@ header .site-head__inner {
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
-	transform: translateY(0);
 	opacity: 1;
+	transform: translateY(0);
 	transition: opacity 300ms ease;
 }
 
@@ -322,8 +331,8 @@ header .site-head__inner {
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__bar {
-	background: transparent;
 	border-color: transparent;
+	background: transparent;
 	transform: rotate(180deg);
 }
 
@@ -331,39 +340,44 @@ header .site-head__inner {
    	================================================== */
 
 .hero {
-	flex-direction: column;
-	display: flex;
 	position: relative;
-	gap: 4rem;
+	/*	display: flex;
+	flex-direction: column;*/
+	padding-bottom: calc(var(--spacer) * 3);
 	margin-top: 0;
 	background-color: inherit;
+	/*gap: 4rem;*/
 	justify-content: space-between;
-}
-
-.hero > * {
-	flex-basis: 100%;
 }
 
 .hero::before {
 	content: "";
 	position: absolute;
-	background-color: var(--clr-primary-100);
+	top: 0;
+	left: 0;
 	z-index: -10;
+	width: 100vw;
 	height: 100%;
-	width: 100%;
+	margin-left: 50%;
+	background-color: var(--clr-primary-100);
+	transform: translateX(-50%);
 }
 
 /*CHECK why does adding max-width work here?*/
 .hero img {
-	max-width: 100vw;
+	position: relative;
+	right: 50%;
+	left: 50%;
 	width: 100vw;
-	margin-left: 50%;
-	transform: translateX(-50%);
+	max-width: 42rem;
+	margin-right: -50vw;
+	margin-left: -50vw;
 }
 
-@media only screen and (min-width: 62rem) {
+@media only screen and (min-width: 42rem) {
 	.hero {
 		flex-direction: row-reverse;
+		padding-top: calc(var(--spacer) * 3);
 	}
 
 	.hero::before {
@@ -372,8 +386,11 @@ header .site-head__inner {
 
 	/*FIXME image not shrinking */
 	.hero img {
-		max-width: auto;
-		width: auto;
+		position: initial;
+		width: initial;
+		max-width: initial;
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
@@ -381,7 +398,16 @@ header .site-head__inner {
    	================================================== */
 
 .find-out {
+	/*display: flex;*/
+	flex-wrap: wrap;
+	/*justify-content: space-between;*/
+	/*align-items: center;*/
 	padding: clamp(2rem, 5%, 6rem);
+	/*gap: clamp(2rem, 5%, 6rem);*/
+}
+
+.find-out .cta {
+	/*flex: 0 0 10em;*/
 }
 
 /* 	Footer
@@ -390,10 +416,10 @@ header .site-head__inner {
 .footer-nav__inner {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	align-items: center;
-	gap: 2rem;
+	justify-content: space-between;
 	line-height: 1;
+	gap: 2rem;
 }
 
 .navigation-social {
@@ -402,6 +428,6 @@ header .site-head__inner {
 }
 
 .footer-nav__details ul > li:first-child {
-	color: var(--clr-neutral-400);
 	margin-bottom: 1rem;
+	color: var(--clr-neutral-400);
 }
