@@ -10,7 +10,7 @@
 	--clr-neutral-400: hsla(106, 0%, 7%, 1);
 
 	/* Spacing */
-	--spacer: 1.5em;
+	--spacer: 1.5rem;
 	--lh-small: 1.3;
 	--lh-regular: 1.8;
 
@@ -18,8 +18,8 @@
 	--fs-300: 0.75rem;
 	--fs-400: 1rem;
 	--fs-500: 1.5rem;
-	--fs-600: 2.5rem;
-	--fs-700: 3rem;
+	--fs-600: 3.5rem;
+	--fs-700: 4rem;
 
 	/* font-family */
 	--ff-heading: "DM Serif Display", serif;
@@ -36,7 +36,7 @@ body {
 	font-size: var(--fs-400);
 	line-height: var(--lh-regular);
 	text-align: center;
-	color: var(--clr-neutral-200);
+	color: var(--fg, var(--clr-neutral-200));
 }
 
 #main-content {
@@ -66,7 +66,7 @@ img[src$=".svg"] {
 	margin-left: auto;
 }
 
-@media only screen and (min-width: 42rem) {
+@media only screen and (min-width: 55rem) {
 	body {
 		text-align: left;
 	}
@@ -89,7 +89,7 @@ h3 {
 
 h1,
 h2 {
-	font-size: var(--fs-700);
+	font-size: var(--fs-600);
 }
 
 h3 {
@@ -99,6 +99,9 @@ h3 {
 /* ==================================================
 	 Utilities
 	 ================================================== */
+
+/* 	Positioning and spacing
+    ------------------- */
 
 .center-content {
 	display: grid;
@@ -132,18 +135,46 @@ h3 {
 	flex: 1 1 15rem;
 }
 
-/*CHECK why is --fg working for header but not p?*/
+/* 	Line pseudo elements
+    ------------------- */
+
+.line {
+	position: relative;
+	padding-top: 1em;
+}
+
+.line::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 2em;
+	border-top: 2px solid var(--accent, currentColor);
+	transform: translateX(-50%);
+}
+
+@media only screen and (min-width: 55em) {
+	.line::before {
+		left: 0;
+		transform: translateX(0%);
+	}
+}
+
+/* 	Call to action
+    ------------------- */
+
+/* CHECK why is --fg working for header but not p? */
 .block-accent {
 	--fg: var(--clr-neutral-100);
-	background-color: var(--clr-primary-100);
 	color: var(--clr-neutral-100);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: clamp(2rem, 5%, 6rem);
+	background-color: var(--clr-primary-100);
+	gap: 2rem;
 }
 
-@media only screen and (min-width: 42em) {
+@media only screen and (min-width: 55em) {
 	.block-accent {
 		flex-direction: row;
 	}
@@ -284,6 +315,7 @@ header .site-head__inner {
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	padding: 5rem 1.5rem 2rem 1.5rem;
@@ -291,7 +323,6 @@ header .site-head__inner {
 	margin-top: 6rem;
 	background: var(--clr-neutral-100);
 	-webkit-overflow-scrolling: touch;
-	z-index: 10;
 }
 
 .burger-menu[enabled="true"] .navigation ul {
@@ -308,6 +339,10 @@ header .site-head__inner {
 	visibility: visible;
 	opacity: 1;
 	background-color: var(--clr-neutral-300);
+	background-image: url("images/bg-pattern-mobile-nav.svg");
+	background-position: bottom right;
+	background-size: 100%;
+	background-repeat: no-repeat;
 	transition: opacity 200ms ease;
 }
 
@@ -343,11 +378,10 @@ header .site-head__inner {
 .hero {
 	position: relative;
 	flex-direction: column;
-	padding-bottom: calc(var(--spacer) * 3);
+	justify-content: space-between;
+	padding-bottom: calc(var(--spacer) * 2);
 	margin-top: 0;
 	background-color: inherit;
-	justify-content: space-between;
-	z-index: 1;
 }
 
 .hero > * {
@@ -359,27 +393,25 @@ header .site-head__inner {
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: -1000;
+	z-index: -1;
 	width: 100vw;
 	height: 100%;
 	margin-left: 50%;
 	background-color: var(--clr-primary-100);
+	/* prettier-ignore */
+	background-image:
+		url("images/bg-pattern-intro-left-desktop.svg"),
+		url("images/bg-pattern-intro-right-desktop.svg");
+	background-position-x: 0, 110%;
+	background-position-y: 200%, -10%;
+	background-repeat: no-repeat;
 	transform: translateX(-50%);
 }
 
-/*FIXME make into utility class*/
-h1 {
-	position: relative;
-	padding-top: 1em;
-}
-
-h1::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 2em;
-	border-top: 1px solid white;
+.hero .wrapper {
+	max-width: 55ch;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .hero img {
@@ -392,23 +424,32 @@ h1::before {
 	margin-left: -50vw;
 }
 
-@media only screen and (min-width: 52rem) {
+@media only screen and (min-width: 55rem) {
 	.hero {
 		flex-direction: row-reverse;
-		padding-top: calc(var(--spacer) * 3);
+		padding-top: 4rem;
+		padding-bottom: 0;
 	}
 
 	.hero::before {
-		height: 80%;
+		height: 85%;
 	}
 
 	.hero img {
-		max-width: 100%;
-		left: 0;
 		right: 0;
+		left: 0;
+		width: 100%;
+		max-width: 665px;
 		margin-right: 0;
-		margin-left: 0;
+		margin-left: auto;
 	}
+}
+
+/* 	Different
+   	================================================== */
+
+.different {
+	--accent: var(--clr-primary-100);
 }
 
 /* 	Find out more
@@ -417,20 +458,39 @@ h1::before {
 .find-out {
 	flex-wrap: wrap;
 	padding: clamp(2rem, 5%, 6rem);
+	background-image: url("images/bg-pattern-how-we-work-mobile.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
 }
 
 /* 	Footer
    	================================================== */
+
+footer {
+	position: relative;
+	background-color: hsla(106, 0%, 98%, 1);
+}
+
+footer::after {
+	content: "";
+	position: absolute;
+	width: 100vw;
+	margin-left: 50%;
+	background-image: url("images/bg-pattern-footer-desktop.svg");
+	background-position: top left;
+	background-repeat: no-repeat;
+	transform: translateX(-50%);
+}
 
 .footer-nav__inner {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	line-height: 1;
-	gap: 2rem;
 	padding-bottom: 2rem;
 	border-bottom: 1px solid var(--clr-neutral-200);
+	line-height: 1;
+	gap: 2rem;
 }
 
 .navigation-social {
