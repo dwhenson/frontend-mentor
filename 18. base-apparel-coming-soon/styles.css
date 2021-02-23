@@ -2,8 +2,8 @@
 	--desaturatedRed: hsl(0, 36%, 70%);
 	--softRed: hsl(0, 93%, 68%);
 	--grayishRed: hsl(0, 6%, 24%);
-	--gradientLight: linear, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
-	--gradientDark: linear, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+	--gradientLight: hsl(0, 0%, 100%), hsl(0, 80%, 86%);
+	--gradientDark: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
 
 	font-family: "Josefin Sans", sans-serif;
 	font-weight: 400;
@@ -11,25 +11,25 @@
 
 body {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto 1fr;
 	grid-template-areas:
 		"logo image"
 		"content image";
+	grid-template-rows: auto 1fr;
+	grid-template-columns: 1fr 1fr;
 	grid-auto-flow: column;
-	color: var(--desaturatedRed);
-	line-height: 1.8;
 	max-width: 125em;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
+	line-height: 1.8;
+	color: var(--desaturatedRed);
 	gap: 4rem;
 }
 
 h1 {
-	text-transform: uppercase;
 	font-size: 5rem;
-	letter-spacing: 0.5rem;
 	font-weight: 400;
+	letter-spacing: 0.5rem;
+	text-transform: uppercase;
 }
 
 h1 span {
@@ -38,6 +38,15 @@ h1 span {
 
 p {
 	font-size: 1.25rem;
+}
+
+:focus-visible {
+	outline: 3px dotted currentColor;
+	outline-offset: 0.2rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
 }
 
 .container {
@@ -52,9 +61,9 @@ p {
 }
 
 .logo {
-	padding-left: clamp(6rem, 5%, 8rem);
 	padding-top: 4rem;
 	padding-bottom: 10rem;
+	padding-left: clamp(6rem, 5%, 8rem);
 }
 
 picture {
@@ -66,16 +75,61 @@ picture img {
 	object-fit: cover;
 }
 
+label {
+	position: relative;
+	display: flex;
+	width: min(100%, 25rem);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+input {
+	width: 100%;
+	padding: 0.5em 1em;
+	border: 1px solid black;
+	border-radius: 2em;
+	margin-right: auto;
+	margin-left: auto;
+	color: var(--desaturatedRed);
+}
+
+input::placeholder {
+	color: var(--desaturatedRed);
+}
+
+button {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	height: 102%;
+	padding: 0.5em 2em;
+	border: 1px solid var(--desaturatedRed);
+	border-radius: 2em;
+	background: linear-gradient(var(--gradientDark));
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+button:hover {
+	background: linear-gradient(var(--gradientLight));
+}
+
+img .error {
+	position: absolute;
+	right: -4em;
+}
+
 @media only screen and (max-width: 62.5em) {
 	body {
-		grid-template-columns: 1fr;
-		grid-template-rows: min-content min-content auto;
 		grid-template-areas:
 			"logo"
 			"image"
 			"content";
+		grid-template-rows: min-content min-content auto;
+		grid-template-columns: 1fr;
 		text-align: center;
 		gap: 6rem;
+		margin-bottom: 12rem;
 	}
 
 	.container {
