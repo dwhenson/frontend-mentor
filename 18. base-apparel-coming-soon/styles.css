@@ -79,8 +79,6 @@ label {
 	position: relative;
 	display: flex;
 	width: min(100%, 25rem);
-	margin-right: auto;
-	margin-left: auto;
 }
 
 input {
@@ -155,7 +153,7 @@ div.error {
 	}
 
 	.logo {
-		padding-bottom: 4rem;
+		padding-bottom: 0rem;
 		padding-left: clamp(2rem, 2.5%, 3rem);
 	}
 
@@ -163,5 +161,10 @@ div.error {
 		width: 100%;
 		max-height: 30rem;
 		object-position: center top;
+	}
+
+	label {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
