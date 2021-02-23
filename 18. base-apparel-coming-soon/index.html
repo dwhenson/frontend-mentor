@@ -26,7 +26,14 @@
 			</p>
 			<form action="#">
 				<label for="email">
-					<input id="email" type="email" name="email" id="email" placeholder="Email Address" required />
+					<input
+						id="emailInput"
+						type="email"
+						name="email"
+						id="email"
+						placeholder="Email Address"
+						required
+					/>
 					<img
 						id="errorIcon"
 						class="error"
@@ -34,7 +41,7 @@
 						alt="error"
 						aria-describedby="errorMessage"
 					/>
-					<button><img src="images/icon-arrow.svg" alt="submit" /></button>
+					<button type="submit"><img src="images/icon-arrow.svg" alt="submit" /></button>
 				</label>
 				<div id="errorMessage" class="error" role="alert">Please enter a valid email address</div>
 			</form>
