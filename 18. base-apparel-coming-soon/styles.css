@@ -114,9 +114,25 @@ button:hover {
 	background: linear-gradient(var(--gradientLight));
 }
 
-img .error {
+img.error {
+	display: none;
 	position: absolute;
-	right: -4em;
+	right: 6em;
+	height: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+input.error {
+	border: 1px solid red;
+}
+
+div.error {
+	display: none;
+	color: red;
+	font-size: 1rem;
+	margin-left: 1em;
+	margin-top: 0.25em;
 }
 
 @media only screen and (max-width: 62.5em) {
