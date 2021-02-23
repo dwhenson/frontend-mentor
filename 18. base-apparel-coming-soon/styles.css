@@ -1,0 +1,97 @@
+:root {
+	--desaturatedRed: hsl(0, 36%, 70%);
+	--softRed: hsl(0, 93%, 68%);
+	--grayishRed: hsl(0, 6%, 24%);
+	--gradientLight: linear, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+	--gradientDark: linear, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-areas:
+		"logo image"
+		"content image";
+	grid-auto-flow: column;
+	color: var(--desaturatedRed);
+	line-height: 1.8;
+	max-width: 125em;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 4rem;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 5rem;
+	letter-spacing: 0.5rem;
+	font-weight: 400;
+}
+
+h1 span {
+	color: initial;
+}
+
+p {
+	font-size: 1.25rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	padding-right: clamp(6rem, 5%, 8rem);
+	padding-left: clamp(6rem, 5%, 8rem);
+}
+
+.container > * + * {
+	margin-top: 2em;
+}
+
+.logo {
+	padding-left: clamp(6rem, 5%, 8rem);
+	padding-top: 4rem;
+	padding-bottom: 10rem;
+}
+
+picture {
+	grid-area: image;
+}
+
+picture img {
+	height: 100%;
+	object-fit: cover;
+}
+
+@media only screen and (max-width: 62.5em) {
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content min-content auto;
+		grid-template-areas:
+			"logo"
+			"image"
+			"content";
+		text-align: center;
+		gap: 6rem;
+	}
+
+	.container {
+		align-self: start;
+		padding-right: clamp(2rem, 2.5%, 3rem);
+		padding-left: clamp(2rem, 2.5%, 3rem);
+	}
+
+	.logo {
+		padding-bottom: 4rem;
+		padding-left: clamp(2rem, 2.5%, 3rem);
+	}
+
+	picture img {
+		width: 100%;
+		max-height: 30rem;
+		object-position: center top;
+	}
+}

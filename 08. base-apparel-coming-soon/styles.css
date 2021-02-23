@@ -1,0 +1,173 @@
+/* =============================
+   Global styles
+   ============================= */
+
+:root {
+	--desaturatedRed: hsl(0, 36%, 70%);
+	--softRed: hsl(0, 93%, 68%);
+	--grayishRed: hsl(0, 6%, 24%);
+	--gradientLight: linear, 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+	--gradientDark: linear, 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+}
+
+body {
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	color: var(--desaturatedRed);
+	line-height: 1.5;
+	text-align: center;
+}
+
+/* =============================
+   Mobile
+   ============================= */
+
+/* Typography
+   ============================= */
+
+h1 {
+	font-size: clamp(1.5rem, 5vw + 1rem, 6rem);
+	font-weight: 300;
+	letter-spacing: 7.5px;
+	line-height: 1;
+	margin-bottom: 0.25em;
+	text-transform: uppercase;
+}
+
+h1 span {
+	color: black;
+	font-weight: 400;
+}
+
+p {
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
+	margin-bottom: 2em;
+}
+
+/* Layout
+   ============================= */
+
+main {
+	align-self: start;
+	margin: 5em 7.5% 10%;
+}
+
+.logo {
+	margin: 2em 0 2em 7.5%;
+	min-width: 10em;
+	width: 30%;
+}
+
+/* Form layout and styles
+   ============================= */
+
+form {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+}
+
+input {
+	background-color: transparent;
+	border: 1px solid var(--desaturatedRed);
+	border-radius: 2em;
+	color: var(--desaturatedRed);
+	flex-grow: 1;
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
+	font-weight: 300;
+	padding: 0.5em 1em;
+	text-indent: 1em;
+}
+
+input::placeholder {
+	color: var(--desaturatedRed);
+	font-size: clamp(0.75rem, 1vw + 0.5rem, 1.5rem);
+	font-weight: 300;
+}
+
+.form-wrapper {
+	position: relative;
+}
+
+button {
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	border: none;
+	border-radius: 5em;
+	cursor: pointer;
+	height: 100%;
+	padding: 0.5em 10%;
+	position: absolute;
+	right: 0;
+	transition: box-shadow 200ms;
+}
+
+button:hover {
+	box-shadow: 0 5px 20px 0 hsla(0, 6%, 24%, 0.25);
+}
+
+button:focus,
+input:focus {
+	outline: 2px solid var(--grayishRed);
+}
+
+/* Javascript controlled styles
+   ============================= */
+
+.error {
+	display: none;
+	left: calc(100% - (8em));
+	position: absolute;
+	top: 1.1em;
+	width: 1.75em;
+}
+
+.status {
+	font-size: clamp(0.75rem, 1.5vw + 0.5rem, 1.5rem);
+	margin-left: 2.1em;
+	margin-top: 0.5em;
+}
+
+/* =============================
+   Desktop styles
+   ============================= */
+
+@media only screen and (min-width: 950px) {
+	/* Layout
+	   ============================= */
+
+	body {
+		display: grid;
+		grid-template-columns: 1fr 45vw;
+		grid-template-rows: auto 1fr;
+		text-align: left;
+	}
+
+	.logo {
+		margin-left: 15%;
+		max-width: 15em;
+	}
+
+	main {
+		margin-left: 15%;
+		margin-top: 2.5em;
+	}
+
+	.hero {
+		grid-area: 1 / 2/ -1 / -1;
+		height: 100%;
+		object-fit: fill;
+	}
+
+	form {
+		margin: 0;
+		width: 70%;
+	}
+
+	button {
+		padding: 0.5em 10%;
+	}
+}

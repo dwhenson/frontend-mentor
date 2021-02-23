@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<title>Frontend Mentor | Base Apparel coming soon page</title>
+		<script async defer src="script.js"></script>
+	</head>
+
+	<body class="center-content">
+		<img class="logo" src="images/logo.svg" alt="Base Apparel" />
+		<div class="container">
+			<!-- Avoid issues with image as flex child -->
+			<h1>We're <span>coming soon</span></h1>
+			<p>
+				Hello fellow shoppers! We're currently building our new fashion store. Add your email below to
+				stay up-to-date with announcements and our launch deals.
+			</p>
+			<form action="#">
+				<label for="email">Enter email address</label>
+				<input type="email" name="email" id="email" placeholder="Email Address" required />
+				<img src="images/icon-error.svg" alt="error" />
+				<button><img src="images/icon-arrow.svg" alt="submit" /></button>
+			</form>
+		</div>
+		<picture>
+			<source srcset="images/hero-desktop.jpg" media="(min-width: 1000px)" />
+			<img src="images/hero-mobile.jpg" alt="A girl looking great in Base Apparel clothes" />
+		</picture>
+	</body>
+</html>
