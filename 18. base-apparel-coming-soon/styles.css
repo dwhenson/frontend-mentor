@@ -79,10 +79,11 @@ picture img {
 	object-fit: cover;
 }
 
-label {
+.label {
 	position: relative;
 	display: flex;
 	width: min(100%, 25rem);
+	margin-bottom: 10rem;
 }
 
 input {
@@ -151,6 +152,14 @@ div.error {
 		gap: 6rem;
 	}
 
+	h1 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1rem;
+	}
+
 	.container {
 		align-self: start;
 		padding-right: clamp(2rem, 2.5%, 3rem);
@@ -168,7 +177,7 @@ div.error {
 		object-position: center top;
 	}
 
-	label {
+	.label {
 		margin-right: auto;
 		margin-left: auto;
 	}

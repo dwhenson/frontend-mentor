@@ -25,15 +25,9 @@
 				stay up-to-date with announcements and our launch deals.
 			</p>
 			<form action="#">
-				<label for="email">
-					<input
-						id="emailInput"
-						type="email"
-						name="email"
-						id="email"
-						placeholder="Email Address"
-						required
-					/>
+				<div class="label">
+					<label class="visually-hidden" for="emailInput">Enter email address</label>
+					<input id="emailInput" type="email" name="email" placeholder="Email Address" required />
 					<img
 						id="errorIcon"
 						class="error"
@@ -42,7 +36,7 @@
 						aria-describedby="errorMessage"
 					/>
 					<button type="submit"><img src="images/icon-arrow.svg" alt="submit" /></button>
-				</label>
+				</div>
 				<div id="errorMessage" class="error" role="alert">Please enter a valid email address</div>
 			</form>
 		</div>
