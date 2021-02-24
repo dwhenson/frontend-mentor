@@ -26,6 +26,7 @@ h2,
 .h2,
 h3,
 .h3 {
+<<<<<<< HEAD
 	line-height: 1.1;
 }
 
@@ -35,6 +36,16 @@ ol {
 	padding-left: 0;
 	margin: 0;
 	list-style: none;
+=======
+	line-height: 1;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+	padding: 0;
+>>>>>>> frontend-mentor/master
 }
 
 /* Set core root defaults */
@@ -46,7 +57,15 @@ html {
 body {
 	min-height: 100vh;
 	text-rendering: optimizeSpeed;
+<<<<<<< HEAD
 	line-height: 1.5;
+=======
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+>>>>>>> frontend-mentor/master
 }
 
 /* Make images easier to work with */
@@ -81,6 +100,10 @@ select {
 /* ----  Accessibility  ---- */
 
 /* Text meant only for screen readers */
+<<<<<<< HEAD
+=======
+
+>>>>>>> frontend-mentor/master
 .visually-hidden {
 	position: absolute !important;
 	width: 1px;
@@ -94,14 +117,22 @@ select {
 .visually-hidden:hover,
 .visually-hidden:active,
 .visually-hidden:focus {
+<<<<<<< HEAD
 	display: block;
 	top: 5px;
 	left: 5px;
 	z-index: 100000; /* Above WP toolbar */
+=======
+	top: 5px;
+	left: 5px;
+	z-index: 100000; /* Above WP toolbar */
+	display: block;
+>>>>>>> frontend-mentor/master
 	width: auto;
 	height: auto;
 	padding: 15px 23px 14px;
 	border-radius: 3px;
+<<<<<<< HEAD
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	background-color: #f1f1f1;
 	font-size: 14px;
@@ -147,3 +178,14 @@ a#skip-main:not(:focus) {
 main:focus {
 	outline: none;
 }
+=======
+	color: #21759b;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: normal;
+	text-decoration: none;
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+}
+>>>>>>> frontend-mentor/master
