@@ -20,15 +20,14 @@
 		<div class="container flow-section">
 			<header class="flow-content">
 				<h1>Our Pricing</h1>
-				<div class="switch-container">
-					<label class="toggle" for="monthly">Monthly</label>
-					<input type="radio" class="toggle-element" name="price-toggle" id="monthly" />
-					<label class="toggle" for="annually">Annually</label>
-					<input type="radio" class="toggle-element" name="price-toggle" id="annually" />
+				<label class="toggle" for="toggle-element">
+					<span class="toggle-annual">Monthly</span>
+					<input type="checkbox" role="switch" class="toggle-element" id="toggle-element" />
 					<div class="toggle-styles" aria-hidden="true">
 						<div class="toggle-thumb"></div>
 					</div>
-				</div>
+					<span class="toggle-monthly">Annually</span>
+				</label>
 			</header>
 			<main class="flex">
 				<section class="flow-content plan">
