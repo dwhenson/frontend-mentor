@@ -1,22 +1,22 @@
 /* ==========  Variables  ========== */
 
-const toggle = document.querySelector("#toggle-element");
-const priceSwitches = Array.from(document.querySelectorAll(".switch"));
+const toggle = document.querySelector(".switch-container");
+const basic = document.querySelector("#basic");
+const professional = document.querySelector("#professional");
+const master = document.querySelector("#master");
 
 /* ==========  Functions  ========== */
 
 function togglePrice(event) {
-	if (event.target.checked) {
-		priceSwitches.forEach((priceSwitch) => {
-			if (priceSwitch.classList.contains("annually")) return;
-			priceSwitch.classList.add("annually");
-		});
+	if (event.target.id === "monthly") {
+		basic.textContent = "19.99";
+		professional.textContent = "24.99";
+		master.textContent = "39.99";
 	}
-	if (!event.target.checked) {
-		priceSwitches.forEach((priceSwitch) => {
-			if (!priceSwitch.classList.contains("annually")) return;
-			priceSwitch.classList.remove("annually");
-		});
+	if (event.target.id === "annually") {
+		basic.textContent = "199.99";
+		professional.textContent = "224.99";
+		master.textContent = "339.99";
 	}
 }
 

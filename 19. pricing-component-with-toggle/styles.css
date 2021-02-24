@@ -164,11 +164,11 @@ Blocks
 }
 
 #annually.toggle-element {
-	right: 30%;
+	right: 25%;
 }
 
 #monthly.toggle-element {
-	right: 45%;
+	right: 50%;
 }
 
 .toggle-styles {
@@ -241,12 +241,6 @@ Blocks
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	transform: translateY(-5rem);
-	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
-}
-
-.switch.annually {
-	transform: translateY(0);
 }
 
 /* Plans
@@ -256,7 +250,11 @@ Blocks
 	background-color: white;
 	border-radius: 0.5em;
 	color: var(--fg, inherit);
-	padding: 2em;
+	padding: 2em 3em;
+}
+
+.plan span[id] {
+	width: 5ch;
 }
 
 @media only screen and (min-width: 55em) {
@@ -289,4 +287,3 @@ Blocks
 .plan li:last-of-type {
 	border-bottom: 1px solid rgba(233, 234, 237, 1);
 }
-/* TODO */
