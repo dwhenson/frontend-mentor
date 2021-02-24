@@ -125,27 +125,50 @@ Blocks
 /* Toggle
 	 ============================= */
 
-.toggle {
+.switch-container {
+	position: relative;
+	display: inline-flex;
+	justify-content: space-between;
 	align-items: center;
+	gap: 2rem;
+	margin-top: 2em;
+}
+
+.toggle {
 	color: var(--clr-neutral-400);
 	cursor: pointer;
-	display: flex;
+	display: block;
 	gap: 1em;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2em;
-	position: relative;
-	width: min-content;
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
+	/*position: relative;*/
+	/*width: min-content;*/
+}
+
+.toggle[for="monthly"] {
+	order: 1;
+}
+
+.toggle[for="annually"] {
+	order: 3;
 }
 
 .toggle-element {
-	height: 2em;
+	height: 4em;
 	opacity: 0;
 	position: absolute;
-	right: 40%;
-	top: 45%;
+	top: 35%;
 	transform: translateY(-50%);
-	width: 2em;
+	width: 4em;
+	cursor: pointer;
+}
+
+#annually.toggle-element {
+	right: 30%;
+}
+
+#monthly.toggle-element {
+	right: 45%;
 }
 
 .toggle-styles {
@@ -156,6 +179,9 @@ Blocks
 	overflow: hidden;
 	position: relative;
 	width: calc((var(--toggle-thumb-size) * 2) + (var(--toggle-thumb-space) * 2));
+	cursor: pointer;
+	order: 2;
+	z-index: -1;
 }
 
 .toggle-thumb {
@@ -171,7 +197,7 @@ Blocks
 	transform: none;
 	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
 	width: var(--toggle-thumb-size);
-	z-index: 1;
+	z-index: -1;
 }
 
 .toggle-thumb::before {
@@ -190,14 +216,6 @@ Blocks
 :checked + .toggle-styles .toggle-thumb {
 	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
 	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
-}
-
-.toggle-styles:hover .toggle-thumb {
-	margin-left: 1px;
-}
-
-:checked + .toggle-styles:hover .toggle-thumb {
-	margin-left: -1px;
 }
 
 /* Prices
@@ -223,7 +241,7 @@ Blocks
 	align-items: center;
 	display: flex;
 	flex-direction: column;
-	transform: translateY(-6rem);
+	transform: translateY(-5rem);
 	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
 }
 
