@@ -331,10 +331,16 @@
 			</footer>
 
 			<!-- Check-Out Modal -->
-			<section class="checkout modal">
+			<section
+				class="checkout modal"
+				id="dialog"
+				role="dialog"
+				aria-labelledby="title"
+				aria-describedby="description"
+			>
 				<div class="[ flow-content ] [ summary checkout content ]">
-					<h2>Order summary</h2>
-					<p>
+					<h2 id="title">Order summary</h2>
+					<p id="description">
 						“I drink coffee as <span class="value" data-value="preferences">_____</span> with a
 						<span class="value" data-value="bean"> _____ </span> type of bean.
 						<span class="value" data-value="quantity">_____</span>
@@ -348,7 +354,7 @@
 						Subscription discount codes can also be redeemed at the checkout.
 					</p>
 					<p class="price-check">
-						<span class="price">$28.80/mo </span>
+						<span class="price">_____</span>
 						<button type="submit" id="submit" class="cta light-accent">Checkout</button>
 					</p>
 				</div>

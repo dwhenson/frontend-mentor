@@ -2,20 +2,17 @@
 	/* =================== Variables ====================== */
 	/* ==================================================== */
 
-	const button = document.querySelector("#checkout");
-	const modal = document.querySelector(".checkout.modal");
-	const submit = document.querySelector("#submit");
+	const order = document.querySelector("#submit");
+	const dialog = document.querySelector("#dialog");
+	const checkout = document.querySelector("#checkout");
+	const price = document.querySelector(".price");
 
 	/* =================== Functions ====================== */
 	/* ==================================================== */
 
-	/**
-	 * Handle the submit event on the order modal
-	 * @param  {event} event The event object
-	 */
 	function submitHandler(event) {
-		if (event.target !== submit) return;
-		modal.innerHTML = `
+		if (event.target !== order) return;
+		dialog.innerHTML = `
 		<div class="[ flow-content ] [ summary checkout content ]">
 			<h2>Thanks for your order.</h2>
 			<p class="check">
@@ -25,41 +22,40 @@
 	`;
 	}
 
-	/**
-	 * Close the model if the escape key is pressed
-	 * @param  {event} event The event object
-	 */
-	function closeModalKey(event) {
-		if (event.key !== "Escape") return;
-		modal.style.display = "none";
-		document.removeEventListener("keydown", closeModalKey);
+	function addESC(e) {
+		if (e.keyCode == 27) {
+			closeDialog();
+		}
 	}
 
-	/**
-	 * Close the modal if clicked outside the modal
-	 * @param  {event} event The event object
-	 */
-	function closeModalClick(event) {
+	function addClick(event) {
 		if (event.target.closest(".content")) return;
-		modal.style.display = "none";
-		document.removeEventListener("click", closeModalClick);
+		closeDialog();
 	}
 
-	/**
-	 * Open the modal when the form is submitted
-	 * @param  {event} event The event object
-	 */
-	function openModal(event) {
-		if (event.target !== button) return;
-		event.preventDefault();
-		modal.style.display = "block";
-		submit.focus();
-		document.addEventListener("click", closeModalClick);
-		document.addEventListener("keydown", closeModalKey);
-		modal.addEventListener("click", submitHandler);
+	function closeDialog() {
+		dialog.removeAttribute("data-open");
+		order.focus();
+		document.removeEventListener("keydown", addESC);
+	}
+
+	function openDialog(event) {
+		if (event.target !== checkout) return;
+		dialog.setAttribute("data-open", "");
+		order.focus();
+		order.addEventListener("keydown", function (event) {
+			if (event.keyCode == 9) {
+				event.preventDefault();
+			}
+		});
+		document.addEventListener("keydown", addESC);
+		document.addEventListener("click", addClick, {
+			once: true,
+		});
+		dialog.addEventListener("click", submitHandler);
 	}
 
 	/* ============  Inits and Event Listeners  =========== */
 	/* ==================================================== */
-	document.addEventListener("click", openModal);
+	document.addEventListener("click", openDialog);
 })();

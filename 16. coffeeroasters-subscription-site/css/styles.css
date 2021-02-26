@@ -922,6 +922,10 @@ button.cta {
 	background-color: rgba(21, 22, 24, 0.75);
 }
 
+.checkout.modal[data-open] {
+	display: block;
+}
+
 .checkout.modal .content {
 	position: absolute;
 	top: 50%;

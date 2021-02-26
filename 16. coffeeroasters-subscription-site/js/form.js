@@ -19,7 +19,7 @@
 	/**
 	 * Revert styles and content if capsules is deselected
 	 */
-	function removeCapsules() {
+	function deSelectCapsules() {
 		// Revert grind details to original styles
 		grind.style.pointerEvents = "revert";
 		grind.removeAttribute("tabindex");
@@ -41,7 +41,7 @@
 	 * Check if capsules is selected and remove necessary functionality
 	 * @param  {event} event The event object
 	 */
-	function checkCapsules(event) {
+	function selectCapsules(event) {
 		if (event.target.value === "capsules") {
 			// Deactivate grind details element
 			grind.style.pointerEvents = "none";
@@ -54,7 +54,7 @@
 				span.style.display = "none";
 			});
 			// Add listener to check if capsules is deselected
-			preferences.addEventListener("change", removeCapsules, {
+			preferences.addEventListener("change", deSelectCapsules, {
 				once: true,
 			});
 		}
@@ -69,8 +69,10 @@
 		fields.forEach((field) => {
 			if (category === field.dataset.value) {
 				field.textContent = event.target.value;
+				if (event.target.value === "capsules") {
+					selectCapsules(event);
+				}
 			}
-			checkCapsules(event);
 		});
 	}
 
