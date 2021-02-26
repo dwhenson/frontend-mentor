@@ -125,6 +125,15 @@ Blocks
 /* Toggle
 	 ============================= */
 
+fieldset {
+	border: none;
+}
+
+.switch-container:focus-within {
+	outline: 2px solid currentColor;
+	outline-offset: 1em;
+}
+
 .switch-container {
 	position: relative;
 	display: inline-flex;
@@ -139,10 +148,6 @@ Blocks
 	cursor: pointer;
 	display: block;
 	gap: 1em;
-	/*margin-left: auto;*/
-	/*margin-right: auto;*/
-	/*position: relative;*/
-	/*width: min-content;*/
 }
 
 .toggle[for="monthly"] {
@@ -208,10 +213,10 @@ Blocks
 	height: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
 	width: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
 }
-
+/*
 :focus + .toggle-styles:not(:hover) .toggle-thumb::before {
 	display: block;
-}
+}*/
 
 :checked + .toggle-styles .toggle-thumb {
 	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);

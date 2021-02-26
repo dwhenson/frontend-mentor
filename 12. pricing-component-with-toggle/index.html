@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Frontend Mentor | [Challenge Name Here]</title>
+		<title>Frontend Mentor | Pricing Toggle</title>
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
@@ -19,15 +19,17 @@
 	<body>
 		<div class="container flow-section">
 			<header class="flow-content">
-				<h1>Our Pricing</h1>
-				<label class="toggle" for="toggle-element">
-					<span class="toggle-annual">Monthly</span>
-					<input type="checkbox" role="switch" class="toggle-element" id="toggle-element" />
-					<div class="toggle-styles" aria-hidden="true">
-						<div class="toggle-thumb"></div>
-					</div>
-					<span class="toggle-monthly">Annually</span>
-				</label>
+				<fieldset>
+					<legend><h1>Our Pricing</h1></legend>
+					<label class="toggle" for="toggle-element">
+						<span class="toggle-annual">Monthly</span>
+						<input type="checkbox" role="switch" class="toggle-element" id="toggle-element" />
+						<div class="toggle-styles" aria-hidden="true">
+							<div class="toggle-thumb"></div>
+						</div>
+						<span class="toggle-monthly">Annually</span>
+					</label>
+				</fieldset>
 			</header>
 			<main class="flex">
 				<section class="flow-content plan">
