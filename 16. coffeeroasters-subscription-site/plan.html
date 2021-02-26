@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/styles.css" />
 		<script defer src="js/main.js"></script>
 		<script defer src="js/form.js"></script>
+		<script defer src="js/order.js"></script>
 	</head>
 
 	<body>
@@ -113,7 +114,7 @@
 									<li>
 										<h3 class="visually-hidden">Capsule</h3>
 										<p class="visually-hidden">Compatible with Nespresso systems and similar brewers</p>
-										<input type="radio" id="capsule" name="preferences" value="capsule" required />
+										<input type="radio" id="capsule" name="preferences" value="capsules" required />
 										<label for="capsule"></label>
 										<h3 aria-hidden="true">Capsule</h3>
 										<p aria-hidden="true">Compatible with Nespresso systems and similar brewers</p>
@@ -282,7 +283,7 @@
 									<li>
 										<h3 class="visually-hidden">Every month</h3>
 										<p class="visually-hidden">$22.50 per shipment. Includes free priority shipping.</p>
-										<input type="radio" id="three-weeks" name="deliveries" value="three weeks" />
+										<input type="radio" id="three-weeks" name="deliveries" value="month" />
 										<label for="three-weeks"></label>
 										<h3 aria-hidden="true">Every month</h3>
 										<p aria-hidden="true">$22.50 per shipment. Includes free priority shipping.</p>
@@ -294,11 +295,15 @@
 						<section class="flow-content dark-accent summary">
 							<h2>Order summary</h2>
 							<p>
-								“I drink coffee as <span class="value" data-value="preferences">_____</span> with a
+								“I drink coffee <span id="method">as</span>
+								<span class="value" data-value="preferences">_____</span> with a
 								<span class="value" data-value="bean"> _____ </span> type of bean.
-								<span class="value" data-value="quantity">_____</span> ground ala
-								<span class="value" data-value="grind">_____</span>, sent to me every
-								<span class="value" data-value="deliveries">_____</span>.”
+								<span class="value" data-value="quantity">_____</span>
+								<span id="grind-text">
+									ground ala
+									<span class="value" data-value="grind">_____</span>,
+								</span>
+								sent to me every <span class="value" data-value="deliveries">_____</span>.”
 							</p>
 						</section>
 						<button type="submit" id="checkout" class="cta light-accent">Create my plan</button>
@@ -332,9 +337,11 @@
 					<p>
 						“I drink coffee as <span class="value" data-value="preferences">_____</span> with a
 						<span class="value" data-value="bean"> _____ </span> type of bean.
-						<span class="value" data-value="quantity">_____</span> ground ala
-						<span class="value" data-value="grind">_____</span>, sent to me every
-						<span class="value" data-value="deliveries">_____</span>.”
+						<span class="value" data-value="quantity">_____</span>
+						<span id="grind-text">
+							ground ala
+							<span class="value" data-value="grind">_____</span> </span
+						>, sent to me every <span class="value" data-value="deliveries">_____</span>.”
 					</p>
 					<p class="check">
 						Is this correct? You can proceed to checkout or go back to plan selection if something is off.

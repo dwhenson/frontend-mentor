@@ -54,7 +54,7 @@
 	 Global Styles
 	 ================================================== */
 body {
-	background-color: var(--clr-neutral-000);
+	background-color: var(--clr-secondary-100);
 	font-family: "Barlow", sans-serif;
 	font-size: var(--fs-400);
 	line-height: var(--lh-regular);
@@ -317,22 +317,8 @@ h4 {
 }
 
 .container {
-	padding-right: 2rem;
-	padding-left: 2rem;
-}
-
-@media only screen and (min-width: 45em) {
-	.container {
-		padding-right: 3rem;
-		padding-left: 3rem;
-	}
-}
-
-@media only screen and (min-width: 65em) {
-	.container {
-		padding-right: 4rem;
-		padding-left: 4rem;
-	}
+	padding-right: clamp(2rem, 5%, 4rem);
+	padding-left: clamp(2rem, 5%, 4rem);
 }
 
 /* 	CTA
@@ -505,7 +491,8 @@ header .nav {
 	position: relative;
 	display: none;
 	justify-content: space-between;
-	width: 70%;
+	width: 80%;
+	/*margin-left: 1rem;*/
 }
 
 .stages-container::before {
@@ -844,6 +831,7 @@ summary:focus:not(:focus-visible) {
 
 details {
 	text-align: left;
+	cursor: pointer;
 }
 
 details ul h3 {

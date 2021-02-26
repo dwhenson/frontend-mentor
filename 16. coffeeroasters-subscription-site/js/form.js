@@ -2,13 +2,63 @@
 	/* =================== Variables ====================== */
 	/* ==================================================== */
 
+	// All radio buttons
 	const fields = [...document.querySelectorAll(".value")];
-	const button = document.querySelector("#checkout");
-	const modal = document.querySelector(".checkout.modal");
-	const submit = document.querySelector("#submit");
+	// Detail elements
+	const grind = document.querySelector("#grind");
+	const preferences = document.querySelector("#preferences");
+	// Span elements to hide or change
+	const grindText = document.querySelectorAll("#grind-text");
+	const method = document.querySelector("#method");
+	// Only grind radio buttons
+	const grinds = [...document.querySelectorAll("[name='grind']")];
 
 	/* =================== Functions ====================== */
 	/* ==================================================== */
+
+	/**
+	 * Revert styles and content if capsules is deselected
+	 */
+	function removeCapsules() {
+		// Revert grind details to original styles
+		grind.style.pointerEvents = "revert";
+		grind.removeAttribute("tabindex");
+		grind.style.color = "revert";
+		method.textContent = "as";
+		// Revert order summary text
+		grindText.forEach((span) => {
+			span.style.display = "inline";
+		});
+		// If a grind type has been selected open the grind details element
+		grinds.forEach((item) => {
+			if (item.checked) {
+				grind.setAttribute("open", "");
+			}
+		});
+	}
+
+	/**
+	 * Check if capsules is selected and remove necessary functionality
+	 * @param  {event} event The event object
+	 */
+	function checkCapsules(event) {
+		if (event.target.value === "capsules") {
+			// Deactivate grind details element
+			grind.style.pointerEvents = "none";
+			grind.setAttribute("tabindex", "-1");
+			grind.style.color = "var(--clr-neutral-200)";
+			grind.removeAttribute("open");
+			// Adjust order summary text
+			method.textContent = "using";
+			grindText.forEach((span) => {
+				span.style.display = "none";
+			});
+			// Add listener to check if capsules is deselected
+			preferences.addEventListener("change", removeCapsules, {
+				once: true,
+			});
+		}
+	}
 
 	/**
 	 * Handle change events on the form inputs and render value to summary
@@ -20,62 +70,12 @@
 			if (category === field.dataset.value) {
 				field.textContent = event.target.value;
 			}
+			checkCapsules(event);
 		});
-	}
-
-	/**
-	 * Handle the submit event on the order modal
-	 * @param  {event} event The event object
-	 */
-	function submitHandler(event) {
-		if (event.target !== submit) return;
-		modal.innerHTML = `
-	<div class="[ flow-content ] [ summary checkout content ]">
-		<h2>Thanks for your order.</h2>
-		<p class="check">
-			Order received. Your coffee will be with soon.
-		</p>
-	</div>
-`;
-	}
-
-	/**
-	 * Close the model if the escape key is pressed
-	 * @param  {event} event The event object
-	 */
-	function closeModalKey(event) {
-		if (event.key !== "Escape") return;
-		modal.style.display = "none";
-		document.removeEventListener("keydown", closeModalKey);
-	}
-
-	/**
-	 * Close the modal if clicked outside the modal
-	 * @param  {event} event The event object
-	 */
-	function closeModalClick(event) {
-		if (event.target.closest(".content")) return;
-		modal.style.display = "none";
-		document.removeEventListener("click", closeModalClick);
-	}
-
-	/**
-	 * Open the modal when the form is submitted
-	 * @param  {event} event The event object
-	 */
-	function openModal(event) {
-		if (event.target !== button) return;
-		event.preventDefault();
-		modal.style.display = "block";
-		submit.focus();
-		document.addEventListener("click", closeModalClick);
-		document.addEventListener("keydown", closeModalKey);
-		modal.addEventListener("click", submitHandler);
 	}
 
 	/* ============  Inits and Event Listeners  =========== */
 	/* ==================================================== */
 
 	document.addEventListener("change", changeHandler);
-	document.addEventListener("click", openModal);
 })();

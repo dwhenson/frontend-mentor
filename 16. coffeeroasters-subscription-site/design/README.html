@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="frontendmentor-coffeeroasterssubscriptionsite">Frontend Mentor - Coffeeroasters subscription site</h1>
+
+<figure>
+<img src="./preview.jpg" alt="Design preview for the Coffeeroasters subscription site coding challenge" />
+<figcaption>Design preview for the Coffeeroasters subscription site coding challenge</figcaption>
+</figure>
+
+<h2 id="welcome👋">Welcome! 👋</h2>
+
+<p>Thanks for purchasing this premium Frontend Mentor coding challenge.</p>
+
+<p><a href="https://www.frontendmentor.io">Frontend Mentor</a> challenges allow you to improve your skills in a real-life workflow. These premium challenges are perfect portfolio pieces, so please do feel free to use what you build in your portfolio to show others.</p>
+
+<p><strong>To do this challenge, you need a good understanding of HTML, CSS, and JavaScript.</strong></p>
+
+<h2 id="thechallenge">The challenge</h2>
+
+<p>Your challenge is to build out this multi-page coffee subscription website and get it looking as close to the design as possible.</p>
+
+<p>You can use any tools you like to help you complete the challenge. So if you&#8217;ve got something you&#8217;d like to practice, feel free to give it a go.</p>
+
+<p>Your users should be able to:</p>
+
+<ul>
+<li>View the optimal layout for each page depending on their device&#8217;s screen size</li>
+<li>See hover states for all interactive elements throughout the site</li>
+<li>Make selections to create a coffee subscription and see an order summary modal of their choices (details provided below)</li>
+</ul>
+
+<h3 id="expectedbahaviour">Expected bahaviour</h3>
+
+<p>The interactive subscription page has a number of specific behaviours, which are listed below:</p>
+
+<ul>
+<li>If &#8220;Capsule&#8221; is selected for the first option</li>
+<li> The &#8220;Want us to grind them?&#8221; section should be disabled and not able to be opened</li>
+<li>Order summary texts updates</li>
+<li> If &#8220;Capsule&#8221; is selected, update the order summary text to:
+
+<ul>
+<li>&#8220;I drink my coffee <strong>using</strong> Capsules&#8221;</li>
+<li>Remove the grind selection text</li>
+</ul></li>
+<li> If &#8220;Filter&#8221; or &#8220;Espresso&#8221; are selected, update the order summary text to:
+
+<ul>
+<li>&#8220;I drink my coffee <strong>as</strong> Filter||Espresso&#8221;</li>
+<li>Keep/Add the grind selection text</li>
+</ul></li>
+<li> For all other selections, add the selection title in the blank space where appropriate</li>
+<li>Updating per shipment price (shown in &#8220;How often should we deliver?&#8221; section at the bottom) based on weight selected</li>
+<li> If 250g weight is selected
+
+<ul>
+<li>Every Week price per shipment is $7.20</li>
+<li>Every 2 Weeks price per shipment is $9.60</li>
+<li>Every Month price per shipment is $12.00</li>
+</ul></li>
+<li> If 500g weight is selected
+
+<ul>
+<li>Every Week price per shipment is $13.00</li>
+<li>Every 2 Weeks price per shipment is $17.50</li>
+<li>Every Month price per shipment is $22.00</li>
+</ul></li>
+<li> If 1000g weight is selected
+
+<ul>
+<li>Every Week price per shipment is $22.00</li>
+<li>Every 2 Weeks price per shipment is $32.00</li>
+<li>Every Month price per shipment is $42.00</li>
+</ul></li>
+<li>Calculating per month cost for the Order Summary modal</li>
+<li> If Every Week is selected, the Order Summary modal should show the per shipment price multiplied by 4. For example, if 250g weight is selected, the price would be $28.80/month</li>
+<li> If Every 2 Weeks is selected, the Order Summary modal should show the per shipment price multiplied by 2. For example, if 250g weight is selected, the price would be $19.20/month</li>
+<li> If Every Month is selected, the Order Summary modal should show the per shipment price multiplied by 1. For example, if 250g weight is selected, the price would be $12.00/month</li>
+</ul>
+
+<p>The designs show these differences, so you can refer to them to get an idea of what&#8217;s needed for the different states.</p>
+
+<p>Want some support on the challenge? <a href="https://www.frontendmentor.io/slack">Join our Slack community</a> and ask questions in the <strong>#help</strong> channel.</p>
+
+<h2 id="wheretofindeverything">Where to find everything</h2>
+
+<p>Your task is to build out the project to the Sketch design file provided. You can download the design file on the platform. It comes with a <code>README.md</code> file as well to help you get set up on Sketch or other popular design tools like Figma and Adobe XD.</p>
+
+<p>All the required assets for this project are in the <code>/assets</code> folder. The assets are already exported for the correct screen size and optimized. Some images can be re-used at multiple screen sizes. So if you don&#8217;t see an image in a specific folder, it will typically be in another folder for that page.</p>
+
+<p>The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.</p>
+
+<h2 id="buildingyourproject">Building your project</h2>
+
+<p>Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:</p>
+
+<ol>
+<li>Separate the <code>starter-code</code> from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on <a href="https://github.com/">GitHub</a>. This will make it easier to share your code with the community if you need some help. If you&#8217;re not sure how to do this, <a href="https://try.github.io/">have a read through of this Try Git resource</a>. <strong>IMPORTANT: There are already a couple of <code>.gitignore</code> files in this project. Please do not remove them or change the content of the files. This is to avoid the accidental upload of the Sketch file to GitHub. With these premium challenges, please be sure not to share the Sketch file in your GitHub repo. Thanks!</strong></li>
+<li>Configure your repository to publish your code to a URL. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, but we recommend using <a href="https://bit.ly/fem-vercel">Vercel</a>. We&#8217;ve got more information about deploying your project with Vercel below.</li>
+<li>Look through the designs to start planning out how you&#8217;ll tackle the project. This step is crucial to help you think ahead for CSS classes that you could create to make reusable styles.</li>
+<li>Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.</li>
+<li>Write out the base styles for your project, including general content styles, such as <code>font-family</code> and <code>font-size</code>.</li>
+<li>Start adding styles to the top of the page and work down. Only move on to the next section once you&#8217;re happy you&#8217;ve completed the area you&#8217;re working on.</li>
+</ol>
+
+<h2 id="deployingyourproject">Deploying your project</h2>
+
+<p>As mentioned above, there are a number of ways to host your project for free. We recommend using <a href="https://bit.ly/fem-vercel">Vercel</a> as it&#8217;s an amazing service and extremely simple to get set up with. If you&#8217;d like to use Vercel, here are some steps to follow to get started:</p>
+
+<ol>
+<li><a href="https://bit.ly/fem-vercel-signup">Sign up to Vercel</a> and go through the onboarding flow, ensuring your GitHub account is connected by using their <a href="https://vercel.com/docs/v2/git-integrations/vercel-for-github">Vercel for GitHub</a> integration.</li>
+<li>Connect your project to Vercel from the <a href="https://vercel.com/import">&#8220;Import project&#8221; page</a>, using the &#8220;From Git Repository&#8221; button and selecting the project you want to deploy.</li>
+<li>Once connected, every time you <code>git push</code>, Vercel will create a new <a href="https://vercel.com/docs/v2/platform/deployments">deployment</a> and the deployment URL will be shown on your <a href="https://vercel.com/dashboard">Dashboard</a>. You will also receive an email for each deployment with the URL.</li>
+</ol>
+
+<h2 id="sharingyoursolution">Sharing your solution</h2>
+
+<p>There are multiple places you can share your solution:</p>
+
+<ol>
+<li>Submit it on the platform so that other users will see your solution on the site. Here&#8217;s our <a href="https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248">&#8220;Complete guide to submitting solutions&#8221;</a> to help you do that. <strong>With these premium challenges please be sure not to upload the Sketch file to GitHub when you&#8217;re submitting to the platform and sharing it around.</strong></li>
+<li>Share your solution page in the <strong>#finished-projects</strong> channel of the <a href="https://www.frontendmentor.io/slack">Slack community</a>.</li>
+<li>Tweet <a href="https://twitter.com/frontendmentor">@frontendmentor</a> and mention <strong>@frontendmentor</strong> including the repo and live URLs in the tweet. We&#8217;d love to take a look at what you&#8217;ve built and help share it around.</li>
+</ol>
+
+<h2 id="givingfeedback">Giving feedback</h2>
+
+<p>Feedback is always welcome, so if you have any to give on this challenge please email hi[at]frontendmentor[dot]io.</p>
+
+<p><strong>Have fun building!</strong> 🚀</p>
+
+</body>
+</html>
+
