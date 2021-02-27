@@ -1,5 +1,5 @@
 # frontend-mentor
-Projects and challenges from [Frontend Mentor](https://www.frontendmentor.io) that are designed to help me improve my website development skills by building components, pages and web-sites. 
+Projects and challenges from [Frontend Mentor](https://www.frontendmentor.io) that are designed to help me improve my website development skills by building components, pages and websites. 
 
 My focus is on buidling things using semantic and accessiable HTML, efficent CSS, and JavaScript when necessary.
 
