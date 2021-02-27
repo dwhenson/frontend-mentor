@@ -12,7 +12,7 @@ Users should be able to:
 
 ## Lessons Learnt
 
-💡 Look the the functionality of the component without considering how it looks to identify the most appropriate HTML to use. (For example, this toggle is better as a radio button).
+💡 I need to take my time and look at the functionality of the component without considering how it looks to identify the most appropriate HTML to use. (For example, this toggle is better as a radio button). This will save time in the long run.
 
 💡 I think this could be done without JS using a `monthly:checked ~ .price` or `monthly:checked > .price` selectors, but this would require a massive code restructure. Again better planning from the outset might have enabled me to do this.
 
