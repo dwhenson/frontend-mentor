@@ -48,10 +48,6 @@ body {
 	font-size: var(--fs-400);
 }
 
-#main-content {
-	margin-top: 0;
-}
-
 :focus-visible {
 	outline: 3px dotted currentColor;
 	outline-offset: 0.2rem;
@@ -65,11 +61,11 @@ body {
    	================================================== */
 
 h1 {
-	font-size: 1.5rem;
+	font-size: 2rem;
 }
 
 h2 {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 /* ==================================================
@@ -86,7 +82,7 @@ h2 {
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer) * 5);
+	margin-top: calc(var(--spacer) * 3);
 }
 
 .flow-content > * + * {
