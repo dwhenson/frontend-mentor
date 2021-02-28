@@ -44,9 +44,10 @@
 	 ================================================== */
 body {
 	background-color: var(--clr-neutral-100);
-	color: var(--clr-fg-100);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
+	text-align: center;
+	color: var(--clr-fg-100);
 }
 
 :focus-visible {
@@ -63,19 +64,21 @@ body {
 
 h1 {
 	font-size: 2rem;
+	text-align: left;
 }
 
 h2 {
 	font-size: 1.5rem;
+	text-align: left;
 }
 
 a,
 label,
 .subheading,
 .today p:not([class]) {
-	color: var(--clr-fg-200);
-	text-decoration: none;
 	font-weight: 700;
+	text-decoration: none;
+	color: var(--clr-fg-200);
 }
 
 .total {
@@ -84,17 +87,17 @@ label,
 }
 
 .total span {
-	color: var(--clr-fg-200);
-	font-size: 1rem;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-weight: 400;
 	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--clr-fg-200);
 }
 
-/* ==================================================
-	 Utilities
-	 ================================================== */
+/* 	==================================================
+   	Utilities
+	================================================== */
 
 .center-content {
 	display: grid;
@@ -122,6 +125,7 @@ label,
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	gap: var(--spacer);
 }
 
@@ -132,9 +136,9 @@ label,
 
 .increase::before {
 	content: "\25B2";
-	transform: translateY(50%);
-	position: absolute;
+	position: relative;
 	left: -1.5em;
+	transform: translateY(50%);
 	font-size: 0.5em;
 }
 
@@ -145,8 +149,9 @@ label,
 
 .decrease::before {
 	content: "\25BC";
+	position: relative;
+	top: 0;
+	left: -0.5em;
 	transform: translateY(50%);
-	position: absolute;
-	left: -1.5em;
 	font-size: 0.5em;
 }
