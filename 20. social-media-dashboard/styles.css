@@ -1,7 +1,7 @@
 :root {
 	/* Primary - Text */
 	--clr-primary-100: hsl(163, 72%, 41%);
-	--clr-primary-200: hshsl(356, 69%, 56%);
+	--clr-primary-200: hsl(356, 69%, 56%);
 	--clr-primary-facebook: hsl(208, 92%, 53%);
 	--clr-primary-twitter: hsl(203, 89%, 53%);
 	--clr-primary-instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
@@ -120,10 +120,33 @@ label,
 
 .flex {
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
-	gap: 2rem;
+	gap: var(--spacer);
 }
 
-.flex > * {
-	flex-basis: 100%;
+.increase {
+	position: relative;
+	color: var(--clr-primary-100);
+}
+
+.increase::before {
+	content: "\25B2";
+	transform: translateY(50%);
+	position: absolute;
+	left: -1.5em;
+	font-size: 0.5em;
+}
+
+.decrease {
+	position: relative;
+	color: var(--clr-primary-200);
+}
+
+.decrease::before {
+	content: "\25BC";
+	transform: translateY(50%);
+	position: absolute;
+	left: -1.5em;
+	font-size: 0.5em;
 }
