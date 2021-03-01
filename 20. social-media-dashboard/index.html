@@ -16,66 +16,62 @@
 		<script src="main.js" async defer></script>
 	</head>
 
-	<body class="center-content">
+	<body class="center-content container">
 		<!-- Wrapper to allow center alignment -->
 		<div class="flow-section">
-			<header>
-				<h1>Social Media Dashboard</h1>
-				<p class="subheading">Total Followers: 23,004</p>
+			<header class="flex">
+				<!-- Wrapper to enable flex -->
+				<div>
+					<h1>Social Media Dashboard</h1>
+					<p class="subheading">Total Followers: 23,004</p>
+				</div>
 				<!-- visually hidden -->
 				<div class="">
-					<input type="checkbox" id="dark-mode" />
 					<label for="dark-mode"> Dark Mode </label>
+					<input type="checkbox" id="dark-mode" />
 				</div>
 			</header>
 
-			<div>
-				<div class="totals">
-					<div class="facebook">
-						<a href="#">
-							<img src="images/icon-facebook.svg" alt="Facebook" />
-							<p>@dwhenson</p>
-						</a>
-						<p class="total">1987<span>followers</span></p>
-						<p class="increase">12 Today</p>
-					</div>
+			<div class="summaries">
+				<div class="card summary facebook">
+					<a href="#">
+						<img src="images/icon-facebook.svg" alt="Facebook" />
+						<p>@dwhenson</p>
+					</a>
+					<p class="total">1987<span>followers</span></p>
+					<p class="increase">12 Today</p>
 				</div>
-				<div class="totals">
-					<div class="twitter">
-						<a href="#">
-							<img src="images/icon-twitter.svg" alt="twitter" />
-							<p>@dwhenson</p>
-						</a>
-						<p class=">1044<span>followers</span></p>
-						<p class="increase">29 Today</p>
-					</div>
+				<div class="card summary">
+					<a href="#">
+						<img src="images/icon-twitter.svg" alt="twitter" />
+						<p>@dwhenson</p>
+					</a>
+					<p class="total">1044<span>followers</span></p>
+					<p class="increase">99 Today</p>
 				</div>
-				<div class="totals">
-					<div class="instagram">
-						<a href="#">
-							<img src="images/icon-instagram.svg" alt="instagram" />
-							<p>@dwhenson</p>
-						</a>
-						<p class="total">11k<span>followers</span></p>
-						<p class="increase">29 Today</p>
-					</div>
+				<div class="card summary instagram">
+					<a href="#">
+						<img src="images/icon-instagram.svg" alt="instagram" />
+						<p>@dwhenson</p>
+					</a>
+					<p class="total">11k<span>followers</span></p>
+					<p class="increase">29 Today</p>
 				</div>
-				<div class="totals">
-					<div class="youtube">
-						<a href="#">
-							<img src="images/icon-youtube.svg" alt="youtube" />
-							<p>@dwhenson</p>
-						</a>
-						<p class="total">11k<span>followers</span></p>
-						<p class="increase">29 Today</p>
-					</div>
+				<div class="card summary youtube">
+					<a href="#">
+						<img src="images/icon-youtube.svg" alt="youtube" />
+						<p>@dwhenson</p>
+					</a>
+					<p class="total">11k<span>followers</span></p>
+					<p class="increase">29 Today</p>
 				</div>
 			</div>
 
-			<section class="todays" id="main-content" tab-index="-1" aria-label="Overview Today">
+			<section id="main-content" tab-index="-1" aria-label="Overview Today">
 				<h2>Overview - Today</h2>
-				<div class="today">
-					<div class="facebook">
+
+				<div class="todays">
+					<div class="card today facebook">
 						<p>Page Views</p>
 						<a href="#">
 							<img src="images/icon-facebook.svg" alt="facebook" />
@@ -83,7 +79,7 @@
 						<p class="today total">87</p>
 						<p class="today increase">3%</p>
 					</div>
-					<div class="facebook">
+					<div class="card today facebook">
 						<p>Likes</p>
 						<a href="#">
 							<img src="images/icon-facebook.svg" alt="facebook" />
@@ -91,7 +87,7 @@
 						<p class="today total">52</p>
 						<p class="today decrease">2%</p>
 					</div>
-					<div class="instagram">
+					<div class="card today instagram">
 						<p>Likes</p>
 						<a href="#">
 							<img src="images/icon-instagram.svg" alt="instagram" />
@@ -99,7 +95,7 @@
 						<p class="today total">5462</p>
 						<p class="today increase">2257%</p>
 					</div>
-					<div class="instagram">
+					<div class="card today instagram">
 						<p>Profile Views</p>
 						<a href="#">
 							<img src="images/icon-instagram.svg" alt="instagram" />
@@ -107,7 +103,7 @@
 						<p class="today total">52k</p>
 						<p class="today increase">1375%</p>
 					</div>
-					<div class="twitter">
+					<div class="card today twitter">
 						<p>Retweets</p>
 						<a href="#">
 							<img src="images/icon-twitter.svg" alt="twitter" />
@@ -115,7 +111,7 @@
 						<p class="today total">117</p>
 						<p class="today increase">203%</p>
 					</div>
-					<div class="twitter">
+					<div class="card today twitter">
 						<p>Likes</p>
 						<a href="#">
 							<img src="images/icon-twitter.svg" alt="twitter" />
@@ -123,7 +119,7 @@
 						<p class="today total">507</p>
 						<p class="today increase">563%</p>
 					</div>
-					<div class="youtube">
+					<div class="card today youtube">
 						<p>Likes</p>
 						<a href="#">
 							<img src="images/icon-youtube.svg" alt="youtube" />
@@ -131,7 +127,7 @@
 						<p class="today total">107</p>
 						<p class="today decrease">19%</p>
 					</div>
-					<div class="youtube">
+					<div class="card today youtube">
 						<p>Total Views</p>
 						<a href="#">
 							<img src="images/icon-youtube.svg" alt="youtube" />
