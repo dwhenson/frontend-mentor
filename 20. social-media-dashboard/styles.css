@@ -87,20 +87,6 @@ label,
 	color: var(--clr-fg-200);
 }
 
-.total {
-	font-size: 3rem;
-	font-weight: 700;
-}
-
-.total span {
-	display: block;
-	font-size: 1rem;
-	font-weight: 400;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	color: var(--clr-fg-200);
-}
-
 /* 	==================================================
    	Utilities
 	================================================== */
@@ -168,22 +154,88 @@ label,
 .summaries,
 .todays {
 	display: grid;
-	gap: var(--spacer);
-	background-color: var(--clr-neutral-200);
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	gap: calc(var(--spacer) * 2);
+	border-radius: 1em;
 }
 
 .card {
+	background-color: var(--clr-neutral-200);
+	border-radius: 0.5em;
 	display: grid;
-	gap: var(--spacer);
+	gap: calc(var(--spacer) * 2);
+	padding: calc(var(--spacer) * 2);
 }
 
-.summaries > .card,
-.todays > .card {
-	padding: clamp(1rem, 2.5%, 3rem);
+/* 	Summary cards
+    ------------------- */
+
+.summary .total {
+	font-size: 3rem;
+	font-weight: 700;
 }
 
-.card a {
+.summary .total span {
+	display: block;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--clr-fg-200);
+}
+
+.summaries a {
 	display: flex;
 	justify-content: center;
 	gap: var(--spacer);
+}
+
+.summaries .facebook {
+	border-top: 0.25em solid var(--clr-primary-facebook);
+}
+
+.summaries .twitter {
+	border-top: 0.25em solid var(--clr-primary-twitter);
+}
+
+/* FIXME border image not working */
+.summaries .instagram {
+	border-image: var(--clr-primary-instagram);
+	border-image-width: 0.25em;
+	border-image-slice: 1;
+}
+
+.summaries .youtube {
+	border-top: 0.25em solid var(--clr-primary-youtube);
+}
+
+/* 	Today cards
+    ------------------- */
+
+.todays .card {
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+}
+
+.today > p:not([class]) {
+	align-self: start;
+	justify-self: start;
+}
+
+.today > a {
+	justify-self: end;
+	align-self: start;
+}
+
+.today .total {
+	font-size: 2.5rem;
+	font-weight: 700;
+	justify-self: start;
+	align-self: end;
+}
+
+.today .increase,
+.today .decrease {
+	justify-self: end;
+	align-self: end;
 }
