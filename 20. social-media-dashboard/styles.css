@@ -4,7 +4,7 @@
 	--clr-primary-200: hsl(356, 69%, 56%);
 	--clr-primary-facebook: hsl(208, 92%, 53%);
 	--clr-primary-twitter: hsl(203, 89%, 53%);
-	--clr-primary-instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+	--clr-primary-instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 	--clr-primary-youtube: hsl(348, 97%, 39%);
 
 	/* Light Theme */
@@ -28,6 +28,18 @@
 
 	/* font-family */
 	--ff-body: "Inter", sans-serif;
+
+	/* Toggle switch */
+	--metric-toggle-thumb-size: 1.5rem;
+	--metric-toggle-thumb-space: 0.2rem;
+	--metric-toggle-icon-space: 0.5rem;
+	--transition-snappy-duration: 500ms;
+	--transition-silky-duration: 200ms;
+
+	/* prettier-ignore */
+	--transition-icon:
+		opacity var(--transition-snappy-duration) ease,
+		transform var(--transition-silky-duration) cubic-bezier(1, 0, 0.55, 0.85);
 }
 
 /* Dark Theme */
@@ -36,18 +48,20 @@
 	--clr-neutral-100: hsl(230, 17%, 14%);
 	--clr-fg-100: hsl(0, 0%, 100%);
 	--clr-fg-200: hsl(228, 34%, 66%);
-	--clr-toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
-/* ==================================================
-	 Global Styles
-	 ================================================== */
+/* 	==================================================
+	Global Styles
+	================================================== */
+
 body {
 	background-color: var(--clr-neutral-100);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
 	text-align: center;
 	color: var(--clr-fg-100);
+	margin-top: 3rem;
 }
 
 :focus-visible {
@@ -115,10 +129,10 @@ label,
 
 .flex {
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: space-between;
-	gap: var(--spacer);
+	gap: calc(var(--spacer) * 2);
 }
 
 .increase {
@@ -148,14 +162,106 @@ label,
 	font-size: 0.5em;
 }
 
+/* 	==================================================
+	Blocks
+	================================================== */
+
+/* 	Toggle
+   	================================================== */
+
+.toggle {
+	line-height: 1;
+	font-weight: 700;
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: var(--spacer);
+}
+
+/* Hide native checkbox and position on top of toggle */
+.toggle__element {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: var(--metric-toggle-thumb-size);
+	width: 1em;
+	height: 1em;
+}
+
+/* Style toggle pill */
+.toggle__decor {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: calc((var(--metric-toggle-thumb-size) * 2) + (var(--metric-toggle-thumb-space) * 2));
+	height: calc(var(--metric-toggle-thumb-size) + (var(--metric-toggle-thumb-space) * 1.75));
+	background: var(--clr-toggle);
+	border-radius: var(--metric-toggle-thumb-size);
+	box-sizing: content-box;
+}
+
+/* Style toggle thumb */
+.toggle__thumb {
+	display: grid;
+	place-items: center;
+	width: var(--metric-toggle-thumb-size);
+	height: var(--metric-toggle-thumb-size);
+	border-radius: var(--metric-toggle-thumb-size);
+
+	/* prettier-ignore */
+	background:
+		linear-gradient(
+			229.84deg,
+			rgba(255, 255, 255, 0) 14.29%,
+			rgba(48, 48, 48, 0.15) 81.82%
+		),
+		#fff;
+	box-shadow: 0 0 var(--metric-toggle-thumb-space) rgba(0, 0, 0, 0.25);
+	position: absolute;
+	top: var(--metric-toggle-thumb-space);
+	left: var(--metric-toggle-thumb-space);
+	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	z-index: 1;
+}
+
+/* Add focus marker to thumb */
+.toggle__thumb::before {
+	content: "";
+	display: none;
+	width: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
+	height: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
+	border: 2px solid var(--clr-primary-100);
+	border-radius: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
+}
+
+:focus + .toggle__decor:not(:hover) .toggle__thumb::before {
+	display: block;
+}
+
+/* Transition on checked */
+:checked + .toggle__decor .toggle__thumb {
+	transform: translateX(var(--metric-toggle-thumb-size)) rotate(270deg);
+	box-shadow: 0 0 var(--metric-toggle-thumb-space) rgba(0, 0, 0, 0.9);
+}
+
+/* Nudge effect when hovering over toggle */
+.toggle__decor:hover .toggle__thumb {
+	margin-left: 1px;
+}
+
+:checked + .toggle__decor:hover .toggle__thumb {
+	margin-left: -1px;
+}
+
 /* 	Cards
    	================================================== */
 
 .summaries,
 .todays {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-	border-radius: 1em;
+	grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+	border-radius: 0.5em;
 	gap: calc(var(--spacer) * 2);
 }
 
@@ -198,11 +304,12 @@ label,
 	border-top: 0.25em solid var(--clr-primary-twitter);
 }
 
-/* FIXME border image not working */
+/* FIXME border image not working rounded */
 .summaries .instagram {
+	border: 0.25em solid transparent;
 	border-image: var(--clr-primary-instagram);
 	border-image-slice: 1;
-	border-image-width: 0.25em;
+	border-image-width: 0.25em 0 0 0;
 }
 
 .summaries .youtube {
@@ -213,8 +320,8 @@ label,
     ------------------- */
 
 .todays .card {
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto 1fr;
+	grid-template-columns: max-content 1fr;
 }
 
 .today > p:not([class]) {
