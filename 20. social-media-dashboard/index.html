@@ -25,11 +25,16 @@
 					<h1>Social Media Dashboard</h1>
 					<p class="subheading">Total Followers: 23,004</p>
 				</div>
-				<!-- visually hidden -->
-				<div class="">
-					<label for="dark-mode"> Dark Mode </label>
-					<input type="checkbox" id="dark-mode" />
-				</div>
+
+				<label class="toggle" for="toggle-element" hidden>
+					<span class="toggle__label">Dark Mode</span>
+					<!-- Visually hidden -->
+					<input type="checkbox" role="switch" class="toggle__element" id="toggle-element" />
+					<!-- Screen reader hidden -->
+					<div class="toggle__decor" aria-hidden="true">
+						<div class="toggle__thumb"></div>
+					</div>
+				</label>
 			</header>
 
 			<div class="summaries">
@@ -41,7 +46,7 @@
 					<p class="total">1987<span>followers</span></p>
 					<p class="increase">12 Today</p>
 				</div>
-				<div class="card summary">
+				<div class="card summary twitter">
 					<a href="#">
 						<img src="images/icon-twitter.svg" alt="twitter" />
 						<p>@dwhenson</p>

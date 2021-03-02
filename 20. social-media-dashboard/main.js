@@ -1,5 +1,4 @@
 const toggle = document.querySelector(".toggle");
-const checkbox = document.querySelector("#dark-mode");
 const root = document.querySelector("html");
 
 /**

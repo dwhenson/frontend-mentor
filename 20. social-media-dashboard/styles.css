@@ -33,13 +33,6 @@
 	--metric-toggle-thumb-size: 1.5rem;
 	--metric-toggle-thumb-space: 0.2rem;
 	--metric-toggle-icon-space: 0.5rem;
-	--transition-snappy-duration: 500ms;
-	--transition-silky-duration: 200ms;
-
-	/* prettier-ignore */
-	--transition-icon:
-		opacity var(--transition-snappy-duration) ease,
-		transform var(--transition-silky-duration) cubic-bezier(1, 0, 0.55, 0.85);
 }
 
 /* Dark Theme */
@@ -49,6 +42,16 @@
 	--clr-fg-100: hsl(0, 0%, 100%);
 	--clr-fg-200: hsl(228, 34%, 66%);
 	--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+@media (prefers-color-scheme: dark) {
+	:root.dark-theme {
+		--clr-neutral-200: hsl(228, 28%, 20%);
+		--clr-neutral-100: hsl(230, 17%, 14%);
+		--clr-fg-100: hsl(0, 0%, 100%);
+		--clr-fg-200: hsl(228, 34%, 66%);
+		--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	}
 }
 
 /* 	==================================================
