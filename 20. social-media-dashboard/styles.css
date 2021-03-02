@@ -224,7 +224,7 @@ label,
 	position: absolute;
 	top: var(--metric-toggle-thumb-space);
 	left: var(--metric-toggle-thumb-space);
-	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	transition: transform 100ms cubic-bezier(1, 0, 0.55, 0.85);
 	z-index: 1;
 }
 
