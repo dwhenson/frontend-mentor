@@ -44,27 +44,17 @@
 	--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
-@media (prefers-color-scheme: dark) {
-	:root.dark-theme {
-		--clr-neutral-200: hsl(228, 28%, 20%);
-		--clr-neutral-100: hsl(230, 17%, 14%);
-		--clr-fg-100: hsl(0, 0%, 100%);
-		--clr-fg-200: hsl(228, 34%, 66%);
-		--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-	}
-}
-
 /* 	==================================================
 	Global Styles
 	================================================== */
 
 body {
+	margin-top: 3rem;
 	background-color: var(--clr-neutral-100);
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
 	text-align: center;
 	color: var(--clr-fg-100);
-	margin-top: 3rem;
 }
 
 :focus-visible {
@@ -173,44 +163,49 @@ label,
    	================================================== */
 
 .toggle {
-	line-height: 1;
-	font-weight: 700;
 	position: relative;
 	display: flex;
 	align-items: center;
+	font-weight: 700;
+	line-height: 1;
+	cursor: pointer;
 	gap: var(--spacer);
 }
 
 /* Hide native checkbox and position on top of toggle */
 .toggle__element {
-	opacity: 0;
 	position: absolute;
 	top: 50%;
-	transform: translateY(-50%);
 	right: var(--metric-toggle-thumb-size);
+	opacity: 0;
 	width: 1em;
 	height: 1em;
+	transform: translateY(-50%);
 }
 
 /* Style toggle pill */
 .toggle__decor {
-	display: block;
 	position: relative;
-	overflow: hidden;
+	display: block;
+	box-sizing: content-box;
 	width: calc((var(--metric-toggle-thumb-size) * 2) + (var(--metric-toggle-thumb-space) * 2));
 	height: calc(var(--metric-toggle-thumb-size) + (var(--metric-toggle-thumb-space) * 1.75));
-	background: var(--clr-toggle);
 	border-radius: var(--metric-toggle-thumb-size);
-	box-sizing: content-box;
+	overflow: hidden;
+	background: var(--clr-toggle);
 }
 
 /* Style toggle thumb */
 .toggle__thumb {
+	position: absolute;
 	display: grid;
-	place-items: center;
+	top: var(--metric-toggle-thumb-space);
+	left: var(--metric-toggle-thumb-space);
+	z-index: 1;
 	width: var(--metric-toggle-thumb-size);
 	height: var(--metric-toggle-thumb-size);
 	border-radius: var(--metric-toggle-thumb-size);
+	box-shadow: 0 0 var(--metric-toggle-thumb-space) rgba(0, 0, 0, 0.25);
 
 	/* prettier-ignore */
 	background:
@@ -220,12 +215,8 @@ label,
 			rgba(48, 48, 48, 0.15) 81.82%
 		),
 		#fff;
-	box-shadow: 0 0 var(--metric-toggle-thumb-space) rgba(0, 0, 0, 0.25);
-	position: absolute;
-	top: var(--metric-toggle-thumb-space);
-	left: var(--metric-toggle-thumb-space);
 	transition: transform 100ms cubic-bezier(1, 0, 0.55, 0.85);
-	z-index: 1;
+	place-items: center;
 }
 
 /* Add focus marker to thumb */
@@ -244,8 +235,8 @@ label,
 
 /* Transition on checked */
 :checked + .toggle__decor .toggle__thumb {
-	transform: translateX(var(--metric-toggle-thumb-size)) rotate(270deg);
 	box-shadow: 0 0 var(--metric-toggle-thumb-space) rgba(0, 0, 0, 0.9);
+	transform: translateX(var(--metric-toggle-thumb-size)) rotate(270deg);
 }
 
 /* Nudge effect when hovering over toggle */
