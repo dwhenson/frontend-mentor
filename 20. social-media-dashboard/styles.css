@@ -13,6 +13,7 @@
 	--clr-fg-100: hsl(230, 17%, 14%);
 	--clr-fg-200: hsl(228, 12%, 44%);
 	--clr-toggle: hsl(230, 22%, 74%);
+	--hover: hsla(227, 49%, 96%, 0.5);
 
 	/* Spacing */
 	--spacer: 1rem;
@@ -37,11 +38,12 @@
 
 /* Dark Theme */
 :root.dark-theme {
-	--clr-neutral-200: hsl(228, 28%, 20%);
 	--clr-neutral-100: hsl(230, 17%, 14%);
+	--clr-neutral-200: hsl(228, 28%, 20%);
 	--clr-fg-100: hsl(0, 0%, 100%);
 	--clr-fg-200: hsl(228, 34%, 66%);
 	--clr-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+	--hover: hsla(228, 28%, 20%, 0.5);
 }
 
 /* 	==================================================
@@ -214,7 +216,7 @@ label,
 			rgba(255, 255, 255, 0) 14.29%,
 			rgba(48, 48, 48, 0.15) 81.82%
 		),
-		#fff;
+	var(--clr-neutral-100);
 	transition: transform 100ms cubic-bezier(1, 0, 0.55, 0.85);
 	place-items: center;
 }
@@ -225,7 +227,7 @@ label,
 	display: none;
 	width: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
 	height: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
-	border: 2px solid var(--clr-primary-100);
+	border: 3px solid var(--clr-primary-100);
 	border-radius: calc(var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space));
 }
 
@@ -265,6 +267,11 @@ label,
 	border-radius: 0.5em;
 	background-color: var(--clr-neutral-200);
 	gap: calc(var(--spacer) * 2);
+}
+
+.card:hover {
+	cursor: pointer;
+	background-color: var(--hover);
 }
 
 /* 	Summary cards
