@@ -1,8 +1,8 @@
 :root {
 	/* Colors */
 	--clr-primary-100: 263, 55%, 52%;
-	--clr-primary-200: 217, 19%, 35%;
 	--clr-primary-200: 219, 29%, 14%;
+	--clr-primary-300: 217, 19%, 35%;
 	--clr-neutral-100: 0, 0%, 100%;
 	--clr-neutral-200: 0, 0%, 81%;
 	--clr-neutral-300: 210, 46%, 95%;
@@ -13,8 +13,7 @@
 	--fs-500: 1.5rem;
 
 	/* Spacing */
-	--spacer: 1rem;
-	--line-height: 1.8;
+	--spacer: 1em;
 
 	/* font-family */
 	--ff-body: "Barlow Semi Condensed", sans-serif;
@@ -29,6 +28,7 @@ body {
 	font-size: var(--fs-400);
 	font-weight: 500;
 	background-color: hsl(var(--clr-neutral-300));
+	line-height: 1.4;
 }
 
 /* 	Typography
@@ -36,10 +36,16 @@ body {
 
 .position {
 	font-size: var(--fs-300);
+	color: var(--position, hsla(var(--clr-primary-200), 0.5));
+	margin-top: 0.15em;
 }
 
 .short {
 	font-size: var(--fs-500);
+}
+
+.long {
+	color: var(--long, hsla(var(--clr-primary-200), 0.7));
 }
 
 /*  ==================================================
@@ -49,11 +55,29 @@ body {
 .testimonials {
 	display: grid;
 	gap: var(--spacer);
+	grid-auto-flow: dense;
+	grid-template-rows: min-content min-content;
+	grid-template-columns: repeat(autofill, minmax(18em, 1fr));
+	grid-auto-flow: dense;
 }
 
-/* 	==================================================
+@media only screen and (min-width: 50em) {
+	.rows-2 {
+		grid-row: 1 / span 2;
+		grid-column: 4;
+	}
+
+	.cols-2 {
+		grid-column: span 2;
+	}
+}
+
+/*   ==================================================
    	Utilities
 	  ================================================== */
+
+/*  Spacing
+    ------------------- */
 
 .center-content {
 	display: grid;
@@ -66,14 +90,42 @@ body {
 	grid-column: 2;
 }
 
-.container {
-	padding: clamp(1rem, 2.5%, 3rem);
+.flow > * + * {
+	margin-top: var(--spacer);
 }
 
 .flex {
 	display: flex;
 	align-items: center;
 	gap: var(--spacer);
+	line-height: 1.2;
+}
+
+/*  Color
+    ------------------- */
+
+.accent-primary-100 {
+	--border: hsla(var(--clr-neutral-100), 0.5);
+	--bg: hsl(var(--clr-primary-100));
+	--fg: hsl(var(--clr-neutral-100));
+	--position: hsla(var(--clr-neutral-100), 0.5);
+	--long: hsla(var(--clr-neutral-100), 0.7);
+}
+
+.accent-primary-200 {
+	--border: hsla(var(--clr-primary-100), 0.5);
+	--bg: hsl(var(--clr-primary-200));
+	--fg: hsl(var(--clr-neutral-100));
+	--position: hsla(var(--clr-neutral-100), 0.5);
+	--long: hsla(var(--clr-neutral-100), 0.7);
+}
+
+.accent-primary-300 {
+	--border: hsla(var(--clr-primary-300), 0.5);
+	--bg: hsl(var(--clr-primary-300));
+	--fg: hsl(var(--clr-neutral-100));
+	--position: hsla(var(--clr-neutral-100), 0.5);
+	--long: hsla(var(--clr-neutral-100), 0.7);
 }
 
 /* ==================================================
@@ -81,5 +133,13 @@ body {
    ================================================== */
 
 .testimonial {
+	padding: 2rem;
 	background-color: var(--bg, hsl(var(--clr-neutral-100)));
+	color: var(--fg, hsl(var(--clr-primary-200)));
+	border-radius: var(--spacer);
+}
+
+.testimonial img {
+	border-radius: 50%;
+	border: 3px solid var(--border, hsl(var(--clr-neutral-300)));
 }
