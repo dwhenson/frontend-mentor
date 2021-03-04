@@ -10,11 +10,11 @@ Users should be able to:
 
 ## Lessons Learnt
 
-💡 I need to think about the functionality that I want from the grid before starting to add in rules and hoping for the right result. I also need to look into `min-content` verses `auto` and why this impacts row height. 
+💡 I need to think about the functionality that I want from the grid before starting to add in rules and hoping for the right result. `autofit` combined with `minmax('some-value', 1fr)` can help avoid, or at least, the need for media queries. 
 
 ## Code Tips
 
-🗒 When varying the only the opacity on a common color using CSS custom properties separate out the color values from the color prefix, as per the following example:
+🗒 When only varying the opacity on a common color using CSS custom properties separate out the color values from the color prefix, as per the following example:
 
 ```
 :root {
