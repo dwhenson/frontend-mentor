@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<title>Frontend Mentor | Interactive pricing component</title>
+		<link rel="stylesheet" href="reset.css" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+	<body>
+		<header>
+			<h1>Simple, traffic-based pricing</h1>
+			<p class="sub-heading">Sign-up for our 30-day trial. No credit card required.</p>
+		</header>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+		<div class="component">
+			<p><span class="views"></span>pageviews</p>
+			<p><span class="price"></span>/month</p>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+			<input type="range" name="range" value="10" placeholder="" />
 
-  Pageviews
-  $ /month
+			<div class="switch-container">
+				<label class="toggle" for="monthly">Monthly Billing</label>
+				<input type="radio" class="toggle-element" name="price-toggle" id="monthly" />
+				<label class="toggle" for="annually">Annual Billing</label>
+				<input type="radio" class="toggle-element" name="price-toggle" id="annually" />
+				<div class="toggle-styles" aria-hidden="true">
+					<div class="toggle-thumb"></div>
+				</div>
+			</div>
+			<!-- 25% discount -->
 
-  Monthly Billing
-  Yearly Billing 25% discount
+			<ul>
+				<li>Unlimited websites</li>
+				<li>100% data ownership</li>
+				<li>Email reports</li>
+			</ul>
+			<button>Start my trial</button>
+		</div>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded
+			by <a href="#">Your Name Here</a>.
+		</div>
+	</body>
 </html>
