@@ -1,0 +1,163 @@
+:root {
+	/* Primary */
+	--clr-primary-100: hsl(174, 77%, 80%);
+	--clr-primary-200: hsl(174, 86%, 45%);
+	--clr-primary-300: hsl(14, 92%, 95%);
+	--clr-primary-400: hsl(15, 100%, 70%);
+	--clr-primary-500: hsl(226, 100%, 87%);
+
+	/* Neutral */
+	--clr-meutral-100: hsl(0, 0%, 100%);
+	--clr-meutral-200: hsl(230, 100%, 99%);
+	--clr-meutral-300: hsl(224, 65%, 95%);
+	--clr-meutral-400: hsl(223, 50%, 87%);
+	--clr-meutral-500: hsl(225, 20%, 60%);
+	--clr-meutral-600: hsl(227, 35%, 25%);
+
+	/* Spacing */
+	--spacer: 1rem;
+
+	/* Font size */
+	--fs-400: 1rem;
+	--fs-500: 1.5rem;
+
+	/* font-family */
+	--ff-body: "Manrope", sans-serif;
+
+	/* Toggle switch */
+	--metric-toggle-thumb-size: 1.5rem;
+	--metric-toggle-thumb-space: 0.2rem;
+	--metric-toggle-icon-space: 0.5rem;
+}
+
+/* 	==================================================
+	Global Styles
+	================================================== */
+
+body {
+	font-family: var(--ff-body);
+}
+
+/* 	Typography
+   	================================================== */
+
+/*  ==================================================
+    Composition
+    ================================================== */
+
+/*   ==================================================
+   	Utilities
+	  ================================================== */
+
+/*  Spacing
+    ------------------- */
+
+.center-content {
+	display: grid;
+	grid-template-columns: minmax(1rem, 1fr) minmax(0, 1440px) minmax(1rem, 1fr);
+}
+
+.center-content > * {
+	grid-column: 2;
+	margin-top: 30%;
+	margin-bottom: 30%;
+}
+
+.flow > * + * {
+	margin-top: var(--spacer);
+}
+
+/*
+.switch-container:focus-within {
+	outline: 2px solid currentColor;
+	outline-offset: 1em;
+}
+
+.switch-container {
+	position: relative;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	margin-top: 2em;
+}
+
+.toggle {
+	color: var(--clr-neutral-400);
+	cursor: pointer;
+	display: block;
+	gap: 1em;
+}
+
+.toggle[for="monthly"] {
+	order: 1;
+}
+
+.toggle[for="annually"] {
+	order: 3;
+}
+
+.toggle-element {
+	height: 4em;
+	opacity: 0;
+	position: absolute;
+	top: 35%;
+	transform: translateY(-50%);
+	width: 4em;
+	cursor: pointer;
+}
+
+#annually.toggle-element {
+	right: 25%;
+}
+
+#monthly.toggle-element {
+	right: 50%;
+}
+
+.toggle-styles {
+	background: linear-gradient(to right, var(--clr-accent-300), var(--clr-accent-600));
+	border-radius: var(--toggle-thumb-size);
+	display: block;
+	height: calc(var(--toggle-thumb-size) + (var(--toggle-thumb-space) * 2));
+	overflow: hidden;
+	position: relative;
+	width: calc((var(--toggle-thumb-size) * 2) + (var(--toggle-thumb-space) * 2));
+	cursor: pointer;
+	order: 2;
+	z-index: -1;
+}
+
+.toggle-thumb {
+	background-color: white;
+	border-radius: var(--toggle-thumb-size);
+	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
+	display: grid;
+	height: var(--toggle-thumb-size);
+	left: var(--toggle-thumb-space);
+	place-items: center;
+	position: absolute;
+	top: var(--toggle-thumb-space);
+	transform: none;
+	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	width: var(--toggle-thumb-size);
+	z-index: -1;
+}
+
+.toggle-thumb::before {
+	border: 2px solid var(--clr-neutral-800);
+	border-radius: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
+	content: "";
+	display: none;
+	height: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
+	width: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
+}
+
+:focus + .toggle-styles:not(:hover) .toggle-thumb::before {
+	display: block;
+}
+
+:checked + .toggle-styles .toggle-thumb {
+	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
+	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
+}*/
