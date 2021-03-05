@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="frontendmentor-socialmediadashboardwiththemeswitcher">Frontend Mentor - Social media dashboard with theme switcher</h1>
+
+<figure>
+<img src="./design/desktop-preview.jpg" alt="Design preview for the Social media dashboard with theme switcher coding challenge" />
+<figcaption>Design preview for the Social media dashboard with theme switcher coding challenge</figcaption>
+</figure>
+
+<h2 id="thechallenge">The challenge</h2>
+
+<p>Users should be able to:</p>
+
+<ul>
+<li>View the optimal layout for the site depending on their device&#8217;s screen size</li>
+<li>See hover states for all interactive elements on the page</li>
+<li>Toggle color theme to their preference</li>
+</ul>
+
+<h2 id="lessonslearnt">Lessons Learnt</h2>
+
+<p>💡 Providing a custom property on the <code>:root</code> that changes inside the <code>prefers-color-scheme</code> media query provides a hook for JavaScipt that then allows for tailoring changes against the &#8216;state&#8217; that the CSS is displaying</p>
+
+<h2 id="codetips">Code Tips</h2>
+
+<p>🗒 The <code>border-radius</code> property doesn&#8217;t work with the <code>border-image</code> property. If you need the same effect then use pseudo elements to achieve this (don&#8217;t forget to include the <code>position</code> property to move them around easily!!).
+🗒 To move the toggle if the user system preferences are set to dark mode use the <code>click()</code> method rather than <code>checked = true</code> (only the first of these fires the change event and influences the connected CSS)</p>
+
+<h2 id="usefulresources">Useful Resources</h2>
+
+<p>Big appreciation for <a href="https://piccalil.li">Andy Bell&#8217;s</a> tutorials here!</p>
+
+<p>🔗 Andy Bell on <a href="https://piccalil.li/tutorial/solution-002-toggle-switch">making an accessible toggle switch</a>. Usual massively in-depth ultimate edge case catered for approach from Andy.</p>
+
+<p>🔗 Andy Bell on <a href="https://piccalil.li/tutorial/get-css-custom-property-value-with-javascript">how to get a CSSS custom property with JavaScipt</a>. Have to confess to some rather blind copy and pasting on my part here&#8230;</p>
+
+<p>🔗 Andy Bell on <a href="https://piccalil.li/tutorial/create-a-user-controlled-dark-or-light-mode">creating a user controlled dark or light mode</a>. A great resource, I&#8217;ve not yet added in the <code>localStorage</code> to retain the users preferences on page load.</p>
+
+</body>
+</html>
+
