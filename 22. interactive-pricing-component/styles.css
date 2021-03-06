@@ -7,19 +7,20 @@
 	--clr-primary-500: hsl(226, 100%, 87%);
 
 	/* Neutral */
-	--clr-meutral-100: hsl(0, 0%, 100%);
-	--clr-meutral-200: hsl(230, 100%, 99%);
-	--clr-meutral-300: hsl(224, 65%, 95%);
-	--clr-meutral-400: hsl(223, 50%, 87%);
-	--clr-meutral-500: hsl(225, 20%, 60%);
-	--clr-meutral-600: hsl(227, 35%, 25%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-200: hsl(230, 100%, 99%);
+	--clr-neutral-300: hsl(224, 65%, 95%);
+	--clr-neutral-400: hsl(223, 50%, 87%);
+	--clr-neutral-500: hsl(225, 20%, 60%);
+	--clr-neutral-600: hsl(227, 35%, 25%);
 
 	/* Spacing */
 	--spacer: 1rem;
 
 	/* Font size */
 	--fs-400: 1rem;
-	--fs-500: 1.5rem;
+	--fs-500: 2rem;
+	--fs-600: 2.5rem;
 
 	/* font-family */
 	--ff-body: "Manrope", sans-serif;
@@ -36,10 +37,37 @@
 
 body {
 	font-family: var(--ff-body);
+	color: var(--clr-neutral-500);
+	text-align: center;
 }
 
 /* 	Typography
    	================================================== */
+
+h1 {
+	color: var(--clr-neutral-600);
+	font-size: var(--fs-500);
+}
+
+.pageviews {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 800;
+}
+
+.price {
+	display: inline-flex;
+	font-size: var(--fs-600);
+	color: var(--clr-neutral-600);
+	font-weight: 800;
+	align-items: center;
+	gap: 0.25em;
+}
+
+.month {
+	font-size: var(--fs-400);
+	color: var(--clr-neutral-500);
+}
 
 /*  ==================================================
     Composition
@@ -54,7 +82,7 @@ body {
 
 .center-content {
 	display: grid;
-	grid-template-columns: minmax(1rem, 1fr) minmax(0, 1440px) minmax(1rem, 1fr);
+	grid-template-columns: minmax(1rem, 2fr) minmax(0, 800px) minmax(1rem, 1fr);
 }
 
 .center-content > * {
@@ -63,8 +91,15 @@ body {
 	margin-bottom: 30%;
 }
 
-.flow > * + * {
+.flow-section > * + * {
+	margin-top: calc(var(--spacer) * 5);
+}
+.flow-content > * + * {
 	margin-top: var(--spacer);
+}
+
+.range {
+	display: block;
 }
 
 /*
