@@ -36,11 +36,11 @@
 	================================================== */
 
 body {
-	font-family: var(--ff-body);
-	color: var(--clr-neutral-500);
-	text-align: center;
 	background-color: var(--clr-neutral-300);
+	font-family: var(--ff-body);
 	font-size: var(--fs-400);
+	text-align: center;
+	color: var(--clr-neutral-500);
 }
 
 @media only screen and (min-width: 30em) {
@@ -50,7 +50,7 @@ body {
 }
 
 :focus-visible {
-	outline: 3px dotted currentColor;
+	outline: 3px dotted var(--clr-neutral-600);
 	outline-offset: 0.2rem;
 }
 
@@ -62,24 +62,24 @@ body {
    	================================================== */
 
 h1 {
-	color: var(--clr-neutral-600);
 	font-size: var(--fs-500);
+	color: var(--clr-neutral-600);
 }
 
 .pageviews {
-	text-transform: uppercase;
-	letter-spacing: 3px;
 	font-weight: 800;
+	letter-spacing: 3px;
+	text-transform: uppercase;
 }
 
 .price {
 	display: inline-flex;
-	line-height: 1;
 	align-items: center;
 	justify-content: center;
 	font-size: var(--fs-600);
-	color: var(--clr-neutral-600);
 	font-weight: 800;
+	line-height: 1;
+	color: var(--clr-neutral-600);
 	gap: 0.25em;
 }
 
@@ -101,8 +101,8 @@ h1 {
 .plans {
 	display: grid;
 	grid-template-columns: auto;
-	gap: var(--spacer);
 	grid-auto-flow: dense;
+	gap: var(--spacer);
 }
 
 @media only screen and (min-width: 30em) {
@@ -150,10 +150,10 @@ h1 {
    	================================================== */
 
 .component {
-	background-color: var(--clr-neutral-100);
-	border-radius: 0.5em;
 	padding-top: clamp(3rem, 5%, 5rem);
 	padding-bottom: clamp(3rem, 5%, 5rem);
+	border-radius: 0.5em;
+	background-color: var(--clr-neutral-100);
 }
 
 /* 	Toggle
@@ -162,16 +162,16 @@ h1 {
 .switch-container {
 	position: relative;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	gap: 1rem;
 }
 
 .toggle {
-	cursor: pointer;
 	display: block;
-	gap: 1em;
 	font-size: var(--fs-300);
+	cursor: pointer;
+	gap: 1em;
 }
 
 .toggle[for="monthly"] {
@@ -183,65 +183,66 @@ h1 {
 }
 
 .toggle-element {
-	height: 4em;
-	opacity: 0;
 	position: absolute;
 	top: 35%;
-	transform: translateY(-50%);
-	width: 4em;
-	cursor: pointer;
+	opacity: 0;
 	z-index: 1;
+	width: 2em;
+	height: 2em;
+	transform: translateY(-50%);
+	cursor: pointer;
 }
 
 #annually.toggle-element {
-	right: 22%;
+	right: 40%;
+	margin: 0;
 }
 
 #monthly.toggle-element {
-	right: 48%;
+	right: 50%;
+	margin: 0;
 }
 
 .toggle-styles {
-	background-color: var(--clr-neutral-500);
-	border-radius: var(--toggle-thumb-size);
-	display: block;
-	height: calc(var(--toggle-thumb-size) + (var(--toggle-thumb-space) * 2));
-	overflow: hidden;
 	position: relative;
-	width: calc((var(--toggle-thumb-size) * 2) + (var(--toggle-thumb-space) * 2));
-	cursor: pointer;
+	display: block;
 	order: 2;
+	width: calc((var(--toggle-thumb-size) * 2) + (var(--toggle-thumb-space) * 2));
+	height: calc(var(--toggle-thumb-size) + (var(--toggle-thumb-space) * 2));
+	border-radius: var(--toggle-thumb-size);
+	overflow: hidden;
+	background-color: var(--clr-neutral-500);
+	transition: background-color 200ms cubic-bezier(1, 0, 0.55, 0.85);
+	cursor: pointer;
+}
+
+.toggle-styles:hover,
+#monthly:hover ~ .toggle-styles,
+#annually:hover ~ .toggle-styles {
+	background-color: var(--clr-primary-200);
+}
+
+#annually:focus-visible ~ .toggle-styles,
+#monthly:focus-visible ~ .toggle-styles {
+	outline: 3px dotted var(--clr-neutral-600);
 }
 
 .toggle-thumb {
-	background-color: var(--clr-neutral-100);
+	position: absolute;
+	display: grid;
+	top: var(--toggle-thumb-space);
+	left: var(--toggle-thumb-space);
+	width: var(--toggle-thumb-size);
+	height: var(--toggle-thumb-size);
 	border-radius: var(--toggle-thumb-size);
 	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
-	display: grid;
-	height: var(--toggle-thumb-size);
-	left: var(--toggle-thumb-space);
-	place-items: center;
-	position: absolute;
-	top: var(--toggle-thumb-space);
+	background-color: var(--clr-neutral-100);
 	transform: none;
 	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
-	width: var(--toggle-thumb-size);
+	place-items: center;
 }
 
-.toggle-thumb::before {
-	border: 3px dotted var(--clr-neutral-600);
-	border-radius: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
-	content: "";
-	display: none;
-	height: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
-	width: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
-}
-
-:focus + .toggle-styles:not(:hover) .toggle-thumb::before {
-	display: block;
-}
-
-:checked + .toggle-styles .toggle-thumb {
+#annually:checked + .toggle-styles .toggle-thumb {
 	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
 }
 
@@ -251,13 +252,13 @@ h1 {
 .footer {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
 	flex-wrap: wrap;
-	gap: var(--spacer);
-	margin-top: 3rem;
+	align-items: center;
+	justify-content: space-between;
 	padding-top: 2rem;
 	border-top: 1px solid var(--clr-neutral-500);
+	margin-top: 3rem;
+	gap: var(--spacer);
 }
 
 @media only screen and (min-width: 30em) {
@@ -272,10 +273,14 @@ h1 {
 .cta {
 	display: block;
 	padding: 0.75em 2em;
+	border: none;
 	border-radius: 2em;
+	background-color: var(--clr-neutral-600);
 	font-size: var(--fs-300);
 	color: hsla(0, 0%, 100%, 0.85);
-	background-color: var(--clr-neutral-600);
-	border: none;
 	cursor: pointer;
+}
+
+.cta:hover {
+	color: var(--clr-neutral-100);
 }
