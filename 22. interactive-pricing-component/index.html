@@ -17,15 +17,14 @@
 
 	<body class="center-content">
 		<div class="flow-section">
-			<header class="flow-content">
+			<header class="container flow-content">
 				<h1>Simple, traffic-based pricing</h1>
 				<p class="sub-heading">Sign-up for our 30-day trial. No credit card required.</p>
 			</header>
 
-			<div class="component">
-				<div id="price-slider" hidden>
+			<div class="container flow-content component">
+				<div id="plans" class="plans" hidden>
 					<p class="pageviews"><span id="views"></span> pageviews</p>
-					<p class="price">$<span id="price"></span><span class="month">/month</span></p>
 					<input
 						id="input"
 						class="range"
@@ -36,8 +35,10 @@
 						max="4"
 						step="1"
 					/>
+					<p class="price">$<span id="price"></span><span class="month">/month</span></p>
 				</div>
 
+				<!-- Only displayed if JavaScript fails -->
 				<table id="table">
 					<thead>
 						<tr>
@@ -86,12 +87,14 @@
 				</div>
 				<!-- 25% discount -->
 
-				<ul>
-					<li>Unlimited websites</li>
-					<li>100% data ownership</li>
-					<li>Email reports</li>
-				</ul>
-				<button>Start my trial</button>
+				<div class="footer">
+					<ul>
+						<li>Unlimited websites</li>
+						<li>100% data ownership</li>
+						<li>Email reports</li>
+					</ul>
+					<button class="cta">Start my trial</button>
+				</div>
 				<!-- End component wrapper -->
 			</div>
 			<!-- End page wrapper -->
