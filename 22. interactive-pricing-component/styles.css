@@ -74,11 +74,19 @@ h1 {
 
 .price {
 	display: inline-flex;
+	line-height: 1;
+	align-items: center;
+	justify-content: center;
 	font-size: var(--fs-600);
 	color: var(--clr-neutral-600);
 	font-weight: 800;
-	align-items: center;
 	gap: 0.25em;
+}
+
+@media only screen and (min-width: 30em) {
+	.price {
+		justify-content: flex-end;
+	}
 }
 
 .month {
@@ -90,9 +98,22 @@ h1 {
     Composition
     ================================================== */
 
-/*   ==================================================
+.plans {
+	display: grid;
+	grid-template-columns: auto;
+	gap: var(--spacer);
+	grid-auto-flow: dense;
+}
+
+@media only screen and (min-width: 30em) {
+	.range {
+		grid-column: span 2;
+	}
+}
+
+/*  ==================================================
    	Utilities
-	  ================================================== */
+	================================================== */
 
 /*  Spacing
     ------------------- */
