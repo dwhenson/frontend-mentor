@@ -99,7 +99,7 @@ h1 {
 
 .center-content {
 	display: grid;
-	grid-template-columns: minmax(1rem, 2fr) minmax(0, 800px) minmax(1rem, 1fr);
+	grid-template-columns: minmax(1rem, 1fr) minmax(0, 34rem) minmax(1rem, 1fr);
 }
 
 .center-content > * {
@@ -109,36 +109,48 @@ h1 {
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer) * 5);
+	margin-top: calc(var(--spacer) * 3);
 }
+
 .flow-content > * + * {
 	margin-top: var(--spacer);
 }
 
-.range {
-	display: block;
+.container {
+	padding-right: clamp(3rem, 5%, 5rem);
+	padding-left: clamp(3rem, 5%, 5rem);
 }
 
-/*
-.switch-container:focus-within {
-	outline: 2px solid currentColor;
-	outline-offset: 1em;
+/* ==================================================
+   Blocks
+   ================================================== */
+
+/* 	Component
+   	================================================== */
+
+.component {
+	background-color: var(--clr-neutral-100);
+	border-radius: 0.5em;
+	padding-top: clamp(3rem, 5%, 5rem);
+	padding-bottom: clamp(3rem, 5%, 5rem);
 }
+
+/* 	Toggle
+   	================================================== */
 
 .switch-container {
 	position: relative;
-	display: inline-flex;
-	justify-content: space-between;
+	display: flex;
+	justify-content: center;
 	align-items: center;
-	gap: 2rem;
-	margin-top: 2em;
+	gap: 1rem;
 }
 
 .toggle {
-	color: var(--clr-neutral-400);
 	cursor: pointer;
 	display: block;
 	gap: 1em;
+	font-size: var(--fs-300);
 }
 
 .toggle[for="monthly"] {
@@ -157,18 +169,19 @@ h1 {
 	transform: translateY(-50%);
 	width: 4em;
 	cursor: pointer;
+	z-index: 1;
 }
 
 #annually.toggle-element {
-	right: 25%;
+	right: 22%;
 }
 
 #monthly.toggle-element {
-	right: 50%;
+	right: 48%;
 }
 
 .toggle-styles {
-	background: linear-gradient(to right, var(--clr-accent-300), var(--clr-accent-600));
+	background-color: var(--clr-neutral-500);
 	border-radius: var(--toggle-thumb-size);
 	display: block;
 	height: calc(var(--toggle-thumb-size) + (var(--toggle-thumb-space) * 2));
@@ -177,11 +190,10 @@ h1 {
 	width: calc((var(--toggle-thumb-size) * 2) + (var(--toggle-thumb-space) * 2));
 	cursor: pointer;
 	order: 2;
-	z-index: -1;
 }
 
 .toggle-thumb {
-	background-color: white;
+	background-color: var(--clr-neutral-100);
 	border-radius: var(--toggle-thumb-size);
 	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
 	display: grid;
@@ -193,11 +205,10 @@ h1 {
 	transform: none;
 	transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
 	width: var(--toggle-thumb-size);
-	z-index: -1;
 }
 
 .toggle-thumb::before {
-	border: 2px solid var(--clr-neutral-800);
+	border: 3px dotted var(--clr-neutral-600);
 	border-radius: calc(var(--toggle-thumb-size) - var(--toggle-thumb-space));
 	content: "";
 	display: none;
@@ -210,6 +221,40 @@ h1 {
 }
 
 :checked + .toggle-styles .toggle-thumb {
-	box-shadow: 0 0 var(--toggle-thumb-space) var(--clr-neutral-800);
 	transform: translateX(var(--toggle-thumb-size)) rotate(270deg);
-}*/
+}
+
+/* 	Footer
+   	================================================== */
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--spacer);
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--clr-neutral-500);
+}
+
+@media only screen and (min-width: 30em) {
+	.footer {
+		flex-direction: row;
+	}
+}
+
+/* CTA
+   ------------------- */
+
+.cta {
+	display: block;
+	padding: 0.75em 2em;
+	border-radius: 2em;
+	font-size: var(--fs-300);
+	color: hsla(0, 0%, 100%, 0.85);
+	background-color: var(--clr-neutral-600);
+	border: none;
+	cursor: pointer;
+}
