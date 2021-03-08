@@ -15,9 +15,10 @@
 	--clr-neutral-600: hsl(227, 35%, 25%);
 
 	/* Spacing */
-	--spacer: 1rem;
+	--spacer: 2rem;
 
 	/* Font size */
+	--fs-300: 0.9rem;
 	--fs-400: 1rem;
 	--fs-500: 2rem;
 	--fs-600: 2.5rem;
@@ -26,9 +27,8 @@
 	--ff-body: "Manrope", sans-serif;
 
 	/* Toggle switch */
-	--metric-toggle-thumb-size: 1.5rem;
-	--metric-toggle-thumb-space: 0.2rem;
-	--metric-toggle-icon-space: 0.5rem;
+	--toggle-thumb-size: 1.3rem;
+	--toggle-thumb-space: 0.15rem;
 }
 
 /* 	==================================================
@@ -39,6 +39,23 @@ body {
 	font-family: var(--ff-body);
 	color: var(--clr-neutral-500);
 	text-align: center;
+	background-color: var(--clr-neutral-300);
+	font-size: var(--fs-400);
+}
+
+@media only screen and (min-width: 30em) {
+	.component {
+		text-align: left;
+	}
+}
+
+:focus-visible {
+	outline: 3px dotted currentColor;
+	outline-offset: 0.2rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
 }
 
 /* 	Typography
