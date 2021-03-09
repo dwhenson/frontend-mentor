@@ -38,6 +38,7 @@
 body {
 	background-image: url("images/bg-pattern.svg");
 	background-repeat: no-repeat;
+	background-size: 100% 30%;
 	font-family: var(--ff-body);
 	font-size: var(--fs-400);
 	text-align: center;
