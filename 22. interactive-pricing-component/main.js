@@ -34,7 +34,7 @@ input.oninput = function () {
 
 /**
  * Change all prices according to monthly or annual selection
- * @param      {Object}  event   The event object
+ * @param {Object}  event   The event object
  */
 function changePrice(event) {
 	if (!event.target.closest(".switch-container")) return;
