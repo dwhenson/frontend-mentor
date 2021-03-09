@@ -23,9 +23,11 @@
 			</header>
 
 			<form class="container flow-content component">
-				<div id="plans" class="plans">
+				<div id="plans" class="plans" aria-hidden="true">
 					<p class="pageviews"><span id="views"></span> pageviews</p>
-					<label class="visually-hidden" for="range-input">Select number of pageviews</label>
+					<label class="visually-hidden" for="range-input" aria-hidden="true"
+						>Select number of pageviews</label
+					>
 					<input
 						id="range-input"
 						class="range"
@@ -39,15 +41,53 @@
 					<p class="price">$<span id="price"></span><span class="month">/month</span></p>
 				</div>
 
-				<div class="switch-container">
+				<div class="switch-container" aria-hidden="true">
 					<label class="toggle" for="monthly">Monthly Billing</label>
 					<input type="radio" class="toggle-element" name="price-toggle" id="monthly" />
 					<label class="toggle" for="annually">Annual Billing</label>
 					<input type="radio" class="toggle-element" name="price-toggle" id="annually" />
-					<div class="toggle-styles" aria-hidden="true">
+					<div class="toggle-styles">
 						<div class="toggle-thumb"></div>
 					</div>
 				</div>
+
+				<!-- Screen reader only -->
+				<table class="visually-hidden">
+					<thead>
+						<tr>
+							<th scope="col">Number of page views</th>
+							<th scope="col">Monthly Cost in USD</th>
+							<th scope="col">Monthly Cost - yearly Billing 25% discount</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>10K</td>
+							<td>8</td>
+							<td>6</td>
+						</tr>
+						<tr>
+							<td>50K</td>
+							<td>12</td>
+							<td>9</td>
+						</tr>
+						<tr>
+							<td>100K</td>
+							<td>16</td>
+							<td>12</td>
+						</tr>
+						<tr>
+							<td>500K</td>
+							<td>24</td>
+							<td>18</td>
+						</tr>
+						<tr>
+							<td>1M</td>
+							<td>36</td>
+							<td>27</td>
+						</tr>
+					</tbody>
+				</table>
 
 				<div class="footer">
 					<ul role="list">
