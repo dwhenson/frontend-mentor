@@ -17,64 +17,26 @@
 
 	<body class="center-content">
 		<div class="flow-section">
-			<header class="container flow-content">
+			<header class="container">
 				<h1>Simple, traffic-based pricing</h1>
 				<p class="sub-heading">Sign-up for our 30-day trial. No credit card required.</p>
 			</header>
 
 			<div class="container flow-content component">
-				<div id="plans" class="plans" hidden>
+				<div id="plans" class="plans">
 					<p class="pageviews"><span id="views"></span> pageviews</p>
 					<input
-						id="input"
+						id="range-input"
 						class="range"
 						type="range"
 						name="range"
-						value="10"
+						value="2"
 						min="0"
 						max="4"
 						step="1"
 					/>
 					<p class="price">$<span id="price"></span><span class="month">/month</span></p>
 				</div>
-
-				<!-- Only displayed if JavaScript fails -->
-				<table id="table">
-					<thead>
-						<tr>
-							<th scope="col">Number of page views</th>
-							<th scope="col">Monthly Cost in USD</th>
-							<th scope="col">Monthly Cost - yearly Billing</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>10K</td>
-							<td>8</td>
-							<td>6</td>
-						</tr>
-						<tr>
-							<td>50K</td>
-							<td>12</td>
-							<td>9</td>
-						</tr>
-						<tr>
-							<td>100K</td>
-							<td>16</td>
-							<td>12</td>
-						</tr>
-						<tr>
-							<td>500K</td>
-							<td>24</td>
-							<td>18</td>
-						</tr>
-						<tr>
-							<td>1M</td>
-							<td>36</td>
-							<td>27</td>
-						</tr>
-					</tbody>
-				</table>
 
 				<div class="switch-container">
 					<label class="toggle" for="monthly">Monthly Billing</label>
