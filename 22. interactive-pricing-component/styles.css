@@ -245,12 +245,12 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 #annually.toggle-element {
-	right: 40%;
+	right: 43%;
 	margin: 0;
 }
 
 #monthly.toggle-element {
-	right: 50%;
+	right: 49%;
 	margin: 0;
 }
 
