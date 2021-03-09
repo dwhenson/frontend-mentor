@@ -113,8 +113,8 @@ h1 {
 	}
 }
 
-/*  ==================================================
-   	Utilities
+/* ==================================================
+   Utilities
 	================================================== */
 
 /*  Spacing
@@ -144,8 +144,15 @@ h1 {
 }
 
 .container {
-	padding-right: clamp(2rem, 5%, 4rem);
-	padding-left: clamp(2rem, 5%, 4rem);
+	padding-right: clamp(1.5rem, 5%, 3rem);
+	padding-left: clamp(1.5rem, 5%, 3rem);
+}
+
+@media only screen and (min-width: 30em) {
+	.container {
+		padding-right: clamp(3rem, 5%, 6rem);
+		padding-left: clamp(3rem, 5%, 6rem);
+	}
 }
 
 /* ==================================================
@@ -181,7 +188,6 @@ input[type="range"]::-webkit-slider-thumb {
 	background-image: url("images/icon-slider.svg");
 	background-repeat: no-repeat;
 	background-position: center center;
-	cursor: pointer;
 	appearance: none;
 }
 
@@ -320,8 +326,8 @@ label[for="annually"]::after {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 2rem;
-	border-top: 1px solid var(--clr-neutral-500);
+	padding-top: 1rem;
+	border-top: 1px solid hsla(225, 20%, 60%, 0.25);
 	margin-top: 3rem;
 	gap: var(--spacer);
 }
