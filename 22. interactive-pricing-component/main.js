@@ -7,15 +7,38 @@ const plans = [
 ];
 const planSection = document.querySelector("#plans");
 const table = document.querySelector("#table");
-const input = document.querySelector("#input");
+const input = document.querySelector("#range-input");
 const views = document.querySelector("#views");
 const price = document.querySelector("#price");
+const annually = document.querySelector("#annually");
+const min = input.min;
+const max = input.max;
+const value = input.value;
 
 input.oninput = function () {
 	views.innerHTML = plans[this.value].views;
-	price.innerHTML = plans[this.value].price;
+
+	if (annually.checked) {
+		price.innerHTML = plans[this.value].discount;
+	} else {
+		price.innerHTML = plans[this.value].price;
+	}
+
+	this.style.background = `linear-gradient(to right, var(--clr-primary-100) ${
+		((this.value - this.min) / (this.max - this.min)) * 100
+	}%, var(--clr-neutral-400) ${
+		((this.value - this.min) / (this.max - this.min)) * 100
+	}%, var(--clr-neutral-400) 100%)`;
 };
 
-table.setAttribute("hidden", "true");
-planSection.removeAttribute("hidden");
+input.style.background = `linear-gradient(to right,var(--clr-primary-100) ${
+	((value - min) / (max - min)) * 100
+}%, var(--clr-neutral-400) ${((value - min) / (max - min)) * 100}%, var(--clr-neutral-400) 100%)`;
 input.oninput();
+
+function changePrice(event) {
+	if (!event.target.closest(".switch-container")) return;
+	input.oninput();
+}
+
+document.addEventListener("change", changePrice);
