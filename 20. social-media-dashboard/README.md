@@ -17,6 +17,8 @@ Users should be able to:
 ## Code Tips
 
 🗒 The `border-radius` property doesn't work with the `border-image` property. If you need the same effect then use pseudo elements to achieve this (don't forget to include the `position` property to move them around easily!!).
+
+
 🗒 To move the toggle if the user system preferences are set to dark mode use the `click()` method rather than `checked = true` (only the first of these fires the change event and influences the connected CSS)
 
 ## Useful Resources
