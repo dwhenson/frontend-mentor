@@ -5,8 +5,6 @@ const plans = [
 	{ views: "500K", price: 24, discount: 18 },
 	{ views: "1M", price: 36, discount: 27 },
 ];
-const planSection = document.querySelector("#plans");
-const table = document.querySelector("#table");
 const input = document.querySelector("#range-input");
 const views = document.querySelector("#views");
 const price = document.querySelector("#price");
@@ -15,6 +13,9 @@ const min = input.min;
 const max = input.max;
 const value = input.value;
 
+/**
+ * Update HTML and slider styles based on slider position
+ */
 input.oninput = function () {
 	views.innerHTML = plans[this.value].views;
 
@@ -31,14 +32,23 @@ input.oninput = function () {
 	}%, var(--clr-neutral-400) 100%)`;
 };
 
-input.style.background = `linear-gradient(to right,var(--clr-primary-100) ${
-	((value - min) / (max - min)) * 100
-}%, var(--clr-neutral-400) ${((value - min) / (max - min)) * 100}%, var(--clr-neutral-400) 100%)`;
-input.oninput();
-
+/**
+ * Change all prices according to monthly or annual selection
+ * @param      {Object}  event   The event object
+ */
 function changePrice(event) {
 	if (!event.target.closest(".switch-container")) return;
 	input.oninput();
 }
 
+/* ============  Inits and Event Listeners  =========== */
+/* ==================================================== */
+
+// Update the range slider styles on page load
+input.style.background = `linear-gradient(to right,var(--clr-primary-100) ${
+	((value - min) / (max - min)) * 100
+}%, var(--clr-neutral-400) ${((value - min) / (max - min)) * 100}%, var(--clr-neutral-400) 100%)`;
+input.oninput();
+
+// Listen for changes on price toggle
 document.addEventListener("change", changePrice);
