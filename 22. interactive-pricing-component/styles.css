@@ -178,9 +178,9 @@ input[type="range"]::-webkit-slider-thumb {
 	height: 3rem;
 	border-radius: 3rem;
 	background-color: var(--clr-primary-200);
-
-	/* FIXME */
 	background-image: url("images/icon-slider.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
 	cursor: pointer;
 	appearance: none;
 }
