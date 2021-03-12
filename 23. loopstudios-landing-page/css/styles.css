@@ -63,8 +63,9 @@ h1 {
 	font-size: var(--step-5);
 	color: var(--clr-neutral-100);
 	text-align: left;
-	margin-top: 7rem;
-	max-width: 12ch;
+	margin-top: 10rem;
+	border: 2px solid var(--clr-neutral-100);
+	padding: 1.5rem 1.5rem 1rem;
 }
 
 h2 {
@@ -93,11 +94,11 @@ h3 {
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer) * 3);
+	margin-top: calc(var(--spacer) * 6);
 }
 
 .flow-content > * + * {
-	margin-top: var(--spacer);
+	margin-top: 2em;
 }
 
 .flex {
@@ -106,7 +107,7 @@ h3 {
 	gap: var(--spacer);
 }
 
-@media only screen and (min-width: 43em) {
+@media only screen and (min-width: 43.75em) {
 	.flex {
 		flex-direction: row;
 	}
@@ -128,9 +129,9 @@ h3 {
    Blocks
    ================================================== */
 
-header {
+.site-head {
 	padding-top: 3rem;
-	padding-bottom: 7rem;
+	padding-bottom: 14rem;
 	background-color: hsla(295, 51%, 18%, 1);
 	color: var(--clr-neutral-100);
 }
@@ -138,7 +139,7 @@ header {
 /* 	Navigation
    	================================================== */
 
-/*.site-head {
+/* .site-head {
 	padding: 0.6rem 0;
 
 	background: var(--color-primary);
@@ -149,7 +150,7 @@ header {
 
 .site-head :focus {
 	outline-color: var(--color-light);
-}*/
+} */
 
 .site-head__inner {
 	display: flex;
