@@ -5,31 +5,51 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 		<title>Frontend Mentor | Loopstudios Landing Page</title>
-		<link rel="stylesheet" href="reset.css" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="styles.css" />
-		<script src="main.js"></script>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/styles.css" />
+		<script src="./js/burger-menu.js" type="module" defer></script>
 	</head>
+
 	<body class="center-content flow-section">
-		<header>
-			<a href="#main" id="main-content">Skip to content</a>
+		<header class="site-head" role="banner">
+			<a href="#main-content" class="skip-link">Skip to content</a>
 			<div class="container">
-				<nav class="flex">
-					<div class="wrapper">
-						<a href="/"><img src="images/logo.svg" alt="Loopstudios logo" /></a>
+				<div class="site-head__inner">
+					<div>
+						<a href="/" aria-label="Loopstudios home" class="site-head__brand">
+							<img src="images/logo.svg" alt="Loopstudios logo" />
+						</a>
 					</div>
-					<ul class="flex" role="list">
-						<li><a href="/">About</a></li>
-						<li><a href="/">Careers</a></li>
-						<li><a href="/">Events</a></li>
-						<li><a href="/">Products</a></li>
-						<li><a href="/">Support</a></li>
-					</ul>
-				</nav>
+					<burger-menu max-width="600">
+						<nav class="navigation" aria-label="primary">
+							<a id="logo" href="/" aria-label="Loopstudios home" class="site-head__brand">
+								<img src="images/logo.svg" alt="Loopstudios logo" />
+							</a>
+							<ul role="list">
+								<li>
+									<a href="/">About</a>
+								</li>
+								<li>
+									<a href="/">Careers</a>
+								</li>
+								<li>
+									<a href="/">Events</a>
+								</li>
+								<li>
+									<a href="/">Products</a>
+								</li>
+								<li>
+									<a href="/">Support</a>
+								</li>
+							</ul>
+						</nav>
+					</burger-menu>
+				</div>
 				<h1>Immersive experiences that deliver</h1>
 			</div>
 		</header>
@@ -135,7 +155,7 @@
 
 		<footer class="container flex">
 			<div>
-				<nav class="flow-content">
+				<nav class="flow-content" aria-label="secondary">
 					<a href="/"><img src="images/logo.svg" alt="Loopstudios logo" /></a>
 					<ul class="flex" role="list">
 						<li><a href="/">About</a></li>

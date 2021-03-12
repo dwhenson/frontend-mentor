@@ -128,25 +128,26 @@ select {
 }
 
 /* Skip to main content */
-#main-content {
+.skip-link {
 	position: absolute;
 	display: inline-block;
 	top: 1rem;
 	left: 1rem;
 	padding: 0.7rem 1rem 0.5rem 1rem;
-	background-color: black;
+	background-color: white;
 	font-weight: 700;
 	text-decoration: none;
 	text-transform: uppercase;
-	color: white;
+	color: black;
+	outline: 3px dotted white;
 }
 
-#main-content:hover {
+.skip-link:hover {
 	background: black;
 	color: white;
 }
 
-#main-content:not(:focus) {
+.skip-link:not(:focus) {
 	position: absolute;
 	width: 1px;
 	height: auto;
