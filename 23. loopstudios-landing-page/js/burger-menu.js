@@ -120,6 +120,7 @@ class BurgerMenu extends HTMLElement {
 	}
 
 	manageFocus() {
+		// NOTE DH additions to show logo outside of nav on small screens
 		const logo = document.querySelector("#logo");
 		this.state.enabled ? (logo.style.display = "block") : (logo.style.display = "none");
 
