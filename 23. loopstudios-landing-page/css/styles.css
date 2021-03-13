@@ -146,6 +146,9 @@ h3 {
 	padding-bottom: 14rem;
 	background-color: hsla(295, 51%, 18%, 1);
 	color: var(--clr-neutral-100);
+	background-image: url("../images/desktop/image-hero.jpg");
+	background-size: cover;
+	background-position: left;
 }
 
 /* 	Navigation
@@ -160,7 +163,6 @@ h3 {
 }
 
 .site-head__brand {
-	/* display: block; */
 	width: 12rem;
 }
 
@@ -329,6 +331,36 @@ h3 {
 		height: min-content;
 		padding-top: clamp(2rem, 15%, 6rem);
 		padding-left: clamp(2rem, 15%, 6rem);
+	}
+}
+
+/* 	Gallery
+   	================================================== */
+
+.gallery {
+	display: grid;
+	gap: calc(var(--spacer) * 1.5);
+}
+
+.gallery figure {
+	position: relative;
+}
+
+.gallery figcaption {
+	max-width: 9ch;
+	line-height: 1;
+	position: absolute;
+	bottom: calc(var(--spacer) * 1.5);
+	left: calc(var(--spacer) * 1.5);
+	font-size: var(--step-3);
+	font-weight: 300;
+	font-family: var(--ff-headings);
+	text-transform: uppercase;
+}
+
+@media only screen and (min-width: 40em) {
+	.gallery {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
