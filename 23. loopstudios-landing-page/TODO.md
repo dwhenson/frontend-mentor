@@ -6,5 +6,7 @@ TODO
 - Set up typography (can utopia work?) ✅ DONE
 - Icon links, aria described by for sections, skip-link/main atts ✅ DONE
 - Add images (check background images or not) ✅ DONE
-- Add main nav and hamburger styles
+- Add main nav and hamburger styles ✅ DONE
+- Fix gallery grid
+- Style cta button
 - Add hover states
