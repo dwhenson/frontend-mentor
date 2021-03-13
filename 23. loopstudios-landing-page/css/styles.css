@@ -82,6 +82,7 @@ h1 {
 
 h2 {
 	font-size: var(--step-4);
+	max-width: 15ch;
 }
 
 h3 {
@@ -306,12 +307,7 @@ h3 {
 /* 	Interactive
    	================================================== */
 
-/* FIXME img needs to fill grid cell */
-.interactive img {
-	object-fit: cover;
-}
-
-@media only screen and (min-width: 43em) {
+@media only screen and (min-width: 55em) {
 	.interactive {
 		display: grid;
 		grid-template-columns: 50% 12.5% 37.5%;
@@ -321,6 +317,16 @@ h3 {
 	.interactive picture {
 		grid-row: 1;
 		grid-column: 1 / 3;
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.interactive picture img {
+		object-fit: cover;
+
+		/* height: auto;
+		width: 100%; */
 	}
 
 	.interactive div {
@@ -339,6 +345,7 @@ h3 {
 
 .gallery {
 	display: grid;
+	grid-template-columns: auto;
 	gap: calc(var(--spacer) * 1.5);
 }
 
@@ -346,19 +353,41 @@ h3 {
 	position: relative;
 }
 
+.gallery picture {
+	/* width: 100%;
+	height: 100%; */
+
+	/* display: flex;
+	align-items: center; */
+}
+
+.gallery picture img {
+	object-fit: cover;
+	max-height: 30em;
+	width: 100%;
+}
+
 .gallery figcaption {
 	max-width: 9ch;
 	line-height: 1;
 	position: absolute;
-	bottom: calc(var(--spacer) * 1.5);
-	left: calc(var(--spacer) * 1.5);
-	font-size: var(--step-3);
+	bottom: calc(var(--spacer) * 1);
+	left: calc(var(--spacer) * 1);
+	font-size: var(--step-2);
 	font-weight: 300;
 	font-family: var(--ff-headings);
 	text-transform: uppercase;
+	text-align: left;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 43.75em) {
+	.gallery {
+		grid-template-columns: repeat(2, auto);
+		grid-auto-rows: minmax(auto);
+	}
+}
+
+@media only screen and (min-width: 55em) {
 	.gallery {
 		grid-template-columns: repeat(4, 1fr);
 	}
