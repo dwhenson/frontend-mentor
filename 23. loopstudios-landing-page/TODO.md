@@ -7,6 +7,8 @@ TODO
 - Icon links, aria described by for sections, skip-link/main atts ✅ DONE
 - Add images (check background images or not) ✅ DONE
 - Add main nav and hamburger styles ✅ DONE
-- Fix gallery grid
-- Style cta button
-- Add hover states
+- Fix gallery grid ✅ DONE
+- Style and layout cta button ✅ DONE
+- Add filter over images ✅ DONE
+- Add hover states for basic links?
+- Fix focus outline on mobile nav links and bottom logo?
