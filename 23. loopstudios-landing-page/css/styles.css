@@ -143,6 +143,7 @@ h3 {
    ================================================== */
 
 .site-head {
+	position: relative;
 	padding-top: 3rem;
 	padding-bottom: 14rem;
 	background-color: hsla(295, 51%, 18%, 1);
@@ -150,6 +151,19 @@ h3 {
 	background-image: url("../images/desktop/image-hero.jpg");
 	background-size: cover;
 	background-position: left;
+	opacity: 0.99;
+}
+
+.site-head::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--clr-neutral-400);
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+	z-index: -1;
 }
 
 /* 	Navigation
@@ -354,6 +368,8 @@ h3 {
 }
 
 .gallery picture {
+	background-color: var(--clr-neutral-400);
+
 	/* width: 100%;
 	height: 100%; */
 
@@ -364,7 +380,9 @@ h3 {
 .gallery picture img {
 	object-fit: cover;
 	max-height: 30em;
-	width: 100%;
+	opacity: 0.7;
+
+	/* width: 100%; */
 }
 
 .gallery figcaption {
@@ -378,6 +396,18 @@ h3 {
 	font-family: var(--ff-headings);
 	text-transform: uppercase;
 	text-align: left;
+}
+
+.gallery figure:hover picture {
+	background-color: var(--clr-neutral-100);
+}
+
+.gallery picture:hover img {
+	opacity: 0.3;
+}
+
+.gallery figure:hover figcaption {
+	color: var(--clr-neutral-400);
 }
 
 @media only screen and (min-width: 43.75em) {
