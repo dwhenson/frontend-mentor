@@ -346,8 +346,9 @@ h3 {
 .cta {
 	display: none;
 	padding: 0.5em 2em;
+	color: var(--clr-neutral-400);
 	border: 1px solid var(--clr-neutral-400);
-	background-color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-100);
 	transition: background-color 200ms;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -372,15 +373,15 @@ h3 {
 }
 
 .cta:hover {
-	background-color: var(--clr-neutral-100);
-	color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-400);
+	color: var(--clr-neutral-100);
 }
 
 .cta:focus-visible {
 	outline: 3px dotted var(--clr-neutral-400);
 	outline-offset: 0.25rem;
-	background-color: var(--clr-neutral-100);
-	color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-400);
+	color: var(--clr-neutral-100);
 }
 
 .cta:focus:not(:focus-visible) {
