@@ -391,6 +391,15 @@ h3 {
 	}
 }
 
+.cta:focus-visible {
+	outline: 3px dotted var(--clr-neutral-400);
+	outline-offset: 0.25rem;
+}
+
+.cta:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
 /* Gallery
    ------------------- */
 
@@ -434,14 +443,17 @@ h3 {
 	text-align: left;
 }
 
+.gallery a:focus picture,
 .gallery figure:hover picture {
 	background-color: var(--clr-neutral-100);
 }
 
+.gallery a:focus picture,
 .gallery picture:hover img {
 	opacity: 0.3;
 }
 
+.gallery a:focus figcaption,
 .gallery figure:hover figcaption {
 	color: var(--clr-neutral-400);
 }
