@@ -143,27 +143,14 @@ h3 {
    ================================================== */
 
 .site-head {
-	position: relative;
 	padding-top: 3rem;
 	padding-bottom: 14rem;
-	background-color: hsla(295, 51%, 18%, 1);
 	color: var(--clr-neutral-100);
-	background-image: url("../images/desktop/image-hero.jpg");
-	background-size: cover;
-	background-position: left;
-	opacity: 0.99;
-}
 
-.site-head::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: var(--clr-neutral-400);
-	top: 0;
-	left: 0;
-	opacity: 0.3;
-	z-index: -1;
+	/* prettier-ignore */
+	background:
+		linear-gradient(hsla(200, 16%, 18%, 0.6), hsla(200, 16%, 18%, 0.2)),
+		center/cover url("../images/desktop/image-hero.jpg") hsla(295, 51%, 18%, 1);
 }
 
 /* 	Navigation
@@ -239,7 +226,7 @@ h3 {
 	width: 2rem;
 	height: 2rem; /* Nice big tap target */
 	position: relative;
-	z-index: 1;
+	z-index: 100;
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -259,6 +246,7 @@ h3 {
 	background: var(--clr-neutral-400);
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
+	z-index: 10;
 }
 
 .burger-menu[enabled="true"] .navigation ul {
@@ -318,8 +306,20 @@ h3 {
 	display: none;
 }
 
-/* 	CTA
-   	================================================== */
+nav li {
+	position: relative;
+}
+
+nav li:hover::after {
+	content: "";
+	position: absolute;
+	background-color: var(--clr-neutral-100);
+	width: 25px;
+	height: 2px;
+	bottom: -8px;
+	right: 50%;
+	transform: translateX(50%);
+}
 
 /* 	Interactive
    	================================================== */
@@ -371,6 +371,7 @@ h3 {
 	border: 1px solid var(--clr-neutral-400);
 	text-transform: uppercase;
 	padding: 0.5em 2em;
+	transition: background-color 200ms;
 }
 
 .cta.bottom {
@@ -391,7 +392,14 @@ h3 {
 	}
 }
 
+.cta:hover {
+	color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-100);
+}
+
 .cta:focus-visible {
+	color: var(--clr-neutral-400);
+	background-color: var(--clr-neutral-100);
 	outline: 3px dotted var(--clr-neutral-400);
 	outline-offset: 0.25rem;
 }
@@ -415,6 +423,7 @@ h3 {
 
 .gallery picture {
 	background-color: var(--clr-neutral-400);
+	transition: background-color 200ms;
 
 	/* width: 100%;
 	height: 100%; */
@@ -424,6 +433,7 @@ h3 {
 }
 
 .gallery picture img {
+	/* z-index: -1; */
 	object-fit: cover;
 	max-height: 30em;
 	opacity: 0.7;
@@ -523,7 +533,24 @@ footer .site-head__brand {
 	}
 }
 
+.icon-list li {
+	position: relative;
+}
+
+.icon-list li:hover::after {
+	content: "";
+	position: absolute;
+	background-color: var(--clr-neutral-100);
+	width: 25px;
+	height: 2px;
+	bottom: -4px;
+	right: 50%;
+	transform: translateX(50%);
+}
+
+/*
 ul {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+*/
