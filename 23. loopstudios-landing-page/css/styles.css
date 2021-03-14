@@ -318,6 +318,9 @@ h3 {
 	display: none;
 }
 
+/* 	CTA
+   	================================================== */
+
 /* 	Interactive
    	================================================== */
 
@@ -354,8 +357,42 @@ h3 {
 	}
 }
 
-/* 	Gallery
+/* 	Creations
    	================================================== */
+
+.creations .wrapper {
+	justify-content: space-between;
+}
+
+.cta {
+	letter-spacing: 2px;
+	background-color: var(--clr-neutral-400);
+	display: none;
+	border: 1px solid var(--clr-neutral-400);
+	text-transform: uppercase;
+	padding: 0.5em 2em;
+}
+
+.cta.bottom {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 2rem;
+	width: max-content;
+}
+
+@media only screen and (min-width: 43.75em) {
+	.cta.top {
+		display: inline-block;
+	}
+
+	.cta.bottom {
+		display: none;
+	}
+}
+
+/* Gallery
+   ------------------- */
 
 .gallery {
 	display: grid;
@@ -381,8 +418,7 @@ h3 {
 	object-fit: cover;
 	max-height: 30em;
 	opacity: 0.7;
-
-	/* width: 100%; */
+	width: 100%;
 }
 
 .gallery figcaption {
