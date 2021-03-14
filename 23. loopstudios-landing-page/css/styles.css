@@ -303,26 +303,6 @@ h3 {
 	transform: rotate(180deg);
 }
 
-#logo {
-	display: none;
-}
-
-nav[aria-label] li {
-	position: relative;
-}
-
-.burger-menu[enabled="false"] li:hover::after,
-nav[aria-label="secondary"] li:hover::after {
-	content: "";
-	position: absolute;
-	background-color: var(--clr-neutral-100);
-	width: 25px;
-	height: 2px;
-	bottom: -8px;
-	right: 50%;
-	transform: translateX(50%);
-}
-
 /* 	Interactive
    	================================================== */
 
@@ -343,9 +323,6 @@ nav[aria-label="secondary"] li:hover::after {
 
 	.interactive picture img {
 		object-fit: cover;
-
-		/* height: auto;
-		width: 100%; */
 	}
 
 	.interactive div {
@@ -426,12 +403,6 @@ nav[aria-label="secondary"] li:hover::after {
 .gallery picture {
 	background-color: var(--clr-neutral-400);
 	transition: background-color 200ms;
-
-	/* width: 100%;
-	height: 100%; */
-
-	/* display: flex;
-	align-items: center; */
 }
 
 .gallery picture img {
@@ -550,4 +521,28 @@ footer .site-head__brand {
 	transform: translateX(50%);
 }
 
-/*  */
+/* ==================================================
+	Exceptions
+	================================================== */
+
+/* Reach out of burger menu component for logo */
+#logo {
+	display: none;
+}
+
+/* Enable navigation underline, not on expanded burger menu */
+nav[aria-label] li {
+	position: relative;
+}
+
+.burger-menu[enabled="false"] li:hover::after,
+nav[aria-label="secondary"] li:hover::after {
+	content: "";
+	position: absolute;
+	background-color: var(--clr-neutral-100);
+	width: 25px;
+	height: 2px;
+	bottom: -8px;
+	right: 50%;
+	transform: translateX(50%);
+}

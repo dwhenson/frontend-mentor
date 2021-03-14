@@ -10,5 +10,6 @@ TODO
 - Fix gallery grid ✅ DONE
 - Style and layout cta button ✅ DONE
 - Add filter over images ✅ DONE
-- Add hover states for basic links?
-- Fix focus outline on mobile nav links and bottom logo?
+- Add hover states for basic links? ✅ DONE
+- Fix focus outline on mobile nav links and bottom logo? ✅ DONE
+- Clean code, refactor and readme
