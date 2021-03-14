@@ -260,6 +260,7 @@ h3 {
 }
 
 .burger-menu[enabled="true"] .navigation li {
+	width: max-content;
 	font-size: var(--step-3);
 	font-weight: 300;
 	font-family: var(--ff-headings);
@@ -306,11 +307,12 @@ h3 {
 	display: none;
 }
 
-nav li {
+nav[aria-label] li {
 	position: relative;
 }
 
-nav li:hover::after {
+.burger-menu[enabled="false"] li:hover::after,
+nav[aria-label="secondary"] li:hover::after {
 	content: "";
 	position: absolute;
 	background-color: var(--clr-neutral-100);
@@ -548,9 +550,4 @@ footer .site-head__brand {
 	transform: translateX(50%);
 }
 
-/*
-ul {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-*/
+/*  */
