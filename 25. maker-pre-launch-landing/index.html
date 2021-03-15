@@ -18,19 +18,20 @@
 		<nav class="container">
 			<a href="#main" class="skip-link">Skip to content</a>
 			<a href="/" aria-label="Maker Home">
-				<img src="assets/logo.svg" alt="Marker logo" />
+				<img class="logo" src="assets/logo.svg" alt="Marker logo" />
 			</a>
 		</nav>
-		<header class="container flow-content">
+		<header class="container flow-content hero">
 			<h1>Get paid for the work <span>you</span> love to do.</h1>
 			<p>
 				The 9-5 grind is so last century. We believe in living life on your own terms. Whether you’re
 				looking to escape the rat race or set up a side hustle, we’ve got you covered.
 			</p>
+			<img src="assets/icon-scroll.svg" alt="" aria-hidden="true" />
 		</header>
 
 		<main id="main" class="container flow-section" tabindex="-1">
-			<section class="flex" aria-labelledby="section-heading-01">
+			<section class="flex features" aria-labelledby="section-heading-01">
 				<h2 id="section-heading-01" class="visually-hidden">Features</h2>
 				<div class="flex card">
 					<!-- Avoid flex image issues  -->
@@ -45,7 +46,7 @@
 					<!-- Avoid flex image issues  -->
 					<div><img src="assets/illustration-financial-freedom.svg" alt="" aria-hidden="true" /></div>
 					<div class="flow-content wrapper">
-						<h2>Gain financial freedom</h2>
+						<h3>Gain financial freedom</h3>
 						<p>Start making money work for you. There’s nothing quite like earning while you sleep.</p>
 					</div>
 				</div>
@@ -54,22 +55,30 @@
 					<!-- Avoid flex image issues  -->
 					<div><img src="assets/illustration-lifestyle.svg" alt="" aria-hidden="true" /></div>
 					<div class="flow-content wrapper">
-						<h2>Choose your lifestyle</h2>
+						<h3>Choose your lifestyle</h3>
 						<p>Own your daily schedule. Fancy a lie-in? Go for it! Take charge of your week.</p>
 					</div>
 				</div>
 
 				<div class="flex card">
 					<!-- Avoid flex image issues  -->
-					<div><img src="assets/illustration-work-anywhere.svg" alt="" aria-hidden="true" /></div>
+					<!-- HACK to adjust svg padding size -->
+					<div>
+						<img
+							src="assets/illustration-work-anywhere.svg"
+							alt=""
+							aria-hidden="true"
+							style="padding-top: 3.5rem; padding-bottom: 3.5rem"
+						/>
+					</div>
 					<div class="flow-content wrapper">
-						<h2>Work from anywhere</h2>
+						<h3>Work from anywhere</h3>
 						<p>Selling online means not being pinned down. Want to work AND travel? Go for it!</p>
 					</div>
 				</div>
 			</section>
 
-			<section class="flow-content creations" aria-labelledby="section-heading-02">
+			<section class="flow-section" aria-labelledby="section-heading-02">
 				<div class="flow-content wrapper">
 					<h2 id="section-heading-02">Our pricing plans</h2>
 					<p>
@@ -78,12 +87,12 @@
 					</p>
 				</div>
 
-				<div class="flex wrapper">
-					<div class="flow-content dip">
+				<div class="flex plans">
+					<div class="flow-content plan dip">
 						<h3>Dip your toe</h3>
 						<p>Just getting started? No problem at all! Our free plan will take you a long way.</p>
+						<h3><span class="accent">Free</span></h3>
 						<ul class="flow-content" role="list">
-							<li>Free</li>
 							<li>Unlimited products</li>
 							<li>Basic analytics</li>
 							<li>Limited marketplace exposure</li>
@@ -91,13 +100,13 @@
 						</ul>
 					</div>
 
-					<div class="flow-content dive">
+					<div class="flow-content plan dive">
 						<h3>Dive right in</h3>
 						<p>
 							Ready for the big time? Our paid plan will help you take your business to the next level.
 						</p>
+						<h3><span class="accent">$25.00</span> /month</h3>
 						<ul class="flow-content" role="list">
-							<li>$25.00 /month</li>
 							<li>Custom domain</li>
 							<li>Advanced analytics and reports</li>
 							<li>High marketplace visibility</li>
