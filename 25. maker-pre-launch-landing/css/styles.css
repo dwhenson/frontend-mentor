@@ -1,0 +1,100 @@
+:root {
+	/* Neutral */
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-200: hsl(225, 14%, 53%);
+	--clr-neutral-300: hsl(232, 56%, 8%);
+
+	/* Primary */
+	--clr-primary-100: hsl(206, 84%, 22%);
+	--clr-primary-200: hsl(179, 80%, 58%);
+	--clr-primary-300: hsl(343, 100%, 58%);
+
+	/* Spacing */
+	--spacer: 1rem;
+
+	/* Utopia */
+	--step-0: clamp(1rem, 0.882rem + 0.6867vw, 1.5rem);
+	--step-1: clamp(1.2rem, 1.0584rem + 0.824vw, 1.8rem);
+	--step-2: clamp(1.44rem, 1.27rem + 0.9888vw, 2.16rem);
+	--step-3: clamp(1.7281rem, 1.5242rem + 1.1863vw, 2.5919rem);
+	--step-4: clamp(2.0738rem, 1.829rem + 1.424vw, 3.1106rem);
+	--step-5: clamp(2.4881rem, 2.1944rem + 1.709vw, 3.7325rem);
+	--step-6: clamp(2.9863rem, 2.6339rem + 2.0498vw, 4.4788rem);
+
+	/* font-family */
+	--ff-body: "Manrope", sans-serif;
+}
+
+/* 	==================================================
+	Global Styles
+	================================================== */
+
+body {
+	font-family: var(--ff-body);
+	font-size: var(--fs-400);
+	line-height: 1.8;
+	text-align: center;
+	background-color: var(--clr-neutral-300);
+	color: var(--clr-neutral-100);
+}
+
+:focus-visible {
+	outline: 3px dotted var(--clr-neutral-100);
+	outline-offset: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
+/* 	Typography
+   	================================================== */
+
+h1 {
+	font-size: var(--step-4);
+}
+
+h1 span {
+	color: var(--clr-primary-200);
+}
+
+/* ==================================================
+   Utilities
+	================================================== */
+
+.center-content {
+	display: grid;
+	grid-template-rows: repeat(3, min-content);
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1440px) minmax(0, 1fr);
+}
+
+.center-content > * {
+	grid-column: 2;
+}
+
+.flow-section > * + * {
+	margin-top: calc(var(--spacer) * 9);
+}
+
+.flow-content > * + * {
+	margin-top: 1em;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: calc(var(--spacer) * 1);
+}
+
+.container {
+	padding-right: clamp(2rem, 2.5%, 3rem);
+	padding-left: clamp(2rem, 2.5%, 3rem);
+}
+
+@media only screen and (min-width: 40em) {
+	.container {
+		padding-right: clamp(5rem, 5%, 10rem);
+		padding-left: clamp(5rem, 5%, 10rem);
+	}
+}
