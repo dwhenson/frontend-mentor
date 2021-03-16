@@ -345,10 +345,19 @@ button:hover {
 	color: var(--clr-neutral-100);
 }
 
-@media only screen and (min-width: 45em) {
+.error {
+	display: none;
+	color: var(--clr-primary-300);
+	margin-top: -1rem;
+	margin-right: auto;
+	text-align: left;
+}
+
+@media only screen and (min-width: 50em) {
 	.form {
 		flex-direction: row;
 		justify-content: center;
+		position: relative;
 	}
 
 	input {
@@ -357,5 +366,11 @@ button:hover {
 
 	button {
 		width: 10rem;
+	}
+
+	.error {
+		position: absolute;
+		left: 20%;
+		bottom: -2rem;
 	}
 }

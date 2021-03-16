@@ -38,7 +38,6 @@
 				<h2 id="section-heading-01" class="visually-hidden">Features</h2>
 				<div class="flex card">
 					<!-- Avoid flex image issues  -->
-					<div><img src="assets/illustration-passions.svg" alt="" aria-hidden="true" /></div>
 					<div class="flow-content wrapper">
 						<h2>Indulge your passions</h2>
 						<p>Your passions shouldn't be just for the weekend. Earn a living doing what you love.</p>
@@ -126,10 +125,13 @@
 				<form class="flex form" action="#">
 					<label class="visually-hidden" for="email">Email address</label>
 					<input type="email" name="email" id="email" placeholder="Email address" />
+					<div class="error" tabindex="0" aria-live="assertive">
+						Opps that doesn't look like an email address
+					</div>
 					<button type="submit">Get notified</button>
 				</form>
 			</div>
 		</footer>
-		<script src="main.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>
