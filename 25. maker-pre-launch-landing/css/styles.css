@@ -135,7 +135,7 @@ nav .logo {
 
 .hero {
 	margin-top: 3rem;
-	padding-top: 18rem;
+	padding-top: 16rem;
 	background-image: url("../assets/illustration-hero-mobile.png");
 	background-size: 110%;
 	background-repeat: no-repeat;
@@ -207,4 +207,34 @@ nav .logo {
 	position: absolute;
 	top: -2rem;
 	left: 2rem;
+}
+
+/* 	Footer
+   	================================================== */
+
+footer {
+	margin-bottom: 6rem;
+}
+
+.form {
+	margin-top: 2rem;
+	gap: calc(var(--spacer) * 1);
+}
+
+input,
+button {
+	display: block;
+	width: 100%;
+	border-radius: 2rem;
+	padding: 0.5em 2em;
+	border: none;
+	font-weight: 800;
+}
+
+input {
+	background-color: var(--clr-primary-100);
+}
+
+button {
+	background-color: var(--clr-primary-200);
 }
