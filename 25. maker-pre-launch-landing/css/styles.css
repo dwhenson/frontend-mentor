@@ -30,12 +30,12 @@
 	================================================== */
 
 body {
+	background-color: var(--clr-neutral-300);
 	font-family: var(--ff-body);
 	font-size: var(--step-0);
 	line-height: 1.8;
 	text-align: center;
-	background-color: var(--clr-neutral-300);
-	color: var(--clr-neutral-200);
+	color: var(--fg, var(--clr-neutral-200));
 }
 
 :focus-visible {
@@ -134,14 +134,14 @@ nav .logo {
 }
 
 .hero {
-	margin-top: 3rem;
 	padding-top: 18rem;
+	margin-top: 3rem;
 	background-image: url("../assets/illustration-hero-mobile.png");
 }
 
 .hero img {
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 @media only screen and (min-width: 45em) {
@@ -155,17 +155,17 @@ nav .logo {
 	}
 
 	.hero .wrapper {
+		max-width: 45rem;
+		padding-top: 4rem;
+		padding-right: clamp(2rem, 10%, 6rem);
+		padding-bottom: 3rem;
+		padding-left: clamp(2rem, 10%, 6rem);
+		margin: 0 auto;
 		background-color: var(--clr-neutral-300);
 		background-image: url("../assets/bg-hero-squiggle.svg");
+		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center;
-		margin: 0 auto;
-		padding-top: 4rem;
-		padding-bottom: 3rem;
-		max-width: 45rem;
-		padding-right: clamp(2rem, 10%, 6rem);
-		padding-left: clamp(2rem, 10%, 6rem);
 	}
 }
 
@@ -179,18 +179,22 @@ nav .logo {
 /* Cards
    ------------------- */
 
+.card > div:first-of-type {
+	flex-shrink: 0;
+}
+
 .card img {
-	background-color: var(--clr-primary-100);
-	padding: 2rem;
-	border-radius: 3rem;
 	width: 10rem;
 	height: auto;
+	padding: 2rem;
+	border-radius: 3rem;
+	background-color: var(--clr-primary-100);
 }
 
 @media only screen and (min-width: 45em) {
 	.card {
-		text-align: left;
 		flex-direction: row;
+		text-align: left;
 	}
 
 	.features.flex .flex.card:nth-of-type(odd) {
@@ -212,8 +216,8 @@ nav .logo {
 	}
 
 	.features.flex .flex.card:nth-of-type(odd) {
-		padding-left: 0;
 		padding-bottom: 4rem;
+		padding-left: 0;
 	}
 
 	.features.flex .flex.card:nth-of-type(even) {
@@ -227,8 +231,8 @@ nav .logo {
 
 .plan-summary {
 	max-width: 45rem;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 .plans {
@@ -238,16 +242,10 @@ nav .logo {
 
 .plan {
 	position: relative;
-	text-align: left;
+	max-width: 70%;
 	padding: 3.5rem 2rem 2rem;
 	border-radius: 1rem;
-	max-width: 70%;
-}
-
-.plan li {
-	margin-top: 0.75rem;
-	padding-left: 1rem;
-	color: var(--fg, var(--clr-neutral-100));
+	text-align: left;
 }
 
 .plan.free {
@@ -265,11 +263,17 @@ nav .logo {
 	margin-left: -1.5rem;
 }
 
-.plan ul li::marker {
+.plan li {
+	padding-left: 1rem;
+	margin-top: 0.75rem;
+	color: var(--fg, var(--clr-neutral-100));
+}
+
+.plan li::marker {
 	content: "\2713\0020";
 }
 
-.plan.free ul li::marker {
+.plan.free li::marker {
 	color: var(--clr-primary-200);
 }
 
@@ -278,7 +282,6 @@ nav .logo {
 
 	padding-top: 3.5rem;
 	padding-bottom: 3.5rem;
-	color: var(--clr-neutral-300);
 	background-color: var(--clr-primary-200);
 }
 
@@ -305,59 +308,59 @@ nav .logo {
    	================================================== */
 
 footer {
+	top: 0;
 	margin-bottom: 6rem;
 	background-image: url("../assets/bg-footer-squiggle.svg");
 	background-size: 100%;
 	background-repeat: no-repeat;
-	top: 0;
 }
 
 .form {
-	margin-top: 2rem;
-	gap: calc(var(--spacer) * 1);
 	flex-wrap: wrap;
+	margin-top: 2rem;
+	gap: var(--spacer);
 }
 
 input,
 button {
 	display: block;
 	width: 100%;
-	border-radius: 2rem;
 	border: none;
+	border-radius: 2rem;
 	font-weight: 800;
 }
 
 input {
-	color: var(--clr-neutral-100);
 	padding: 0.5em 2em;
 	background-color: var(--clr-primary-100);
+	color: var(--clr-neutral-100);
 }
 
 button {
 	padding: 0.5em 1em;
-	cursor: pointer;
 	background-color: var(--clr-primary-200);
+	cursor: pointer;
 }
 
 button:hover {
-	background-color: transparent;
 	border: 1px solid var(--clr-primary-200);
+	background-color: transparent;
 	color: var(--clr-neutral-100);
 }
 
 .error {
 	display: none;
-	color: var(--clr-primary-300);
 	margin-top: -1rem;
 	margin-right: auto;
 	text-align: left;
+	color: var(--clr-primary-300);
 }
 
 @media only screen and (min-width: 50em) {
 	.form {
+		position: relative;
 		flex-direction: row;
 		justify-content: center;
-		position: relative;
 	}
 
 	input {
@@ -370,7 +373,7 @@ button:hover {
 
 	.error {
 		position: absolute;
-		left: 20%;
 		bottom: -2rem;
+		left: 20%;
 	}
 }
