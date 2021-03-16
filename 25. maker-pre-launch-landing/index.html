@@ -17,8 +17,8 @@
 	<body class="center-content flow-section">
 		<nav class="container">
 			<a href="#main" class="skip-link">Skip to content</a>
-			<a href="/" aria-label="Maker Home">
-				<img class="logo" src="assets/logo.svg" alt="Marker logo" />
+			<a class="logo" href="/" aria-label="Maker Home">
+				<img src="assets/logo.svg" alt="Marker logo" />
 			</a>
 		</nav>
 		<header class="container hero">
@@ -34,6 +34,7 @@
 
 		<main id="main" class="container flow-section" tabindex="-1">
 			<section class="flex features" aria-labelledby="section-heading-01">
+				<!-- Provide accessible heading -->
 				<h2 id="section-heading-01" class="visually-hidden">Features</h2>
 				<div class="flex card">
 					<!-- Avoid flex image issues  -->
@@ -81,7 +82,7 @@
 			</section>
 
 			<section class="flow-section" aria-labelledby="section-heading-02">
-				<div class="flow-content wrapper">
+				<div class="flow-content wrapper plan-summary">
 					<h2 id="section-heading-02">Our pricing plans</h2>
 					<p>
 						We only make money when our creators make money. Our plans are always affordable, and it’s
@@ -90,11 +91,11 @@
 				</div>
 
 				<div class="flex plans">
-					<div class="flow-content plan dip">
+					<div class="flow-content plan free">
 						<h3>Dip your toe</h3>
 						<p>Just getting started? No problem at all! Our free plan will take you a long way.</p>
 						<h3><span class="accent">Free</span></h3>
-						<ul class="flow-content" role="list">
+						<ul class="flow-content">
 							<li>Unlimited products</li>
 							<li>Basic analytics</li>
 							<li>Limited marketplace exposure</li>
@@ -102,13 +103,13 @@
 						</ul>
 					</div>
 
-					<div class="flow-content plan dive">
+					<div class="flow-content plan paid">
 						<h3>Dive right in</h3>
 						<p>
 							Ready for the big time? Our paid plan will help you take your business to the next level.
 						</p>
 						<h3><span class="accent">$25.00</span> /month</h3>
-						<ul class="flow-content" role="list">
+						<ul class="flow-content">
 							<li>Custom domain</li>
 							<li>Advanced analytics and reports</li>
 							<li>High marketplace visibility</li>

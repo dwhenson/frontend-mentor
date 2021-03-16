@@ -137,8 +137,6 @@ nav .logo {
 	margin-top: 3rem;
 	padding-top: 18rem;
 	background-image: url("../assets/illustration-hero-mobile.png");
-	background-size: 110%;
-	background-repeat: no-repeat;
 }
 
 .hero img {
@@ -165,7 +163,9 @@ nav .logo {
 		margin: 0 auto;
 		padding-top: 4rem;
 		padding-bottom: 3rem;
-		max-width: 75%;
+		max-width: 45rem;
+		padding-right: clamp(2rem, 10%, 6rem);
+		padding-left: clamp(2rem, 10%, 6rem);
 	}
 }
 
@@ -173,7 +173,7 @@ nav .logo {
    	================================================== */
 
 .features.flex {
-	gap: calc(var(--spacer) * 4);
+	gap: calc(var(--spacer) * 2);
 }
 
 /* Cards
@@ -187,8 +187,49 @@ nav .logo {
 	height: auto;
 }
 
+@media only screen and (min-width: 45em) {
+	.card {
+		text-align: left;
+		flex-direction: row;
+	}
+
+	.features.flex .flex.card:nth-of-type(odd) {
+		padding-left: 4rem;
+	}
+
+	.features.flex .flex.card:nth-of-type(even) {
+		padding-right: 4rem;
+	}
+}
+
+@media only screen and (min-width: 65em) {
+	.features.flex {
+		flex-direction: row;
+	}
+
+	.card {
+		flex-direction: column;
+	}
+
+	.features.flex .flex.card:nth-of-type(odd) {
+		padding-left: 0;
+		padding-bottom: 4rem;
+	}
+
+	.features.flex .flex.card:nth-of-type(even) {
+		padding-top: 4rem;
+		padding-right: 0;
+	}
+}
+
 /* 	Plans
    	================================================== */
+
+.plan-summary {
+	max-width: 45rem;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .plans {
 	margin-top: 5rem;
@@ -200,36 +241,64 @@ nav .logo {
 	text-align: left;
 	padding: 3.5rem 2rem 2rem;
 	border-radius: 1rem;
+	max-width: 70%;
 }
 
 .plan li {
 	margin-top: 0.75rem;
+	padding-left: 1rem;
 	color: var(--fg, var(--clr-neutral-100));
 }
 
-.plan.dip {
+.plan.free {
 	background-color: var(--clr-primary-100);
 }
 
-.plan.dip::before {
+.plan.free::before {
 	content: url("../assets/icon-free.svg");
 	position: absolute;
 	top: -1.5rem;
 	left: 2rem;
 }
 
-.plan.dive {
+.plan ul {
+	margin-left: -1.5rem;
+}
+
+.plan ul li::marker {
+	content: "\2713\0020";
+}
+
+.plan.free ul li::marker {
+	color: var(--clr-primary-200);
+}
+
+.plan.paid {
 	--fg: var(--clr-neutral-300);
 
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
 	color: var(--clr-neutral-300);
 	background-color: var(--clr-primary-200);
 }
 
-.plan.dive::before {
+.plan.paid::before {
 	content: url("../assets/icon-paid.svg");
 	position: absolute;
 	top: -2rem;
 	left: 2rem;
+}
+
+@media only screen and (min-width: 65em) {
+	.plan {
+		max-width: 40%;
+	}
+
+	.plans {
+		flex-direction: row;
+		justify-content: center;
+		gap: var(--spacer);
+	}
 }
 
 /* 	Footer
@@ -238,13 +307,15 @@ nav .logo {
 footer {
 	margin-bottom: 6rem;
 	background-image: url("../assets/bg-footer-squiggle.svg");
-	background-size: 100% 4rem;
+	background-size: 100%;
 	background-repeat: no-repeat;
+	top: 0;
 }
 
 .form {
 	margin-top: 2rem;
 	gap: calc(var(--spacer) * 1);
+	flex-wrap: wrap;
 }
 
 input,
@@ -252,15 +323,39 @@ button {
 	display: block;
 	width: 100%;
 	border-radius: 2rem;
-	padding: 0.5em 2em;
 	border: none;
 	font-weight: 800;
 }
 
 input {
+	color: var(--clr-neutral-100);
+	padding: 0.5em 2em;
 	background-color: var(--clr-primary-100);
 }
 
 button {
+	padding: 0.5em 1em;
+	cursor: pointer;
 	background-color: var(--clr-primary-200);
+}
+
+button:hover {
+	background-color: transparent;
+	border: 1px solid var(--clr-primary-200);
+	color: var(--clr-neutral-100);
+}
+
+@media only screen and (min-width: 45em) {
+	.form {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	input {
+		max-width: 45%;
+	}
+
+	button {
+		width: 10rem;
+	}
 }
