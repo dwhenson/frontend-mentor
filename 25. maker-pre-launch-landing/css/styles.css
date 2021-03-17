@@ -122,7 +122,7 @@ h3 {
    Blocks
    ================================================== */
 
-/* 	Header
+/* 	Nav
    	================================================== */
 
 nav {
@@ -131,6 +131,13 @@ nav {
 
 nav .logo {
 	margin: 0 auto;
+}
+
+/* 	Header
+   	================================================== */
+
+header.hero {
+	grid-column: 1 / -1;
 }
 
 .hero {
@@ -307,12 +314,12 @@ nav .logo {
 /* 	Footer
    	================================================== */
 
-footer {
+footer.footer {
 	top: 0;
 	margin-bottom: 6rem;
 	background-image: url("../assets/bg-footer-squiggle.svg");
-	background-size: 100%;
-	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	grid-column: 1 / -1;
 }
 
 .form {
@@ -324,7 +331,7 @@ footer {
 input,
 button {
 	display: block;
-	width: 100%;
+	width: 90%;
 	border: none;
 	border-radius: 2rem;
 	font-weight: 800;
@@ -364,7 +371,7 @@ button:hover {
 	}
 
 	input {
-		max-width: 45%;
+		max-width: 25rem;
 	}
 
 	button {
