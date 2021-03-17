@@ -129,6 +129,11 @@ nav {
 	margin-top: 3rem;
 }
 
+nav a {
+	display: block;
+	width: max-content;
+}
+
 nav .logo {
 	margin: 0 auto;
 }
