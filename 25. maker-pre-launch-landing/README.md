@@ -1,7 +1,5 @@
 # Frontend Mentor - Maker pre-launch landing page solution
 
-![Design preview for the Maker pre-launch landing page coding challenge](../design/desktop-preview.jpg)
-
 ## The challenge
 
 Users should be able to:
