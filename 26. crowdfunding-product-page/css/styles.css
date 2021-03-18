@@ -73,6 +73,7 @@ h3 {
 .large {
 	font-size: var(--step-4);
 	color: var(--clr-neutral-300);
+	font-weight: 800;
 }
 
 /* ==================================================
@@ -330,6 +331,8 @@ main {
 	margin: 0 auto;
 }
 
+/* Intro */
+
 main > img {
 	margin: -28px auto;
 }
@@ -342,9 +345,58 @@ main > img {
 	margin-top: 2rem;
 }
 
-/* Stands
-	 ================================================== */
+/* Stats */
 
+.stats > .flex {
+	position: relative;
+	gap: calc(var(--spacer) * 1);
+	flex-direction: column;
+	text-align: center;
+}
+
+.stats > p {
+	flex-basis: 100%;
+}
+
+.progress::before {
+	content: "";
+	background-color: var(--clr-primary-100);
+
+	position: absolute;
+
+	/* top: 50%;
+	left: 0;
+	transform: translateY(-50%); */
+	height: 100%;
+	width: 50%;
+	border-radius: 1em;
+}
+
+.progress {
+	margin-top: 2rem;
+	position: relative;
+	border-radius: 1em;
+	background-color: hsla(0, 0%, 48%, 0.25);
+
+	/* position: absolute; */
+	/* top: 50%; */
+	/* transform: translateY(-50%); */
+	height: 0.5em;
+	width: 100%;
+	transition: 0.1s ease;
+}
+
+@media only screen and (min-width: 38em) {
+	.stats {
+		text-align: left;
+		gap: calc(var(--spacer) * 2);
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+.
+/* Stands */
 .stands > div {
 	border: 1px solid hsla(0, 0%, 48%, 0.25);
 	box-shadow: none;
