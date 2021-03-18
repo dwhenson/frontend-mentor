@@ -1,0 +1,270 @@
+:root {
+	/* Primary */
+	--clr-primary-100: hsl(176, 50%, 47%);
+	--clr-primary-200: hsl(176, 72%, 28%);
+	--clr-neutral-100: hsl(0, 0%, 100%);
+	--clr-neutral-200: hsl(0, 0%, 48%);
+	--clr-neutral-300: hsl(0, 0%, 0%);
+
+	/* Spacing */
+	--spacer: 1rem;
+
+	/* Utopia */
+	--step--1: clamp(0.7813rem, 0.7592rem + 0.0939vw, 0.8438rem);
+	--step-0: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
+	--step-1: clamp(1.125rem, 0.9932rem + 0.5624vw, 1.4994rem);
+	--step-2: clamp(1.35rem, 1.1216rem + 0.9746vw, 1.9988rem);
+	--step-3: clamp(1.62rem, 1.2523rem + 1.569vw, 2.6644rem);
+
+	/* font-family */
+	--ff-body: "Commissioner", sans-serif;
+}
+
+/* 	==================================================
+	Global Styles
+	================================================== */
+
+body {
+	font-family: var(--ff-body);
+	font-size: var(--step-0);
+	font-weight: 300;
+	line-height: 1.8;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-neutral-100);
+}
+
+:focus-visible {
+	outline: 3px dotted currentColor;
+	outline-offset: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
+@media only screen and (min-width: 40em) {
+	body {
+		text-align: left;
+	}
+}
+
+/* 	Typography
+   	================================================== */
+
+h1 {
+	font-size: var(--step-3);
+}
+
+h2 {
+	font-size: var(--step-2);
+}
+
+h3 {
+	font-size: var(--step-1);
+}
+
+/* ==================================================
+   Utilities
+	================================================== */
+
+.center-content {
+	display: grid;
+	grid-template-rows: repeat(3, min-content);
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1440px) minmax(0, 1fr);
+}
+
+.center-content > * {
+	grid-column: 2;
+}
+
+.flow-section > * + * {
+	margin-top: calc(var(--spacer) * 6);
+}
+
+.flow-content > * + * {
+	margin-top: 2em;
+}
+
+.flex {
+	display: flex;
+
+	/* flex-direction: column; */
+	gap: var(--spacer);
+}
+
+@media only screen and (min-width: 40em) {
+	.flex {
+		flex-direction: row;
+	}
+}
+
+.container {
+	padding-right: clamp(2rem, 2.5%, 3rem);
+	padding-left: clamp(2rem, 2.5%, 3rem);
+}
+
+@media only screen and (min-width: 40em) {
+	.container {
+		padding-right: clamp(5rem, 5%, 10rem);
+		padding-left: clamp(5rem, 5%, 10rem);
+	}
+}
+
+/* 	Navigation
+   	================================================== */
+
+.site-head__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacer);
+}
+
+.site-head__brand {
+	width: 12rem;
+}
+
+.navigation ul {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: calc(var(--spacer) * 2);
+}
+
+.burger-menu__trigger {
+	display: none;
+}
+
+.burger-menu__trigger:focus-visible {
+	outline: 3px dotted var(--clr-neutral-100);
+	outline-offset: 0.25rem;
+}
+
+.burger-menu__trigger:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
+.burger-menu__bar,
+.burger-menu__bar::before,
+.burger-menu__bar::after {
+	position: absolute;
+	display: block;
+	left: 50%;
+	width: 24px;
+	height: 3px;
+	border: 1px solid var(--clr-neutral-100);
+	border-radius: 3px;
+	margin-left: -12px;
+	background: var(--clr-neutral-100);
+	transition: transform 350ms ease-in-out;
+}
+
+.burger-menu__bar {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.burger-menu__bar::before,
+.burger-menu__bar::after {
+	content: "";
+}
+
+.burger-menu__bar::before {
+	top: -8px;
+}
+
+.burger-menu__bar::after {
+	bottom: -8px;
+}
+
+.burger-menu[enabled="true"] .burger-menu__trigger {
+	position: relative;
+	display: block;
+	z-index: 100;
+	width: 2rem;
+	height: 2rem; /* Nice big tap target */
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.burger-menu[enabled="true"] .burger-menu__panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	padding-top: 3rem;
+	padding-right: clamp(2rem, 2.5%, 3rem);
+	padding-left: clamp(2rem, 2.5%, 3rem);
+	overflow-y: auto;
+	background: var(--clr-neutral-400);
+	-webkit-overflow-scrolling: touch;
+}
+
+.burger-menu[enabled="true"] .navigation ul {
+	display: block;
+	margin-top: 7rem;
+	text-align: left;
+}
+
+.burger-menu[enabled="true"] .navigation ul > * + * {
+	margin-top: 0.5rem;
+}
+
+.burger-menu[enabled="true"] .navigation li {
+	width: max-content;
+	font-family: var(--ff-headings);
+	font-size: var(--step-3);
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.burger-menu[enabled="true"] .navigation li a {
+	display: block;
+	line-height: 1.2;
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__panel {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 200ms ease;
+}
+
+.burger-menu[enabled="true"][status="closed"] .burger-menu__panel > * {
+	opacity: 0;
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {
+	top: 0;
+	transform: rotate(45deg);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+.burger-menu[enabled="true"][status="open"] .burger-menu__bar {
+	border-color: transparent;
+	background: transparent;
+	transform: rotate(180deg);
+}
+
+header,
+.intro {
+	background-color: var(--clr-neutral-200);
+}

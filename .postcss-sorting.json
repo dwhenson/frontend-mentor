@@ -76,6 +76,10 @@
 		"padding-right",
 		"padding-bottom",
 		"padding-left",
+ 		"padding-block-start",
+		"padding-block-end",
+		"padding-inline-start",
+		"padding-inline-end",
 
 		"outline",
 		"outline-width",
@@ -128,6 +132,10 @@
 		"margin-right",
 		"margin-bottom",
 		"margin-left",
+		"margin-block-start",
+		"margin-block-end",
+		"margin-inline-start",
+		"margin-inline-end",
 
 		"background",
 		"background-color",
