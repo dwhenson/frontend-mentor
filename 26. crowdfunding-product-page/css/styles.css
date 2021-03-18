@@ -7,14 +7,14 @@
 	--clr-neutral-300: hsl(0, 0%, 0%);
 
 	/* Spacing */
-	--spacer: 1rem;
+	--spacer: 1em;
 
 	/* Utopia */
-	--step--1: clamp(0.7813rem, 0.7592rem + 0.0939vw, 0.8438rem);
-	--step-0: clamp(0.9375rem, 0.8715rem + 0.2817vw, 1.125rem);
-	--step-1: clamp(1.125rem, 0.9932rem + 0.5624vw, 1.4994rem);
-	--step-2: clamp(1.35rem, 1.1216rem + 0.9746vw, 1.9988rem);
-	--step-3: clamp(1.62rem, 1.2523rem + 1.569vw, 2.6644rem);
+	--step-0: clamp(1rem, 1rem + 0, 1rem);
+	--step-1: clamp(1.2rem, 1.19rem + 0.07vw, 1.25rem);
+	--step-2: clamp(1.44rem, 1.41rem + 0.18vw, 1.56rem);
+	--step-3: clamp(1.73rem, 1.66rem + 0.32vw, 1.95rem);
+	--step-4: clamp(2.07rem, 1.97rem + 0.53vw, 2.44rem);
 
 	/* font-family */
 	--ff-body: "Commissioner", sans-serif;
@@ -27,18 +27,18 @@
 body {
 	font-family: var(--ff-body);
 	font-size: var(--step-0);
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.8;
 	text-align: center;
+	color: var(--clr-neutral-200);
 }
 
 a {
 	text-decoration: none;
-	color: var(--clr-neutral-100);
 }
 
 :focus-visible {
-	outline: 3px dotted currentColor;
+	outline: 3px dotted var(--clr-primary-200);
 	outline-offset: 0.25rem;
 }
 
@@ -52,8 +52,18 @@ a {
 	}
 }
 
+body:last-child {
+	margin-bottom: 6rem;
+}
+
 /* 	Typography
    	================================================== */
+
+h1,
+h2,
+h3 {
+	color: var(--clr-neutral-300);
+}
 
 h1 {
 	font-size: var(--step-3);
@@ -65,6 +75,11 @@ h2 {
 
 h3 {
 	font-size: var(--step-1);
+}
+
+.large {
+	font-size: var(--step-4);
+	color: var(--clr-neutral-300);
 }
 
 /* ==================================================
@@ -82,11 +97,11 @@ h3 {
 }
 
 .flow-section > * + * {
-	margin-top: calc(var(--spacer) * 6);
+	margin-top: calc(var(--spacer) * 2);
 }
 
 .flow-content > * + * {
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .flex {
@@ -102,16 +117,46 @@ h3 {
 	}
 }
 
-.container {
+.container-major {
 	padding-right: clamp(2rem, 2.5%, 3rem);
 	padding-left: clamp(2rem, 2.5%, 3rem);
 }
 
+.container-minor {
+	padding-right: clamp(1rem, 2.5%, 2rem);
+	padding-left: clamp(1rem, 2.5%, 2rem);
+}
+
 @media only screen and (min-width: 40em) {
-	.container {
+	.container-major {
 		padding-right: clamp(5rem, 5%, 10rem);
 		padding-left: clamp(5rem, 5%, 10rem);
 	}
+
+	.container-minor {
+		padding-right: clamp(2rem, 5%, 4rem);
+		padding-left: clamp(2rem, 5%, 4rem);
+	}
+}
+
+.cta {
+	background-color: var(--clr-primary-100);
+	color: var(--clr-neutral-100);
+	border: none;
+	padding: 0.5em 1.5em;
+	border-radius: 2em;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.cta:hover,
+.cta:focus-visible {
+	background-color: var(--clr-primary-200);
+}
+
+.pledge {
+	color: var(--clr-primary-100);
+	font-weight: 500;
 }
 
 /* 	Navigation
@@ -264,7 +309,11 @@ h3 {
 	transform: rotate(180deg);
 }
 
-header,
-.intro {
+header {
 	background-color: var(--clr-neutral-200);
+}
+
+main {
+	max-width: 50rem;
+	margin: 0 auto;
 }
