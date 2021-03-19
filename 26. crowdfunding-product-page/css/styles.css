@@ -33,7 +33,9 @@ body {
 }
 
 a {
+	color: var(--clr-neutral-100);
 	text-decoration: none;
+	font-weight: 500;
 }
 
 :focus-visible {
@@ -83,7 +85,7 @@ h3 {
 .center-content {
 	display: grid;
 	grid-template-rows: repeat(3, min-content);
-	grid-template-columns: minmax(0, 1fr) minmax(0, 1440px) minmax(0, 1fr);
+	grid-template-columns: minmax(0, 1fr) minmax(375px, 1440px) minmax(0, 1fr);
 }
 
 .center-content > * {
@@ -143,6 +145,7 @@ h3 {
 	font-weight: 500;
 	cursor: pointer;
 	width: max-content;
+	transition: background-color 200ms;
 }
 
 .cta:hover,
