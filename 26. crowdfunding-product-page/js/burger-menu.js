@@ -1,7 +1,5 @@
 import getFocusableElements from "./get-focusable-elements.js";
 
-console.log("test");
-
 class BurgerMenu extends HTMLElement {
 	constructor() {
 		super();
@@ -120,10 +118,6 @@ class BurgerMenu extends HTMLElement {
 	}
 
 	manageFocus() {
-		// NOTE DH additions to show logo outside of nav on small screens
-		const logo = document.querySelector("#logo");
-		this.state.enabled ? (logo.style.display = "block") : (logo.style.display = "none");
-
 		if (!this.state.enabled) {
 			this.focusableElements.forEach((element) => element.removeAttribute("tabindex"));
 			return;
