@@ -320,28 +320,93 @@ h3 {
 
 header {
 	background-color: var(--clr-primary-200);
-	background-image: url("images/image-hero-mobile.jpg");
+	background-image: url("../images/image-hero-mobile.jpg");
 	padding-bottom: 17rem;
+	background-size: cover;
+	background-position: center;
 }
 
 @media only screen and (min-width: 38em) {
 	header {
-		background-image: url("images/image-hero-desktop.jpg");
+		background-image: url("../images/image-hero-desktop.jpg");
 	}
 }
 
 /* Main
 	 ================================================== */
 
-main {
-	max-width: 50rem;
-	margin: 0 auto;
+main > * {
+	background-color: var(--clr-neutral-100);
 }
 
-/* Intro */
+main {
+	max-width: 50rem;
+	margin: -7rem auto 3rem;
+}
 
-main > img {
-	margin: -28px auto;
+/* Bookmark
+   ------------------- */
+
+main .bookmark {
+	position: relative;
+	background-color: hsla(176, 50%, 47%, 0.1);
+	text-align: right;
+	padding-left: 4rem;
+	color: var(--clr-primary-200);
+	font-weight: 800;
+}
+
+main .bookmark:hover {
+	background-color: hsla(0, 0%, 48%, 0.1);
+	color: var(--clr-neutral-200);
+}
+
+main .bookmark:focus-within {
+	outline: 3px dotted var(--clr-primary-200);
+	outline-offset: 0.5rem;
+	background-color: hsla(0, 0%, 48%, 0.1);
+	color: var(--clr-neutral-200);
+}
+
+main .bookmark-icon {
+	position: absolute;
+	left: 0;
+	top: -8px;
+}
+
+main .bookmark-icon circle {
+	fill: var(--clr-primary-200);
+}
+
+main .bookmark-icon path {
+	fill: var(--clr-neutral-100);
+}
+
+main .bookmark:focus-within circle,
+main .bookmark:hover circle {
+	fill: var(--clr-neutral-200);
+}
+
+main .bookmark:focus-within path,
+main .bookmark:hover path {
+	fill: #a9a9a9;
+}
+
+main .bookmark input {
+	display: block;
+	position: absolute;
+	left: 1rem;
+	top: 0;
+	width: 2rem;
+	height: 2rem;
+	opacity: 0;
+}
+
+/* Intro
+	 ================================================== */
+
+.intro > img {
+	margin: -4rem auto 0;
 }
 
 .intro {
