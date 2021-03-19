@@ -169,6 +169,8 @@ h3 {
 
 .site-head__brand {
 	width: 12rem;
+	position: relative;
+	z-index: 100;
 }
 
 .navigation ul {
@@ -248,7 +250,7 @@ h3 {
 	padding-right: clamp(2rem, 2.5%, 3rem);
 	padding-left: clamp(2rem, 2.5%, 3rem);
 	overflow-y: auto;
-	background: var(--clr-neutral-400);
+	background: linear-gradient(to bottom, hsla(0, 0%, 0%, 1), hsla(0, 0%, 0%, 0));
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -256,6 +258,9 @@ h3 {
 	display: block;
 	margin-top: 4rem;
 	text-align: left;
+	background-color: var(--clr-neutral-100);
+	padding: clamp(2rem, 5%, 4rem);
+	border-radius: 2em;
 }
 
 .burger-menu[enabled="true"] .navigation ul > * + * {
@@ -268,9 +273,8 @@ h3 {
 }
 
 .burger-menu[enabled="true"] .navigation li a {
+	color: var(--clr-neutral-300);
 	display: block;
-
-	/* line-height: 2; */
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {

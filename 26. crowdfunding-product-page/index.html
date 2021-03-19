@@ -23,11 +23,8 @@
 						<img src="images/logo.svg" alt="Crowdfund logo" />
 					</a>
 
-					<burger-menu max-width="500">
+					<burger-menu max-width="600">
 						<nav class="navigation" aria-label="primary">
-							<a id="logo" href="/" aria-label="Crowdfund home" class="site-head__brand">
-								<img src="images/logo.svg" alt="Crowdfund logo" />
-							</a>
 							<ul role="list">
 								<li>
 									<a href="/">About</a>
@@ -46,16 +43,21 @@
 		</header>
 
 		<main id="main" class="container-major flow-section" tabindex="-1">
-			<img src="images/logo-mastercraft.svg" alt="" aria-hidden="true" />
-
 			<section class="flow-content box intro" aria-labelledby="section-heading-00">
+				<img src="images/logo-mastercraft.svg" alt="" aria-hidden="true" />
 				<h1 id="section-heading-00">Mastercraft Bamboo Monitor Riser</h1>
 				<p class="subheading">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
 				<div class="flex">
 					<button class="cta">Back this project</button>
-					<label for="bookmark">
+					<label class="cta bookmark" for="bookmark">
 						Bookmark
 						<input type="checkbox" name="bookmark" id="bookmark" />
+						<svg class="bookmark-icon" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+							<g class="bookmark-icon">
+								<circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+								<path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+							</g>
+						</svg>
 					</label>
 				</div>
 			</section>
