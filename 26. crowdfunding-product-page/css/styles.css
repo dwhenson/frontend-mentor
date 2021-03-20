@@ -33,9 +33,13 @@ body {
 }
 
 a {
-	color: var(--clr-neutral-100);
-	text-decoration: none;
 	font-weight: 500;
+	text-decoration: none;
+	color: var(--clr-neutral-100);
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 :focus-visible {
@@ -74,8 +78,8 @@ h3 {
 
 .large {
 	font-size: var(--step-4);
-	color: var(--clr-neutral-300);
 	font-weight: 800;
+	color: var(--clr-neutral-300);
 }
 
 /* ==================================================
@@ -102,9 +106,9 @@ h3 {
 
 .flex {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
 	gap: var(--spacer);
 }
 
@@ -131,21 +135,21 @@ h3 {
 }
 
 .box {
-	box-shadow: rgba(163, 163, 163, 0.25) 0 5px 20px -5px;
-	border-radius: 1em;
 	padding: clamp(2rem, 5%, 4rem);
+	border-radius: 1em;
+	box-shadow: rgba(163, 163, 163, 0.25) 0 5px 20px -5px;
 }
 
 .cta {
-	background-color: var(--clr-primary-100);
-	color: var(--clr-neutral-100);
-	border: none;
-	padding: 0.5em 1.5em;
-	border-radius: 2em;
-	font-weight: 500;
-	cursor: pointer;
 	width: max-content;
+	padding: 0.5em 1.5em;
+	border: none;
+	border-radius: 2em;
+	background-color: var(--clr-primary-100);
 	transition: background-color 200ms;
+	font-weight: 500;
+	color: var(--clr-neutral-100);
+	cursor: pointer;
 }
 
 .cta:hover,
@@ -154,26 +158,26 @@ h3 {
 }
 
 .pledge {
-	color: var(--clr-primary-100);
 	font-weight: 500;
+	color: var(--clr-primary-100);
 }
 
 /* 	Navigation
    	================================================== */
 
 .site-head__inner {
-	margin-top: 2rem;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	margin-top: 2rem;
 	gap: var(--spacer);
 }
 
 .site-head__brand {
-	width: 12rem;
 	position: relative;
 	z-index: 100;
+	width: 12rem;
 }
 
 .navigation ul {
@@ -259,11 +263,11 @@ h3 {
 
 .burger-menu[enabled="true"] .navigation ul {
 	display: block;
-	margin-top: 4rem;
-	text-align: left;
-	background-color: var(--clr-neutral-100);
 	padding: clamp(2rem, 5%, 4rem);
 	border-radius: 2em;
+	margin-top: 4rem;
+	background-color: var(--clr-neutral-100);
+	text-align: left;
 }
 
 .burger-menu[enabled="true"] .navigation ul > * + * {
@@ -276,8 +280,8 @@ h3 {
 }
 
 .burger-menu[enabled="true"] .navigation li a {
-	color: var(--clr-neutral-300);
 	display: block;
+	color: var(--clr-neutral-300);
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {
@@ -319,11 +323,11 @@ h3 {
 	 ================================================== */
 
 header {
+	padding-bottom: 17rem;
 	background-color: var(--clr-primary-200);
 	background-image: url("../images/image-hero-mobile.jpg");
-	padding-bottom: 17rem;
-	background-size: cover;
 	background-position: center;
+	background-size: cover;
 }
 
 @media only screen and (min-width: 38em) {
@@ -349,11 +353,11 @@ main {
 
 main .bookmark {
 	position: relative;
-	background-color: hsla(176, 50%, 47%, 0.1);
-	text-align: right;
 	padding-left: 4rem;
-	color: var(--clr-primary-200);
+	background-color: hsla(176, 50%, 47%, 0.1);
 	font-weight: 800;
+	text-align: right;
+	color: var(--clr-primary-200);
 }
 
 main .bookmark:hover {
@@ -370,8 +374,8 @@ main .bookmark:focus-within {
 
 main .bookmark-icon {
 	position: absolute;
-	left: 0;
 	top: -8px;
+	left: 0;
 }
 
 main .bookmark-icon circle {
@@ -393,13 +397,13 @@ main .bookmark:hover path {
 }
 
 main .bookmark input {
-	display: block;
 	position: absolute;
-	left: 1rem;
+	display: block;
 	top: 0;
+	left: 1rem;
+	opacity: 0;
 	width: 2rem;
 	height: 2rem;
-	opacity: 0;
 }
 
 /* Intro
@@ -421,9 +425,9 @@ main .bookmark input {
 
 .stats > .flex {
 	position: relative;
-	gap: calc(var(--spacer) * 1);
 	flex-direction: column;
 	text-align: center;
+	gap: calc(var(--spacer) * 1);
 }
 
 .stats > p {
@@ -434,31 +438,31 @@ main .bookmark input {
 
 .progress::before {
 	content: "";
-	background-color: var(--clr-primary-100);
 	position: absolute;
-	height: 100%;
 	width: var(--width-bar);
+	height: 100%;
 	border-radius: 1em;
+	background-color: var(--clr-primary-100);
 }
 
 .progress {
 	--width-bar: 50%;
+	position: relative;
+	width: 100%;
+	height: 0.5em;
+	border-radius: 1em;
 
 	margin-top: 2rem;
-	position: relative;
-	border-radius: 1em;
 	background-color: hsla(0, 0%, 48%, 0.25);
-	height: 0.5em;
-	width: 100%;
 	transition: 0.1s ease;
 }
 
 @media only screen and (min-width: 38em) {
 	.stats > .flex {
-		text-align: left;
-		gap: calc(var(--spacer) * 2);
 		flex-direction: row;
 		align-items: center;
+		text-align: left;
+		gap: calc(var(--spacer) * 2);
 	}
 }
 
