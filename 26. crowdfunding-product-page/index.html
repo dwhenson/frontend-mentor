@@ -76,7 +76,7 @@
 						days left
 					</p>
 				</div>
-				<!-- Bar to show progress (empty on init)-->
+				Bar to show progress (empty on init
 				<div class="progress" id="progress"></div>
 			</div>
 
@@ -107,7 +107,7 @@
 						</p>
 						<div class="flex">
 							<p><span class="large">101</span> left</p>
-							<button class="cta">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
 						</div>
 					</div>
 
@@ -122,7 +122,7 @@
 						</p>
 						<div class="flex">
 							<p><span class="large">64</span> left</p>
-							<button class="cta">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
 						</div>
 					</div>
 
@@ -137,12 +137,79 @@
 						</p>
 						<div class="flex">
 							<p><span class="large">0</span> left</p>
-							<button class="cta">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
 						</div>
 					</div>
 				</div>
 			</article>
 		</main>
+
+		<!-- Main Modal Start -->
+
+		<div id="my-dialog" class="center-content dialog" role="dialog" aria-labelledby="dialog-title">
+			<div class="flow-section dialog__window">
+				<div class="container-minor flow-content dialog__header">
+					<button aria-label="Close Dialog">Close</button>
+					<h2 id="dialog-title">Back this project</h2>
+					<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+				</div>
+
+				<form class="container-minor flow-section dialog__main">
+					<div class="flow-content box reward no-support">
+						<input type="radio" name="reward" id="no-support" />
+						<label for="no-support">Pledge with no reward</label>
+						<p>
+							Choose to support us without a reward if you simply believe in our project. As a backer, you
+							will be signed up to receive product updates via email.
+						</p>
+					</div>
+
+					<div class="flow-content box reward bamboo">
+						<input type="radio" name="reward" id="bamboo" />
+						<div class="flex">
+							<label for="bamboo">Bamboo Stand </label>
+							<p class="pledge">Pledge $25 or more</p>
+							<p><span>101</span> left</p>
+						</div>
+						<p>
+							You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional
+							campaign, and you’ll be added to a special Backer member list.
+						</p>
+
+						<div class="flex commit">
+							<label for="commit">Enter your pledge</label>
+							<div class="cta">$<input type="number" name="commit" value="25" /></div>
+							<button class="cta" type="submit">Continue</button>
+						</div>
+					</div>
+
+					<div class="flow-content box reward black">
+						<label for="black">Black Edition Stand Pledge </label>
+						<input type="radio" name="reward" id="black" />
+						<p>
+							$75 or more You get a Black Special Edition computer stand and a personal thank you. You’ll
+							be added to our Backer member list. Shipping is included. 64 left
+						</p>
+						Selected pledge start Enter your pledge $75 Continue Selected pledge end
+					</div>
+
+					<div class="flow-content box reward mahogany">
+						<label for="mahogany">Mahogany Special Edition</label>
+						<input type="radio" name="reward" id="mahogany" />
+						<p>
+							Pledge $200 or more You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+							personal thank you. You’ll be added to our Backer member list. Shipping is included. 0 left
+						</p>
+						Selected pledge start Enter your pledge $200 Continue Selected pledge end
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- 	Success modal start Thanks for your support! Your pledge brings us one step closer to sharing
+		Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
+		Got it! Success modal end -->
 	</body>
 	<script src="js/burger-menu.js" type="module"></script>
+	<script src="js/modal.js" type="module"></script>
 </html>
