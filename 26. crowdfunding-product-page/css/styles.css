@@ -176,7 +176,7 @@ h3 {
 
 .site-head__brand {
 	position: relative;
-	z-index: 100;
+	z-index: 10;
 	width: 12rem;
 }
 
@@ -236,7 +236,7 @@ h3 {
 .burger-menu[enabled="true"] .burger-menu__trigger {
 	position: relative;
 	display: block;
-	z-index: 100;
+	z-index: 10;
 	width: 2rem;
 	height: 2rem; /* Nice big tap target */
 	border: none;
@@ -250,7 +250,7 @@ h3 {
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 10;
+	z-index: 1;
 	width: 100%;
 	height: 100%;
 	padding-top: 3rem;
@@ -324,15 +324,19 @@ h3 {
 
 header {
 	padding-bottom: 17rem;
-	background-color: var(--clr-primary-200);
-	background-image: url("../images/image-hero-mobile.jpg");
-	background-position: center;
-	background-size: cover;
+
+	/* prettier-ignore */
+	background:
+		linear-gradient(hsla(200, 16%, 18%, 0.4), hsla(200, 16%, 18%, 0)),
+		center/cover url("../images/image-hero-mobile.jpg") var(--clr-primary-200);
 }
 
 @media only screen and (min-width: 38em) {
 	header {
-		background-image: url("../images/image-hero-desktop.jpg");
+		/* prettier-ignore */
+		background:
+			linear-gradient(hsla(200, 16%, 18%, 0.4), hsla(200, 16%, 18%, 0)),
+			center/cover url("../images/image-hero-desktop.jpg") var(--clr-primary-200);
 	}
 }
 
@@ -344,7 +348,7 @@ main > * {
 }
 
 main {
-	max-width: 50rem;
+	max-width: 60rem;
 	margin: -7rem auto 3rem;
 }
 
@@ -447,6 +451,7 @@ main .bookmark input {
 
 .progress {
 	--width-bar: 50%;
+
 	position: relative;
 	width: 100%;
 	height: 0.5em;
@@ -490,5 +495,110 @@ main .bookmark input {
 	.stands .flex {
 		flex-direction: row;
 		align-items: center;
+	}
+}
+
+/* 	Modal
+   	================================================== */
+
+.dialog {
+	background-color: rgba(51, 51, 51, 0.7);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100;
+}
+
+.dialog__window {
+	max-width: 50rem;
+	margin: 14rem auto 0;
+	background-color: var(--clr-neutral-100);
+	padding: clamp(2rem, 2.5%, 3rem);
+	border-radius: 1em;
+}
+
+/* Rewards
+   ------------------- */
+
+.reward {
+	border: 1px solid hsla(0, 0%, 48%, 0.25);
+	box-shadow: none;
+}
+
+.reward:focus-within {
+	border-color: var(--clr-primary-200);
+}
+
+.reward .pledge {
+	font-weight: 700;
+	margin-right: auto;
+}
+
+.reward label {
+	color: var(--clr-neutral-300);
+	font-weight: 700;
+	gap: 1em;
+}
+
+.reward.box span:last-of-type {
+	color: var(--clr-neutral-300);
+	font-weight: 700;
+	margin-right: 0.25em;
+}
+
+/* Reward commitment */
+
+.commit {
+	/* display: none; */
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--clr-neutral-200);
+	justify-content: flex-end;
+}
+
+.commit label {
+	margin-right: auto;
+	color: var(--clr-neutral-200);
+	font-weight: 400;
+}
+
+.commit div.cta {
+	border: 1px solid var(--clr-primary-200);
+	border-radius: 2rem;
+	max-width: 6.5rem;
+	padding: 0.5em 1.5em;
+	cursor: pointer;
+	display: flex;
+	gap: 0.5em;
+	background-color: transparent;
+	color: var(--clr-neutral-200);
+	align-items: baseline;
+}
+
+.commit input {
+	border: none;
+	width: 3ch;
+	background: transparent;
+}
+
+/* Expand section */
+
+.reward input:first-of-type:checked ~ .commit {
+	display: flex;
+	animation: sweep 0.2s;
+	will-change: opacity, transform;
+}
+
+@keyframes sweep {
+	0% {
+		opacity: 0;
+		transform: translateY(-1em);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
