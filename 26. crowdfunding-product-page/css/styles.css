@@ -525,10 +525,15 @@ main .bookmark input {
 .reward {
 	border: 1px solid hsla(0, 0%, 48%, 0.25);
 	box-shadow: none;
+	position: relative;
 }
 
 .reward:focus-within {
 	border-color: var(--clr-primary-200);
+}
+
+.reward div.flex:first-of-type {
+	margin-top: 0;
 }
 
 .reward .pledge {
@@ -540,6 +545,7 @@ main .bookmark input {
 	color: var(--clr-neutral-300);
 	font-weight: 700;
 	gap: 1em;
+	cursor: pointer;
 }
 
 .reward.box span:last-of-type {
@@ -548,10 +554,52 @@ main .bookmark input {
 	margin-right: 0.25em;
 }
 
+/* Custom radio */
+
+input[type="radio"] {
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	left: 2rem;
+	top: 2rem;
+	border: none;
+	cursor: pointer;
+}
+
+input[type="radio"]::after {
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	position: relative;
+	background-color: var(--clr-neutral-100);
+	content: "";
+	display: inline-block;
+	border: 1px solid var(--clr-neutral-200);
+}
+
+input[type="radio"]:checked::after {
+	width: 0.75rem;
+	height: 0.75rem;
+	position: relative;
+	left: 3px;
+	top: 1px;
+	background-color: var(--clr-primary-200);
+	content: "";
+	display: inline-block;
+	padding: 0.5em;
+	border: 1px solid var(--clr-neutral-200);
+}
+
+.reward > label,
+.reward > p,
+.reward > div:first-of-type {
+	margin-left: 4rem;
+}
+
 /* Reward commitment */
 
 .commit {
-	/* display: none; */
+	display: none;
 	margin-top: 2rem;
 	padding-top: 1.5rem;
 	border-top: 1px solid var(--clr-neutral-200);
@@ -579,8 +627,9 @@ main .bookmark input {
 
 .commit input {
 	border: none;
-	width: 3ch;
+	width: 5ch;
 	background: transparent;
+	font-weight: 700;
 }
 
 /* Expand section */
