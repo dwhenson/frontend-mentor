@@ -502,21 +502,53 @@ main .bookmark input {
    	================================================== */
 
 .dialog {
-	background-color: rgba(51, 51, 51, 0.7);
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 100;
+	display: none;
+}
+
+.dialog.opened {
+	display: block;
 }
 
 .dialog__window {
-	max-width: 50rem;
+	/* display: inline-block; */
+	position: fixed;
+	width: min(90%, 50rem);
 	margin: 14rem auto 0;
 	background-color: var(--clr-neutral-100);
 	padding: clamp(2rem, 2.5%, 3rem);
 	border-radius: 1em;
+	z-index: 101;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.dialog-mask {
+	background-color: rgba(51, 51, 51, 0.8);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 100;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+}
+
+.dialog button[aria-label="Close Dialog"] {
+	border: none;
+	display: block;
+	background-color: transparent;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+.dialog button[aria-label="Close Dialog"]:hover,
+.dialog button[aria-label="Close Dialog"]:focus-visible {
+	color: var(--clr-primary-200);
+}
+
+.dialog button[aria-label="Close Dialog"] + h2 {
+	margin-top: -1.8rem;
 }
 
 /* Rewards
@@ -537,7 +569,7 @@ main .bookmark input {
 }
 
 .reward .pledge {
-	font-weight: 700;
+	font-weight: 400;
 	margin-right: auto;
 }
 
@@ -619,7 +651,7 @@ input[type="radio"]:checked::after {
 	padding: 0.5em 1.5em;
 	cursor: pointer;
 	display: flex;
-	gap: 0.5em;
+	gap: 0.25em;
 	background-color: transparent;
 	color: var(--clr-neutral-200);
 	align-items: baseline;
