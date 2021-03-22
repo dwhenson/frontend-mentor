@@ -3,7 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
 		<title>Frontend Mentor | Crowdfunding product page</title>
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
 		<link
@@ -46,13 +51,20 @@
 			<section class="flow-content box intro" aria-labelledby="section-heading-00">
 				<img src="images/logo-mastercraft.svg" alt="" aria-hidden="true" />
 				<h1 id="section-heading-00">Mastercraft Bamboo Monitor Riser</h1>
-				<p class="subheading">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
+				<p class="subheading">
+					A beautiful & handcrafted monitor stand to reduce neck and eye strain.
+				</p>
 				<div class="flex">
 					<button class="cta dialog-button">Back this project</button>
 					<label class="cta bookmark" for="bookmark">
 						Bookmark
 						<input type="checkbox" name="bookmark" id="bookmark" />
-						<svg class="bookmark-icon" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							class="bookmark-icon"
+							width="56"
+							height="56"
+							xmlns="http://www.w3.org/2000/svg"
+						>
 							<g class="bookmark-icon">
 								<circle fill="#2F2F2F" cx="28" cy="28" r="28" />
 								<path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
@@ -84,14 +96,16 @@
 				<section class="flow-content" aria-labelledby="section-heading-01">
 					<h2 id="section-heading-01">About this project</h2>
 					<p>
-						The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your
-						screen to a more comfortable viewing height. Placing your monitor at eye level has the
-						potential al to improve your posture and make you more comfortable while at work, helping you
-						stay focused on the task at hand.
+						The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that
+						elevates your screen to a more comfortable viewing height. Placing your
+						monitor at eye level has the potential al to improve your posture and make
+						you more comfortable while at work, helping you stay focused on the task
+						at hand.
 					</p>
 					<p>
-						Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your
-						computer to allow notepads, pens, and USB sticks to be stored under the stand.
+						Featuring artisan craftsmanship, the simplicity of design creates extra
+						desk space below your computer to allow notepads, pens, and USB sticks to
+						be stored under the stand.
 					</p>
 				</section>
 
@@ -102,12 +116,15 @@
 							<p class="pledge">Pledge $25 or more</p>
 						</div>
 						<p>
-							You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional
-							campaign, and you’ll be added to a special Backer member list.
+							You get an ergonomic stand made of natural bamboo. You've helped us
+							launch our promotional campaign, and you’ll be added to a special Backer
+							member list.
 						</p>
 						<div class="flex">
 							<p><span class="large">101</span> left</p>
-							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">
+								Select Reward
+							</button>
 						</div>
 					</div>
 
@@ -117,12 +134,14 @@
 							<p class="pledge">Pledge $75 or more</p>
 						</div>
 						<p>
-							You get a Black Special Edition computer stand and a personal thank you. You’ll be added to
-							our Backer member list.
+							You get a Black Special Edition computer stand and a personal thank you.
+							You’ll be added to our Backer member list.
 						</p>
 						<div class="flex">
 							<p><span class="large">64</span> left</p>
-							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">
+								Select Reward
+							</button>
 						</div>
 					</div>
 
@@ -132,12 +151,15 @@
 							<p class="pledge">Pledge $200 or more</p>
 						</div>
 						<p>
-							You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you.
-							You’ll be added to our Backer member list. Shipping is included.
+							You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+							personal thank you. You’ll be added to our Backer member list. Shipping
+							is included.
 						</p>
 						<div class="flex">
 							<p><span class="large">0</span> left</p>
-							<button class="cta dialog-button" data-dialog="my-dialog">Select Reward</button>
+							<button class="cta dialog-button" data-dialog="my-dialog">
+								Select Reward
+							</button>
 						</div>
 					</div>
 				</div>
@@ -145,21 +167,17 @@
 		</main>
 
 		<!-- Main Modal Start -->
-
-		<div class="dialog" role="dialog" aria-labelledby="dialog-title">
+		<div class="main-dialog" role="dialog" aria-labelledby="dialog-title">
 			<div class="flow-section dialog__window">
 				<div class="container-minor flow-content dialog__header">
-					<button class="dialog-button" aria-label="Close Dialog">
-						<svg aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M17.778.808l1.414 1.414L11.414 10l7.778 7.778-1.414 1.414L10 11.414l-7.778 7.778-1.414-1.414L8.586 10 .808 2.222 2.222.808 10 8.586 17.778.808z"
-								fill="#7b7b7b"
-								fill-rule="evenodd"
-							/>
-						</svg>
+					<button id="close" aria-label="Close Dialog">
+						<img src="images/icon-close-modal.svg" alt="" />
 					</button>
 					<h2 id="dialog-title">Back this project</h2>
-					<p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+					<p>
+						Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the
+						world?
+					</p>
 				</div>
 
 				<form class="container-minor flow-section dialog__main">
@@ -167,8 +185,9 @@
 						<input type="radio" name="reward" id="no-support" />
 						<label for="no-support">Pledge with no reward</label>
 						<p>
-							Choose to support us without a reward if you simply believe in our project. As a backer, you
-							will be signed up to receive product updates via email.
+							Choose to support us without a reward if you simply believe in our
+							project. As a backer, you will be signed up to receive product updates
+							via email.
 						</p>
 					</div>
 
@@ -180,14 +199,15 @@
 							<p><span>101</span> left</p>
 						</div>
 						<p>
-							You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional
-							campaign, and you’ll be added to a special Backer member list.
+							You get an ergonomic stand made of natural bamboo. You've helped us
+							launch our promotional campaign, and you’ll be added to a special Backer
+							member list.
 						</p>
 
 						<div class="flex commit">
 							<label for="commit">Enter your pledge</label>
 							<div class="cta">$<input type="number" name="commit" value="25" /></div>
-							<button class="cta" type="submit">Continue</button>
+							<button class="cta continue">Continue</button>
 						</div>
 					</div>
 
@@ -199,13 +219,13 @@
 							<p><span>64</span> left</p>
 						</div>
 						<p>
-							You get a Black Special Edition computer stand and a personal thank you. You’ll be added to
-							our Backer member list. Shipping is included.
+							You get a Black Special Edition computer stand and a personal thank you.
+							You’ll be added to our Backer member list. Shipping is included.
 						</p>
 						<div class="flex commit">
 							<label for="commit">Enter your pledge</label>
 							<div class="cta">$<input type="number" name="commit" value="75" /></div>
-							<button class="cta" type="submit">Continue</button>
+							<button class="cta continue">Continue</button>
 						</div>
 					</div>
 
@@ -217,23 +237,35 @@
 							<p><span>0</span> left</p>
 						</div>
 						<p>
-							Pledge $200 or more You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
-							personal thank you. You’ll be added to our Backer member list. Shipping is included.
+							Pledge $200 or more You get two Special Edition Mahogany stands, a Backer
+							T-Shirt, and a personal thank you. You’ll be added to our Backer member
+							list. Shipping is included.
 						</p>
 						<div class="flex commit">
 							<label for="commit">Enter your pledge</label>
 							<div class="cta">$<input type="number" name="commit" value="200" /></div>
-							<button class="cta" type="submit">Continue</button>
+							<button class="cta continue">Continue</button>
 						</div>
 					</div>
 				</form>
 			</div>
 			<div class="dialog-mask"></div>
 		</div>
-
-		<!-- 	Success modal start Thanks for your support! Your pledge brings us one step closer to sharing
-		Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.
-		Got it! Success modal end -->
+		<!-- Main Modal End -->
+		<!-- 	Success Modal Start -->
+		<div class="success-dialog" role="dialog" aria-labelledby="dialog-title">
+			<div class="flow-section dialog__window">
+				<img src="images/icon-check.svg" alt="" aria-hidden="true" />
+				<h2>Thanks for your support!</h2>
+				<p>
+					Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor
+					Riser worldwide. You will get an email once our campaign is completed.
+				</p>
+				<button class="cta clear">Got it!</button>
+			</div>
+			<div class="dialog-mask-success"></div>
+		</div>
+		<!-- Success Modal End -->
 	</body>
 	<script src="js/burger-menu.js" type="module"></script>
 	<script src="js/modal.js" type="module"></script>

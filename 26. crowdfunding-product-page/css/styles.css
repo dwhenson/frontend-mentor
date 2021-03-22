@@ -498,18 +498,21 @@ main .bookmark input {
 	}
 }
 
-/* 	Modal
+/* 	Modals
    	================================================== */
 
-.dialog {
+/* Main modal
+   ------------------- */
+
+.main-dialog {
 	display: none;
 }
 
-.dialog.opened {
+.main-dialog.opened {
 	display: block;
 }
 
-.dialog__window {
+.main-dialog .dialog__window {
 	/* display: inline-block; */
 	position: fixed;
 	width: min(90%, 50rem);
@@ -523,7 +526,7 @@ main .bookmark input {
 	transform: translateX(-50%);
 }
 
-.dialog-mask {
+.main-dialog .dialog-mask {
 	background-color: rgba(51, 51, 51, 0.8);
 	height: 100%;
 	width: 100%;
@@ -534,7 +537,7 @@ main .bookmark input {
 	left: 0;
 }
 
-.dialog button[aria-label="Close Dialog"] {
+.main-dialog button[aria-label="Close Dialog"] {
 	border: none;
 	display: block;
 	background-color: transparent;
@@ -542,13 +545,14 @@ main .bookmark input {
 	cursor: pointer;
 }
 
-.dialog button[aria-label="Close Dialog"]:hover,
-.dialog button[aria-label="Close Dialog"]:focus-visible {
+.main-dialog button[aria-label="Close Dialog"]:hover,
+/*.dialog button[aria-label="Close Dialog"]:focus-within,*/
+.main-dialog button[aria-label="Close Dialog"]:focus-visible {
 	color: var(--clr-primary-200);
 }
 
-.dialog button[aria-label="Close Dialog"] + h2 {
-	margin-top: -1.8rem;
+.main-dialog button[aria-label="Close Dialog"] + h2 {
+	margin-top: -1rem;
 }
 
 /* Rewards
@@ -682,4 +686,44 @@ input[type="radio"]:checked::after {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+/* Success Modal
+   ------------------- */
+
+.success-dialog {
+	display: none;
+}
+
+.success-dialog.opened {
+	display: block;
+}
+
+.success-dialog .dialog__window {
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	width: min(60%, 30rem);
+	margin: 18rem auto 0;
+	background-color: var(--clr-neutral-100);
+	padding: clamp(2rem, 2.5%, 3rem);
+	border-radius: 1em;
+	z-index: 1001;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	line-height: 2;
+}
+
+.success-dialog .dialog-mask-success {
+	background-color: rgba(51, 51, 51, 0.8);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+	overflow: hidden;
+	top: 0;
+	left: 0;
 }
