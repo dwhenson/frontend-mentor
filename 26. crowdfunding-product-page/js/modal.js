@@ -4,16 +4,16 @@
 const KEYCODE = {
 	ESC: 27,
 };
-// Main dialog
-const mainDialog = document.querySelector(".main-dialog");
-const dialogMask = document.querySelector(".dialog-mask");
-const dialogWindow = document.querySelector(".dialog__window");
+// Main dialog variables
+const mainDialog = document.querySelector("#dialogMain");
+const dialogMask = document.querySelector("#dialogMask");
+const dialogWindow = document.querySelector("#dialogWindow");
 const closeButton = document.querySelector("#close");
 let previousActiveElementPage;
-// Success dialog
-const successDialog = document.querySelector(".success-dialog");
-const dialogMaskSuccess = document.querySelector(".dialog-mask-success");
-const clearButton = document.querySelector(".clear");
+// Success dialog variables
+const successDialog = document.querySelector("#dialogSuccess");
+const dialogMaskSuccess = document.querySelector("#dialogMaskSuccess");
+const clearButton = document.querySelector("#clear");
 let previousActiveElementModal;
 
 /* =================== Functions ====================== */
@@ -22,10 +22,9 @@ let previousActiveElementModal;
 /* Helper Functions
 /* ==================================================== */
 
-// NOTE can this be refactored?
 function keyHandlerMain(event) {
 	if (event.keyCode === KEYCODE.ESC) {
-		closeDialog();
+		closeDialogMain();
 	}
 }
 
@@ -61,7 +60,7 @@ function closeDialogSuccess() {
 /**
  * Opens the success dialog
  */
-function openSuccess() {
+function openDialogSuccess() {
 	// Store the currently active element
 	previousActiveElementModal = document.activeElement;
 	// Set the main dialog as inert and active the success dialog
@@ -86,11 +85,11 @@ function openSuccess() {
 /**
  * Closes the main dialog.
  */
-function closeDialog() {
+function closeDialogMain() {
 	// Remove the event listeners
 	mainDialog.removeEventListener("keydown", keyHandlerMain);
-	dialogMask.removeEventListener("click", closeDialog);
-	closeButton.removeEventListener("click", closeDialog);
+	dialogMask.removeEventListener("click", closeDialogMain);
+	closeButton.removeEventListener("click", closeDialogMain);
 	// Remove the inert setting from all body children
 	Array.from(document.body.children).forEach((child) => {
 		if (child !== mainDialog) {
@@ -106,7 +105,7 @@ function closeDialog() {
 /**
  * Opens a the main dialog.
  */
-function openDialog() {
+function openDialogMain() {
 	// Store the currently focused element
 	previousActiveElementPage = document.activeElement;
 	// Get direct children of body and set all to inert except the main dialogue
@@ -121,13 +120,13 @@ function openDialog() {
 	closeButton.focus();
 	// Add listeners to the close the main dialog
 	mainDialog.addEventListener("keydown", keyHandlerMain);
-	dialogMask.addEventListener("click", closeDialog);
-	closeButton.addEventListener("click", closeDialog);
+	dialogMask.addEventListener("click", closeDialogMain);
+	closeButton.addEventListener("click", closeDialogMain);
 	// Add listeners to the main dialog to open success dialog
 	dialogWindow.addEventListener("click", function (event) {
 		if (!event.target.closest(".continue")) return;
 		event.preventDefault();
-		openSuccess();
+		openDialogSuccess();
 	});
 }
 
@@ -137,7 +136,7 @@ function openDialog() {
  */
 function clickHandler(event) {
 	if (!event.target.closest(".dialog-button")) return;
-	openDialog(event);
+	openDialogMain(event);
 }
 
 /* ============  Inits and Event Listeners  =========== */
