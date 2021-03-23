@@ -9,6 +9,7 @@ const mainDialog = document.querySelector("#dialogMain");
 const dialogMask = document.querySelector("#dialogMask");
 const dialogWindow = document.querySelector("#dialogWindow");
 const closeButton = document.querySelector("#close");
+const mainTitle = document.querySelector("#dialog-title");
 let previousActiveElementPage;
 // Success dialog variables
 const successDialog = document.querySelector("#dialogSuccess");
@@ -31,6 +32,7 @@ function keyHandlerMain(event) {
 function keyHandlerSuccess(event) {
 	if (event.keyCode === KEYCODE.ESC) {
 		closeDialogSuccess();
+		closeDialogMain();
 	}
 }
 
@@ -55,6 +57,7 @@ function closeDialogSuccess() {
 	successDialog.classList.remove("opened");
 	// Restore focus to the previously focused element
 	previousActiveElementModal.focus();
+	closeDialogMain();
 }
 
 /**
@@ -87,7 +90,7 @@ function openDialogSuccess() {
  */
 function closeDialogMain() {
 	// Remove the event listeners
-	mainDialog.removeEventListener("keydown", keyHandlerMain);
+	document.removeEventListener("keydown", keyHandlerMain);
 	dialogMask.removeEventListener("click", closeDialogMain);
 	closeButton.removeEventListener("click", closeDialogMain);
 	// Remove the inert setting from all body children
@@ -117,9 +120,9 @@ function openDialogMain() {
 	// Add the open class to show the dialog
 	mainDialog.classList.add("opened");
 	// Move focus to the close button
-	closeButton.focus();
+	mainTitle.focus();
 	// Add listeners to the close the main dialog
-	mainDialog.addEventListener("keydown", keyHandlerMain);
+	document.addEventListener("keydown", keyHandlerMain);
 	dialogMask.addEventListener("click", closeDialogMain);
 	closeButton.addEventListener("click", closeDialogMain);
 	// Add listeners to the main dialog to open success dialog

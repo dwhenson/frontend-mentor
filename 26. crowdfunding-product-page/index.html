@@ -56,9 +56,9 @@
 				</p>
 				<div class="flex">
 					<button class="cta dialog-button">Back this project</button>
-					<label class="cta bookmark" for="bookmark">
-						Bookmark
+					<div class="cta bookmark">
 						<input type="checkbox" name="bookmark" id="bookmark" />
+						<label for="bookmark">Bookmark</label>
 						<svg
 							class="bookmark-icon"
 							width="56"
@@ -70,17 +70,18 @@
 								<path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
 							</g>
 						</svg>
-					</label>
+					</div>
 				</div>
 			</section>
 			<div class="box stats">
 				<div class="flex">
 					<p>
-						<span class="large">$89,914</span><br />
+						<span class="large">$<span id="total-usd">89,914</span></span
+						><br />
 						of $100,000 backed
 					</p>
 					<p>
-						<span class="large">5,007</span><br />
+						<span id="total-backers" class="large">5,007</span><br />
 						total backers
 					</p>
 					<p>
@@ -167,93 +168,109 @@
 		</main>
 
 		<!-- Main Modal Start -->
-		<div class="main-dialog" role="dialog" aria-labelledby="dialog-title">
-			<div class="flow-section dialog__window">
+		<div
+			id="dialogMain"
+			class="main-dialog"
+			role="dialog"
+			aria-labelledby="dialog-title"
+		>
+			<div id="dialogWindow" class="dialog__window">
 				<div class="container-minor flow-content dialog__header">
+					<h2 id="dialog-title" tabindex="-1">Back this project</h2>
 					<button id="close" aria-label="Close Dialog">
 						<img src="images/icon-close-modal.svg" alt="" />
 					</button>
-					<h2 id="dialog-title">Back this project</h2>
 					<p>
 						Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the
 						world?
 					</p>
 				</div>
 
-				<form class="container-minor flow-section dialog__main">
-					<div class="flow-content box reward no-support">
-						<input type="radio" name="reward" id="no-support" />
-						<label for="no-support">Pledge with no reward</label>
-						<p>
-							Choose to support us without a reward if you simply believe in our
-							project. As a backer, you will be signed up to receive product updates
-							via email.
-						</p>
-					</div>
+				<form class="container-minor dialog__main">
+					<fieldset class="flow-section">
+						<legend class="visually-hidden">Pledge options</legend>
+						<div class="flow-content box reward no-support">
+							<input type="radio" name="reward" id="no-support" />
+							<label for="no-support">Pledge with no reward</label>
+							<p>
+								Choose to support us without a reward if you simply believe in our
+								project. As a backer, you will be signed up to receive product updates
+								via email.
+							</p>
+						</div>
 
-					<div class="flow-content box reward bamboo">
-						<input type="radio" name="reward" id="bamboo" />
-						<div class="flex">
-							<label for="bamboo">Bamboo Stand </label>
-							<p class="pledge">Pledge $25 or more</p>
-							<p><span>101</span> left</p>
-						</div>
-						<p>
-							You get an ergonomic stand made of natural bamboo. You've helped us
-							launch our promotional campaign, and you’ll be added to a special Backer
-							member list.
-						</p>
+						<div class="flow-content box reward bamboo">
+							<input type="radio" name="reward" id="bamboo" />
+							<div class="flex">
+								<label for="bamboo">Bamboo Stand </label>
+								<p class="pledge">Pledge $25 or more</p>
+								<p><span>101</span> left</p>
+							</div>
+							<p>
+								You get an ergonomic stand made of natural bamboo. You've helped us
+								launch our promotional campaign, and you’ll be added to a special Backer
+								member list.
+							</p>
 
-						<div class="flex commit">
-							<label for="commit">Enter your pledge</label>
-							<div class="cta">$<input type="number" name="commit" value="25" /></div>
-							<button class="cta continue">Continue</button>
+							<div class="flex commit">
+								<label for="commit">Enter your pledge</label>
+								<div class="cta">$<input type="number" name="commit" value="25" /></div>
+								<button class="cta continue">Continue</button>
+							</div>
 						</div>
-					</div>
 
-					<div class="flow-content box reward black">
-						<input type="radio" name="reward" id="black" />
-						<div class="flex">
-							<label for="black">Black Edition Stand </label>
-							<p class="pledge">Pledge $75 or more</p>
-							<p><span>64</span> left</p>
+						<div class="flow-content box reward black">
+							<input type="radio" name="reward" id="black" />
+							<div class="flex">
+								<label for="black">Black Edition Stand </label>
+								<p class="pledge">Pledge $75 or more</p>
+								<p><span>64</span> left</p>
+							</div>
+							<p>
+								You get a Black Special Edition computer stand and a personal thank you.
+								You’ll be added to our Backer member list. Shipping is included.
+							</p>
+							<div class="flex commit">
+								<label for="commit">Enter your pledge</label>
+								<div class="cta">$<input type="number" name="commit" value="75" /></div>
+								<button class="cta continue">Continue</button>
+							</div>
 						</div>
-						<p>
-							You get a Black Special Edition computer stand and a personal thank you.
-							You’ll be added to our Backer member list. Shipping is included.
-						</p>
-						<div class="flex commit">
-							<label for="commit">Enter your pledge</label>
-							<div class="cta">$<input type="number" name="commit" value="75" /></div>
-							<button class="cta continue">Continue</button>
-						</div>
-					</div>
 
-					<div class="flow-content box reward mahogany">
-						<input type="radio" name="reward" id="mahogany" />
-						<div class="flex">
-							<label for="mahogany">Mahogany Special Edition</label>
-							<p class="pledge">Pledge $200 or more</p>
-							<p><span>0</span> left</p>
+						<div class="flow-content box reward mahogany">
+							<input type="radio" name="reward" id="mahogany" />
+							<div class="flex">
+								<label for="mahogany">Mahogany Special Edition</label>
+								<p class="pledge">Pledge $200 or more</p>
+								<p><span>0</span> left</p>
+							</div>
+							<p>
+								Pledge $200 or more You get two Special Edition Mahogany stands, a
+								Backer T-Shirt, and a personal thank you. You’ll be added to our Backer
+								member list. Shipping is included.
+							</p>
+							<div class="flex commit">
+								<label for="commit">Enter your pledge</label>
+								<div class="cta">
+									$<input type="number" name="commit" value="200" />
+								</div>
+								<button class="cta continue">Continue</button>
+							</div>
 						</div>
-						<p>
-							Pledge $200 or more You get two Special Edition Mahogany stands, a Backer
-							T-Shirt, and a personal thank you. You’ll be added to our Backer member
-							list. Shipping is included.
-						</p>
-						<div class="flex commit">
-							<label for="commit">Enter your pledge</label>
-							<div class="cta">$<input type="number" name="commit" value="200" /></div>
-							<button class="cta continue">Continue</button>
-						</div>
-					</div>
+					</fieldset>
 				</form>
 			</div>
-			<div class="dialog-mask"></div>
+			<div id="dialogMask" class="dialog-mask"></div>
 		</div>
 		<!-- Main Modal End -->
+
 		<!-- 	Success Modal Start -->
-		<div class="success-dialog" role="dialog" aria-labelledby="dialog-title">
+		<div
+			id="dialogSuccess"
+			class="success-dialog"
+			role="dialog"
+			aria-labelledby="dialog-title"
+		>
 			<div class="flow-section dialog__window">
 				<img src="images/icon-check.svg" alt="" aria-hidden="true" />
 				<h2>Thanks for your support!</h2>
@@ -261,12 +278,13 @@
 					Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor
 					Riser worldwide. You will get an email once our campaign is completed.
 				</p>
-				<button class="cta clear">Got it!</button>
+				<button id="clear" class="cta clear">Got it!</button>
 			</div>
-			<div class="dialog-mask-success"></div>
+			<div id="dialogMaskSuccess" class="dialog-mask-success"></div>
 		</div>
 		<!-- Success Modal End -->
 	</body>
+	<script src="js/app.js"></script>
 	<script src="js/burger-menu.js" type="module"></script>
 	<script src="js/modal.js" type="module"></script>
 </html>
