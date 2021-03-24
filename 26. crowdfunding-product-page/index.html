@@ -76,12 +76,12 @@
 			<div class="box stats">
 				<div class="flex">
 					<p>
-						<span class="large">$<span id="total-usd">89,914</span></span
+						<span class="large">$<span id="total-usd">0</span></span
 						><br />
 						of $100,000 backed
 					</p>
 					<p>
-						<span id="total-backers" class="large">5,007</span><br />
+						<span id="total-backers" class="large">0</span><br />
 						total backers
 					</p>
 					<p>
@@ -89,7 +89,7 @@
 						days left
 					</p>
 				</div>
-				Bar to show progress (empty on init
+				<!-- Bar to show progress -->
 				<div class="progress" id="progress"></div>
 			</div>
 
@@ -122,7 +122,9 @@
 							member list.
 						</p>
 						<div class="flex">
-							<p><span class="large">101</span> left</p>
+							<p>
+								<span class="large remaining-page" data-type="bamboo">0</span> left
+							</p>
 							<button class="cta dialog-button" data-dialog="my-dialog">
 								Select Reward
 							</button>
@@ -139,7 +141,7 @@
 							You’ll be added to our Backer member list.
 						</p>
 						<div class="flex">
-							<p><span class="large">64</span> left</p>
+							<p><span class="large remaining-page" data-type="black">0</span> left</p>
 							<button class="cta dialog-button" data-dialog="my-dialog">
 								Select Reward
 							</button>
@@ -157,7 +159,9 @@
 							is included.
 						</p>
 						<div class="flex">
-							<p><span class="large">0</span> left</p>
+							<p>
+								<span class="large remaining-page" data-type="mahogany">0</span> left
+							</p>
 							<button class="cta dialog-button" data-dialog="my-dialog">
 								Select Reward
 							</button>
@@ -204,7 +208,7 @@
 							<div class="flex">
 								<label for="bamboo">Bamboo Stand </label>
 								<p class="pledge">Pledge $25 or more</p>
-								<p><span>101</span> left</p>
+								<p><span class="remaining-modal" data-type="bamboo">0</span> left</p>
 							</div>
 							<p>
 								You get an ergonomic stand made of natural bamboo. You've helped us
@@ -224,7 +228,7 @@
 							<div class="flex">
 								<label for="black">Black Edition Stand </label>
 								<p class="pledge">Pledge $75 or more</p>
-								<p><span>64</span> left</p>
+								<p><span class="remaining-modal" data-type="black">0</span> left</p>
 							</div>
 							<p>
 								You get a Black Special Edition computer stand and a personal thank you.
@@ -242,7 +246,7 @@
 							<div class="flex">
 								<label for="mahogany">Mahogany Special Edition</label>
 								<p class="pledge">Pledge $200 or more</p>
-								<p><span>0</span> left</p>
+								<p><span class="remaining-modal" data-type="mahogany">0</span> left</p>
 							</div>
 							<p>
 								Pledge $200 or more You get two Special Edition Mahogany stands, a
@@ -252,7 +256,7 @@
 							<div class="flex commit">
 								<label for="commit">Enter your pledge</label>
 								<div class="cta">
-									$<input type="number" name="commit" value="200" />
+									$<input type="number" name="commit" value="200"" />
 								</div>
 								<button class="cta continue">Continue</button>
 							</div>
