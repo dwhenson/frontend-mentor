@@ -25,7 +25,7 @@ function disableNotAvailible(remainder) {
 	button.disabled = true;
 	if (remainder.classList.contains("remaining-modal")) {
 		const input = remainder.closest(".box").querySelector("input");
-		input.setAttribute("disabled", "true");
+		input.setAttribute("disabled", "");
 	}
 }
 
