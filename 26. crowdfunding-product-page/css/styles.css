@@ -778,11 +778,9 @@ input[type="radio"]:checked::after {
 	flex-direction: column;
 	align-items: center;
 	z-index: 1001;
-	width: min(60%, 30rem);
-	padding: clamp(2rem, 2.5%, 3rem);
+	width: min(90%, 30rem);
+	padding: clamp(2rem, 2.5%, 2rem);
 	border-radius: 1em;
-
-	/* margin: 18rem auto 0; */
 	background-color: var(--clr-neutral-100);
 	transform: translate(-50%, -50%);
 	line-height: 2;
