@@ -101,6 +101,7 @@ function closeDialogMain() {
 		}
 	});
 	// Close the dialog
+	body.style.overflow = "auto";
 	mainDialog.classList.remove("opened");
 	// Restore focus to the previously focused element
 	previousActiveElementPage.focus();
@@ -120,6 +121,7 @@ function openDialogMain() {
 	});
 	// Add the open class to show the dialog
 	mainDialog.classList.add("opened");
+	body.style.overflow = "hidden";
 	// Move focus to the close button
 	mainTitle.focus();
 	// Add listeners to the close the main dialog
