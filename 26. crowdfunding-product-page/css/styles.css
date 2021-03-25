@@ -684,14 +684,19 @@ input[type="radio"]:checked::after {
 
 .commit {
 	display: none;
-	justify-content: flex-end;
 	padding-top: 1.5rem;
 	border-top: 1px solid var(--clr-neutral-200);
 	margin-top: 2rem;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.commit > * {
+	width: 100%;
 }
 
 .commit label {
-	margin-right: auto;
+	margin-left: 0;
 	font-weight: 400;
 	color: var(--clr-neutral-200);
 }
@@ -699,7 +704,7 @@ input[type="radio"]:checked::after {
 .commit div.cta {
 	display: flex;
 	align-items: baseline;
-	max-width: 6.5rem;
+
 	padding: 0.5em 1.5em;
 	border: 1px solid var(--clr-primary-200);
 	border-radius: 2rem;
@@ -714,6 +719,26 @@ input[type="radio"]:checked::after {
 	border: none;
 	background: transparent;
 	font-weight: 700;
+}
+
+@media only screen and (min-width: 38em) {
+	.commit {
+		justify-content: flex-end;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.commit label {
+		margin-right: auto;
+	}
+
+	.commit > * {
+		max-width: 33%;
+	}
+
+	.commit div.cta {
+		max-width: 6.5rem;
+	}
 }
 
 .reward input:first-of-type:checked ~ .commit {

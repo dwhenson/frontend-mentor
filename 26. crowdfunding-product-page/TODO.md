@@ -15,4 +15,4 @@ TODO
 - Clean code, refactor and readme ✅ DONE
 - Make label disappear narrow screens ✅ DONE
 - Fix success modal padding on narrow screens ✅ DONE
-- Fix main modal styles on narrow screens
+- Fix main modal styles on narrow screens - extension
