@@ -364,7 +364,6 @@ main {
 
 main .bookmark {
 	position: relative;
-	padding-left: 4rem;
 	background-color: hsla(0, 0%, 48%, 0.1);
 	font-weight: 800;
 	text-align: right;
@@ -374,7 +373,7 @@ main .bookmark {
 
 main .bookmark-icon {
 	position: absolute;
-	top: -8px;
+	top: -1.25rem;
 	left: 0;
 }
 
@@ -392,6 +391,10 @@ main .bookmark input {
 main .bookmark label {
 	display: block;
 	cursor: pointer;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 
 main .bookmark-icon circle {
@@ -422,6 +425,28 @@ main .bookmark input:checked ~ svg path {
 main .bookmark:focus-within {
 	outline: 3px dotted var(--clr-primary-200);
 	outline-offset: 1rem;
+}
+
+@media only screen and (min-width: 38em) {
+	main .bookmark {
+		flex-direction: row;
+
+		/* align-items: center; */
+		text-align: left;
+		gap: calc(var(--spacer) * 2);
+		padding-left: 4rem;
+	}
+
+	main .bookmark label {
+		position: static;
+		width: min-content;
+		height: auto;
+		overflow: visible;
+	}
+
+	main .bookmark-icon {
+		top: -0.25rem;
+	}
 }
 
 /* Intro
@@ -635,10 +660,24 @@ input[type="radio"]:checked::after {
 	background-color: var(--clr-primary-200);
 }
 
-.reward > label,
-.reward > p,
+.reward label {
+	margin-left: 3rem;
+}
+
 .reward > div:first-of-type {
-	margin-left: 4rem;
+	margin-left: 0;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+@media only screen and (min-width: 38em) {
+	/*	.reward > label {
+		 margin-left: 4rem;
+	} */
+
+	.reward > div:first-of-type {
+		flex-direction: row;
+	}
 }
 
 /* Reward commitment extension */

@@ -12,4 +12,7 @@ TODO
 - Add filter over images ✅ DONE
 - Add hover states for basic links? ✅ DONE
 - Fix focus outline on mobile nav links and bottom logo? ✅ DONE
-- Clean code, refactor and readme
+- Clean code, refactor and readme ✅ DONE
+- Make label disappear narrow screens ✅ DONE
+- Fix success modal padding on narrow screens ✅ DONE
+- Fix main modal styles on narrow screens
