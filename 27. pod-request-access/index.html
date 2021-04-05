@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frontend Mentor | Pod request access landing page</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="css/global.css" />
+	</head>
+	<body>
+		<section class="flow-section" aria-labelledby="h1">
+			<img class="logo" src="images/desktop/logo.svg" alt="Pod logo" />
+			<header class="flow-content">
+				<h1 id="h1">Publish your podcasts <span>everywhere</span></h1>
+				<p>
+					Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts,
+					Google Podcasts, Pocket Casts and more!
+				</p>
+			</header>
+			<main>
+				<ul class="platforms" role="list">
+					<!-- Wrapper to avoid issues with img as a flex item -->
+					<div class="wrapper"><img src="images/desktop/spotify.svg" alt="Spotify" /></div>
+					<!-- Wrapper to avoid issues with img as a flex item -->
+					<div class="wrapper"><img src="images/desktop/apple-podcast.svg" alt="Apple" /></div>
+					<!-- Wrapper to avoid issues with img as a flex item -->
+					<div class="wrapper"><img src="images/desktop/google-podcasts.svg" alt="Google" /></div>
+					<!-- Wrapper to avoid issues with img as a flex item -->
+					<div class="wrapper"><img src="images/desktop/pocket-casts.svg" alt="Pocket Casts" /></div>
+				</ul>
+				<form action="/">
+					<label class="visually-hidden" for="email">Enter email address</label>
+					<input type="email" name="email" id="email" placeholder="Email address" />
+					<button>Request access</button>
+				</form>
+			</main>
+		</section>
+	</body>
+</html>

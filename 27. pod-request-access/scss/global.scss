@@ -1,0 +1,79 @@
+@import "reset";
+
+/* ==================================================
+	 Global Styles
+	 ================================================== */
+
+@import "abstracts/config";
+
+body {
+	display: grid;
+	grid-template-columns: minmax(1rem, 1fr) minmax(0, 1440px) minmax(1rem, 1fr);
+	background-color: var(--clr-neutral-500);
+	font-family: var(--ff-body);
+	font-size: var(--step--1);
+	font-weight: 400;
+	line-height: 1.8;
+	color: var(--clr-neutral-100);
+	text-align: center;
+	background-image: url("../images/mobile/image-host.jpg");
+	background-repeat: no-repeat;
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: hsla(225, 26%, 23%, 0.9);
+		z-index: -1;
+	}
+}
+
+body > * {
+	grid-column: 2;
+}
+
+:focus-visible {
+	outline: 3px dotted currentColor;
+	outline-offset: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
+/* 	Typography
+   	================================================== */
+
+h1 {
+	font-size: var(--step-1);
+	text-transform: uppercase;
+	line-height: 1.5;
+	color: var(--clr-primary-100);
+
+	span {
+		color: var(--clr-neutral-100);
+	}
+}
+
+/* ==================================================
+	 Utilities
+	 ================================================== */
+
+@import "utilities/flow-section";
+@import "utilities/flow-content";
+@import "utilities/visually-hidden";
+
+/* ==================================================
+Blocks
+================================================== */
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacer) * 3);
+}
+
+@import "blocks/logo";
+@import "blocks/platforms";
+@import "blocks/form";
