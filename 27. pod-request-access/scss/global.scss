@@ -49,23 +49,33 @@ body {
 			background-color: transparent;
 		}
 	}
+
+	& > * {
+		grid-column: 2;
+	}
 }
 
-body > * {
-	grid-column: 2;
+main {
+	display: flex;
+	flex-direction: column;
+	padding-top: 3em;
+	margin-top: 0;
+	gap: calc(var(--spacer) * 3);
+
+	@include viewport(medium) {
+		flex-direction: column-reverse;
+		gap: 4rem;
+	}
 }
 
-:focus-visible {
-	outline: 3px dotted currentColor;
-	outline-offset: 0.25rem;
+@include viewport(medium) {
+	header,
+	main {
+		max-width: 70ch;
+		padding-bottom: 2rem;
+		background-color: var(--clr-neutral-500);
+	}
 }
-
-:focus:not(:focus-visible) {
-	outline: transparent;
-}
-
-/* 	Typography
-   	================================================== */
 
 h1 {
 	max-width: 25ch;
@@ -86,40 +96,6 @@ h1 {
 	}
 }
 
-/* ==================================================
-	 Utilities
-	 ================================================== */
-
-@import "utilities/flow-section";
-@import "utilities/flow-content";
-@import "utilities/visually-hidden";
-
-/* ==================================================
-Blocks
-================================================== */
-
-@include viewport(medium) {
-	header,
-	main {
-		max-width: 70ch;
-		padding-bottom: 2rem;
-		background-color: var(--clr-neutral-500);
-	}
-}
-
-main {
-	display: flex;
-	flex-direction: column;
-	padding-top: 3em;
-	margin-top: 0;
-	gap: calc(var(--spacer) * 3);
-
-	@include viewport(medium) {
-		flex-direction: column-reverse;
-		gap: 4rem;
-	}
-}
-
 p {
 	max-width: 45ch;
 	margin-right: auto;
@@ -129,6 +105,19 @@ p {
 		margin-left: 0;
 	}
 }
+
+/* ==================================================
+	 Utilities
+	 ================================================== */
+
+@import "utilities/flow-section";
+@import "utilities/flow-content";
+@import "utilities/visually-hidden";
+@import "utilities/outline";
+
+/* ==================================================
+Blocks
+================================================== */
 
 @import "blocks/logo";
 @import "blocks/platforms";

@@ -171,17 +171,30 @@ body > * {
 	grid-column: 2;
 }
 
-:focus-visible {
-	outline: 3px dotted currentColor;
-	outline-offset: 0.25rem;
+main {
+	display: flex;
+	flex-direction: column;
+	padding-top: 3em;
+	margin-top: 0;
+	gap: calc(var(--spacer) * 3);
 }
 
-:focus:not(:focus-visible) {
-	outline: transparent;
+@media (min-width: 45rem) {
+	main {
+		flex-direction: column-reverse;
+		gap: 4rem;
+	}
 }
 
-/* 	Typography
-   	================================================== */
+@media (min-width: 45rem) {
+	header,
+	main {
+		max-width: 70ch;
+		padding-bottom: 2rem;
+		background-color: var(--clr-neutral-500);
+	}
+}
+
 h1 {
 	max-width: 25ch;
 	margin-right: auto;
@@ -201,6 +214,18 @@ h1 {
 
 h1 span {
 	color: var(--clr-neutral-100);
+}
+
+p {
+	max-width: 45ch;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@media (min-width: 45rem) {
+	p {
+		margin-left: 0;
+	}
 }
 
 /* ==================================================
@@ -248,45 +273,18 @@ h1 span {
 	clip: auto !important;
 }
 
+:focus-visible {
+	outline: 3px dotted currentColor;
+	outline-offset: 0.25rem;
+}
+
+:focus:not(:focus-visible) {
+	outline: transparent;
+}
+
 /* ==================================================
 Blocks
 ================================================== */
-@media (min-width: 45rem) {
-	header,
-	main {
-		max-width: 70ch;
-		padding-bottom: 2rem;
-		background-color: var(--clr-neutral-500);
-	}
-}
-
-main {
-	display: flex;
-	flex-direction: column;
-	padding-top: 3em;
-	margin-top: 0;
-	gap: calc(var(--spacer) * 3);
-}
-
-@media (min-width: 45rem) {
-	main {
-		flex-direction: column-reverse;
-		gap: 4rem;
-	}
-}
-
-p {
-	max-width: 45ch;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-@media (min-width: 45rem) {
-	p {
-		margin-left: 0;
-	}
-}
-
 .logo {
 	max-width: 5rem;
 	padding-top: 3rem;
@@ -331,6 +329,8 @@ form {
 	}
 }
 
+form input,
+form button,
 form label {
 	width: 100%;
 	max-width: 30rem;
@@ -338,8 +338,6 @@ form label {
 
 form input,
 form button {
-	width: 100%;
-	max-width: 30rem;
 	padding: 0.75em 2em;
 	border: none;
 	border-radius: 2rem;
