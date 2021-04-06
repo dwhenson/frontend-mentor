@@ -1,6 +1,6 @@
 @mixin viewport($breakpoint) {
 	@if $breakpoint == "medium" {
-		@media (min-width: 37rem) {
+		@media (min-width: 45rem) {
 			@content;
 		}
 	} @else if $breakpoint == "large" {
