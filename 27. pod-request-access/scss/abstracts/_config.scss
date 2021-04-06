@@ -1,8 +1,11 @@
+$medium: 37rem;
+$large: 50rem;
+
 :root {
 	/* Colors */
 	--clr-primary-100: hsla(157, 74%, 62%, 1);
 	--clr-primary-200: hsla(157, 100%, 85%, 1);
-	--clr-error-200: hsla(0, 100%, 50%, 1);
+	--clr-error-100: hsla(0, 100%, 50%, 1);
 	--clr-neutral-100: hsla(0, 0%, 100%, 1);
 	--clr-neutral-200: hsla(225, 40%, 83%, 1);
 	--clr-neutral-300: hsla(225, 21%, 45%, 1);
