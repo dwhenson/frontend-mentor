@@ -10,6 +10,7 @@
 body {
 	display: grid;
 	grid-template-columns: minmax(1rem, 1fr) minmax(0, 1440px) minmax(1rem, 1fr);
+	grid-template-rows: min-content;
 	background-color: var(--clr-neutral-500);
 	font-family: var(--ff-body);
 	font-size: var(--step--1);
@@ -20,6 +21,12 @@ body {
 	background-image: url("../images/mobile/image-host.jpg");
 	background-repeat: no-repeat;
 
+	@include viewport(medium) {
+		text-align: left;
+		background-position: top right;
+		background-image: url("../images/tablet/image-host.jpg");
+	}
+
 	&::before {
 		content: "";
 		position: absolute;
@@ -27,6 +34,10 @@ body {
 		height: 100%;
 		background-color: hsla(225, 26%, 23%, 0.9);
 		z-index: -1;
+
+		@include viewport(medium) {
+			background-color: transparent;
+		}
 	}
 }
 
@@ -43,6 +54,28 @@ body > * {
 	outline: transparent;
 }
 
+main {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacer) * 3);
+
+	@include viewport(medium) {
+		flex-direction: column-reverse;
+		padding-bottom: 20rem;
+		gap: 4rem;
+		background-image: url("../images/desktop/bg-pattern-dots.svg");
+		background-repeat: no-repeat;
+		background-position: left bottom;
+	}
+}
+
+@include viewport(medium) {
+	section {
+		background-color: var(--clr-neutral-500);
+		max-width: 90%;
+	}
+}
+
 /* 	Typography
    	================================================== */
 
@@ -51,10 +84,19 @@ h1 {
 	text-transform: uppercase;
 	line-height: 1.5;
 	color: var(--clr-primary-100);
+	max-width: 25ch;
+
+	@include viewport(medium) {
+		padding-top: 5rem;
+	}
 
 	span {
 		color: var(--clr-neutral-100);
 	}
+}
+
+p {
+	max-width: 45ch;
 }
 
 /* ==================================================
@@ -68,12 +110,6 @@ h1 {
 /* ==================================================
 Blocks
 ================================================== */
-
-main {
-	display: flex;
-	flex-direction: column;
-	gap: calc(var(--spacer) * 3);
-}
 
 @import "blocks/logo";
 @import "blocks/platforms";

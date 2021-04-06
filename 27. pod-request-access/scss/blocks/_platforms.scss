@@ -3,4 +3,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: calc(var(--spacer) * 1.5);
+
+	@include viewport(medium) {
+		justify-content: flex-start;
+	}
 }

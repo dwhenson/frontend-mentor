@@ -1,12 +1,22 @@
 form {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: calc(var(--spacer) * 0.5);
 
+	@include viewport(medium) {
+		max-width: 28rem;
+		flex-direction: row;
+	}
+
+	label {
+		width: 100%;
+	}
+
 	input,
 	button {
 		border-radius: 2rem;
-		padding: 0.75em 1em;
+		padding: 0.75em 2em;
 		font-weight: bold;
 		border: none;
 		width: 100%;
@@ -14,7 +24,7 @@ form {
 
 	input {
 		background-color: var(--clr-neutral-300);
-		color: var(--clr-neutal-100);
+		color: var(--clr-neutral-100);
 		padding-left: 2rem;
 
 		&::placeholder {
@@ -24,6 +34,12 @@ form {
 
 	button {
 		background-color: var(--clr-primary-100);
+
+		@include viewport(medium) {
+			position: absolute;
+			width: fit-content;
+			right: 0;
+		}
 
 		&:hover {
 			background-color: var(--clr-primary-200);
@@ -37,9 +53,5 @@ form {
 		text-align: left;
 		padding-left: 2rem;
 		color: var(--clr-error-100);
-	}
-
-	@include viewport(medium) {
-		flex-direction: row;
 	}
 }
