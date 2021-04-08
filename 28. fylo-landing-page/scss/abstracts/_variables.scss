@@ -3,23 +3,28 @@ $large: 90rem;
 
 :root {
 	/* Colors */
-	--clr-primary-100: hsla(157, 74%, 62%, 1);
-	--clr-primary-200: hsla(157, 100%, 85%, 1);
-	--clr-error-100: hsla(0, 100%, 50%, 1);
+	// Accents
+	--clr-accent-100: hsla(176, 68%, 64%, 1);
+	--clr-accent-200: hsla(198, 60%, 50%, 1);
+	--clr-accent-400: hsla(0, 100%, 63%, 1);
+	// Neutrals
 	--clr-neutral-100: hsla(0, 0%, 100%, 1);
-	--clr-neutral-200: hsla(225, 40%, 83%, 1);
-	--clr-neutral-300: hsla(225, 21%, 45%, 1);
-	--clr-neutral-400: hsla(225, 26%, 23%, 1);
-	--clr-neutral-500: hsla(224, 35%, 11%, 1);
+	--clr-neutral-200: hsla(219, 30%, 18%, 1);
+	--clr-neutral-300: hsla(217, 28%, 15%, 1);
+	--clr-neutral-400: hsla(218, 28%, 13%, 1);
+	--clr-neutral-500: hsla(216, 53%, 9%, 1);
 
 	/* Spacing */
-	--spacer: 1em;
+	--spacer: 1rem;
 
 	/* Utopia.fyi */
-	--step--1: clamp(0.8rem, 0.65rem + 0.66vw, 1.24rem);
-	--step-0: clamp(1rem, 0.65rem + 1.5vw, 2rem);
-	--step-1: clamp(1.25rem, 0.55rem + 2.98vw, 3.24rem);
+	--step--1: clamp(0.66rem, 0.64rem + 0.13vw, 0.75rem);
+	--step-0: clamp(0.94rem, 0.9rem + 0.18vw, 1.06rem);
+	--step-1: clamp(1.33rem, 1.28rem + 0.25vw, 1.5rem);
+	// --step-2: clamp(1.87rem, 1.8rem + 0.36vw, 2.12rem);
+	--step-2: clamp(2.65rem, 2.55rem + 0.5vw, 3rem);
 
-	/* font-family */
-	--ff-body: "Chivo", sans-serif;
+	/* font-families */
+	--ff-body: "Open sans", sans-serif;
+	--ff-headings: "Raleway", sans-serif;
 }
