@@ -1,0 +1,3 @@
+.flow-content > * + * {
+	margin-top: calc(var(--spacer) * 1);
+}
