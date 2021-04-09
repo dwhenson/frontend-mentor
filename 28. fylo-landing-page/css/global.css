@@ -129,11 +129,17 @@ body {
 h3,
 h1 + p {
   font-size: var(--step-1);
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1,
 h2 {
   font-size: var(--step-4);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40ch;
 }
 
 a {
@@ -146,7 +152,9 @@ a:hover {
 }
 
 img:not([class]) {
-  margin: 0 auto;
+  margin: 0 auto 4rem;
+  width: 100%;
+  max-width: 45rem;
 }
 
 /* ==================================================
@@ -277,3 +285,49 @@ main:focus {
 /* ==================================================
    Blocks
    ================================================== */
+nav.split {
+  flex-direction: row;
+  padding-top: clamp(2rem, 5%, 4rem);
+}
+
+.logo {
+  max-width: 5rem;
+}
+@media (min-width: 45rem) {
+  .logo {
+    max-width: 10rem;
+  }
+}
+
+nav li {
+  max-width: max-content;
+}
+
+nav ul.split {
+  flex-basis: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+@media (min-width: 45rem) {
+  nav ul.split {
+    gap: 3rem;
+  }
+}
+
+.cta {
+  display: block;
+  max-width: fit-content;
+  padding: 0.75em 4em;
+  border-radius: 2em;
+  margin: 2rem auto 0;
+  background-color: var(--clr-accent-200);
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font-weight: 700;
+}
+.cta:hover {
+  background-color: var(--clr-accent-100);
+}

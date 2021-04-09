@@ -1,6 +1,6 @@
 nav.split {
-	padding-top: clamp(2rem, 5%, 4rem);
 	flex-direction: row;
+	padding-top: clamp(2rem, 5%, 4rem);
 }
 
 .logo {
@@ -18,6 +18,11 @@ nav li {
 nav ul.split {
 	flex-basis: auto;
 	flex-direction: row;
-	justify-content: flex-end;
 	align-items: center;
+	justify-content: flex-end;
+	gap: 1rem;
+
+	@include respond-to("medium") {
+		gap: 3rem;
+	}
 }
