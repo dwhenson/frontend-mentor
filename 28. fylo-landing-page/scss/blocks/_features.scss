@@ -3,9 +3,11 @@
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
 	gap: 5rem;
+	margin-left: auto;
+	margin-right: auto;
 
 	@include respond-to("medium") {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(2, max(50ch));
 	}
 }
 

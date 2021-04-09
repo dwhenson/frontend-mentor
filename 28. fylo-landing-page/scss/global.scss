@@ -45,7 +45,7 @@ a {
 img:not([class]) {
 	margin: 0 auto 4rem;
 	width: 100%;
-	max-width: 45rem;
+	max-width: 55rem;
 }
 
 /* ==================================================
@@ -67,3 +67,4 @@ img:not([class]) {
 @import "blocks/nav";
 @import "blocks/cta";
 @import "blocks/features";
+@import "blocks/productive";

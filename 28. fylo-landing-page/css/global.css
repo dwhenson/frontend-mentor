@@ -154,7 +154,7 @@ a:hover {
 img:not([class]) {
   margin: 0 auto 4rem;
   width: 100%;
-  max-width: 45rem;
+  max-width: 55rem;
 }
 
 /* ==================================================
@@ -216,7 +216,7 @@ main:focus {
 
 /* Add vertical rhythm between sections */
 .flow-section > * + * {
-  margin-top: calc(var(--spacer) * 6);
+  margin-top: calc(var(--spacer) * 10);
 }
 
 /* Add vertical rhythm inside elements */
@@ -337,13 +337,42 @@ nav ul.split {
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-width: 45rem) {
   .features {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, max(50ch));
   }
 }
 
 .feature img {
   margin: 0 auto 2rem;
+}
+
+.productive {
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 5rem;
+}
+
+.productive h2 {
+  margin-left: 0;
+  font-size: var(--step-0);
+  text-align: left;
+}
+@media (min-width: 45rem) {
+  .productive h2 {
+    font-size: var(--step-4);
+  }
+}
+
+.productive a {
+  display: block;
+  text-decoration: underline;
+  color: var(--clr-accent-100);
+}
+.productive a:hover {
+  color: var(--clr-neutral-100);
 }

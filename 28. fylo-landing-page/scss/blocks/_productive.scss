@@ -1,0 +1,26 @@
+.productive {
+	align-items: center;
+	justify-content: space-between;
+	text-align: left;
+	gap: 5rem;
+}
+
+.productive h2 {
+	margin-left: 0;
+	font-size: var(--step-0);
+	text-align: left;
+
+	@include respond-to("medium") {
+		font-size: var(--step-4);
+	}
+}
+
+.productive a {
+	display: block;
+	text-decoration: underline;
+	color: var(--clr-accent-100);
+
+	&:hover {
+		color: var(--clr-neutral-100);
+	}
+}
