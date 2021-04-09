@@ -216,7 +216,7 @@ main:focus {
 
 /* Add vertical rhythm between sections */
 .flow-section > * + * {
-  margin-top: calc(var(--spacer) * 5);
+  margin-top: calc(var(--spacer) * 6);
 }
 
 /* Add vertical rhythm inside elements */
@@ -320,14 +320,30 @@ nav ul.split {
   display: block;
   max-width: fit-content;
   padding: 0.75em 4em;
+  border: none;
   border-radius: 2em;
   margin: 2rem auto 0;
   background-color: var(--clr-accent-200);
-  cursor: pointer;
-  border: none;
-  color: inherit;
   font-weight: 700;
+  color: inherit;
+  cursor: pointer;
 }
 .cta:hover {
   background-color: var(--clr-accent-100);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 5rem;
+}
+@media (min-width: 45rem) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature img {
+  margin: 0 auto 2rem;
 }

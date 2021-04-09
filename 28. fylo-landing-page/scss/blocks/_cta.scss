@@ -2,13 +2,13 @@
 	display: block;
 	max-width: fit-content;
 	padding: 0.75em 4em;
+	border: none;
 	border-radius: 2em;
 	margin: 2rem auto 0;
 	background-color: var(--clr-accent-200);
-	cursor: pointer;
-	border: none;
-	color: inherit;
 	font-weight: 700;
+	color: inherit;
+	cursor: pointer;
 
 	&:hover {
 		background-color: var(--clr-accent-100);

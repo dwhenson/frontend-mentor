@@ -1,0 +1,14 @@
+.features {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	gap: 5rem;
+
+	@include respond-to("medium") {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.feature img {
+	margin: 0 auto 2rem;
+}
