@@ -17,10 +17,12 @@
 	</head>
 
 	<body class="center-content flow-section">
-		<header>
-			<nav>
-				<img src="images/logo.svg" alt="Fylo Logo" />
-				<ul role="list">
+		<header class="container">
+			<nav class="split">
+				<div class="wrapper">
+					<img class="logo" src="images/logo.svg" alt="Fylo Logo" />
+				</div>
+				<ul class="split" role="list">
 					<li><a href="/">Features</a></li>
 					<li><a href="/">Team</a></li>
 					<li><a href="/">Sign In</a></li>
@@ -28,7 +30,7 @@
 			</nav>
 		</header>
 
-		<section class="flow-content" aria-labelledby="page-heading">
+		<section class="container flow-content" aria-labelledby="page-heading">
 			<img src="images/illustration-intro.png" alt="" />
 			<h1 id="page-heading">All your files in one secure location, accessible anywhere.</h1>
 			<p>
@@ -38,7 +40,7 @@
 			<a class="cta" href="/">Get Started</a>
 		</section>
 
-		<section aria-labelledby="features">
+		<section class="container" aria-labelledby="features">
 			<h2 id="features" class="visually-hidden">Features</h2>
 			<div class="feature flow-content">
 				<img src="images/icon-access-anywhere.svg" alt="" />
@@ -74,7 +76,7 @@
 			</div>
 		</section>
 
-		<section aria-labelledby="productive">
+		<section class="container split" aria-labelledby="productive">
 			<div class="wrapper">
 				<img src="images/illustration-stay-productive.png" alt="" />
 			</div>
@@ -92,47 +94,53 @@
 			</div>
 		</section>
 
-		<section aria-labelledby="testimonials">
+		<section class="container split" aria-labelledby="testimonials">
 			<h2 id="testimonials" class="visually-hidden">Testimonials</h2>
-			<figure>
+			<figure class="flow-content">
 				<blockquote>
 					Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become
 					a well-oiled collaboration machine.
 				</blockquote>
-				<figcaption>
-					<img src="images/profile-1.jpg" alt="" />
-					<cite><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite>
+				<figcaption class="split">
+					<div class="wrapper"><img src="images/profile-1.jpg" alt="" /></div>
+					<cite class="flow-content"
+						><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite
+					>
 				</figcaption>
 			</figure>
-			<figure>
+			<figure class="flow-content">
 				<blockquote>
 					Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become
 					a well-oiled collaboration machine.
 				</blockquote>
-				<figcaption>
-					<img src="images/profile-2.jpg" alt="" />
-					<cite><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite>
+				<figcaption class="split">
+					<div class="wrapper"><img src="images/profile-2.jpg" alt="" /></div>
+					<cite class="flow-content"
+						><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite
+					>
 				</figcaption>
 			</figure>
-			<figure>
+			<figure class="flow-content">
 				<blockquote>
 					Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become
 					a well-oiled collaboration machine.
 				</blockquote>
-				<figcaption>
-					<img src="images/profile-3.jpg" alt="" />
-					<cite><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite>
+				<figcaption class="split">
+					<div class="wrapper"><img src="images/profile-3.jpg" alt="" /></div>
+					<cite class="flow-content"
+						><span class="name">Satish Patel</span> <span class="position">Founder & CEO, Huddle</span></cite
+					>
 				</figcaption>
 			</figure>
 		</section>
 
-		<section class="flow-content" aria-labelledby="access">
+		<section class="container flow-content" aria-labelledby="access">
 			<h2 id="access">Get early access today</h2>
 			<p>
 				It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions,
 				our support team would be happy to help you.
 			</p>
-			<form>
+			<form class="split">
 				<div class="wrapper">
 					<label class="visually-hidden" for="email">Please add your email</label>
 					<input type="email" name="email" value="email" placeholder="example@email.com" />
@@ -142,34 +150,36 @@
 			</form>
 		</section>
 
-		<footer>
-			<img src="images/logo.svg" alt="Fylo Logo" />
-			<address>
-				<p>
-					Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital
-					divide with additional clicks
-				</p>
-				<a href="tel:15431234567">+1-543-123-4567</a>
-				<a href="mailto:example@fylo.com">example@fylo.com</a>
-			</address>
-			<nav>
+		<footer class="container flow-content">
+			<img class="logo" src="images/logo.svg" alt="Fylo Logo" />
+			<div class="split">
+				<address class="split">
+					<p>
+						Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the
+						digital divide with additional clicks
+					</p>
+					<a href="tel:15431234567">+1-543-123-4567</a>
+					<a href="mailto:example@fylo.com">example@fylo.com</a>
+				</address>
+				<nav class="flow-content split">
+					<ul role="list">
+						<li><a href="/">About Us</a></li>
+						<li><a href="/">Jobs</a></li>
+						<li><a href="/">Press</a></li>
+						<li><a href="/">Blog</a></li>
+					</ul>
+					<ul role="list">
+						<li><a href="/">Contact Us</a></li>
+						<li><a href="/">Terms</a></li>
+						<li><a href="/">Privacy</a></li>
+					</ul>
+				</nav>
 				<ul role="list">
-					<li><a href="/">About Us</a></li>
-					<li><a href="/">Jobs</a></li>
-					<li><a href="/">Press</a></li>
-					<li><a href="/">Blog</a></li>
+					<li><img src="/" alt="" />face</li>
+					<li><img src="/" alt="" />twit</li>
+					<li><img src="/" alt="" />inst</li>
 				</ul>
-				<ul role="list">
-					<li><a href="/">Contact Us</a></li>
-					<li><a href="/">Terms</a></li>
-					<li><a href="/">Privacy</a></li>
-				</ul>
-			</nav>
-			<ul role="list">
-				<li><img src="/" alt="" />face</li>
-				<li><img src="/" alt="" />twit</li>
-				<li><img src="/" alt="" />inst</li>
-			</ul>
+			</div>
 		</footer>
 	</body>
 </html>

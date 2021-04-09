@@ -1,0 +1,58 @@
+@import "reset";
+
+/* ==================================================
+	 Global Styles
+	 ================================================== */
+
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
+
+body {
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-500);
+	font-family: var(--ff-body);
+	font-size: var(--step-0);
+	text-align: center;
+	line-height: 1.5;
+}
+
+h3,
+h1 + p {
+	font-size: var(--step-1);
+}
+
+h1,
+h2 {
+	font-size: var(--step-4);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+		font-weight: bolder;
+	}
+}
+
+img:not([class]) {
+	margin: 0 auto;
+}
+
+/* ==================================================
+	 Utilities
+	 ================================================== */
+
+@import "utilities/skip-link";
+@import "utilities/center-content";
+@import "utilities/container";
+@import "utilities/flow-section";
+@import "utilities/flow-content";
+@import "utilities/visually-hidden";
+@import "utilities/outline";
+@import "utilities/split";
+
+/* ==================================================
+   Blocks
+   ================================================== */

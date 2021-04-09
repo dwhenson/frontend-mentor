@@ -1,16 +1,18 @@
-Skip to main content */ .skip-link {
+/* Skip to main content */
+
+.skip-link {
 	position: absolute;
 	display: inline-block;
 	top: 1rem;
 	left: 1rem;
+	z-index: 100000;
 	padding: 0.7rem 1rem 0.5rem 1rem;
+	outline: 3px dotted white;
 	background-color: white;
 	font-weight: 700;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: black;
-	outline: 3px dotted white;
-	z-index: 100000;
 }
 
 .skip-link:hover {

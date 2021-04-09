@@ -1,0 +1,13 @@
+/* Center main content on page */
+$min: 0;
+$max: 1440px;
+
+.center-content {
+	display: grid;
+	grid-template-rows: min-content;
+	grid-template-columns: minmax(1rem, 1fr) minmax($min, $max) minmax(1rem, 1fr);
+
+	& > * {
+		grid-column: 2;
+	}
+}

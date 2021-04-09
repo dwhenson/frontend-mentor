@@ -1,4 +1,4 @@
-@mixin viewport($breakpoint) {
+@mixin respond-to($breakpoint) {
 	@if $breakpoint == "medium" {
 		@media (min-width: 45rem) {
 			@content;
