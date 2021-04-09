@@ -216,7 +216,12 @@ main:focus {
 
 /* Add vertical rhythm between sections */
 .flow-section > * + * {
-  margin-top: calc(var(--spacer) * 10);
+  margin-top: calc(var(--spacer) * 6);
+}
+@media (min-width: 45rem) {
+  .flow-section > * + * {
+    margin-top: 10rem;
+  }
 }
 
 /* Add vertical rhythm inside elements */
@@ -342,7 +347,7 @@ nav ul.split {
 }
 @media (min-width: 45rem) {
   .features {
-    grid-template-columns: repeat(2, max(50ch));
+    grid-template-columns: repeat(2, minmax(0, 50ch));
   }
 }
 
@@ -355,6 +360,10 @@ nav ul.split {
   justify-content: space-between;
   text-align: left;
   gap: 5rem;
+}
+
+.productive img {
+  margin-bottom: 0;
 }
 
 .productive h2 {

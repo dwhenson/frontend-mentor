@@ -7,7 +7,7 @@
 	margin-right: auto;
 
 	@include respond-to("medium") {
-		grid-template-columns: repeat(2, max(50ch));
+		grid-template-columns: repeat(2, minmax(0, 50ch));
 	}
 }
 
