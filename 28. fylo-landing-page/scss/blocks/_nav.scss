@@ -1,0 +1,23 @@
+nav.split {
+	padding-top: clamp(2rem, 5%, 4rem);
+	flex-direction: row;
+}
+
+.logo {
+	max-width: 5rem;
+
+	@include respond-to("medium") {
+		max-width: 10rem;
+	}
+}
+
+nav li {
+	max-width: max-content;
+}
+
+nav ul.split {
+	flex-basis: auto;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
