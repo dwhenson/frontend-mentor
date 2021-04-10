@@ -1,0 +1,32 @@
+footer {
+	margin-bottom: 6rem;
+	text-align: left;
+
+	div.split {
+		gap: 4rem;
+		justify-content: space-between;
+
+		address {
+			flex-basis: 50%;
+		}
+	}
+
+	address.split {
+		gap: 2rem;
+		justify-content: space-between;
+
+		a {
+			display: block;
+		}
+	}
+
+	nav.split {
+		gap: 2rem;
+	}
+
+	.social-icons {
+		justify-content: center;
+		flex-direction: row;
+		gap: 1rem;
+	}
+}

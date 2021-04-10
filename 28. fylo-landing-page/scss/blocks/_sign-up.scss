@@ -1,0 +1,65 @@
+.sign-up {
+	max-width: 60rem;
+	padding: clamp(2rem, 5%, 3rem);
+	border-radius: 0.5rem;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: var(--clr-neutral-300);
+}
+
+form.split {
+	margin-top: 2.5rem;
+	gap: 0.25rem;
+
+	@include respond-to("medium") {
+		align-items: flex-start;
+		gap: 2rem;
+	}
+
+	div.wrapper {
+		flex: 1;
+	}
+
+	input {
+		width: 100%;
+		display: block;
+		padding: 0.75em 2em;
+		padding-left: 2rem;
+		border: none;
+		border-radius: 2rem;
+		background-color: var(--clr-neutral-100);
+		font-weight: bold;
+		color: var(--clr-neutral-200);
+		flex-grow: 1;
+	}
+
+	input {
+		&::placeholder {
+			color: var(--clr-neutral-400);
+		}
+
+		@include respond-to("medium") {
+			// flex-basis: 100%;
+		}
+	}
+
+	.cta {
+		max-width: 100%;
+		padding-right: 2em;
+		padding-left: 2em;
+		margin: 0;
+
+		@include respond-to("medium") {
+			max-width: fit-content;
+		}
+	}
+
+	.error {
+		display: block;
+		visibility: hidden;
+		padding-left: 2rem;
+		font-size: var(--step--1);
+		text-align: left;
+		color: var(--clr-accent-300);
+	}
+}

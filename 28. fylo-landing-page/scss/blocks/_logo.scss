@@ -1,0 +1,7 @@
+.logo {
+	max-width: 5rem;
+
+	@include respond-to("medium") {
+		max-width: 10rem;
+	}
+}

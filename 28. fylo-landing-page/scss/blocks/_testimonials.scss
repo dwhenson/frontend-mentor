@@ -1,0 +1,37 @@
+.testimonials {
+	gap: 2rem;
+}
+
+figure {
+	text-align: left;
+	background-color: var(--clr-neutral-200);
+	padding: 2rem;
+	border-radius: 0.5em;
+}
+
+figcaption.split {
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5em;
+
+	.name {
+		font-style: normal;
+		display: block;
+		font-weight: bolder;
+	}
+
+	.position {
+		font-size: var(--step--2);
+		font-style: normal;
+	}
+
+	> * {
+		flex-basis: auto;
+		font-size: var(--step--1);
+	}
+}
+
+.profile-pic {
+	border-radius: 50%;
+	max-width: 3rem;
+}

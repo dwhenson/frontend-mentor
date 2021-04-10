@@ -95,7 +95,7 @@ select {
   /* Colors */
   --clr-accent-100: hsla(176, 68%, 64%, 1);
   --clr-accent-200: hsla(198, 60%, 50%, 1);
-  --clr-accent-400: hsla(0, 100%, 63%, 1);
+  --clr-accent-300: hsla(0, 100%, 63%, 1);
   --clr-neutral-100: hsla(0, 0%, 100%, 1);
   --clr-neutral-200: hsla(219, 30%, 18%, 1);
   --clr-neutral-300: hsla(217, 28%, 15%, 1);
@@ -278,9 +278,6 @@ main:focus {
   flex-direction: column;
   gap: var(--spacer);
 }
-.split > * {
-  flex: 1;
-}
 @media (min-width: 45rem) {
   .split {
     flex-direction: row;
@@ -290,9 +287,25 @@ main:focus {
 /* ==================================================
    Blocks
    ================================================== */
-nav.split {
+header nav.split {
   flex-direction: row;
   padding-top: clamp(2rem, 5%, 4rem);
+  justify-content: space-between;
+}
+header nav.split ul.split {
+  flex-basis: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+@media (min-width: 45rem) {
+  header nav.split ul.split {
+    gap: 3rem;
+  }
+}
+header nav.split li {
+  max-width: max-content;
 }
 
 .logo {
@@ -301,23 +314,6 @@ nav.split {
 @media (min-width: 45rem) {
   .logo {
     max-width: 10rem;
-  }
-}
-
-nav li {
-  max-width: max-content;
-}
-
-nav ul.split {
-  flex-basis: auto;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-}
-@media (min-width: 45rem) {
-  nav ul.split {
-    gap: 3rem;
   }
 }
 
@@ -347,7 +343,7 @@ nav ul.split {
 }
 @media (min-width: 45rem) {
   .features {
-    grid-template-columns: repeat(2, minmax(0, 50ch));
+    grid-template-columns: repeat(2, minmax(0, 45ch));
   }
 }
 
@@ -384,4 +380,123 @@ nav ul.split {
 }
 .productive a:hover {
   color: var(--clr-neutral-100);
+}
+
+.testimonials {
+  gap: 2rem;
+}
+
+figure {
+  text-align: left;
+  background-color: var(--clr-neutral-200);
+  padding: 2rem;
+  border-radius: 0.5em;
+}
+
+figcaption.split {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+figcaption.split .name {
+  font-style: normal;
+  display: block;
+  font-weight: bolder;
+}
+figcaption.split .position {
+  font-size: var(--step--2);
+  font-style: normal;
+}
+figcaption.split > * {
+  flex-basis: auto;
+  font-size: var(--step--1);
+}
+
+.profile-pic {
+  border-radius: 50%;
+  max-width: 3rem;
+}
+
+.sign-up {
+  max-width: 60rem;
+  padding: clamp(2rem, 5%, 3rem);
+  border-radius: 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--clr-neutral-300);
+}
+
+form.split {
+  margin-top: 2.5rem;
+  gap: 0.25rem;
+}
+@media (min-width: 45rem) {
+  form.split {
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+form.split div.wrapper {
+  flex: 1;
+}
+form.split input {
+  width: 100%;
+  display: block;
+  padding: 0.75em 2em;
+  padding-left: 2rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: var(--clr-neutral-100);
+  font-weight: bold;
+  color: var(--clr-neutral-200);
+  flex-grow: 1;
+}
+form.split input::placeholder {
+  color: var(--clr-neutral-400);
+}
+form.split .cta {
+  max-width: 100%;
+  padding-right: 2em;
+  padding-left: 2em;
+  margin: 0;
+}
+@media (min-width: 45rem) {
+  form.split .cta {
+    max-width: fit-content;
+  }
+}
+form.split .error {
+  display: block;
+  visibility: hidden;
+  padding-left: 2rem;
+  font-size: var(--step--1);
+  text-align: left;
+  color: var(--clr-accent-300);
+}
+
+footer {
+  margin-bottom: 6rem;
+  text-align: left;
+}
+footer div.split {
+  gap: 4rem;
+  justify-content: space-between;
+}
+footer div.split address {
+  flex-basis: 50%;
+}
+footer address.split {
+  gap: 2rem;
+  justify-content: space-between;
+}
+footer address.split a {
+  display: block;
+}
+footer nav.split {
+  gap: 2rem;
+}
+footer .social-icons {
+  justify-content: center;
+  flex-direction: row;
+  gap: 1rem;
 }

@@ -1,3 +1,11 @@
+// TODO add social icons - check a11y issues
+// TODO add pseudo icons to footer
+// TODO add pseudo icons links
+// TODO add pseudo element to testimonials
+// TODO add skip link to main and main
+// FIXME make logo a link and focusable
+// TODO add comments to each utility file
+
 @import "reset";
 
 /* ==================================================
@@ -65,6 +73,10 @@ img:not([class]) {
    Blocks
    ================================================== */
 @import "blocks/nav";
+@import "blocks/logo";
 @import "blocks/cta";
 @import "blocks/features";
 @import "blocks/productive";
+@import "blocks/testimonials";
+@import "blocks/sign-up";
+@import "blocks/footer";
