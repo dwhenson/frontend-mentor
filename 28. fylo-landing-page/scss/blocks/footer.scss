@@ -1,10 +1,18 @@
-footer {
-	margin-bottom: 6rem;
+/* 	Footer
+   	================================================== */
+
+footer.footer {
+	padding-top: 12rem;
+	padding-bottom: 3rem;
+	margin-top: -6rem;
+	margin-bottom: 3rem;
+	background-color: var(--clr-neutral-200);
 	text-align: left;
 
 	div.split {
-		gap: 4rem;
 		justify-content: space-between;
+		margin-top: 2rem;
+		gap: 4rem;
 
 		address {
 			flex-basis: 50%;
@@ -12,8 +20,8 @@ footer {
 	}
 
 	address.split {
-		gap: 2rem;
 		justify-content: space-between;
+		gap: 2rem;
 
 		a {
 			display: block;
@@ -25,8 +33,18 @@ footer {
 	}
 
 	.social-icons {
-		justify-content: center;
 		flex-direction: row;
+		justify-content: center;
 		gap: 1rem;
+
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			fill: var(--clr-neutral-100);
+
+			&:hover {
+				fill: var(--clr-accent-100);
+			}
+		}
 	}
 }

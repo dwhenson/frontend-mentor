@@ -1,3 +1,6 @@
+/* 	Productive Section
+   	================================================== */
+
 .productive {
 	align-items: center;
 	justify-content: space-between;
@@ -20,11 +23,24 @@
 }
 
 .productive a {
-	display: block;
-	text-decoration: underline;
+	display: inline-block;
+	border-bottom: 1px solid var(--clr-accent-100);
 	color: var(--clr-accent-100);
 
+	svg {
+		display: inline;
+		margin-left: 0.25em;
+		vertical-align: middle;
+
+		// FIXME hover not working
+		&:hover {
+			fill: var(--clr-neutral-100);
+		}
+	}
+
 	&:hover {
+		border-bottom: 1px solid var(--clr-neutral-100);
+		text-decoration: none;
 		color: var(--clr-neutral-100);
 	}
 }

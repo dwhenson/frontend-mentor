@@ -1,10 +1,4 @@
-// TODO add social icons - check a11y issues
-// TODO add pseudo icons to footer
-// TODO add pseudo icons links
-// TODO add pseudo element to testimonials
-// TODO add skip link to main and main
-// FIXME make logo a link and focusable
-// TODO add comments to each utility file
+// CHECK sizing and layout of footer/sign-up/testimonials
 
 @import "reset";
 
@@ -15,45 +9,51 @@
 @import "abstracts/variables";
 @import "abstracts/breakpoints";
 
+/* 	Base Styles
+   	================================================== */
+
 body {
-	color: var(--clr-neutral-100);
 	background-color: var(--clr-neutral-500);
 	font-family: var(--ff-body);
 	font-size: var(--step-0);
-	text-align: center;
 	line-height: 1.5;
+	text-align: center;
+	color: var(--clr-neutral-100);
 }
 
 h3,
 h1 + p {
-	font-size: var(--step-1);
 	max-width: 50ch;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--step-1);
 }
 
 h1,
 h2 {
-	font-size: var(--step-4);
-	margin-left: auto;
-	margin-right: auto;
 	max-width: 40ch;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--step-4);
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
+	color: inherit;
 
 	&:hover {
 		text-decoration: underline;
-		font-weight: bolder;
 	}
 }
 
+:hover {
+	transition: 200ms;
+}
+
 img:not([class]) {
-	margin: 0 auto 4rem;
 	width: 100%;
 	max-width: 55rem;
+	margin: 0 auto 4rem;
 }
 
 /* ==================================================
@@ -72,6 +72,7 @@ img:not([class]) {
 /* ==================================================
    Blocks
    ================================================== */
+
 @import "blocks/nav";
 @import "blocks/logo";
 @import "blocks/cta";

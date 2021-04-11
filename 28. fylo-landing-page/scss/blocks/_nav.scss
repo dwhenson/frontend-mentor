@@ -1,7 +1,10 @@
+/* 	Navigation
+   	================================================== */
+
 header nav.split {
 	flex-direction: row;
-	padding-top: clamp(2rem, 5%, 4rem);
 	justify-content: space-between;
+	padding-top: clamp(2rem, 5%, 4rem);
 
 	ul.split {
 		flex-basis: auto;

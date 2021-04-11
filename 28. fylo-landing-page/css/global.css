@@ -91,6 +91,8 @@ select {
 /* ==================================================
 	 Global Styles
 	 ================================================== */
+/* 	Custom Properties
+   	================================================== */
 :root {
   /* Colors */
   --clr-accent-100: hsla(176, 68%, 64%, 1);
@@ -117,44 +119,49 @@ select {
   --ff-headings: "Raleway", sans-serif;
 }
 
+/* 	Base Styles
+   	================================================== */
 body {
-  color: var(--clr-neutral-100);
   background-color: var(--clr-neutral-500);
   font-family: var(--ff-body);
   font-size: var(--step-0);
-  text-align: center;
   line-height: 1.5;
+  text-align: center;
+  color: var(--clr-neutral-100);
 }
 
 h3,
 h1 + p {
-  font-size: var(--step-1);
   max-width: 50ch;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  font-size: var(--step-1);
 }
 
 h1,
 h2 {
-  font-size: var(--step-4);
-  margin-left: auto;
-  margin-right: auto;
   max-width: 40ch;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: var(--step-4);
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 a:hover {
   text-decoration: underline;
-  font-weight: bolder;
+}
+
+:hover {
+  transition: 200ms;
 }
 
 img:not([class]) {
-  margin: 0 auto 4rem;
   width: 100%;
   max-width: 55rem;
+  margin: 0 auto 4rem;
 }
 
 /* ==================================================
@@ -287,10 +294,12 @@ main:focus {
 /* ==================================================
    Blocks
    ================================================== */
+/* 	Navigation
+   	================================================== */
 header nav.split {
   flex-direction: row;
-  padding-top: clamp(2rem, 5%, 4rem);
   justify-content: space-between;
+  padding-top: clamp(2rem, 5%, 4rem);
 }
 header nav.split ul.split {
   flex-basis: auto;
@@ -308,6 +317,8 @@ header nav.split li {
   max-width: max-content;
 }
 
+/* Logo
+   ------------------- */
 .logo {
   max-width: 5rem;
 }
@@ -317,6 +328,8 @@ header nav.split li {
   }
 }
 
+/* 	CTA
+   	================================================== */
 .cta {
   display: block;
   max-width: fit-content;
@@ -333,13 +346,14 @@ header nav.split li {
   background-color: var(--clr-accent-100);
 }
 
+/* 	Features Section
+   	================================================== */
 .features {
   display: grid;
-  grid-template-columns: 1fr;
   grid-template-rows: auto;
+  grid-template-columns: 1fr;
+  justify-content: center;
   gap: 5rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 @media (min-width: 45rem) {
   .features {
@@ -351,6 +365,8 @@ header nav.split li {
   margin: 0 auto 2rem;
 }
 
+/* 	Productive Section
+   	================================================== */
 .productive {
   align-items: center;
   justify-content: space-between;
@@ -374,23 +390,47 @@ header nav.split li {
 }
 
 .productive a {
-  display: block;
-  text-decoration: underline;
+  display: inline-block;
+  border-bottom: 1px solid var(--clr-accent-100);
   color: var(--clr-accent-100);
 }
+.productive a svg {
+  display: inline;
+  margin-left: 0.25em;
+  vertical-align: middle;
+}
+.productive a svg:hover {
+  fill: var(--clr-neutral-100);
+}
 .productive a:hover {
+  border-bottom: 1px solid var(--clr-neutral-100);
+  text-decoration: none;
   color: var(--clr-neutral-100);
 }
 
+/* 	Testimonial Section
+   	================================================== */
 .testimonials {
+  position: relative;
   gap: 2rem;
+}
+.testimonials::before {
+  content: "";
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  z-index: -1;
+  width: 4rem;
+  height: 4rem;
+  background-image: url("../images/bg-quotes.png");
+  background-repeat: no-repeat;
 }
 
 figure {
-  text-align: left;
-  background-color: var(--clr-neutral-200);
   padding: 2rem;
   border-radius: 0.5em;
+  background-color: var(--clr-neutral-200);
+  text-align: left;
 }
 
 figcaption.split {
@@ -399,9 +439,9 @@ figcaption.split {
   gap: 0.5em;
 }
 figcaption.split .name {
-  font-style: normal;
   display: block;
   font-weight: bolder;
+  font-style: normal;
 }
 figcaption.split .position {
   font-size: var(--step--2);
@@ -413,10 +453,12 @@ figcaption.split > * {
 }
 
 .profile-pic {
-  border-radius: 50%;
   max-width: 3rem;
+  border-radius: 50%;
 }
 
+/* 	Sign-up Section
+   	================================================== */
 .sign-up {
   max-width: 60rem;
   padding: clamp(2rem, 5%, 3rem);
@@ -424,6 +466,7 @@ figcaption.split > * {
   margin-right: auto;
   margin-left: auto;
   background-color: var(--clr-neutral-300);
+  isolation: isolate;
 }
 
 form.split {
@@ -440,8 +483,9 @@ form.split div.wrapper {
   flex: 1;
 }
 form.split input {
-  width: 100%;
   display: block;
+  flex-grow: 1;
+  width: 100%;
   padding: 0.75em 2em;
   padding-left: 2rem;
   border: none;
@@ -449,7 +493,6 @@ form.split input {
   background-color: var(--clr-neutral-100);
   font-weight: bold;
   color: var(--clr-neutral-200);
-  flex-grow: 1;
 }
 form.split input::placeholder {
   color: var(--clr-neutral-400);
@@ -474,29 +517,44 @@ form.split .error {
   color: var(--clr-accent-300);
 }
 
-footer {
-  margin-bottom: 6rem;
+/* 	Footer
+   	================================================== */
+footer.footer {
+  padding-top: 12rem;
+  padding-bottom: 3rem;
+  margin-top: -6rem;
+  margin-bottom: 3rem;
+  background-color: var(--clr-neutral-200);
   text-align: left;
 }
-footer div.split {
-  gap: 4rem;
+footer.footer div.split {
   justify-content: space-between;
+  margin-top: 2rem;
+  gap: 4rem;
 }
-footer div.split address {
+footer.footer div.split address {
   flex-basis: 50%;
 }
-footer address.split {
-  gap: 2rem;
+footer.footer address.split {
   justify-content: space-between;
+  gap: 2rem;
 }
-footer address.split a {
+footer.footer address.split a {
   display: block;
 }
-footer nav.split {
+footer.footer nav.split {
   gap: 2rem;
 }
-footer .social-icons {
-  justify-content: center;
+footer.footer .social-icons {
   flex-direction: row;
+  justify-content: center;
   gap: 1rem;
+}
+footer.footer .social-icons svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--clr-neutral-100);
+}
+footer.footer .social-icons svg:hover {
+  fill: var(--clr-accent-100);
 }
