@@ -10,10 +10,19 @@ const errorField = document.querySelector(".error");
 /* ==================================================== */
 
 /**
+ * Check if email address is valid
+ * @param      {string}   The email
+ * @return     {boolean}  The result of the test
+ */
+function emailIsValid(email) {
+	return /\S+@\S+\.\S+/.test(email);
+}
+
+/**
  * Check input for valid email on key down
  */
-function validateEmailKeydown() {
-	if (!form.checkValidity()) {
+function validateEmailKeydown(event) {
+	if (!emailIsValid(event.target.value)) {
 		errorField.style.visibility = "visible";
 	} else {
 		errorField.style.visibility = "hidden";
@@ -23,8 +32,8 @@ function validateEmailKeydown() {
 /**
  * Check input for valid email on form submission
  */
-function validateEmailSubmission() {
-	if (!form.checkValidity() || !emailField.value) {
+function validateEmailSubmission(event) {
+	if (!emailIsValid(event.target.value) || !emailField.value) {
 		errorField.style.visibility = "visible";
 	} else {
 		form.submit();
