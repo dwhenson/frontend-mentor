@@ -1,0 +1,84 @@
+// TODO Improve email validation with regex
+// TODO Add pseudo elements icons in footer
+
+@import "reset";
+
+/* ==================================================
+	 Global Styles
+	 ================================================== */
+
+@import "abstracts/variables";
+@import "abstracts/breakpoints";
+
+/* 	Base Styles
+   	================================================== */
+
+body {
+	background-color: var(--clr-neutral-500);
+	font-family: var(--ff-body);
+	font-size: var(--step-0);
+	line-height: 1.5;
+	text-align: center;
+	color: var(--clr-neutral-100);
+}
+
+h3,
+h1 + p {
+	max-width: 50ch;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--step-1);
+}
+
+h1,
+h2 {
+	max-width: 40ch;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: var(--step-4);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+:hover {
+	transition: 200ms;
+}
+
+img:not([class]) {
+	width: 100%;
+	max-width: 55rem;
+	margin: 0 auto 4rem;
+}
+
+/* ==================================================
+	 Utilities
+	 ================================================== */
+
+@import "utilities/skip-link";
+@import "utilities/center-content";
+@import "utilities/container";
+@import "utilities/flow-section";
+@import "utilities/flow-content";
+@import "utilities/visually-hidden";
+@import "utilities/outline";
+@import "utilities/split";
+
+/* ==================================================
+   Blocks
+   ================================================== */
+
+@import "blocks/nav";
+@import "blocks/logo";
+@import "blocks/cta";
+@import "blocks/features";
+@import "blocks/productive";
+@import "blocks/testimonials";
+@import "blocks/sign-up";
+@import "blocks/footer";
