@@ -3,31 +3,23 @@
 
 :root {
 	/* Colors */
-	// Accents
-	--clr-accent-100: hsla(176, 68%, 64%, 1);
-	--clr-accent-200: hsla(198, 60%, 50%, 1);
-	--clr-accent-300: hsla(0, 100%, 63%, 1);
-	// Neutrals
-	--clr-neutral-100: hsla(0, 0%, 100%, 1);
-	--clr-neutral-200: hsla(219, 30%, 18%, 1);
-	--clr-neutral-300: hsla(217, 28%, 15%, 1);
-	--clr-neutral-400: hsla(218, 28%, 13%, 1);
-	--clr-neutral-500: hsla(216, 53%, 9%, 1);
+	--clr-primary-100: hsla(22, 89%, 52%, 1);
+	--clr-primary-200: hsla(22, 100%, 69%, 1);
+	--clr-secondary-100: hsla(220, 50%, 17%, 1);
+	--clr-secondary-200: hsla(221, 23%, 58%, 1);
+	--clr-neutral-100: hsla(198, 28%, 93%, 1);
+	--clr-neutral-200: hsla(0, 0%, 100%, 1);
 
 	/* Spacing */
 	--spacer: 1rem;
 
 	/* Font sizes */
-	--step--2: clamp(0.61rem, 0.55rem + 0.28vw, 0.8rem);
-	--step--1: clamp(0.73rem, 0.65rem + 0.39vw, 1rem);
-	--step-0: clamp(0.88rem, 0.77rem + 0.54vw, 1.25rem);
-	--step-1: clamp(1.05rem, 0.9rem + 0.73vw, 1.56rem);
-	--step-2: clamp(1.26rem, 1.06rem + 0.99vw, 1.95rem);
-	--step-3: clamp(1.51rem, 1.25rem + 1.33vw, 2.44rem);
-	--step-4: clamp(1.81rem, 1.46rem + 1.77vw, 3.05rem);
-	--step-5: clamp(2.18rem, 1.71rem + 2.34vw, 3.82rem);
+	--step--1: clamp(0.67rem, 0.64rem + 0.12vw, 0.75rem);
+	--step-0: clamp(1rem, 0.96rem + 0.19vw, 1.13rem);
+	--step-1: clamp(1.5rem, 1.43rem + 0.28vw, 1.69rem);
+	--step-2: clamp(2.25rem, 2.15rem + 0.42vw, 2.53rem);
+	--step-3: clamp(3.38rem, 3.23rem + 0.63vw, 3.8rem);
 
 	/* Font-families */
-	--ff-body: "Open sans", sans-serif;
-	--ff-headings: "Raleway", sans-serif;
+	--ff-body: "Barlow", sans-serif;
 }
