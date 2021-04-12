@@ -20,6 +20,7 @@ function emailIsValid(email) {
 
 /**
  * Check input for valid email on key down
+ * @param      {object}   The event object
  */
 function validateEmailKeydown(event) {
 	if (!emailIsValid(event.target.value)) {
@@ -31,6 +32,7 @@ function validateEmailKeydown(event) {
 
 /**
  * Check input for valid email on form submission
+ * @param      {object}   The event object
  */
 function validateEmailSubmission(event) {
 	if (!emailIsValid(event.target.value) || !emailField.value) {
