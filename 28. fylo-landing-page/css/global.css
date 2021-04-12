@@ -541,8 +541,8 @@ footer.footer div.split address {
 }
 footer.footer address.split {
   justify-content: space-between;
-  gap: 3rem;
   font-style: normal;
+  gap: 3rem;
 }
 footer.footer address.split p {
   position: relative;
@@ -552,6 +552,7 @@ footer.footer address.split p:before {
   content: url("../images/icon-location.svg");
   position: absolute;
   display: block;
+  margin-top: 5px;
   margin-left: -2rem;
 }
 footer.footer address.split a {
@@ -559,17 +560,17 @@ footer.footer address.split a {
   display: block;
   margin-left: 2rem;
 }
-footer.footer address.split .tel:before {
-  content: url("../images/icon-phone.svg");
+footer.footer address.split a::before {
   position: absolute;
   display: block;
+  margin-top: 3px;
   margin-left: -2rem;
+}
+footer.footer address.split .tel:before {
+  content: url("../images/icon-phone.svg");
 }
 footer.footer address.split .email:before {
   content: url("../images/icon-email.svg");
-  position: absolute;
-  display: block;
-  margin-left: -2rem;
 }
 footer.footer nav.split {
   gap: 2rem;

@@ -23,8 +23,8 @@ footer.footer {
 
 	address.split {
 		justify-content: space-between;
-		gap: 3rem;
 		font-style: normal;
+		gap: 3rem;
 
 		p {
 			position: relative;
@@ -35,6 +35,7 @@ footer.footer {
 			content: url("../images/icon-location.svg");
 			position: absolute;
 			display: block;
+			margin-top: 5px;
 			margin-left: -2rem;
 		}
 
@@ -42,20 +43,21 @@ footer.footer {
 			position: relative;
 			display: block;
 			margin-left: 2rem;
+
+			&::before {
+				position: absolute;
+				display: block;
+				margin-top: 3px;
+				margin-left: -2rem;
+			}
 		}
 
 		.tel:before {
 			content: url("../images/icon-phone.svg");
-			position: absolute;
-			display: block;
-			margin-left: -2rem;
 		}
 
 		.email:before {
 			content: url("../images/icon-email.svg");
-			position: absolute;
-			display: block;
-			margin-left: -2rem;
 		}
 	}
 
