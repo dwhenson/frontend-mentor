@@ -1,19 +1,25 @@
 /* 	CTA
    	================================================== */
 
+.dark {
+	--fg: var(--clr-secondary-100);
+	--bg: var(--clr-neutral-100);
+	--bg-h: var(--clr-secondary-100);
+	--fg-h: var(--clr-neutral-200);
+}
+
 .cta {
-	display: block;
-	max-width: fit-content;
-	padding: 0.75em 4em;
-	border: none;
-	border-radius: 2em;
-	margin: 2rem auto 0;
-	background-color: var(--clr-accent-200);
-	font-weight: 700;
-	color: inherit;
-	cursor: pointer;
+	display: inline-block;
+	padding: 0.5em 1em;
+	color: var(--fg, var(--clr-neutral-200));
+	text-decoration: none;
+	border-radius: 0.5em;
+	text-transform: uppercase;
+	background-color: var(--bg, var(--clr-primary-100));
+	transition: all 200ms;
 
 	&:hover {
-		background-color: var(--clr-accent-100);
+		color: var(--fg-h, var(--clr-neutral-200));
+		background-color: var(--bg-h, var(--clr-primary-200));
 	}
 }
