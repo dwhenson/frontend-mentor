@@ -4,10 +4,10 @@
 .hero {
 	align-items: center;
 	margin-top: 3rem;
-	gap: 8rem;
+	gap: 6rem;
 
 	div.flow-content {
-		max-width: 50ch;
+		max-width: 40ch;
 	}
 
 	div.order-release {
@@ -15,6 +15,6 @@
 		align-items: baseline;
 		gap: 2rem;
 		width: 100%;
-		margin-top: 2rem;
+		margin-top: 2;
 	}
 }

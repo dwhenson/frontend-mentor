@@ -1,7 +1,7 @@
 // FIX icon proportions on feature section
 // TODO second section filter
 // TODO background images - grey blocks
-// TODO background images - grey blocks
+// FIX positioning on images at mobile viewport
 
 @import "reset";
 
@@ -42,7 +42,7 @@ h1 {
 	font-size: var(--step-3);
 }
 
-img:not([class]) {
+img[src$=".jpg"] {
 	border-radius: 1em;
 }
 

@@ -1,6 +1,6 @@
 @mixin respond-to($breakpoint) {
 	@if $breakpoint == "medium" {
-		@media (min-width: 40em) {
+		@media (min-width: 45em) {
 			@content;
 		}
 	} @else if $breakpoint == "large" {
