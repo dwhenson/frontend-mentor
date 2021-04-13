@@ -422,11 +422,13 @@ header.split {
   grid-template-columns: 1fr;
   -webkit-justify-content: center;
           justify-content: center;
+  text-align: center;
   gap: 4rem;
 }
 @media (min-width: 45em) {
   .features {
     grid-template-columns: repeat(2, minmax(0, 45ch));
+    text-align: left;
   }
 }
 
@@ -436,8 +438,15 @@ header.split {
   height: 2rem;
   padding: 1em;
   border-radius: 1em;
+  margin-right: auto;
   margin-bottom: 2rem;
+  margin-left: auto;
   background-color: var(--clr-primary-100);
+}
+@media (min-width: 45em) {
+  .feature img {
+    margin-left: 0;
+  }
 }
 
 /* 	Footer
