@@ -17,6 +17,7 @@
 	text-transform: uppercase;
 	background-color: var(--bg, var(--clr-primary-100));
 	transition: all 200ms;
+	max-width: fit-content;
 
 	&:hover {
 		color: var(--fg-h, var(--clr-neutral-200));

@@ -14,13 +14,15 @@ body {
 	font-family: var(--ff-body);
 	font-size: var(--step-0);
 	line-height: 1.5;
+	color: var(--clr-secondary-200);
 }
 
 h1,
 h2,
 h3 {
+	color: var(--clr-secondary-100);
 	text-transform: uppercase;
-	line-height: 1.1;
+	line-height: 1;
 }
 
 h3 {
@@ -35,7 +37,7 @@ h1 {
 	font-size: var(--step-3);
 }
 
-img:not(.logo) {
+img:not([class]) {
 	border-radius: 1em;
 }
 
@@ -57,3 +59,7 @@ img:not(.logo) {
    ================================================== */
 
 @import "blocks/cta";
+@import "blocks/header";
+@import "blocks/hero";
+@import "blocks/features";
+@import "blocks/footer";
