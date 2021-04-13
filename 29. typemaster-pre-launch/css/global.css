@@ -431,6 +431,11 @@ header.split {
     text-align: left;
   }
 }
+@media (min-width: 60em) {
+  .features {
+    grid-template-columns: repeat(4, minmax(0, 45ch));
+  }
+}
 
 .feature img {
   box-sizing: content-box;
