@@ -1,0 +1,24 @@
+/* 	Features Section
+   	================================================== */
+
+.features {
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	gap: 4rem;
+
+	@include respond-to("medium") {
+		grid-template-columns: repeat(2, minmax(0, 45ch));
+	}
+}
+
+.feature img {
+	box-sizing: content-box;
+	height: 2rem;
+	width: 2rem;
+	padding: 1em;
+	background-color: var(--clr-primary-100);
+	border-radius: 1em;
+	margin-bottom: 2rem;
+}
