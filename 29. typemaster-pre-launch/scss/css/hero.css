@@ -1,7 +1,0 @@
-.hero div.order-release {
-  display: -webkit-inline-flex;
-  display: inline-flex;
-  -webkit-align-items: baseline;
-          align-items: baseline;
-  gap: 2rem;
-}

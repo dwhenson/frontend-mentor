@@ -3,8 +3,13 @@
 
 .hero {
 	align-items: center;
+	justify-content: space-between;
 	margin-top: 3rem;
 	gap: 6rem;
+
+	img {
+		max-height: 40rem;
+	}
 
 	div.flow-content {
 		max-width: 40ch;
@@ -13,8 +18,7 @@
 	div.order-release {
 		display: inline-flex;
 		align-items: baseline;
-		gap: 2rem;
 		width: 100%;
-		margin-top: 2;
+		gap: 2rem;
 	}
 }

@@ -2,12 +2,12 @@
    	================================================== */
 
 .wireless {
-	gap: 4rem;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
 	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 	margin-bottom: 8rem;
+	text-align: center;
+	gap: 4rem;
 
 	@include respond-to("medium") {
 		text-align: left;
@@ -18,8 +18,8 @@
 	}
 
 	div.photos {
-		gap: 2rem;
 		flex-direction: row;
+		gap: 2rem;
 
 		@include respond-to("large") {
 			flex-basis: 70%;
@@ -31,20 +31,20 @@
 
 		.filter::after {
 			content: "";
-			display: block;
-			background-color: var(--clr-primary-100);
 			position: absolute;
+			display: block;
+			top: 0;
+			opacity: 0.75;
 			width: 100%;
 			height: 100%;
-			top: 0;
 			border-radius: 1em;
-			opacity: 0.75;
+			background-color: var(--clr-primary-100);
 		}
 	}
 
 	div.contents {
-		gap: 2rem;
 		align-items: center;
+		gap: 2rem;
 
 		@include respond-to("medium") {
 			flex-direction: row;

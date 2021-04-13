@@ -127,9 +127,9 @@ body {
 h1,
 h2,
 h3 {
-  color: var(--clr-secondary-100);
-  text-transform: uppercase;
   line-height: 1;
+  text-transform: uppercase;
+  color: var(--clr-secondary-100);
 }
 
 h3 {
@@ -294,20 +294,20 @@ main:focus {
 
 .cta {
   display: inline-block;
-  padding: 0.5em 1em;
-  color: var(--fg, var(--clr-neutral-200));
-  text-decoration: none;
-  border-radius: 0.5em;
-  text-transform: uppercase;
-  background-color: var(--bg, var(--clr-primary-100));
-  transition: all 200ms;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background-color: var(--bg, var(--clr-primary-100));
+  transition: all 200ms;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--fg, var(--clr-neutral-200));
 }
 .cta:hover {
-  color: var(--fg-h, var(--clr-neutral-200));
   background-color: var(--bg-h, var(--clr-primary-200));
+  color: var(--fg-h, var(--clr-neutral-200));
 }
 
 header.split {
@@ -325,8 +325,13 @@ header.split {
 .hero {
   -webkit-align-items: center;
           align-items: center;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   margin-top: 3rem;
   gap: 6rem;
+}
+.hero img {
+  max-height: 40rem;
 }
 .hero div.flow-content {
   max-width: 40ch;
@@ -336,23 +341,22 @@ header.split {
   display: inline-flex;
   -webkit-align-items: baseline;
           align-items: baseline;
-  gap: 2rem;
   width: 100%;
-  margin-top: 2;
+  gap: 2rem;
 }
 
 /* 	Wireless Section
    	================================================== */
 .wireless {
-  gap: 4rem;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-align-items: center;
-          align-items: center;
-  text-align: center;
   -webkit-flex-direction: column;
           flex-direction: column;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   margin-bottom: 8rem;
+  text-align: center;
+  gap: 4rem;
 }
 @media (min-width: 45em) {
   .wireless {
@@ -366,9 +370,9 @@ header.split {
   }
 }
 .wireless div.photos {
-  gap: 2rem;
   -webkit-flex-direction: row;
           flex-direction: row;
+  gap: 2rem;
 }
 @media (min-width: 60em) {
   .wireless div.photos {
@@ -381,19 +385,19 @@ header.split {
 }
 .wireless div.photos .filter::after {
   content: "";
-  display: block;
-  background-color: var(--clr-primary-100);
   position: absolute;
+  display: block;
+  top: 0;
+  opacity: 0.75;
   width: 100%;
   height: 100%;
-  top: 0;
   border-radius: 1em;
-  opacity: 0.75;
+  background-color: var(--clr-primary-100);
 }
 .wireless div.contents {
-  gap: 2rem;
   -webkit-align-items: center;
           align-items: center;
+  gap: 2rem;
 }
 @media (min-width: 45em) {
   .wireless div.contents {
@@ -428,18 +432,18 @@ header.split {
 
 .feature img {
   box-sizing: content-box;
-  height: 2rem;
   width: 2rem;
+  height: 2rem;
   padding: 1em;
-  background-color: var(--clr-primary-100);
   border-radius: 1em;
   margin-bottom: 2rem;
+  background-color: var(--clr-primary-100);
 }
 
 /* 	Footer
    	================================================== */
 footer {
-  text-align: center;
   padding-top: 6rem;
   padding-bottom: 3rem;
+  text-align: center;
 }

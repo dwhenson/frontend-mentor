@@ -1,6 +1,4 @@
 // FIX icon proportions on feature section
-// TODO second section filter
-// TODO background images - grey blocks
 // FIX positioning on images at mobile viewport
 
 @import "reset";
@@ -25,9 +23,9 @@ body {
 h1,
 h2,
 h3 {
-	color: var(--clr-secondary-100);
-	text-transform: uppercase;
 	line-height: 1;
+	text-transform: uppercase;
+	color: var(--clr-secondary-100);
 }
 
 h3 {
