@@ -1,14 +1,19 @@
+// FIX icon proportions on feature section
+// TODO second section filter
+// TODO background images - grey blocks
+// TODO background images - grey blocks
+
 @import "reset";
 
 /* ==================================================
-	 Global Styles
-	 ================================================== */
+	Global Styles
+	================================================== */
 
 @import "abstracts/variables";
 @import "abstracts/breakpoints";
 
-/* 	Base Styles
-   	================================================== */
+/* Base Styles
+   ================================================== */
 
 body {
 	font-family: var(--ff-body);
@@ -42,8 +47,8 @@ img:not([class]) {
 }
 
 /* ==================================================
-	 Utilities
-	 ================================================== */
+	Utilities
+	================================================== */
 
 @import "utilities/skip-link";
 @import "utilities/center-content";
@@ -61,5 +66,6 @@ img:not([class]) {
 @import "blocks/cta";
 @import "blocks/header";
 @import "blocks/hero";
+@import "blocks/wireless";
 @import "blocks/features";
 @import "blocks/footer";
