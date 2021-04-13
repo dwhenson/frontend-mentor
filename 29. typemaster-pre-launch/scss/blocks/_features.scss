@@ -13,6 +13,10 @@
 		grid-template-columns: repeat(2, minmax(0, 45ch));
 		text-align: left;
 	}
+
+	@include respond-to("large") {
+		grid-template-columns: repeat(4, minmax(0, 45ch));
+	}
 }
 
 .feature img {
