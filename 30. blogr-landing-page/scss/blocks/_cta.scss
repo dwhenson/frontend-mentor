@@ -1,0 +1,26 @@
+/* 	CTA
+   	================================================== */
+
+.dark {
+	--fg: var(--clr-secondary-100);
+	--bg: var(--clr-neutral-100);
+	--bg-h: var(--clr-secondary-100);
+	--fg-h: var(--clr-neutral-200);
+}
+
+.cta {
+	display: inline-block;
+	max-width: fit-content;
+	padding: 0.5em 1em;
+	border-radius: 0.5em;
+	background-color: var(--bg, var(--clr-primary-100));
+	transition: all 200ms;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--fg, var(--clr-neutral-200));
+
+	&:hover {
+		background-color: var(--bg-h, var(--clr-primary-200));
+		color: var(--fg-h, var(--clr-neutral-200));
+	}
+}
