@@ -326,10 +326,11 @@ header.split {
 	-webkit-justify-content: space-between;
 	justify-content: space-between;
 	margin-top: 3rem;
-	gap: 6rem;
+	gap: 1rem;
 }
 .hero img {
 	max-height: 40rem;
+	transform: translatex(2rem);
 }
 .hero div.flow-content {
 	max-width: 40ch;
@@ -347,6 +348,12 @@ header.split {
 	.hero {
 		-webkit-align-items: center;
 		align-items: center;
+	}
+}
+
+@media (min-width: 60em) {
+	.hero img {
+		transform: translatex(0);
 	}
 }
 
@@ -378,6 +385,7 @@ header.split {
 	-webkit-flex-direction: row;
 	flex-direction: row;
 	gap: 2rem;
+	transform: translatex(-2rem);
 }
 @media (min-width: 60em) {
 	.wireless div.photos {
@@ -416,6 +424,9 @@ header.split {
 		flex-basis: 25%;
 		-webkit-flex-direction: column;
 		flex-direction: column;
+	}
+	.wireless div.photos {
+		transform: translateX(0);
 	}
 }
 
