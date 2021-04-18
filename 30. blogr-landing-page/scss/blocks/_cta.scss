@@ -12,9 +12,9 @@
 
 .cta {
 	display: block;
-	max-width: 10rem;
-	padding: 0.5em 1em;
-	border-radius: 1em;
+	min-width: 10rem;
+	padding: 0.5em 1.5em;
+	border-radius: 2em;
 	background-color: var(--bg, var(--clr-neutral-100));
 	transition: all 200ms;
 	color: var(--fg, var(--clr-primary-100));

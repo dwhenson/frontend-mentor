@@ -3,10 +3,12 @@ header {
 	color: var(--clr-neutral-100);
 }
 
-.prelude {
+.headline {
+	margin-top: 6rem;
 	padding-bottom: 6rem;
 
 	.split {
+		margin-top: 3rem;
 		flex-direction: row;
 		justify-content: center;
 	}
