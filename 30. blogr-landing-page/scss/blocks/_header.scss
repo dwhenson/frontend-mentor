@@ -1,0 +1,13 @@
+header {
+	background-color: var(--clr-neutral-400);
+	color: var(--clr-neutral-100);
+}
+
+.prelude {
+	padding-bottom: 6rem;
+
+	.split {
+		flex-direction: row;
+		justify-content: center;
+	}
+}

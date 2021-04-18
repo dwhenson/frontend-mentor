@@ -13,14 +13,18 @@
 	</head>
 
 	<body class="center-content flow-section">
-		<header class="site-head" role="banner">
+		<header class="flow-section site-head" role="banner">
 			<div class="container flow-section">
 				<a href="#main" class="skip-link">Skip to content</a>
 				<div class="site-head__inner">
-					<a href="/" aria-label="Blogr Home"><img src="images/logo.svg" alt="Blogr Logo" /></a>
-					<burger-menu max-width="600">
-						<nav class="split navigation" aria-label="primary">
-							<ul class="split main-menu clicky-menu no-js" role="list">
+					<a class="site-head__brand" href="/" aria-label="Blogr Home">
+						<img src="images/logo.svg" alt="Blogr Logo" />
+					</a>
+
+					<burger-menu max-width="700">
+						<nav class="navigation" aria-label="primary">
+							<!-- class="split main-menu clicky-menu no-js" -->
+							<ul role="list">
 								<li>
 									<a href="#">
 										Product
@@ -28,13 +32,13 @@
 											<use xlink:href="#arrow" />
 										</svg>
 									</a>
-									<ul role="list">
+									<!-- <ul role="list">
 										<li><a href="#">Overview</a></li>
 										<li><a href="#">Pricing</a></li>
 										<li><a href="#">Marketplace</a></li>
 										<li><a href="#">Features</a></li>
 										<li><a href="#">Integrations</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
 									<a href="#">
@@ -43,12 +47,12 @@
 											<use xlink:href="#arrow" />
 										</svg>
 									</a>
-									<ul role="list">
+									<!-- <ul role="list">
 										<li><a href="#">About</a></li>
 										<li><a href="#">Team </a></li>
 										<li><a href="#">Blog</a></li>
 										<li><a href="#">Careers</a></li>
-									</ul>
+									</ul> -->
 								</li>
 								<li>
 									<a href="#">
@@ -57,28 +61,31 @@
 											<use xlink:href="#arrow" />
 										</svg>
 									</a>
-									<ul role="list">
+									<!-- <ul role="list">
 										<li><a href="#">Contact</a></li>
 										<li><a href="#">Newsletter</a></li>
 										<li><a href="#">LinkedIn</a></li>
-									</ul>
+									</ul> -->
 								</li>
-							</ul>
-							<ul class="split" role="list">
-								<li><a href="/">Login</a></li>
-								<li><a href="/">Sign Up</a></li>
+								<li class="login"><a href="/">Login</a></li>
+								<li><a class="cta dark" href="/">Sign Up</a></li>
 							</ul>
 						</nav>
 					</burger-menu>
 				</div>
-				<section class="prelude flow-content" aria-labelledby="main-header">
-					<h1 id="main-header">A modern publishing platform</h1>
-					<p>Grow your audience and build your online brand</p>
-					<a class="cta" href="/">Start for Free</a>
-					<a class="cta" href="/">Learn More</a>
-				</section>
 			</div>
+
+			<section class="prelude flow-content" aria-labelledby="main-header">
+				<h1 id="main-header">A modern publishing platform</h1>
+				<p>Grow your audience and build your online brand</p>
+				<div class="split">
+					<a class="cta" href="/">Start for Free</a>
+					<a class="cta dark" href="/">Learn More</a>
+				</div>
+			</section>
+			<!-- </div> -->
 		</header>
+
 		<main id="main" class="container flow-section" tabindex="-1">
 			<section class="flow-content" aria-labelledby="designed">
 				<h2 id="designed">Designed for the future</h2>
@@ -150,5 +157,6 @@
 				</ul>
 			</nav>
 		</footer>
+		<script src="js/burger-menu.js" type="module"></script>
 	</body>
 </html>
