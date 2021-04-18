@@ -2,25 +2,26 @@
    	================================================== */
 
 .dark {
-	--fg: var(--clr-secondary-100);
-	--bg: var(--clr-neutral-100);
-	--bg-h: var(--clr-secondary-100);
-	--fg-h: var(--clr-neutral-200);
+	--fg: var(--clr-neutral-100);
+	--bg: transparent;
+	--bg-h: var(--clr-neutral-100);
+	--fg-h: var(--clr-primary-100);
+
+	border: 1px solid var(--clr-neutral-100);
 }
 
 .cta {
-	display: inline-block;
-	max-width: fit-content;
+	display: block;
+	max-width: 10rem;
 	padding: 0.5em 1em;
-	border-radius: 0.5em;
-	background-color: var(--bg, var(--clr-primary-100));
+	border-radius: 1em;
+	background-color: var(--bg, var(--clr-neutral-100));
 	transition: all 200ms;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: var(--fg, var(--clr-neutral-200));
+	color: var(--fg, var(--clr-primary-100));
+	letter-spacing: 1px;
 
 	&:hover {
 		background-color: var(--bg-h, var(--clr-primary-200));
-		color: var(--fg-h, var(--clr-neutral-200));
+		color: var(--fg-h, var(--clr-neutral-100));
 	}
 }
