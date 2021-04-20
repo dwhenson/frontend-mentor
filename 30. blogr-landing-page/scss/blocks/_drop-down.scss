@@ -4,7 +4,7 @@
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
-	min-width: 8rem;
+	min-width: 8.5rem;
 	color: var(--clr-neutral-100);
 }
 
@@ -34,6 +34,10 @@
 	li a {
 		text-align: left;
 		color: var(--clr-neutral-300);
+
+		&:hover {
+			font-weight: 700;
+		}
 	}
 }
 
@@ -46,6 +50,12 @@
 	max-width: 8rem;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* Prevent offscreen-sub-menus */
+.clicky-menu .sub-menu--right {
+	left: auto !important;
+	right: 0 !important;
 }
 
 .burger-menu[enabled="true"] .clicky-menu ul {
@@ -86,178 +96,15 @@
 	transform: scaleY(-1);
 }
 
-// /**
-//  * No JS fallback
-//  *
-//  * Triggers menus on hover rather than click. Supports keyboard navigation in modern browsers.
-//  */
-// .clicky-menu.no-js li:hover > ul,
-// .clicky-menu.no-js li:focus-within > ul {
-// 	display: block;
-// 	// visibility: visible;
-// }
-
-// 	/* [2] */
-// 	display: block;
-// }
-
-// /* Prevent offscreen-submenus */
-// .clicky-menu .sub-menu--right {
-// 	left: auto !important;
-// 	right: 0 !important;
-// }
-
 /**
- * Footnotes
- *
- * [1] Using visibility instead of display allows for easier transitions and animation of submenus
- * [2] Must be a separate ruleset so that hover works in non-modern browsers
+ * No JS fallback
+ * Triggers menus on hover rather than click.
+ * Supports keyboard navigation in modern browsers.
  */
 
-/* DEMO CSS */
-
-// /* Hidden SVG used for down arrows */
-// svg[hidden] {
-// 	display: none;
-// 	position: absolute;
-// }
-
-// .site-navigation {
-// width: 86%;
-// max-width: 782px;
-// margin: 100px auto 300px;
-// box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-// background-color: #eee;
-// border-radius: 4px;
-// }
-
-// .clicky-menu {
-// 	// display: flex;
-// 	// justify-content: stretch;
-// 	// margin: 0;
-// 	// padding: 0;
-// 	// list-style: none;
-// }
-
-// @media (min-width: 540px) {
-// 	.clicky-menu {
-// 		display: flex;
-// 	}
-// }
-
-/* General Link & Button Styles */
-// .clicky-menu a,
-// .clicky-menu button {
-// 	// margin: 0.25em;
-// 	// padding: 1em;
-// 	// background: transparent;
-// 	// color: #000;
-// 	// font-weight: bold;
-// 	// text-decoration: none;
-// 	// font-family: inherit;
-// 	// border-radius: 3px;
-// 	color: var(--clr-neutral-100);
-// 	background-color: transparent;
-// 	border: none;
-// }
-
-// .clicky-menu a:hover,
-// .clicky-menu button:hover {
-// 	// background: #fff;
-// }
-
-// .clicky-menu a:focus,
-// .clicky-menu button:focus {
-// 	// outline: 0.125em dotted purple;
-// 	// outline-offset: -0.125em;
-// }
-
-// /* Top Level Items */
-// .clicky-menu > li {
-// 	position: relative;
-// 	// flex: 1 1 auto;
-// 	// display: inline-flex;
-// 	// align-items: center;
-// 	// justify-content: stretch;
-// 	// flex-wrap: wrap;
-// }
-
-// .clicky-menu > li > a,
-// .clicky-menu > li > button {
-// 	// flex: 1 0 auto;
-// 	// display: flex;
-// 	// flex-wrap: wrap;
-// 	// align-items: center;
-// 	// border: 0;
-// 	// font-size: inherit;
-// 	// line-height: 0;
-// 	cursor: pointer;
-// 	min-width: 8rem;
-// }
-
-// // @media (min-width: 540px) {
-// // 	.clicky-menu > li > a,
-// // 	.clicky-menu > li > button {
-// // 		// justify-content: center;
-// // 	}
-// // }
-
-// /* Icon */
-// .clicky-menu svg {
-// 	// width: 1em;
-// 	// height: 1em;
-// 	margin-left: 0.5em;
-// }
-
-// .clicky-menu [aria-expanded="true"] svg {
-// 	transform: scaleY(-1);
-// }
-
-// /* Submenu Styles */
-// .clicky-menu ul {
-// 	display: flex;
-// 	flex-direction: column;
-// 	min-width: 100%;
-// 	align-items: flex-start;
-// 	// width: 14em;
-// 	margin-top: 0.5em;
-// 	padding: 0.5rem 1rem;
-// 	// list-style: none;
-// 	background-color: var(--clr-neutral-100);
-// 	border-radius: 0.25rem;
-// }
-
-// @media (min-width: 540px) {
-// 	.clicky-menu {
-// 		// box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
-// 	}
-// }
-
-// /* Responsive Submenu Behavior */
-// .clicky-menu ul[aria-hidden="false"] {
-// 	position: static;
-// 	width: 100%;
-// 	// flex: 0 0 auto;
-// }
-
-// @media (min-width: 540px) {
-// 	.clicky-menu ul[aria-hidden="false"] {
-// 		position: absolute;
-// 		// width: auto;
-// 	}
-// }
-
-// /* Submenu Links */
-// .clicky-menu ul a {
-// 	// display: block;
-// 	// padding-top: 0.375em;
-// 	// padding-bottom: 0.375em;
-// }
-
-// @media (min-width: 540px) {
-// 	.clicky-menu ul a {
-// 		color: var(--clr-neutral-400);
-// 		// padding: 0.375em 1em;
-// 		// white-space: nowrap;
-// 	}
-// }
+.clicky-menu.no-js li:hover > ul,
+.clicky-menu.no-js li:focus-within > ul {
+	margin-top: 0;
+	visibility: visible;
+	min-width: 8.5rem;
+}
