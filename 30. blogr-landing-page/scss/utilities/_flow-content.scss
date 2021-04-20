@@ -1,5 +1,5 @@
 /* Add vertical rhythm inside elements */
 
 .flow-content > * + * {
-	margin-top: calc(var(--spacer) * 1);
+	margin-top: 1em;
 }
