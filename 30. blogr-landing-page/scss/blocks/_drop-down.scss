@@ -13,6 +13,16 @@
 	position: relative;
 }
 
+.clicky-menu li > a.cta {
+	background-color: var(--clr-neutral-100);
+	color: var(--clr-primary-100);
+
+	&:hover {
+		background-color: var(var(--clr-primary-200));
+		color: var(var(--clr-neutral-100));
+	}
+}
+
 /* Sub-menus */
 .clicky-menu ul {
 	// Position off screen
@@ -30,6 +40,7 @@
 	background-color: var(--clr-neutral-100);
 	border-radius: 0.25rem;
 	gap: 0.75rem;
+	// box-shadow: 0 20px 40px var(--clr-neutral-400);
 
 	li a {
 		text-align: left;
@@ -72,6 +83,16 @@
 	text-align: center;
 }
 
+.burger-menu[enabled="true"] .navigation .clicky-menu li > a.cta {
+	background-image: var(--clr-gradient-intro);
+	color: var(--clr-neutral-100);
+
+	&:focus-visible {
+		outline: 3px dotted var(--clr-primary-200);
+		outline-offset: 0.25rem;
+	}
+}
+
 /* Responsive Sub-menu Behavior */
 .clicky-menu ul[aria-hidden="false"] {
 	position: absolute;
@@ -102,9 +123,14 @@
  * Supports keyboard navigation in modern browsers.
  */
 
+.clicky-menu.no-js li > a,
+.clicky-menu.no-js li > button {
+	display: block;
+}
+
 .clicky-menu.no-js li:hover > ul,
 .clicky-menu.no-js li:focus-within > ul {
 	margin-top: 0;
 	visibility: visible;
-	min-width: 8.5rem;
+	min-width: 100%;
 }
