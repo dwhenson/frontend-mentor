@@ -5,7 +5,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 4rem;
+	gap: 2rem;
 
 	> burger-menu {
 		flex-grow: 1;
@@ -18,15 +18,23 @@
 	// width: 7rem;
 }
 
-.navigation ul {
+.navigation > ul {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: calc(var(--spacer) * 2);
+	gap: calc(var(--spacer) * 1);
 
 	.login {
 		margin-left: auto;
+
+		a {
+			display: block;
+		}
 	}
+}
+
+.burger-menu[enabled="true"] .navigation .login {
+	margin-left: 0;
 }
 
 /* Burger menu
@@ -36,15 +44,6 @@
 .burger-menu__trigger {
 	display: none;
 }
-
-// .burger-menu__trigger:focus-visible {
-// 	outline: 3px dotted currentColor;
-// 	outline-offset: 0.25rem;
-// }
-
-// .burger-menu__trigger:focus:not(:focus-visible) {
-// 	outline: transparent;
-// }
 
 .burger-menu__bar,
 .burger-menu__bar::before,
@@ -106,37 +105,39 @@
 	padding-right: 1rem;
 	padding-left: 1rem;
 	overflow-y: auto;
-	// background: linear-gradient(to bottom, hsla(0, 0%, 0%, 1), hsla(0, 0%, 0%, 0));
 	-webkit-overflow-scrolling: touch;
 }
 
 // Hamburger menu panel contents size and positioning
-.burger-menu[enabled="true"] .navigation ul {
-	display: block;
-	padding: clamp(2rem, 5%, 4rem);
+.burger-menu[enabled="true"] .navigation .clicky-menu {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
 	border-radius: 0.5em;
 	margin-top: 4rem;
 	background-color: var(--clr-neutral-100);
-	// text-align: left;
+
+	@include respond-to("medium") {
+		margin-top: 6rem;
+	}
 }
 
-.burger-menu[enabled="true"] .navigation ul > * + * {
-	margin-top: 1rem;
-}
+// .burger-menu[enabled="true"] .navigation ul > * + * {
+// 	margin-top: 1rem;
+// }
 
-.burger-menu[enabled="true"] .navigation li {
-	// width: max-content;
-	// font-size: var(--step-0);
-}
+// .burger-menu[enabled="true"] .navigation li {
+// 	// width: max-content;
+// 	// font-size: var(--step-0);
+// }
 
-.burger-menu[enabled="true"] .navigation li a {
-	display: block;
-	color: var(--clr-neutral-300);
-	font-weight: 700;
-}
+// .burger-menu[enabled="true"] .navigation li button,
+// .burger-menu[enabled="true"] .navigation li a {
+// 	display: block;
+// 	color: var(--clr-neutral-300);
+// }
 
 // Hamburger menu panel transitions
-
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {
 	visibility: visible;
 	opacity: 1;
@@ -149,7 +150,6 @@
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel > * {
 	opacity: 1;
-	// transform: translateY(0);
 }
 
 .burger-menu[enabled="true"][status="open"] .burger-menu__bar::before {

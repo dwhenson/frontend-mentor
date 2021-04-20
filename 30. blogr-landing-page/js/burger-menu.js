@@ -113,34 +113,27 @@ class BurgerMenu extends HTMLElement {
 				this.trigger.setAttribute("aria-label", "Close menu");
 				break;
 			default:
-				console.log("Error01");
+				console.log("Error Process State Change");
 		}
 	}
 
 	manageFocus() {
 		if (!this.state.enabled) {
-			this.focusableElements.forEach((element) =>
-				element.removeAttribute("tabindex")
-			);
+			this.focusableElements.forEach((element) => element.removeAttribute("tabindex"));
 			return;
 		}
 
 		switch (this.state.status) {
 			case "open":
-				this.focusableElements.forEach((element) =>
-					element.removeAttribute("tabindex")
-				);
+				this.focusableElements.forEach((element) => element.removeAttribute("tabindex"));
 				break;
 			case "closed":
 				[...this.focusableElements]
-					.filter(
-						(element) =>
-							element.getAttribute("data-element") !== "burger-menu-trigger"
-					)
+					.filter((element) => element.getAttribute("data-element") !== "burger-menu-trigger")
 					.forEach((element) => element.setAttribute("tabindex", "-1"));
 				break;
 			default:
-				console.log("Error01");
+				console.log("Error Manage Focus");
 		}
 	}
 }

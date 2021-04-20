@@ -306,6 +306,7 @@ main:focus {
   background-color: var(--bg, var(--clr-neutral-100));
   transition: all 200ms;
   color: var(--fg, var(--clr-primary-100));
+  letter-spacing: 1px;
 }
 .cta:hover {
   background-color: var(--bg-h, var(--clr-primary-200));
@@ -333,7 +334,7 @@ main:focus {
   z-index: 10;
 }
 
-.navigation > ul {
+.navigation ul {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -342,15 +343,8 @@ main:focus {
           align-items: center;
   gap: calc(var(--spacer) * 1);
 }
-.navigation > ul .login {
+.navigation ul .login {
   margin-left: auto;
-}
-.navigation > ul .login a {
-  display: block;
-}
-
-.burger-menu[enabled=true] .navigation .login {
-  margin-left: 0;
 }
 
 /* Burger menu
@@ -424,20 +418,22 @@ main:focus {
   -webkit-overflow-scrolling: touch;
 }
 
-.burger-menu[enabled=true] .navigation .clicky-menu {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  padding: 2rem;
+.burger-menu[enabled=true] .navigation ul {
+  display: block;
+  padding: clamp(2rem, 5%, 4rem);
   border-radius: 0.5em;
   margin-top: 4rem;
   background-color: var(--clr-neutral-100);
 }
-@media (min-width: 45em) {
-  .burger-menu[enabled=true] .navigation .clicky-menu {
-    margin-top: 6rem;
-  }
+
+.burger-menu[enabled=true] .navigation ul > * + * {
+  margin-top: 1rem;
+}
+
+.burger-menu[enabled=true] .navigation li a {
+  display: block;
+  color: var(--clr-neutral-300);
+  font-weight: 700;
 }
 
 .burger-menu[enabled=true][status=open] .burger-menu__panel {
@@ -473,93 +469,42 @@ main:focus {
           transform: rotate(180deg);
 }
 
-/* General Link & Button Styles */
-.clicky-menu li > a,
-.clicky-menu li > button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  min-width: 8rem;
-  color: var(--clr-neutral-100);
-}
-
-/* Top Level Items */
-.clicky-menu > li {
-  position: relative;
-}
-
-/* Sub-menus */
+/**
+ * Initial state, hidden off screen
+ */
 .clicky-menu ul {
   position: absolute;
   top: 100%;
   left: 0;
   visibility: hidden;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-align-items: flex-start;
-          align-items: flex-start;
-  min-width: 100%;
-  margin-top: 0.5em;
-  padding: 1.5rem 1rem;
-  background-color: var(--clr-neutral-100);
-  border-radius: 0.25rem;
-  gap: 0.75rem;
-}
-.clicky-menu ul li a {
-  text-align: left;
-  color: var(--clr-neutral-300);
+  /* [1] */
 }
 
-.clicky-menu .login {
+/**
+ * No JS fallback
+ *
+ * Triggers menus on hover rather than click. Supports keyboard navigation in modern browsers.
+ */
+.clicky-menu.no-js li:hover > ul {
   display: block;
-  max-width: 8rem;
 }
 
-.clicky-menu .cta {
-  max-width: 8rem;
-  margin-left: auto;
-  margin-right: auto;
+.clicky-menu.no-js li:focus-within > ul {
+  /* [2] */
+  display: block;
 }
 
-.burger-menu[enabled=true] .clicky-menu ul {
-  background-color: rgba(200, 200, 203, 0.5);
-}
-
-.burger-menu[enabled=true] .navigation .clicky-menu li {
-  width: 100%;
-}
-
-.burger-menu[enabled=true] .navigation .clicky-menu li > a,
-.burger-menu[enabled=true] .navigation .clicky-menu li > button {
-  color: var(--clr-neutral-400);
-  text-align: center;
-}
-
-/* Responsive Sub-menu Behavior */
+/**
+ * Open/Close Menu Behavior with JS
+ */
 .clicky-menu ul[aria-hidden=false] {
-  position: absolute;
   visibility: visible;
 }
 
-.burger-menu[enabled=true] .clicky-menu ul[aria-hidden=false] {
-  visibility: visible;
-  position: static;
-}
-
-/* Icon */
-.clicky-menu svg {
-  margin-left: 0.5em;
-}
-
-.burger-menu[enabled=true] .clicky-menu svg path {
-  stroke: var(--clr-primary-100);
-}
-
-.clicky-menu [aria-expanded=true] svg {
-  -webkit-transform: scaleY(-1);
-          transform: scaleY(-1);
+/* Prevent offscreen-submenus */
+.clicky-menu .sub-menu--right {
+  left: auto !important;
+  right: 0 !important;
 }
 
 /**
@@ -569,7 +514,71 @@ main:focus {
  * [2] Must be a separate ruleset so that hover works in non-modern browsers
  */
 /* DEMO CSS */
+/* Hidden SVG used for down arrows */
+svg[hidden] {
+  display: none;
+  position: absolute;
+}
+
 /* General Link & Button Styles */
+.clicky-menu a,
+.clicky-menu button {
+  color: var(--clr-neutral-100);
+  background-color: transparent;
+  border: none;
+}
+
+/* Top Level Items */
+.clicky-menu > li {
+  position: relative;
+}
+
+.clicky-menu > li > a,
+.clicky-menu > li > button {
+  cursor: pointer;
+  min-width: 8rem;
+}
+
+/* Icon */
+.clicky-menu svg {
+  margin-left: 0.5em;
+}
+
+.clicky-menu [aria-expanded=true] svg {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+/* Submenu Styles */
+.clicky-menu ul {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  min-width: 100%;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  margin-top: 0.5em;
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-neutral-100);
+  border-radius: 0.25rem;
+}
+
+/* Responsive Submenu Behavior */
+.clicky-menu ul[aria-hidden=false] {
+  width: 100%;
+}
+
+/* Submenu Links */
+.clicky-menu ul a {
+  display: block;
+}
+
+@media (min-width: 540px) {
+  .clicky-menu ul a {
+    color: var(--clr-neutral-400);
+  }
+}
 header {
   background-color: var(--clr-neutral-400);
   color: var(--clr-neutral-100);
