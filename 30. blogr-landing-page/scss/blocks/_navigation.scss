@@ -5,7 +5,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: 2rem;
+	gap: 1rem;
 
 	> burger-menu {
 		flex-grow: 1;
@@ -15,14 +15,12 @@
 .logo {
 	position: relative;
 	z-index: 10;
-	// width: 7rem;
 }
 
 .navigation > ul {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	gap: calc(var(--spacer) * 1);
 
 	.login {
 		margin-left: auto;
@@ -116,26 +114,13 @@
 	border-radius: 0.5em;
 	margin-top: 4rem;
 	background-color: var(--clr-neutral-100);
+	box-shadow: 0 20px 40px var(--clr-neutral-400);
+	gap: 1rem;
 
 	@include respond-to("medium") {
 		margin-top: 6rem;
 	}
 }
-
-// .burger-menu[enabled="true"] .navigation ul > * + * {
-// 	margin-top: 1rem;
-// }
-
-// .burger-menu[enabled="true"] .navigation li {
-// 	// width: max-content;
-// 	// font-size: var(--step-0);
-// }
-
-// .burger-menu[enabled="true"] .navigation li button,
-// .burger-menu[enabled="true"] .navigation li a {
-// 	display: block;
-// 	color: var(--clr-neutral-300);
-// }
 
 // Hamburger menu panel transitions
 .burger-menu[enabled="true"][status="open"] .burger-menu__panel {
