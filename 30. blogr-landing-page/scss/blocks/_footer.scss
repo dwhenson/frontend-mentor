@@ -1,0 +1,31 @@
+footer {
+	background-color: var(--clr-neutral-400);
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	border-radius: 0 5rem 0 0;
+
+	nav {
+		align-items: center;
+
+		@include respond-to("medium") {
+			align-items: flex-start;
+		}
+	}
+
+	a {
+		flex-basis: 25%;
+	}
+
+	.inner-nav {
+		width: 100%;
+		gap: max(3rem, 25%);
+
+		> li > a {
+			font-weight: 700;
+		}
+
+		> li > ul {
+			margin-top: 1rem;
+		}
+	}
+}
