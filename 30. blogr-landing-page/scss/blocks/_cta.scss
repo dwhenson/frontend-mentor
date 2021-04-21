@@ -22,6 +22,7 @@
 	&:hover {
 		background-color: var(--bg-h, var(--clr-primary-200));
 		color: var(--fg-h, var(--clr-neutral-100));
+		text-decoration: none;
 	}
 
 	&:focus-visible {
