@@ -83,10 +83,16 @@
 			</section>
 		</header>
 
-		<main id="main" class="container flow-section" tabindex="-1">
-			<section class="designed flow-content" aria-labelledby="designed">
+		<main id="main" class="flow-section" tabindex="-1">
+			<section class="designed flow-content container" aria-labelledby="designed">
 				<h2 id="designed">Designed for the future</h2>
-				<div class="flow-content wrapper">
+				<div class="picture">
+					<picture>
+						<source media="(min-width: 720px)" srcset="images/illustration-editor-desktop.svg" />
+						<img src="images/illustration-editor-mobile.svg" alt="" />
+					</picture>
+				</div>
+				<div class="para-1 flow-content">
 					<h3>Introducing an extensible editor</h3>
 					<p>
 						Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The
@@ -94,6 +100,8 @@
 						and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or change the
 						looks of a blog.
 					</p>
+				</div>
+				<div class="para-2 flow-content">
 					<h3>Robust content management</h3>
 					<p>
 						Flexible content management enables users to easily move through posts. Increase the usability of your blog
@@ -102,23 +110,43 @@
 				</div>
 			</section>
 
-			<section aria-labelledby="infrastructure" class="infrastructure flow-content">
-				<h2 id="infrastructure">State of the Art Infrastructure</h2>
-				<p>
-					With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity.
-					This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-				</p>
-				<h3>Free, open, simple</h3>
-				<p>
-					Blogr is a free and open source application backed by a large community of helpful developers. It supports
-					features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools,
-					and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
-				</p>
-				<h3>Powerful tooling</h3>
-				<p>
-					Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a
-					breeze, but capable of producing even the most complicated sites.
-				</p>
+			<section aria-labelledby="infrastructure" class="infrastructure">
+				<div class="container split">
+					<img src="images/illustration-phones.svg" alt="" />
+					<div class="wrapper flow-content">
+						<h2 id="infrastructure">State of the Art Infrastructure</h2>
+						<p>
+							With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast
+							connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your
+							site competitive.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<section aria-labelledby="free-open" class="free-open container grid">
+				<div class="picture">
+					<picture>
+						<source media="(min-width: 720px)" srcset="images/illustration-laptop-desktop.svg" />
+						<img src="images/illustration-laptop-mobile.svg" alt="" />
+					</picture>
+				</div>
+				<div class="para-1 flow-content">
+					<h3 id="free-open">Free, open, simple</h3>
+					<p>
+						Blogr is a free and open source application backed by a large community of helpful developers. It supports
+						features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting
+						tools, and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to
+						learn.
+					</p>
+				</div>
+				<div class="para-2 flow-content">
+					<h3>Powerful tooling</h3>
+					<p>
+						Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a
+						breeze, but capable of producing even the most complicated sites.
+					</p>
+				</div>
 			</section>
 		</main>
 

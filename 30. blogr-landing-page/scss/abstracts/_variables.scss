@@ -19,11 +19,11 @@
 	--spacer: 1rem;
 
 	/* Font sizes */
-	--step--1: clamp(0.78rem, 0.76rem + 0.12vw, 0.84rem);
-	--step-0: clamp(0.94rem, 0.86rem + 0.37vw, 1.13rem);
-	--step-1: clamp(1.13rem, 0.98rem + 0.73vw, 1.5rem);
-	--step-2: clamp(1.35rem, 1.1rem + 1.27vw, 2rem);
-	--step-3: clamp(1.62rem, 1.21rem + 2.04vw, 2.66rem);
+	--step--1: clamp(0.75rem, 0.6rem + 0.73vw, 1.13rem);
+	--step-0: clamp(1rem, 0.8rem + 0.98vw, 1.25rem);
+	--step-1: clamp(1.33rem, 1.07rem + 1.3vw, 2rem);
+	--step-2: clamp(1.78rem, 1.43rem + 1.73vw, 2.67rem);
+	--step-3: clamp(2.37rem, 1.91rem + 2.31vw, 3.55rem);
 
 	/* Font-families */
 	--ff-body: "Overpass", sans-serif;

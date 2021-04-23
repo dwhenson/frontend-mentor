@@ -19,14 +19,16 @@
 
 .navigation > ul {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: wrap-reverse;
 	align-items: center;
+	gap: 1rem;
 
 	.login {
-		margin-left: auto;
+		margin-left: 0rem;
+		display: block;
 
-		a {
-			display: block;
+		@include respond-to("medium") {
+			margin-left: auto;
 		}
 	}
 }
