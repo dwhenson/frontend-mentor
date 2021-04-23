@@ -1,10 +1,11 @@
-header {
+header.center-content {
 	background-image: url("../images/bg-pattern-intro.svg"), var(--clr-gradient-intro);
 	background-size: 160%;
 	background-position: 30%;
 	color: var(--clr-neutral-100);
 	border-radius: 0 0 0 5rem;
 	text-align: center;
+	grid-column: 1 / -1;
 }
 
 .headline {
