@@ -334,7 +334,7 @@ main:focus {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 .outer-navigation > burger-menu {
   flex-grow: 1;
