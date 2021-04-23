@@ -1,4 +1,8 @@
-/* General Link & Button Styles */
+/* 	Drop Down Menu
+   	================================================== */
+
+/* Global Sub-menu Link & Button Styles
+   ------------------- */
 .clicky-menu li > a,
 .clicky-menu li > button {
 	background-color: transparent;
@@ -15,6 +19,7 @@
 
 .clicky-menu li.login {
 	padding: 0 2rem;
+	// HACK to center link inside li
 	display: grid;
 	place-content: center center;
 }
@@ -29,7 +34,8 @@
 	}
 }
 
-/* Sub-menus */
+/* Sub-menus
+   ------------------- */
 .clicky-menu ul {
 	// Position off screen
 	position: absolute;
@@ -74,6 +80,18 @@
 	right: 0 !important;
 }
 
+/* Icon */
+.clicky-menu svg {
+	margin-left: 0.5em;
+}
+
+.clicky-menu [aria-expanded="true"] svg {
+	transform: scaleY(-1);
+}
+
+/* Burger Menu Style Adjustments
+   ------------------- */
+
 .burger-menu[enabled="true"] .clicky-menu ul {
 	background-color: hsla(240, 2%, 79%, 0.5);
 }
@@ -98,35 +116,23 @@
 	}
 }
 
+.burger-menu[enabled="true"] .clicky-menu ul[aria-hidden="false"] {
+	visibility: visible;
+	position: static;
+}
+
 /* Responsive Sub-menu Behavior */
 .clicky-menu ul[aria-hidden="false"] {
 	position: absolute;
 	visibility: visible;
 }
 
-.burger-menu[enabled="true"] .clicky-menu ul[aria-hidden="false"] {
-	visibility: visible;
-	position: static;
-}
-
-/* Icon */
-.clicky-menu svg {
-	margin-left: 0.5em;
-}
-
 .burger-menu[enabled="true"] .clicky-menu svg path {
 	stroke: var(--clr-primary-100);
 }
 
-.clicky-menu [aria-expanded="true"] svg {
-	transform: scaleY(-1);
-}
-
-/**
- * No JS fallback
- * Triggers menus on hover rather than click.
- * Supports keyboard navigation in modern browsers.
- */
+/* No JavaScript Fallback to Hover Sub-menus
+   ------------------- */
 
 .clicky-menu.no-js li > a,
 .clicky-menu.no-js li > button {
