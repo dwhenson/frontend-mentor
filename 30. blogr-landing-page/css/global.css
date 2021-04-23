@@ -676,6 +676,7 @@ header.center-content {
 }
 
 .infrastructure {
+  margin-top: 0;
   padding-top: 12rem;
 }
 .infrastructure > .container {
