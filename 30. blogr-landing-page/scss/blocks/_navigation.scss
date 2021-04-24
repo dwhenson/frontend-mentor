@@ -24,8 +24,8 @@
 	gap: 1rem;
 
 	.login {
-		margin-left: 0rem;
 		display: block;
+		margin-left: 0rem;
 
 		@include respond-to("medium") {
 			margin-left: auto;
@@ -82,13 +82,13 @@
 .burger-menu[enabled="true"] .burger-menu__trigger {
 	position: relative;
 	display: block;
+	left: calc(100% - 2rem);
 	z-index: 10;
 	width: 2rem;
 	height: 2rem;
 	border: none;
 	background: transparent;
 	cursor: pointer;
-	left: calc(100% - 2rem);
 }
 
 // Hamburger menu panel size and positioning
@@ -114,9 +114,9 @@
 	flex-direction: column;
 	padding: 2rem;
 	border-radius: 0.5em;
+	box-shadow: 0 20px 40px var(--clr-neutral-400);
 	margin-top: 4rem;
 	background-color: var(--clr-neutral-100);
-	box-shadow: 0 20px 40px var(--clr-neutral-400);
 	gap: 1rem;
 
 	@include respond-to("medium") {

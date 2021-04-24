@@ -5,11 +5,11 @@
    ------------------- */
 .clicky-menu li > a,
 .clicky-menu li > button {
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
 	min-width: 8.5rem;
+	border: none;
+	background-color: transparent;
 	color: var(--clr-neutral-100);
+	cursor: pointer;
 }
 
 /* Top Level Items */
@@ -18,9 +18,9 @@
 }
 
 .clicky-menu li.login {
-	padding: 0 2rem;
 	// HACK to center link inside li
 	display: grid;
+	padding: 0 2rem;
 	place-content: center center;
 }
 
@@ -39,18 +39,18 @@
 .clicky-menu ul {
 	// Position off screen
 	position: absolute;
-	top: 100%;
-	left: 0;
-	visibility: hidden;
 	// Styles
 	display: flex;
+	top: 100%;
+	left: 0;
 	flex-direction: column;
 	align-items: flex-start;
+	visibility: hidden;
 	min-width: 100%;
-	margin-top: 0.5em;
 	padding: 1.5rem 1rem;
-	background-color: var(--clr-neutral-100);
 	border-radius: 0.25rem;
+	margin-top: 0.5em;
+	background-color: var(--clr-neutral-100);
 	gap: 0.75rem;
 
 	li a {
@@ -70,14 +70,14 @@
 
 .clicky-menu .cta {
 	max-width: 8rem;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 
 /* Prevent offscreen-sub-menus */
 .clicky-menu .sub-menu--right {
-	left: auto !important;
 	right: 0 !important;
+	left: auto !important;
 }
 
 /* Icon */
@@ -102,8 +102,8 @@
 
 .burger-menu[enabled="true"] .navigation .clicky-menu li > a,
 .burger-menu[enabled="true"] .navigation .clicky-menu li > button {
-	color: var(--clr-neutral-400);
 	text-align: center;
+	color: var(--clr-neutral-400);
 }
 
 .burger-menu[enabled="true"] .navigation .clicky-menu li > a.cta {
@@ -117,8 +117,8 @@
 }
 
 .burger-menu[enabled="true"] .clicky-menu ul[aria-hidden="false"] {
-	visibility: visible;
 	position: static;
+	visibility: visible;
 }
 
 /* Responsive Sub-menu Behavior */
@@ -141,7 +141,7 @@
 
 .clicky-menu.no-js li:hover > ul,
 .clicky-menu.no-js li:focus-within > ul {
-	margin-top: 0;
 	visibility: visible;
 	min-width: 100%;
+	margin-top: 0;
 }

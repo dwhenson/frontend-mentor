@@ -9,10 +9,10 @@
 	gap: 2rem;
 
 	@include respond-to("medium") {
-		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 6rem auto auto 6rem;
-		gap: 4rem 1rem;
+		grid-template-columns: 1fr 1fr;
 		align-items: center;
+		gap: 4rem 1rem;
 
 		h2 {
 			grid-area: 1 / 1 / 2/ -1;
@@ -41,8 +41,8 @@
 		}
 
 		@include respond-to("large") {
-			transform: translateX(5rem);
 			max-width: 200%;
+			transform: translateX(5rem);
 		}
 	}
 }
@@ -62,40 +62,15 @@
 		grid-template-rows: repeat(3, auto);
 		align-items: center;
 
-		img {
-			grid-area: 1 / 1 / 3 / -1;
-			margin-right: auto;
-			margin-left: auto;
-		}
-
-		.para-1 {
-			grid-area: 3 / 1 / -1 / -1;
-			padding-bottom: 4rem;
-			padding-top: 1rem;
-		}
-
-		.background {
-			width: 100vw;
-			margin-left: calc(50% - 50vw);
-			grid-area: 2 / 1 / -1 / 2;
-			background-color: var(--clr-primary-300);
-			border-radius: 0 5rem 0 5rem;
-			background-image: url("../images/bg-pattern-circles.svg");
-			background-position: center -15rem;
-			background-size: cover;
-			background-repeat: no-repeat;
-			align-self: stretch;
-		}
-
 		@include respond-to("medium") {
-			background-size: 50%;
-			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 6rem auto 6rem;
+			grid-template-columns: 1fr 1fr;
+			background-size: 50%;
 			gap: 4rem 1rem;
 
 			img {
-				margin-top: 2rem;
 				grid-area: 1 / 1 / -1 / 2;
+				margin-top: 2rem;
 			}
 
 			.para-1 {
@@ -108,6 +83,31 @@
 				background-position: -10rem -20rem;
 				background-size: 50%;
 			}
+		}
+
+		img {
+			grid-area: 1 / 1 / 3 / -1;
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		.para-1 {
+			grid-area: 3 / 1 / -1 / -1;
+			padding-top: 1rem;
+			padding-bottom: 4rem;
+		}
+
+		.background {
+			grid-area: 2 / 1 / -1 / 2;
+			align-self: stretch;
+			width: 100vw;
+			border-radius: 0 5rem 0 5rem;
+			margin-left: calc(50% - 50vw);
+			background-color: var(--clr-primary-300);
+			background-image: url("../images/bg-pattern-circles.svg");
+			background-position: center -15rem;
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 	}
 }
@@ -142,10 +142,10 @@
 	gap: 3rem;
 
 	@include respond-to("medium") {
-		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 6rem auto auto 6rem;
-		gap: 4rem 1rem;
+		grid-template-columns: 1fr 1fr;
 		align-items: center;
+		gap: 4rem 1rem;
 
 		.picture {
 			grid-area: 1 / 1 / 5 / 2;
@@ -165,13 +165,13 @@
 		margin-left: auto;
 
 		@include respond-to("medium") {
-			transform: translateX(-15rem);
 			max-width: 180%;
+			transform: translateX(-15rem);
 		}
 
 		@include respond-to("large") {
-			transform: translateX(-25rem);
 			max-width: 200%;
+			transform: translateX(-25rem);
 		}
 	}
 }

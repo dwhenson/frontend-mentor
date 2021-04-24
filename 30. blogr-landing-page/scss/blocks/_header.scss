@@ -2,22 +2,22 @@
    	================================================== */
 
 header.center-content {
-	background-image: url("../images/bg-pattern-intro.svg"), var(--clr-gradient-intro);
-	background-size: 160%;
-	background-position: 30%;
-	color: var(--clr-neutral-100);
-	border-radius: 0 0 0 5rem;
-	text-align: center;
 	grid-column: 1 / -1;
+	border-radius: 0 0 0 5rem;
+	background-image: url("../images/bg-pattern-intro.svg"), var(--clr-gradient-intro);
+	background-position: 30%;
+	background-size: 160%;
+	text-align: center;
+	color: var(--clr-neutral-100);
 }
 
 .headline {
-	margin-top: 6rem;
 	padding-bottom: 6rem;
+	margin-top: 6rem;
 
 	.split {
-		margin-top: 3rem;
 		flex-direction: row;
 		justify-content: center;
+		margin-top: 3rem;
 	}
 }
