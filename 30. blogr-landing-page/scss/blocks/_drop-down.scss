@@ -27,6 +27,7 @@
 .clicky-menu li > a.cta {
 	background-color: var(--clr-neutral-100);
 	color: var(--clr-primary-100);
+	width: max-content;
 
 	&:hover {
 		background-color: var(--clr-primary-200);
@@ -83,6 +84,7 @@
 /* Icon */
 .clicky-menu svg {
 	margin-left: 0.5em;
+	stroke: var(--clr-neutral-100);
 }
 
 .clicky-menu [aria-expanded="true"] svg {

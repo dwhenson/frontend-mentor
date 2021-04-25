@@ -215,8 +215,8 @@ main:focus {
 
 /* Add left and right padding to element */
 .container {
-  padding-right: clamp(2rem, 5%, 4rem);
-  padding-left: clamp(2rem, 5%, 4rem);
+  padding-right: clamp(1rem, 5%, 4rem);
+  padding-left: clamp(1rem, 5%, 4rem);
 }
 
 /* Add vertical rhythm between sections */
@@ -502,6 +502,7 @@ main:focus {
 .clicky-menu li > a.cta {
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-100);
+  width: max-content;
 }
 .clicky-menu li > a.cta:hover {
   background-color: var(--clr-primary-200);
@@ -553,6 +554,7 @@ main:focus {
 /* Icon */
 .clicky-menu svg {
   margin-left: 0.5em;
+  stroke: var(--clr-neutral-100);
 }
 
 .clicky-menu [aria-expanded=true] svg {
@@ -693,27 +695,6 @@ header.center-content {
   grid-template-rows: repeat(3, auto);
   align-items: center;
 }
-@media (min-width: 50em) {
-  .infrastructure .grid {
-    grid-template-rows: 6rem auto 6rem;
-    grid-template-columns: 1fr 1fr;
-    background-size: 50%;
-    gap: 4rem 1rem;
-  }
-  .infrastructure .grid img {
-    grid-area: 1/1/-1/2;
-    margin-top: 2rem;
-  }
-  .infrastructure .grid .para-1 {
-    grid-area: 2/2/3/-1;
-    padding-top: 4rem;
-  }
-  .infrastructure .grid .background {
-    grid-area: 2/1/3/-1;
-    background-position: -10rem -20rem;
-    background-size: 50%;
-  }
-}
 .infrastructure .grid img {
   grid-area: 1/1/3/-1;
   margin-right: auto;
@@ -735,6 +716,27 @@ header.center-content {
   background-position: center -15rem;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media (min-width: 50em) {
+  .infrastructure .grid {
+    grid-template-rows: 6rem auto 6rem;
+    grid-template-columns: 1fr 1fr;
+    background-size: 50%;
+    gap: 4rem 1rem;
+  }
+  .infrastructure .grid img {
+    grid-area: 1/1/-1/2;
+    margin-top: 2rem;
+  }
+  .infrastructure .grid .para-1 {
+    grid-area: 2/2/3/-1;
+    padding-top: 4rem;
+  }
+  .infrastructure .grid .background {
+    grid-area: 2/1/3/-1;
+    background-position: -10rem -20rem;
+    background-size: 50%;
+  }
 }
 
 /* Free, open and simple
