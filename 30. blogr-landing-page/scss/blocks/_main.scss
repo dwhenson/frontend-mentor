@@ -8,6 +8,20 @@
 	display: grid;
 	gap: 2rem;
 
+	img {
+		margin-right: auto;
+		margin-left: auto;
+
+		@include respond-to("medium") {
+			max-width: 180%;
+		}
+
+		@include respond-to("large") {
+			max-width: 200%;
+			transform: translateX(5rem);
+		}
+	}
+
 	@include respond-to("medium") {
 		grid-template-rows: 6rem auto auto 6rem;
 		grid-template-columns: 1fr 1fr;
@@ -16,6 +30,7 @@
 
 		h2 {
 			grid-area: 1 / 1 / 2/ -1;
+			margin-top: 2em;
 			text-align: center;
 		}
 
@@ -29,20 +44,6 @@
 
 		.para-2 {
 			grid-area: 3 / 1 / 4 / 2;
-		}
-	}
-
-	img {
-		margin-right: auto;
-		margin-left: auto;
-
-		@include respond-to("medium") {
-			max-width: 180%;
-		}
-
-		@include respond-to("large") {
-			max-width: 200%;
-			transform: translateX(5rem);
 		}
 	}
 }
@@ -90,8 +91,8 @@
 		@include respond-to("medium") {
 			grid-template-rows: 6rem auto 6rem;
 			grid-template-columns: 1fr 1fr;
-			background-size: 50%;
 			gap: 4rem 1rem;
+			background-size: 50%;
 
 			img {
 				grid-area: 1 / 1 / -1 / 2;
@@ -119,6 +120,21 @@
 	display: grid;
 	gap: 3rem;
 
+	img {
+		margin-right: auto;
+		margin-left: auto;
+
+		@include respond-to("medium") {
+			max-width: 180%;
+			transform: translateX(-15rem);
+		}
+
+		@include respond-to("large") {
+			max-width: 200%;
+			transform: translateX(-25rem);
+		}
+	}
+
 	@include respond-to("medium") {
 		grid-template-rows: 6rem auto auto 6rem;
 		grid-template-columns: 1fr 1fr;
@@ -135,21 +151,6 @@
 
 		.para-2 {
 			grid-area: 3 / 2 / 4 / 3;
-		}
-	}
-
-	img {
-		margin-right: auto;
-		margin-left: auto;
-
-		@include respond-to("medium") {
-			max-width: 180%;
-			transform: translateX(-15rem);
-		}
-
-		@include respond-to("large") {
-			max-width: 200%;
-			transform: translateX(-25rem);
 		}
 	}
 }
